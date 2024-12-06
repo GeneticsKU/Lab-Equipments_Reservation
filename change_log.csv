@@ -5570,3 +5570,4 @@ Name: 1537, dtype: object"
 0  Jantanipa_4607  PCR Machines  ... 2024-12-06 14:00:00 2024-12-06 17:00:00
 
 [1 rows x 5 columns]"
+2024-12-06 15:37:27,Add Reservation,Wuthichai_4505,"{'Name': 'Wuthichai_4505', 'Room': 'Central Lab, 6th floor', 'Equipments': 'pH Meter 2', 'Start_Time': datetime.datetime(2024, 12, 6, 15, 45), 'End_Time': datetime.datetime(2024, 12, 6, 16, 30)}"
