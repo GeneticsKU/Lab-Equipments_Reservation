@@ -5555,3 +5555,5 @@ Name: 1537, dtype: object"
 2024-12-06 00:30:30,Add Reservation,Janejira_4612,"{'Name': 'Janejira_4612', 'Room': 'Central Lab, 6th floor', 'Equipments': 'Centrifuge 3', 'Start_Time': datetime.datetime(2024, 12, 9, 11, 0), 'End_Time': datetime.datetime(2024, 12, 9, 15, 0)}"
 2024-12-06 09:13:20,Add Reservation,Leela_4606,"         Name          Room Equipments          Start_Time            End_Time
 0  Leela_4606  PCR Machines     PCR 11 2024-12-06 11:00:00 2024-12-06 14:00:00"
+2024-12-06 09:13:32,Add Reservation,Leela_4606,"         Name          Room Equipments          Start_Time            End_Time
+0  Leela_4606  PCR Machines     PCR 12 2024-12-06 11:00:00 2024-12-06 14:00:00"
