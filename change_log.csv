@@ -5574,3 +5574,7 @@ Name: 1537, dtype: object"
 2024-12-06 15:37:42,Add Reservation,Wuthichai_4505,"{'Name': 'Wuthichai_4505', 'Room': 'Central Lab, 6th floor', 'Equipments': 'pH Meter 1', 'Start_Time': datetime.datetime(2024, 12, 6, 15, 45), 'End_Time': datetime.datetime(2024, 12, 6, 16, 30)}"
 2024-12-07 10:29:06,Add Reservation,Chanikarn_4511,"{'Name': 'Chanikarn_4511', 'Room': 'Central Lab, 6th floor', 'Equipments': 'Refrigerated Centrifuge 1', 'Start_Time': datetime.datetime(2024, 12, 7, 11, 0), 'End_Time': datetime.datetime(2024, 12, 7, 16, 0)}"
 2024-12-07 10:29:32,Add Reservation,Chanikarn_4511,"{'Name': 'Chanikarn_4511', 'Room': 'Central Lab, 6th floor', 'Equipments': 'Refrigerated Centrifuge 2', 'Start_Time': datetime.datetime(2024, 12, 7, 10, 30), 'End_Time': datetime.datetime(2024, 12, 7, 16, 0)}"
+2024-12-07 10:29:53,Add Reservation,Chanikarn_4511,"             Name          Room  ...          Start_Time            End_Time
+0  Chanikarn_4511  PCR Machines  ... 2024-12-07 11:00:00 2024-12-07 14:00:00
+
+[1 rows x 5 columns]"
