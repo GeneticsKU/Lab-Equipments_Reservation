@@ -5658,3 +5658,4 @@ Name: 1537, dtype: object"
 2024-12-11 09:39:28,Add Reservation,Leela_4606,"         Name          Room Equipments          Start_Time            End_Time
 0  Leela_4606  PCR Machines     PCR 12 2024-12-11 11:00:00 2024-12-11 14:00:00"
 2024-12-11 10:28:01,Add Reservation,Dechaphon_4612,"{'Name': 'Dechaphon_4612', 'Room': 'BSL-2', 'Equipments': 'BSC-2', 'Start_Time': datetime.datetime(2024, 12, 11, 12, 0), 'End_Time': datetime.datetime(2024, 12, 11, 15, 0)}"
+2024-12-11 11:32:43,Add Reservation,Danthai_4606,"{'Name': 'Danthai_4606', 'Room': 'Central Lab, 6th floor', 'Equipments': 'Centrifuge 3', 'Start_Time': datetime.datetime(2024, 12, 11, 12, 0), 'End_Time': datetime.datetime(2024, 12, 11, 13, 30)}"
