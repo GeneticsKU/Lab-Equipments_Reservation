@@ -5698,3 +5698,5 @@ Name: 1571, dtype: object"
 2024-12-11 16:10:32,Add Reservation,Jathupat_4615,"{'Name': 'Jathupat_4615', 'Room': 'Hallway, 6th floor', 'Equipments': 'Autoclave 3 (Drain the water every 5 times after using)', 'Start_Time': datetime.datetime(2024, 12, 11, 16, 15), 'End_Time': datetime.datetime(2024, 12, 11, 17, 30)}"
 2024-12-11 16:25:14,Add Reservation,Pee_4507,"       Name          Room Equipments          Start_Time            End_Time
 0  Pee_4507  PCR Machines     PCR 18 2024-12-12 14:00:00 2024-12-12 17:00:00"
+2024-12-11 16:26:16,Add Reservation,Pee_4507,"       Name          Room Equipments          Start_Time            End_Time
+0  Pee_4507  PCR Machines     PCR 17 2024-12-12 14:00:00 2024-12-12 17:00:00"
