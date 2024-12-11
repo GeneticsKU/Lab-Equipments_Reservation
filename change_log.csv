@@ -5700,3 +5700,4 @@ Name: 1571, dtype: object"
 0  Pee_4507  PCR Machines     PCR 18 2024-12-12 14:00:00 2024-12-12 17:00:00"
 2024-12-11 16:26:16,Add Reservation,Pee_4507,"       Name          Room Equipments          Start_Time            End_Time
 0  Pee_4507  PCR Machines     PCR 17 2024-12-12 14:00:00 2024-12-12 17:00:00"
+2024-12-11 16:40:37,Add Reservation,Wuthichai_4505,"{'Name': 'Wuthichai_4505', 'Room': 'Hallway, 6th floor', 'Equipments': 'Autoclave For Waste (Drain the water everytime after using)', 'Start_Time': datetime.datetime(2024, 12, 12, 9, 30), 'End_Time': datetime.datetime(2024, 12, 12, 11, 30)}"
