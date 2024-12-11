@@ -5675,3 +5675,4 @@ Name: 1571, dtype: object"
 0  Supawit_4507  PCR Machines  ... 2024-12-11 14:00:00 2024-12-11 17:00:00
 
 [1 rows x 5 columns]"
+2024-12-11 12:47:27,Add Reservation,Pawida_4606,"{'Name': 'Pawida_4606', 'Room': 'Central Lab, 6th floor', 'Equipments': 'Digital Dry Bath 2', 'Start_Time': datetime.datetime(2024, 12, 11, 13, 0), 'End_Time': datetime.datetime(2024, 12, 11, 14, 15)}"
