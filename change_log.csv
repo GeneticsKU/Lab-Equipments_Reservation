@@ -5759,3 +5759,7 @@ Name: 872, dtype: object"
 2024-12-12 16:02:27,Add Reservation,Thanathip_4505,"{'Name': 'Thanathip_4505', 'Room': 'Central Lab, 5th floor', 'Equipments': 'Incubator Shaker 2', 'Start_Time': datetime.datetime(2024, 12, 13, 0, 0), 'End_Time': datetime.datetime(2024, 12, 13, 16, 30)}"
 2024-12-12 16:35:44,Add Reservation,Pawida_4606,"          Name          Room Equipments          Start_Time            End_Time
 0  Pawida_4606  PCR Machines     PCR 15 2024-12-13 08:00:00 2024-12-13 11:00:00"
+2024-12-12 23:16:03,Add Reservation,Supawit_4507,"           Name          Room  ...          Start_Time            End_Time
+0  Supawit_4507  PCR Machines  ... 2024-12-13 08:00:00 2024-12-13 11:00:00
+
+[1 rows x 5 columns]"
