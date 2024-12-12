@@ -5707,3 +5707,5 @@ Name: 1571, dtype: object"
 [1 rows x 5 columns]"
 2024-12-12 09:39:45,Add Reservation,Leela_4606,"         Name          Room Equipments          Start_Time            End_Time
 0  Leela_4606  PCR Machines     PCR 11 2024-12-12 11:00:00 2024-12-12 14:00:00"
+2024-12-12 09:39:54,Add Reservation,Leela_4606,"         Name          Room Equipments          Start_Time            End_Time
+0  Leela_4606  PCR Machines     PCR 12 2024-12-12 11:00:00 2024-12-12 14:00:00"
