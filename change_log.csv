@@ -5807,3 +5807,4 @@ Name: 886, dtype: object"
 
 [1 rows x 5 columns]"
 2024-12-15 13:04:11,Add Reservation,Dechaphon_4612,"{'Name': 'Dechaphon_4612', 'Room': 'Central Lab, 5th floor', 'Equipments': 'Incubator Shaker 2', 'Start_Time': datetime.datetime(2024, 12, 15, 13, 30), 'End_Time': datetime.datetime(2024, 12, 15, 23, 45)}"
+2024-12-15 13:04:23,Add Reservation,Dechaphon_4612,"{'Name': 'Dechaphon_4612', 'Room': 'Central Lab, 5th floor', 'Equipments': 'Incubator Shaker 2', 'Start_Time': datetime.datetime(2024, 12, 16, 0, 0), 'End_Time': datetime.datetime(2024, 12, 16, 23, 45)}"
