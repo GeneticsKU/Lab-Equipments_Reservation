@@ -5821,3 +5821,4 @@ Name: 886, dtype: object"
 0  Pimmada_4511  PCR Machines  ... 2024-12-16 14:00:00 2024-12-16 17:00:00
 
 [1 rows x 5 columns]"
+2024-12-16 13:56:26,Add Reservation,Juthapor_4503,"{'Name': 'Juthapor_4503', 'Room': 'Hallway, 6th floor', 'Equipments': 'Autoclave For Waste (Drain the water everytime after using)', 'Start_Time': datetime.datetime(2024, 12, 17, 9, 30), 'End_Time': datetime.datetime(2024, 12, 17, 11, 30)}"
