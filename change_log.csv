@@ -5870,3 +5870,4 @@ Name: 886, dtype: object"
 0  Supawit_4507  PCR Machines  ... 2024-12-18 11:00:00 2024-12-18 14:00:00
 
 [1 rows x 5 columns]"
+2024-12-18 08:17:53,Add Reservation,Wuthichai_4505,"{'Name': 'Wuthichai_4505', 'Room': 'Central Lab, 6th floor', 'Equipments': 'Ultrasonic Processors', 'Start_Time': datetime.datetime(2024, 12, 18, 8, 45), 'End_Time': datetime.datetime(2024, 12, 18, 10, 0)}"
