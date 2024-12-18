@@ -5914,3 +5914,7 @@ Name: 1602, dtype: object"
 0  Jathupat_4615  PCR Machines  ... 2024-12-18 14:00:00 2024-12-18 17:00:00
 
 [1 rows x 5 columns]"
+2024-12-18 12:40:53,Add Reservation,Jathupat_4615,"            Name          Room  ...          Start_Time            End_Time
+0  Jathupat_4615  PCR Machines  ... 2024-12-18 14:00:00 2024-12-18 17:00:00
+
+[1 rows x 5 columns]"
