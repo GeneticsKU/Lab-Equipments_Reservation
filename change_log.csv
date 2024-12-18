@@ -5925,3 +5925,7 @@ Equipments    Autoclave 4 (Drain the water every 5 times aft...
 Start_Time                                  2024-12-18 13:00:00
 End_Time                                    2024-12-18 15:00:00
 Name: 1600, dtype: object"
+2024-12-18 13:40:43,Add Reservation,Siriyakorn_4606,"              Name          Room  ...          Start_Time            End_Time
+0  Siriyakorn_4606  PCR Machines  ... 2024-12-19 11:00:00 2024-12-19 14:00:00
+
+[1 rows x 5 columns]"
