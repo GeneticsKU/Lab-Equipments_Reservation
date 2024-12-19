@@ -5948,3 +5948,7 @@ Name: 1600, dtype: object"
 0  Mayuree_4606  PCR Machines  ... 2024-12-19 11:00:00 2024-12-19 14:00:00
 
 [1 rows x 5 columns]"
+2024-12-19 08:26:16,Add Reservation,Mayuree_4606,"           Name          Room  ...          Start_Time            End_Time
+0  Mayuree_4606  PCR Machines  ... 2024-12-19 14:00:00 2024-12-19 17:00:00
+
+[1 rows x 5 columns]"
