@@ -6030,3 +6030,9 @@ Equipments                 PCR 10
 Start_Time    2024-12-19 11:00:00
 End_Time      2024-12-19 14:00:00
 Name: 924, dtype: object"
+2024-12-19 14:20:13,Delete Reservation,Supawit_4507,"Details: Name                 Supawit_4507
+Room                 PCR Machines
+Equipments                 PCR 11
+Start_Time    2024-12-19 14:00:00
+End_Time      2024-12-19 17:00:00
+Name: 930, dtype: object"
