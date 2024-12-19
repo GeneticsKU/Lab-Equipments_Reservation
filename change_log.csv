@@ -5974,3 +5974,7 @@ Equipments                 PCR 10
 Start_Time    2024-12-19 14:00:00
 End_Time      2024-12-19 17:00:00
 Name: 922, dtype: object"
+2024-12-19 09:42:23,Add Reservation,Kanjanabhorn_4615,"                Name          Room  ...          Start_Time            End_Time
+0  Kanjanabhorn_4615  PCR Machines  ... 2024-12-19 11:00:00 2024-12-19 14:00:00
+
+[1 rows x 5 columns]"
