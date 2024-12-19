@@ -6011,3 +6011,4 @@ Name: 1603, dtype: object"
 0  Yada_4507  PCR Machines     PCR 14 2024-12-19 14:00:00 2024-12-19 17:00:00"
 2024-12-19 12:27:11,Add Reservation,Yada_4507,"        Name          Room Equipments          Start_Time            End_Time
 0  Yada_4507  PCR Machines     PCR 16 2024-12-19 14:00:00 2024-12-19 17:00:00"
+2024-12-19 12:34:11,Add Reservation,Worrawit_4505,"{'Name': 'Worrawit_4505', 'Room': 'Hallway, 6th floor', 'Equipments': 'Autoclave For Waste (Drain the water everytime after using)', 'Start_Time': datetime.datetime(2024, 12, 19, 13, 30), 'End_Time': datetime.datetime(2024, 12, 19, 15, 30)}"
