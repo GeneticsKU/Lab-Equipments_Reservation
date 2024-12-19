@@ -5956,3 +5956,9 @@ Name: 1600, dtype: object"
 0  Supawit_4507  PCR Machines  ... 2024-12-19 14:00:00 2024-12-19 17:00:00
 
 [1 rows x 5 columns]"
+2024-12-19 09:17:51,Delete Reservation,Siriyakorn_4606,"Details: Name              Siriyakorn_4606
+Room                 PCR Machines
+Equipments                 PCR 10
+Start_Time    2024-12-19 11:00:00
+End_Time      2024-12-19 14:00:00
+Name: 916, dtype: object"
