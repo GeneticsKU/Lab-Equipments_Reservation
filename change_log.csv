@@ -6102,3 +6102,7 @@ Name: 930, dtype: object"
 0  Chanikarn_4511  PCR Machines  ... 2024-12-21 11:00:00 2024-12-21 14:00:00
 
 [1 rows x 5 columns]"
+2024-12-21 08:04:59,Add Reservation,Chanikarn_4511,"             Name          Room  ...          Start_Time            End_Time
+0  Chanikarn_4511  PCR Machines  ... 2024-12-21 11:00:00 2024-12-21 14:00:00
+
+[1 rows x 5 columns]"
