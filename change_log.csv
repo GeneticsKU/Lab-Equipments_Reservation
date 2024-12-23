@@ -6163,3 +6163,4 @@ Equipments                 PCR 11
 Start_Time    2024-12-23 14:00:00
 End_Time      2024-12-23 17:00:00
 Name: 955, dtype: object"
+2024-12-23 13:17:27,Add Reservation,Pimmada_4511,"{'Name': 'Pimmada_4511', 'Room': 'BSL-2', 'Equipments': 'BSC-1', 'Start_Time': datetime.datetime(2024, 12, 24, 9, 0), 'End_Time': datetime.datetime(2024, 12, 24, 12, 0)}"
