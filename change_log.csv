@@ -6133,3 +6133,5 @@ Name: 930, dtype: object"
 0  Kanjanabhorn_4615  PCR Machines  ... 2024-12-23 11:00:00 2024-12-23 14:00:00
 
 [1 rows x 5 columns]"
+2024-12-23 10:19:21,Add Reservation,Leela_4606,"         Name          Room Equipments          Start_Time            End_Time
+0  Leela_4606  PCR Machines     PCR 15 2024-12-23 11:00:00 2024-12-23 14:00:00"
