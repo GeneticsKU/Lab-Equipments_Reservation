@@ -6187,3 +6187,7 @@ Name: 1633, dtype: object"
 2024-12-24 11:23:17,Add Reservation,Chanikarn_4511,"{'Name': 'Chanikarn_4511', 'Room': 'Central Lab, 6th floor', 'Equipments': 'Refrigerated Centrifuge 2', 'Start_Time': datetime.datetime(2024, 12, 27, 11, 0), 'End_Time': datetime.datetime(2024, 12, 27, 15, 0)}"
 2024-12-24 11:24:25,Add Reservation,Chanikarn_4511,"{'Name': 'Chanikarn_4511', 'Room': 'Central Lab, 6th floor', 'Equipments': 'Fume Hood', 'Start_Time': datetime.datetime(2024, 12, 25, 11, 0), 'End_Time': datetime.datetime(2024, 12, 25, 15, 0)}"
 2024-12-24 11:24:31,Add Reservation,Chanikarn_4511,"{'Name': 'Chanikarn_4511', 'Room': 'Central Lab, 6th floor', 'Equipments': 'Fume Hood', 'Start_Time': datetime.datetime(2024, 12, 27, 11, 0), 'End_Time': datetime.datetime(2024, 12, 27, 15, 0)}"
+2024-12-24 11:25:27,Add Reservation,Chanikarn_4511,"             Name          Room  ...          Start_Time            End_Time
+0  Chanikarn_4511  PCR Machines  ... 2024-12-25 08:00:00 2024-12-25 11:00:00
+
+[1 rows x 5 columns]"
