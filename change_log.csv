@@ -6224,3 +6224,9 @@ Name: 1633, dtype: object"
 2024-12-25 19:49:35,Add Reservation,Khemrutai_4511,"{'Name': 'Khemrutai_4511', 'Room': 'BSL-2', 'Equipments': 'BSC-1', 'Start_Time': datetime.datetime(2024, 12, 26, 13, 0), 'End_Time': datetime.datetime(2024, 12, 26, 14, 0)}"
 2024-12-26 06:12:24,Add Reservation,Chanikarn_4511,"{'Name': 'Chanikarn_4511', 'Room': 'Central Lab, 6th floor', 'Equipments': 'Fume Hood', 'Start_Time': datetime.datetime(2024, 12, 26, 11, 0), 'End_Time': datetime.datetime(2024, 12, 26, 15, 0)}"
 2024-12-26 06:12:47,Add Reservation,Chanikarn_4511,"{'Name': 'Chanikarn_4511', 'Room': 'Central Lab, 6th floor', 'Equipments': 'Refrigerated Centrifuge 2', 'Start_Time': datetime.datetime(2024, 12, 26, 11, 0), 'End_Time': datetime.datetime(2024, 12, 26, 15, 0)}"
+2024-12-26 06:13:17,Delete Reservation,Chanikarn_4511,"Details: Name                  Chanikarn_4511
+Room          Central Lab, 6th floor
+Equipments                 Fume Hood
+Start_Time       2024-12-27 11:00:00
+End_Time         2024-12-27 15:00:00
+Name: 1640, dtype: object"
