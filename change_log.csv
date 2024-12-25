@@ -6202,3 +6202,7 @@ Name: 1633, dtype: object"
 2024-12-25 08:25:42,Add Reservation,Pimmada_4511,"{'Name': 'Pimmada_4511', 'Room': 'BSL-2', 'Equipments': 'BSC-1', 'Start_Time': datetime.datetime(2024, 12, 25, 14, 0), 'End_Time': datetime.datetime(2024, 12, 25, 15, 30)}"
 2024-12-25 08:38:40,Add Reservation,Jathupat_4615,"{'Name': 'Jathupat_4615', 'Room': 'Central Lab, 6th floor', 'Equipments': 'Digital Dry Bath 1', 'Start_Time': datetime.datetime(2024, 12, 25, 8, 45), 'End_Time': datetime.datetime(2024, 12, 25, 13, 30)}"
 2024-12-25 08:57:10,Add Reservation,Mayuree_4606,"{'Name': 'Mayuree_4606', 'Room': 'Central Lab, 6th floor', 'Equipments': 'Digital Dry Bath 3', 'Start_Time': datetime.datetime(2024, 12, 25, 9, 0), 'End_Time': datetime.datetime(2024, 12, 25, 11, 15)}"
+2024-12-25 08:57:35,Add Reservation,Mayuree_4606,"           Name          Room  ...          Start_Time            End_Time
+0  Mayuree_4606  PCR Machines  ... 2024-12-25 11:00:00 2024-12-25 14:00:00
+
+[1 rows x 5 columns]"
