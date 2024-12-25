@@ -6230,3 +6230,9 @@ Equipments                 Fume Hood
 Start_Time       2024-12-27 11:00:00
 End_Time         2024-12-27 15:00:00
 Name: 1640, dtype: object"
+2024-12-26 06:13:27,Delete Reservation,Chanikarn_4511,"Details: Name                     Chanikarn_4511
+Room             Central Lab, 6th floor
+Equipments    Refrigerated Centrifuge 2
+Start_Time          2024-12-27 11:00:00
+End_Time            2024-12-27 15:00:00
+Name: 1638, dtype: object"
