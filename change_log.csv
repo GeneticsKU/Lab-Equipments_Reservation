@@ -6290,3 +6290,9 @@ Equipments                 PCR 11
 Start_Time    2024-12-27 08:00:00
 End_Time      2024-12-27 11:00:00
 Name: 968, dtype: object"
+2024-12-26 23:51:33,Delete Reservation,Siriyakorn_4606,"Details: Name              Siriyakorn_4606
+Room                 PCR Machines
+Equipments                 PCR 12
+Start_Time    2024-12-27 08:00:00
+End_Time      2024-12-27 11:00:00
+Name: 968, dtype: object"
