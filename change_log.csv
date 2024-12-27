@@ -6315,3 +6315,4 @@ Name: 968, dtype: object"
 
 [1 rows x 5 columns]"
 2024-12-27 10:31:18,Add Reservation,Jantanipa_4607,"{'Name': 'Jantanipa_4607', 'Room': 'Hallway, 6th floor', 'Equipments': 'Autoclave 4 (Drain the water every 5 times after using)', 'Start_Time': datetime.datetime(2024, 12, 27, 11, 30), 'End_Time': datetime.datetime(2024, 12, 27, 13, 30)}"
+2024-12-27 14:02:43,Add Reservation,Jantanipa_4607,"{'Name': 'Jantanipa_4607', 'Room': 'Central Lab, 6th floor', 'Equipments': 'Centrifuge 2', 'Start_Time': datetime.datetime(2024, 12, 27, 14, 30), 'End_Time': datetime.datetime(2024, 12, 27, 14, 45)}"
