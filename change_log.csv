@@ -6310,3 +6310,7 @@ Name: 968, dtype: object"
 [1 rows x 5 columns]"
 2024-12-27 08:55:18,Add Reservation,Leela_4606,"         Name          Room Equipments          Start_Time            End_Time
 0  Leela_4606  PCR Machines     PCR 14 2024-12-27 11:00:00 2024-12-27 14:00:00"
+2024-12-27 09:47:12,Add Reservation,Kanjanabhorn_4615,"                Name          Room  ...          Start_Time            End_Time
+0  Kanjanabhorn_4615  PCR Machines  ... 2024-12-27 11:00:00 2024-12-27 14:00:00
+
+[1 rows x 5 columns]"
