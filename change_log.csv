@@ -6360,3 +6360,9 @@ Name: 968, dtype: object"
 
 [1 rows x 5 columns]"
 2025-01-06 10:27:23,Add Reservation,Pimmada_4511,"{'Name': 'Pimmada_4511', 'Room': 'BSL-2', 'Equipments': 'BSC-1', 'Start_Time': datetime.datetime(2025, 1, 6, 10, 30), 'End_Time': datetime.datetime(2025, 1, 6, 12, 0)}"
+2025-01-06 10:30:08,Delete Reservation,Pimmada_4511,"Details: Name                 Pimmada_4511
+Room                        BSL-2
+Equipments                  BSC-1
+Start_Time    2025-01-06 10:30:00
+End_Time      2025-01-06 12:00:00
+Name: 1675, dtype: object"
