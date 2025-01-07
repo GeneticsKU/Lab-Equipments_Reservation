@@ -6450,3 +6450,9 @@ Name: 1679, dtype: object"
 0  Pornchanok_4507  PCR Machines  ... 2025-01-08 11:00:00 2025-01-08 14:00:00
 
 [1 rows x 5 columns]"
+2025-01-07 17:58:18,Delete Reservation,Pornchanok_4507,"Details: Name              Pornchanok_4507
+Room                 PCR Machines
+Equipments                 PCR 14
+Start_Time    2025-01-08 11:00:00
+End_Time      2025-01-08 14:00:00
+Name: 998, dtype: object"
