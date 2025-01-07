@@ -6407,3 +6407,5 @@ Name: 1679, dtype: object"
 0  Yada_4507  PCR Machines     PCR 15 2025-01-07 11:00:00 2025-01-07 14:00:00"
 2025-01-07 10:45:26,Add Reservation,Yada_4507,"        Name          Room Equipments          Start_Time            End_Time
 0  Yada_4507  PCR Machines     PCR 12 2025-01-07 11:00:00 2025-01-07 14:00:00"
+2025-01-07 10:46:05,Add Reservation,Pee_4507,"       Name          Room Equipments          Start_Time            End_Time
+0  Pee_4507  PCR Machines     PCR 12 2025-01-07 14:00:00 2025-01-07 17:00:00"
