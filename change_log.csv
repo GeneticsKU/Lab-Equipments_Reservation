@@ -6489,3 +6489,4 @@ Name: 997, dtype: object"
 0  Narumon_4511  PCR Machines  ... 2025-01-08 11:00:00 2025-01-08 14:00:00
 
 [1 rows x 5 columns]"
+2025-01-08 10:41:57,Add Reservation,Phasanat_4615,"{'Name': 'Phasanat_4615', 'Room': 'Hallway, 6th floor', 'Equipments': 'Autoclave 3 (Drain the water every 5 times after using)', 'Start_Time': datetime.datetime(2025, 1, 8, 11, 0), 'End_Time': datetime.datetime(2025, 1, 8, 13, 0)}"
