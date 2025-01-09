@@ -6548,3 +6548,5 @@ Start_Time       2025-01-09 13:00:00
 End_Time         2025-01-09 15:00:00
 Name: 1706, dtype: object"
 2025-01-09 13:25:43,Add Reservation,Wilasinee_4612,"{'Name': 'Wilasinee_4612', 'Room': 'Hallway, 6th floor', 'Equipments': 'Autoclave 4 (Drain the water every 5 times after using)', 'Start_Time': datetime.datetime(2025, 1, 9, 14, 45), 'End_Time': datetime.datetime(2025, 1, 9, 16, 45)}"
+2025-01-09 13:25:53,Add Reservation,Pee_4507,"       Name          Room Equipments          Start_Time            End_Time
+0  Pee_4507  PCR Machines     PCR 15 2025-01-09 14:00:00 2025-01-09 17:00:00"
