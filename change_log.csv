@@ -6586,3 +6586,4 @@ End_Time                                    2025-01-10 18:30:00
 Name: 1716, dtype: object"
 2025-01-10 18:05:08,Add Reservation,chomphoonut_4607,"{'Name': 'chomphoonut_4607', 'Room': 'BSL-2', 'Equipments': 'BSC-2', 'Start_Time': datetime.datetime(2025, 1, 11, 8, 0), 'End_Time': datetime.datetime(2025, 1, 11, 18, 0)}"
 2025-01-11 08:37:43,Add Reservation,chomphoonut_4607,"{'Name': 'chomphoonut_4607', 'Room': 'Hallway, 6th floor', 'Equipments': 'Autoclave 4 (Drain the water every 5 times after using)', 'Start_Time': datetime.datetime(2025, 1, 11, 8, 45), 'End_Time': datetime.datetime(2025, 1, 11, 10, 45)}"
+2025-01-11 13:15:26,Add Reservation,Kanyarat_4607,"{'Name': 'Kanyarat_4607', 'Room': 'Hallway, 6th floor', 'Equipments': 'Autoclave 3 (Drain the water every 5 times after using)', 'Start_Time': datetime.datetime(2025, 1, 11, 13, 30), 'End_Time': datetime.datetime(2025, 1, 11, 15, 30)}"
