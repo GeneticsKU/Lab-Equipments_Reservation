@@ -6616,3 +6616,4 @@ Equipments    Autoclave 3 (Drain the water every 5 times aft...
 Start_Time                                  2025-01-13 09:30:00
 End_Time                                    2025-01-13 11:00:00
 Name: 1726, dtype: object"
+2025-01-13 11:32:56,Add Reservation,Tanatad_4606,"{'Name': 'Tanatad_4606', 'Room': 'Central Lab, 6th floor', 'Equipments': 'Digital Dry Bath 2', 'Start_Time': datetime.datetime(2025, 1, 13, 11, 45), 'End_Time': datetime.datetime(2025, 1, 13, 14, 0)}"
