@@ -6638,3 +6638,5 @@ Name: 1726, dtype: object"
 0  Supawit_4507  PCR Machines  ... 2025-01-14 14:00:00 2025-01-14 17:00:00
 
 [1 rows x 5 columns]"
+2025-01-14 10:37:19,Add Reservation,Leela_4606,"         Name          Room Equipments          Start_Time            End_Time
+0  Leela_4606  PCR Machines     PCR 15 2025-01-14 11:00:00 2025-01-14 14:00:00"
