@@ -6662,3 +6662,9 @@ Name: 1023, dtype: object"
 0  Supawit_4507  PCR Machines  ... 2025-01-14 14:00:00 2025-01-14 17:00:00
 
 [1 rows x 5 columns]"
+2025-01-14 13:20:31,Delete Reservation,Supawit_4507,"Details: Name                 Supawit_4507
+Room                 PCR Machines
+Equipments                 PCR 11
+Start_Time    2025-01-14 14:00:00
+End_Time      2025-01-14 17:00:00
+Name: 1023, dtype: object"
