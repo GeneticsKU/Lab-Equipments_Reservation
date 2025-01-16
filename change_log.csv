@@ -6721,3 +6721,5 @@ Name: 1034, dtype: object"
 
 [1 rows x 5 columns]"
 2025-01-16 12:07:58,Add Reservation,Supanut_4612,"{'Name': 'Supanut_4612', 'Room': 'Central Lab, 6th floor', 'Equipments': 'Laminar flow', 'Start_Time': datetime.datetime(2025, 1, 16, 12, 15), 'End_Time': datetime.datetime(2025, 1, 16, 16, 0)}"
+2025-01-16 12:32:29,Add Reservation,Yada_4507,"        Name          Room Equipments          Start_Time            End_Time
+0  Yada_4507  PCR Machines     PCR 16 2025-01-16 14:00:00 2025-01-16 17:00:00"
