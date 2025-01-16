@@ -6700,3 +6700,7 @@ Name: 1023, dtype: object"
 [1 rows x 5 columns]"
 2025-01-16 09:00:56,Add Reservation,Apimon_4612,"{'Name': 'Apimon_4612', 'Room': 'Hallway, 6th floor', 'Equipments': 'Autoclave 3 (Drain the water every 5 times after using)', 'Start_Time': datetime.datetime(2025, 1, 16, 9, 15), 'End_Time': datetime.datetime(2025, 1, 16, 11, 15)}"
 2025-01-16 09:01:36,Add Reservation,Apimon_4612,"{'Name': 'Apimon_4612', 'Room': 'Central Lab, 6th floor', 'Equipments': 'Laminar flow', 'Start_Time': datetime.datetime(2025, 1, 16, 9, 30), 'End_Time': datetime.datetime(2025, 1, 16, 12, 0)}"
+2025-01-16 09:04:54,Add Reservation,Tanatad_4606,"           Name          Room  ...          Start_Time            End_Time
+0  Tanatad_4606  PCR Machines  ... 2025-01-16 11:00:00 2025-01-16 14:00:00
+
+[1 rows x 5 columns]"
