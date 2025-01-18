@@ -6744,3 +6744,5 @@ Name: 1724, dtype: object"
 0  Phasanat_4615  PCR Machines  ... 2025-01-17 14:00:00 2025-01-17 17:00:00
 
 [1 rows x 5 columns]"
+2025-01-18 11:20:33,Add Reservation,Leela_4606,"         Name          Room Equipments          Start_Time            End_Time
+0  Leela_4606  PCR Machines     PCR 13 2025-01-18 11:00:00 2025-01-18 14:00:00"
