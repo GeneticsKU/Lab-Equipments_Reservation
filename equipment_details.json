@@ -64,6 +64,21 @@
             "details": "SX-700E TOMY",
             "enabled": true
         },
+         "Autoclave 5 (Drain the water every 5 times after using)": {
+            "image": "Autoclave_5.jpg",
+            "details": "SX-700E TOMY",
+            "enabled": true
+        },
+         "Autoclave 6 (Drain the water every 5 times after using)": {
+            "image": "Autoclave_6.jpg",
+            "details": "SX-700E TOMY",
+            "enabled": true
+        },
+         "Autoclave 7 (Drain the water every 5 times after using)": {
+            "image": "Autoclave_7.jpg",
+            "details": "SX-700E TOMY",
+            "enabled": true
+        },
         "Autoclave For Waste (Drain the water everytime after using)": {
             "image": "Autoclave_Waste.jpg",
             "details": "SX-700 TOMY",
