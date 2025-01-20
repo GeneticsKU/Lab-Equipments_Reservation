@@ -6760,3 +6760,4 @@ Name: 1724, dtype: object"
 0  Mayuree_4606  PCR Machines  ... 2025-01-19 11:00:00 2025-01-19 14:00:00
 
 [1 rows x 5 columns]"
+2025-01-20 08:07:22,Add Reservation,Dechaphon_4612,"{'Name': 'Dechaphon_4612', 'Room': 'Hallway, 6th floor', 'Equipments': 'Autoclave 3 (Drain the water every 5 times after using)', 'Start_Time': datetime.datetime(2025, 1, 20, 9, 30), 'End_Time': datetime.datetime(2025, 1, 20, 11, 30)}"
