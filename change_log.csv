@@ -6779,3 +6779,4 @@ Name: 1724, dtype: object"
 2025-01-20 13:06:19,Add Reservation,Yada_4507,"        Name          Room Equipments          Start_Time            End_Time
 0  Yada_4507  PCR Machines     PCR 12 2025-01-20 14:00:00 2025-01-20 17:00:00"
 2025-01-20 13:08:02,Add Reservation,Yada_4507,"{'Name': 'Yada_4507', 'Room': 'Central Lab, 6th floor', 'Equipments': 'Microcentrifuge 1', 'Start_Time': datetime.datetime(2025, 1, 21, 10, 0), 'End_Time': datetime.datetime(2025, 1, 21, 20, 0)}"
+2025-01-20 14:56:39,Add Reservation,Wilasinee_4612,"{'Name': 'Wilasinee_4612', 'Room': 'Microscope Room, 5th floor', 'Equipments': 'Fluorescence Microscope (Contact before use)', 'Start_Time': datetime.datetime(2025, 1, 20, 15, 0), 'End_Time': datetime.datetime(2025, 1, 20, 16, 30)}"
