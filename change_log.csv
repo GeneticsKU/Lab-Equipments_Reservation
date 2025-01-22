@@ -6820,3 +6820,5 @@ Start_Time    2025-01-22 11:00:00
 End_Time      2025-01-22 14:00:00
 Name: 1056, dtype: object"
 2025-01-22 12:08:30,Add Reservation,Janejira_4612,"{'Name': 'Janejira_4612', 'Room': 'Microscope Room, 5th floor', 'Equipments': 'Fluorescence Microscope (Contact before use)', 'Start_Time': datetime.datetime(2025, 1, 23, 13, 0), 'End_Time': datetime.datetime(2025, 1, 23, 16, 0)}"
+2025-01-22 12:38:21,Add Reservation,Leela_4606,"         Name          Room Equipments          Start_Time            End_Time
+0  Leela_4606  PCR Machines     PCR 15 2025-01-22 14:00:00 2025-01-22 17:00:00"
