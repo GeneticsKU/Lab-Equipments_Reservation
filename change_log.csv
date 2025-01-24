@@ -6889,3 +6889,4 @@ Equipments    Autoclave 4 (Drain the water every 5 times aft...
 Start_Time                                  2025-01-24 14:00:00
 End_Time                                    2025-01-24 16:00:00
 Name: 1793, dtype: object"
+2025-01-24 13:58:47,Add Reservation,Kanyarat_4607,"{'Name': 'Kanyarat_4607', 'Room': 'Hallway, 6th floor', 'Equipments': 'Autoclave 4 (Drain the water every 5 times after using)', 'Start_Time': datetime.datetime(2025, 1, 24, 14, 30), 'End_Time': datetime.datetime(2025, 1, 24, 16, 30)}"
