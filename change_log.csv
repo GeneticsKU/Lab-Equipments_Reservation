@@ -6996,3 +6996,9 @@ Equipments    Refrigerated Centrifuge 1
 Start_Time          2025-01-28 13:00:00
 End_Time            2025-01-28 18:00:00
 Name: 1803, dtype: object"
+2025-01-27 17:26:43,Delete Reservation,Kanyarat_4505,"Details: Name                      Kanyarat_4505
+Room             Central Lab, 6th floor
+Equipments    Refrigerated Centrifuge 4
+Start_Time          2025-01-28 13:00:00
+End_Time            2025-01-28 18:00:00
+Name: 1803, dtype: object"
