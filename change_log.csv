@@ -7003,3 +7003,4 @@ Start_Time          2025-01-28 13:00:00
 End_Time            2025-01-28 18:00:00
 Name: 1803, dtype: object"
 2025-01-27 17:32:08,Add Reservation,Kanyarat_4607,"{'Name': 'Kanyarat_4607', 'Room': 'Central Lab, 6th floor', 'Equipments': 'Incubator 3', 'Start_Time': datetime.datetime(2025, 1, 27, 18, 0), 'End_Time': datetime.datetime(2025, 1, 27, 23, 45)}"
+2025-01-27 19:51:07,Add Reservation,Kanyarat_4505,"{'Name': 'Kanyarat_4505', 'Room': 'Hallway, 6th floor', 'Equipments': 'Autoclave For Waste (Drain the water everytime after using)', 'Start_Time': datetime.datetime(2025, 1, 28, 10, 30), 'End_Time': datetime.datetime(2025, 1, 28, 13, 0)}"
