@@ -6926,3 +6926,9 @@ Name: 1065, dtype: object"
 2025-01-27 11:40:23,Add Reservation,Yada_4507,"        Name          Room Equipments          Start_Time            End_Time
 0  Yada_4507  PCR Machines     PCR 14 2025-01-27 14:00:00 2025-01-27 17:00:00"
 2025-01-27 12:30:50,Add Reservation,Kanyarat_4505,"{'Name': 'Kanyarat_4505', 'Room': 'Central Lab, 5th floor', 'Equipments': 'Incubator Shaker 1', 'Start_Time': datetime.datetime(2025, 1, 27, 13, 0), 'End_Time': datetime.datetime(2025, 1, 27, 23, 45)}"
+2025-01-27 12:33:16,Delete Reservation,Kanyarat_4505,"Details: Name                   Kanyarat_4505
+Room          Central Lab, 5th floor
+Equipments        Incubator Shaker 1
+Start_Time       2025-01-27 13:00:00
+End_Time         2025-01-27 23:45:00
+Name: 1799, dtype: object"
