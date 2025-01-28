@@ -7029,3 +7029,7 @@ Name: 1077, dtype: object"
 2025-01-28 10:29:26,Add Reservation,chomphoonut_4607,"{'Name': 'chomphoonut_4607', 'Room': 'BSL-2', 'Equipments': 'BSC-2', 'Start_Time': datetime.datetime(2025, 1, 29, 9, 0), 'End_Time': datetime.datetime(2025, 1, 29, 17, 0)}"
 2025-01-28 10:52:36,Add Reservation,chomphoonut_4607,"{'Name': 'chomphoonut_4607', 'Room': 'Hallway, 6th floor', 'Equipments': 'Autoclave 3 (Drain the water every 5 times after using)', 'Start_Time': datetime.datetime(2025, 1, 28, 12, 0), 'End_Time': datetime.datetime(2025, 1, 28, 14, 0)}"
 2025-01-28 10:55:03,Add Reservation,Apimon_4612,"{'Name': 'Apimon_4612', 'Room': 'Central Lab, 6th floor', 'Equipments': 'Refrigerated Centrifuge 1', 'Start_Time': datetime.datetime(2025, 1, 28, 12, 0), 'End_Time': datetime.datetime(2025, 1, 28, 17, 0)}"
+2025-01-28 11:25:28,Add Reservation,Supawit_4507,"           Name          Room  ...          Start_Time            End_Time
+0  Supawit_4507  PCR Machines  ... 2025-01-28 14:00:00 2025-01-28 17:00:00
+
+[1 rows x 5 columns]"
