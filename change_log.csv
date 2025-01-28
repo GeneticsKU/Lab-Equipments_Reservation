@@ -7058,3 +7058,4 @@ Name: 1810, dtype: object"
 0  Phasanat_4615  PCR Machines  ... 2025-01-28 14:00:00 2025-01-28 17:00:00
 
 [1 rows x 5 columns]"
+2025-01-28 13:29:27,Add Reservation,Wilasinee_4612,"{'Name': 'Wilasinee_4612', 'Room': 'Microscope Room, 5th floor', 'Equipments': 'Fluorescence Microscope (Contact before use)', 'Start_Time': datetime.datetime(2025, 1, 28, 13, 30), 'End_Time': datetime.datetime(2025, 1, 28, 17, 0)}"
