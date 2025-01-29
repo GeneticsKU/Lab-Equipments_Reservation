@@ -7122,3 +7122,5 @@ Name: 1816, dtype: object"
 0  Jirutchaya_4507  PCR Machines  ... 2025-01-29 14:00:00 2025-01-29 17:00:00
 
 [1 rows x 5 columns]"
+2025-01-29 12:53:03,Add Reservation,Yada_4507,"        Name          Room Equipments          Start_Time            End_Time
+0  Yada_4507  PCR Machines     PCR 12 2025-01-29 14:00:00 2025-01-29 17:00:00"
