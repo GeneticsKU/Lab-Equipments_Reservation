@@ -7133,3 +7133,9 @@ Start_Time       2025-01-29 12:30:00
 End_Time         2025-01-29 15:30:00
 Name: 1823, dtype: object"
 2025-01-29 14:30:50,Add Reservation,Narumon_4511,"{'Name': 'Narumon_4511', 'Room': 'Central Lab, 6th floor', 'Equipments': 'Refrigerated Centrifuge 1', 'Start_Time': datetime.datetime(2025, 1, 30, 10, 15), 'End_Time': datetime.datetime(2025, 1, 30, 11, 15)}"
+2025-01-29 15:07:45,Delete Reservation,Yada_4507,"Details: Name                    Yada_4507
+Room                 PCR Machines
+Equipments                 PCR 12
+Start_Time    2025-01-29 14:00:00
+End_Time      2025-01-29 17:00:00
+Name: 1087, dtype: object"
