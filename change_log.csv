@@ -7106,3 +7106,9 @@ Name: 1083, dtype: object"
 0  Kanjanabhorn_4615  PCR Machines  ... 2025-01-29 11:00:00 2025-01-29 14:00:00
 
 [1 rows x 5 columns]"
+2025-01-29 10:30:10,Delete Reservation,Warunya_4503,"Details: Name                                               Warunya_4503
+Room                                         Hallway, 6th floor
+Equipments    Autoclave 1 (Drain the water every 5 times aft...
+Start_Time                                  2025-01-29 11:45:00
+End_Time                                    2025-01-29 13:45:00
+Name: 1816, dtype: object"
