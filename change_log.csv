@@ -7192,3 +7192,4 @@ Name: 1089, dtype: object"
 0  Kanjanabhorn_4615  PCR Machines  ... 2025-01-30 11:00:00 2025-01-30 14:00:00
 
 [1 rows x 5 columns]"
+2025-01-30 11:36:16,Add Reservation,Tanatad_4606,"{'Name': 'Tanatad_4606', 'Room': 'Central Lab, 6th floor', 'Equipments': 'Digital Dry Bath 2', 'Start_Time': datetime.datetime(2025, 1, 30, 11, 45), 'End_Time': datetime.datetime(2025, 1, 30, 15, 0)}"
