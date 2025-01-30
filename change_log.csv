@@ -7198,3 +7198,7 @@ Name: 1089, dtype: object"
 0  Pee_4507  PCR Machines     PCR 14 2025-01-30 14:00:00 2025-01-30 17:00:00"
 2025-01-30 12:13:53,Add Reservation,Pee_4507,"       Name          Room Equipments          Start_Time            End_Time
 0  Pee_4507  PCR Machines     PCR 15 2025-01-30 14:00:00 2025-01-30 17:00:00"
+2025-01-30 12:46:37,Add Reservation,Phasanat_4615,"            Name          Room  ...          Start_Time            End_Time
+0  Phasanat_4615  PCR Machines  ... 2025-01-30 14:00:00 2025-01-30 17:00:00
+
+[1 rows x 5 columns]"
