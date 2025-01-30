@@ -7154,3 +7154,9 @@ End_Time         2025-01-30 23:45:00
 Name: 1824, dtype: object"
 2025-01-30 00:49:21,Add Reservation,Kanyarat_4607,"{'Name': 'Kanyarat_4607', 'Room': 'Central Lab, 6th floor', 'Equipments': 'Incubator 3', 'Start_Time': datetime.datetime(2025, 1, 30, 1, 15), 'End_Time': datetime.datetime(2025, 1, 30, 23, 45)}"
 2025-01-30 09:14:07,Add Reservation,Jathupat_4615,"{'Name': 'Jathupat_4615', 'Room': 'Hallway, 6th floor', 'Equipments': 'Autoclave 5 (Drain the water every 5 times after using)', 'Start_Time': datetime.datetime(2025, 1, 30, 9, 15), 'End_Time': datetime.datetime(2025, 1, 30, 11, 0)}"
+2025-01-30 09:14:23,Delete Reservation,Jathupat_4615,"Details: Name                                              Jathupat_4615
+Room                                         Hallway, 6th floor
+Equipments    Autoclave 5 (Drain the water every 5 times aft...
+Start_Time                                  2025-01-30 09:15:00
+End_Time                                    2025-01-30 11:00:00
+Name: 1825, dtype: object"
