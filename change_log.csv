@@ -7296,3 +7296,4 @@ Equipments        Real Time PCR 2
 Start_Time    2025-01-31 11:00:00
 End_Time      2025-01-31 14:00:00
 Name: 1097, dtype: object"
+2025-01-31 10:29:05,Add Reservation,Sukhita_4612,"{'Name': 'Sukhita_4612', 'Room': 'Central Lab, 6th floor', 'Equipments': 'Fume Hood', 'Start_Time': datetime.datetime(2025, 1, 31, 10, 30), 'End_Time': datetime.datetime(2025, 1, 31, 16, 0)}"
