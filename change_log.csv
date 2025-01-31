@@ -7242,3 +7242,7 @@ Name: 1831, dtype: object"
 0  Kanjanabhorn_4615  PCR Machines  ... 2025-01-31 14:00:00 2025-01-31 17:00:00
 
 [1 rows x 5 columns]"
+2025-01-31 09:47:30,Add Reservation,Narumon_4511,"           Name          Room  ...          Start_Time            End_Time
+0  Narumon_4511  PCR Machines  ... 2025-01-31 11:00:00 2025-01-31 14:00:00
+
+[1 rows x 5 columns]"
