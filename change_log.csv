@@ -7233,3 +7233,7 @@ Name: 1831, dtype: object"
 2025-01-31 07:57:32,Add Reservation,Kanyarat_4607,"{'Name': 'Kanyarat_4607', 'Room': 'Central Lab, 6th floor', 'Equipments': 'Incubator 3', 'Start_Time': datetime.datetime(2025, 1, 31, 8, 0), 'End_Time': datetime.datetime(2025, 1, 31, 23, 45)}"
 2025-01-31 09:25:21,Add Reservation,Leela_4606,"         Name          Room Equipments          Start_Time            End_Time
 0  Leela_4606  PCR Machines     PCR 13 2025-01-31 11:00:00 2025-01-31 14:00:00"
+2025-01-31 09:28:20,Add Reservation,Thanathip_4505,"             Name          Room  ...          Start_Time            End_Time
+0  Thanathip_4505  PCR Machines  ... 2025-01-31 08:00:00 2025-01-31 11:00:00
+
+[1 rows x 5 columns]"
