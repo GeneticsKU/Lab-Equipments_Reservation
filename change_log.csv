@@ -7290,3 +7290,9 @@ Equipments        Real Time PCR 2
 Start_Time    2025-01-31 14:00:00
 End_Time      2025-01-31 17:00:00
 Name: 1099, dtype: object"
+2025-01-31 10:27:57,Delete Reservation,Arisa_4505,"Details: Name                   Arisa_4505
+Room                 PCR Machines
+Equipments        Real Time PCR 2
+Start_Time    2025-01-31 11:00:00
+End_Time      2025-01-31 14:00:00
+Name: 1097, dtype: object"
