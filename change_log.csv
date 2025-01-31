@@ -7246,3 +7246,9 @@ Name: 1831, dtype: object"
 0  Narumon_4511  PCR Machines  ... 2025-01-31 11:00:00 2025-01-31 14:00:00
 
 [1 rows x 5 columns]"
+2025-01-31 09:47:43,Delete Reservation,Narumon_4511,"Details: Name                 Narumon_4511
+Room                 PCR Machines
+Equipments                PCR 9.3
+Start_Time    2025-01-31 11:00:00
+End_Time      2025-01-31 14:00:00
+Name: 1101, dtype: object"
