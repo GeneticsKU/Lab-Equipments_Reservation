@@ -7303,3 +7303,9 @@ Name: 1097, dtype: object"
 0  Sirintip_4511  PCR Machines  ... 2025-02-03 14:00:00 2025-02-03 17:00:00
 
 [1 rows x 5 columns]"
+2025-02-03 07:14:03,Delete Reservation,Sirintip_4511,"Details: Name                Sirintip_4511
+Room                 PCR Machines
+Equipments                 PCR 12
+Start_Time    2025-02-03 14:00:00
+End_Time      2025-02-03 17:00:00
+Name: 1102, dtype: object"
