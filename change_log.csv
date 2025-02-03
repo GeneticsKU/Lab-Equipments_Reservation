@@ -7362,3 +7362,7 @@ Name: 1103, dtype: object"
 
 [1 rows x 5 columns]"
 2025-02-03 14:51:07,Add Reservation,Kanyarat_4607,"{'Name': 'Kanyarat_4607', 'Room': 'Hallway, 6th floor', 'Equipments': 'Autoclave 3 (Drain the water every 5 times after using)', 'Start_Time': datetime.datetime(2025, 2, 3, 15, 15), 'End_Time': datetime.datetime(2025, 2, 3, 17, 15)}"
+2025-02-03 15:32:29,Add Reservation,Narumon_4511,"           Name          Room  ...          Start_Time            End_Time
+0  Narumon_4511  PCR Machines  ... 2025-02-04 11:00:00 2025-02-04 14:00:00
+
+[1 rows x 5 columns]"
