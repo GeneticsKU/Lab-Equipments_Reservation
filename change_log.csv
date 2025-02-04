@@ -7439,3 +7439,9 @@ Name: 1118, dtype: object"
 0  Pimmada_4511  PCR Machines  ... 2025-02-04 11:00:00 2025-02-04 14:00:00
 
 [1 rows x 5 columns]"
+2025-02-04 10:23:09,Delete Reservation,Pimmada_4511,"Details: Name                 Pimmada_4511
+Room                 PCR Machines
+Equipments                 PCR 16
+Start_Time    2025-02-04 11:00:00
+End_Time      2025-02-04 14:00:00
+Name: 1118, dtype: object"
