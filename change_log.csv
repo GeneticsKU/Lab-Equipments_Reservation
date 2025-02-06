@@ -7646,3 +7646,9 @@ Equipments               Incubator 3
 Start_Time       2025-02-06 01:00:00
 End_Time         2025-02-06 23:45:00
 Name: 1871, dtype: object"
+2025-02-06 13:40:58,Delete Reservation,Kanyarat_4607,"Details: Name                                              Kanyarat_4607
+Room                                         Hallway, 6th floor
+Equipments    Autoclave For Waste (Drain the water everytime...
+Start_Time                                  2025-02-06 13:30:00
+End_Time                                    2025-02-06 15:30:00
+Name: 1875, dtype: object"
