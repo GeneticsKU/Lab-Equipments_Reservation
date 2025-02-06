@@ -7652,3 +7652,4 @@ Equipments    Autoclave For Waste (Drain the water everytime...
 Start_Time                                  2025-02-06 13:30:00
 End_Time                                    2025-02-06 15:30:00
 Name: 1875, dtype: object"
+2025-02-06 13:41:30,Add Reservation,Kanyarat_4607,"{'Name': 'Kanyarat_4607', 'Room': 'Hallway, 6th floor', 'Equipments': 'Autoclave For Waste (Drain the water everytime after using)', 'Start_Time': datetime.datetime(2025, 2, 6, 13, 50), 'End_Time': datetime.datetime(2025, 2, 6, 15, 50)}"
