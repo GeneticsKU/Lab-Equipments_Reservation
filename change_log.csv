@@ -7776,3 +7776,4 @@ Equipments    Autoclave 5 (Drain the water every 5 times aft...
 Start_Time                                  2025-02-10 15:15:00
 End_Time                                    2025-02-10 17:15:00
 Name: 1895, dtype: object"
+2025-02-10 15:07:06,Add Reservation,Jathupat_4615,"{'Name': 'Jathupat_4615', 'Room': 'Hallway, 6th floor', 'Equipments': 'Autoclave 6 (Drain the water every 5 times after using)', 'Start_Time': datetime.datetime(2025, 2, 10, 15, 15), 'End_Time': datetime.datetime(2025, 2, 10, 17, 15)}"
