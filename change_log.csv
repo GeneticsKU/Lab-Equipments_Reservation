@@ -7866,3 +7866,4 @@ Equipments                 Fume Hood
 Start_Time       2025-02-13 15:15:00
 End_Time         2025-02-13 16:00:00
 Name: 1918, dtype: object"
+2025-02-13 16:44:38,Add Reservation,Dechaphon_4612,"{'Name': 'Dechaphon_4612', 'Room': 'Hallway, 6th floor', 'Equipments': 'Autoclave 5 (Drain the water every 5 times after using)', 'Start_Time': datetime.datetime(2025, 2, 13, 17, 0), 'End_Time': datetime.datetime(2025, 2, 13, 18, 30)}"
