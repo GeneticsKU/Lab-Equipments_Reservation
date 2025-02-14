@@ -7888,3 +7888,7 @@ End_Time            2025-02-14 14:00:00
 Name: 1922, dtype: object"
 2025-02-14 08:45:55,Add Reservation,Apimon_4612,"{'Name': 'Apimon_4612', 'Room': 'Hallway, 6th floor', 'Equipments': 'Autoclave 5 (Drain the water every 5 times after using)', 'Start_Time': datetime.datetime(2025, 2, 14, 13, 0), 'End_Time': datetime.datetime(2025, 2, 14, 15, 0)}"
 2025-02-14 08:46:23,Add Reservation,Apimon_4612,"{'Name': 'Apimon_4612', 'Room': 'Central Lab, 6th floor', 'Equipments': 'Refrigerated Centrifuge 2', 'Start_Time': datetime.datetime(2025, 2, 14, 9, 0), 'End_Time': datetime.datetime(2025, 2, 14, 15, 0)}"
+2025-02-14 08:48:22,Add Reservation,Chanikarn_4511,"             Name          Room  ...          Start_Time            End_Time
+0  Chanikarn_4511  PCR Machines  ... 2025-02-14 11:00:00 2025-02-14 14:00:00
+
+[1 rows x 5 columns]"
