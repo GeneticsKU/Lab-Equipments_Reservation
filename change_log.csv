@@ -7874,3 +7874,9 @@ Name: 1918, dtype: object"
 2025-02-13 18:51:00,Add Reservation,Khemrutai_4511,"{'Name': 'Khemrutai_4511', 'Room': 'BSL-2', 'Equipments': 'BSC-1', 'Start_Time': datetime.datetime(2025, 2, 14, 13, 45), 'End_Time': datetime.datetime(2025, 2, 14, 15, 0)}"
 2025-02-14 08:35:09,Add Reservation,Apimon_4612,"{'Name': 'Apimon_4612', 'Room': 'Hallway, 6th floor', 'Equipments': 'Autoclave 5 (Drain the water every 5 times after using)', 'Start_Time': datetime.datetime(2025, 2, 14, 13, 0), 'End_Time': datetime.datetime(2025, 2, 14, 15, 0)}"
 2025-02-14 08:43:16,Add Reservation,Apimon_4612,"{'Name': 'Apimon_4612', 'Room': 'Central Lab, 6th floor', 'Equipments': 'Refrigerated Centrifuge 1', 'Start_Time': datetime.datetime(2025, 2, 14, 9, 0), 'End_Time': datetime.datetime(2025, 2, 14, 14, 0)}"
+2025-02-14 08:44:48,Delete Reservation,Apimon_4612,"Details: Name                                                Apimon_4612
+Room                                         Hallway, 6th floor
+Equipments    Autoclave 5 (Drain the water every 5 times aft...
+Start_Time                                  2025-02-14 13:00:00
+End_Time                                    2025-02-14 15:00:00
+Name: 1922, dtype: object"
