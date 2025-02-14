@@ -7901,3 +7901,4 @@ Equipments                  BSC-1
 Start_Time    2025-02-14 13:45:00
 End_Time      2025-02-14 15:00:00
 Name: 1921, dtype: object"
+2025-02-14 10:15:19,Add Reservation,Khemrutai_4511,"{'Name': 'Khemrutai_4511', 'Room': 'BSL-2', 'Equipments': 'BSC-1', 'Start_Time': datetime.datetime(2025, 2, 14, 13, 0), 'End_Time': datetime.datetime(2025, 2, 14, 14, 45)}"
