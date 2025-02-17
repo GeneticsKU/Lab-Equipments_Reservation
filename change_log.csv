@@ -8006,3 +8006,9 @@ Equipments    Autoclave For Waste (Drain the water everytime...
 Start_Time                                  2025-02-18 10:00:00
 End_Time                                    2025-02-18 11:30:00
 Name: 1945, dtype: object"
+2025-02-17 13:24:58,Delete Reservation,Warunya_4503,"Details: Name                                               Warunya_4503
+Room                                         Hallway, 6th floor
+Equipments    Autoclave For Waste (Drain the water everytime...
+Start_Time                                  2025-02-18 09:30:00
+End_Time                                    2025-02-18 11:45:00
+Name: 1945, dtype: object"
