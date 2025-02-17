@@ -7966,3 +7966,9 @@ Name: 1181, dtype: object"
 0  Danthai_4606  PCR Machines  ... 2025-02-17 14:00:00 2025-02-17 17:00:00
 
 [1 rows x 5 columns]"
+2025-02-17 11:21:36,Delete Reservation,Narumon_4511,"Details: Name                 Narumon_4511
+Room                 PCR Machines
+Equipments                PCR 9.3
+Start_Time    2025-02-17 11:00:00
+End_Time      2025-02-17 14:00:00
+Name: 1182, dtype: object"
