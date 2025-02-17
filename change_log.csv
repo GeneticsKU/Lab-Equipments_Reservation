@@ -7945,3 +7945,9 @@ Name: 1181, dtype: object"
 0  Janejira_4612  PCR Machines  ... 2025-02-17 08:00:00 2025-02-17 11:00:00
 
 [1 rows x 5 columns]"
+2025-02-17 07:28:19,Delete Reservation,Anongpat_4612,"Details: Name                Anongpat_4612
+Room                 PCR Machines
+Equipments                 PCR 11
+Start_Time    2025-02-17 11:00:00
+End_Time      2025-02-17 14:00:00
+Name: 1181, dtype: object"
