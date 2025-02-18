@@ -8098,3 +8098,4 @@ Name: 1955, dtype: object"
 0  Thanathip_4505  PCR Machines  ... 2025-02-18 14:00:00 2025-02-18 17:00:00
 
 [1 rows x 5 columns]"
+2025-02-18 16:06:13,Add Reservation,Jantanipa_4607,"{'Name': 'Jantanipa_4607', 'Room': 'Hallway, 6th floor', 'Equipments': 'Autoclave 2 (Drain the water every 5 times after using)', 'Start_Time': datetime.datetime(2025, 2, 18, 16, 15), 'End_Time': datetime.datetime(2025, 2, 18, 18, 15)}"
