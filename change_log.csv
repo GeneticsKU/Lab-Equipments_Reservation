@@ -8100,3 +8100,7 @@ Name: 1955, dtype: object"
 [1 rows x 5 columns]"
 2025-02-18 16:06:13,Add Reservation,Jantanipa_4607,"{'Name': 'Jantanipa_4607', 'Room': 'Hallway, 6th floor', 'Equipments': 'Autoclave 2 (Drain the water every 5 times after using)', 'Start_Time': datetime.datetime(2025, 2, 18, 16, 15), 'End_Time': datetime.datetime(2025, 2, 18, 18, 15)}"
 2025-02-18 17:04:10,Add Reservation,chomphoonut_4607,"{'Name': 'chomphoonut_4607', 'Room': 'Central Lab, 6th floor', 'Equipments': 'Fume Hood', 'Start_Time': datetime.datetime(2025, 2, 20, 13, 0), 'End_Time': datetime.datetime(2025, 2, 20, 17, 0)}"
+2025-02-18 20:10:43,Add Reservation,Chanikarn_4511,"             Name          Room  ...          Start_Time            End_Time
+0  Chanikarn_4511  PCR Machines  ... 2025-02-19 11:00:00 2025-02-19 14:00:00
+
+[1 rows x 5 columns]"
