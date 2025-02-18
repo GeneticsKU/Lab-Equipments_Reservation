@@ -8059,3 +8059,7 @@ Start_Time    2025-02-18 14:00:00
 End_Time      2025-02-18 17:00:00
 Name: 1188, dtype: object"
 2025-02-18 11:38:50,Add Reservation,Kanyarat_4607,"{'Name': 'Kanyarat_4607', 'Room': 'Hallway, 6th floor', 'Equipments': 'Autoclave 4 (Drain the water every 5 times after using)', 'Start_Time': datetime.datetime(2025, 2, 18, 13, 0), 'End_Time': datetime.datetime(2025, 2, 18, 15, 0)}"
+2025-02-18 12:01:50,Add Reservation,Danthai_4606,"           Name          Room  ...          Start_Time            End_Time
+0  Danthai_4606  PCR Machines  ... 2025-02-18 14:00:00 2025-02-18 17:00:00
+
+[1 rows x 5 columns]"
