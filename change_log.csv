@@ -8087,3 +8087,9 @@ Equipments        Digital Dry Bath 2
 Start_Time       2025-02-18 13:15:00
 End_Time         2025-02-18 16:15:00
 Name: 1954, dtype: object"
+2025-02-18 15:23:31,Delete Reservation,Tanatad_4606,"Details: Name                    Tanatad_4606
+Room          Central Lab, 6th floor
+Equipments              Centrifuge 3
+Start_Time       2025-02-18 15:00:00
+End_Time         2025-02-18 16:15:00
+Name: 1955, dtype: object"
