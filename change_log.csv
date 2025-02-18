@@ -8052,3 +8052,9 @@ Start_Time                                  2025-02-18 13:00:00
 End_Time                                    2025-02-18 15:00:00
 Name: 1937, dtype: object"
 2025-02-18 10:10:24,Add Reservation,chomphoonut_4607,"{'Name': 'chomphoonut_4607', 'Room': 'Hallway, 6th floor', 'Equipments': 'Autoclave 4 (Drain the water every 5 times after using)', 'Start_Time': datetime.datetime(2025, 2, 18, 11, 0), 'End_Time': datetime.datetime(2025, 2, 18, 13, 0)}"
+2025-02-18 11:00:34,Delete Reservation,Narumon_4511,"Details: Name                 Narumon_4511
+Room                 PCR Machines
+Equipments                PCR 9.3
+Start_Time    2025-02-18 14:00:00
+End_Time      2025-02-18 17:00:00
+Name: 1188, dtype: object"
