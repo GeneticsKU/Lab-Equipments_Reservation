@@ -8146,3 +8146,9 @@ Name: 1955, dtype: object"
 [1 rows x 5 columns]"
 2025-02-19 13:05:06,Add Reservation,Pee_4507,"       Name          Room Equipments          Start_Time            End_Time
 0  Pee_4507  PCR Machines     PCR 14 2025-02-19 14:00:00 2025-02-19 17:00:00"
+2025-02-19 13:05:55,Delete Reservation,Pornchanok_4507,"Details: Name              Pornchanok_4507
+Room                 PCR Machines
+Equipments                 PCR 12
+Start_Time    2025-02-19 08:00:00
+End_Time      2025-02-19 11:00:00
+Name: 1194, dtype: object"
