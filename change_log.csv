@@ -8166,3 +8166,9 @@ Equipments                 PCR 12
 Start_Time    2025-02-19 14:00:00
 End_Time      2025-02-19 17:00:00
 Name: 1200, dtype: object"
+2025-02-19 14:00:48,Delete Reservation,Pornchanok_4507,"Details: Name              Pornchanok_4507
+Room                 PCR Machines
+Equipments                 PCR 16
+Start_Time    2025-02-19 14:00:00
+End_Time      2025-02-19 17:00:00
+Name: 1202, dtype: object"
