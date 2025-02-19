@@ -8172,3 +8172,9 @@ Equipments                 PCR 16
 Start_Time    2025-02-19 14:00:00
 End_Time      2025-02-19 17:00:00
 Name: 1202, dtype: object"
+2025-02-19 14:01:13,Delete Reservation,Pee_4507,"Details: Name                     Pee_4507
+Room                 PCR Machines
+Equipments                 PCR 14
+Start_Time    2025-02-19 14:00:00
+End_Time      2025-02-19 17:00:00
+Name: 1200, dtype: object"
