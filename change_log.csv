@@ -8211,3 +8211,4 @@ Name: 1201, dtype: object"
 0  Thanathip_4505  PCR Machines  ... 2025-02-20 11:00:00 2025-02-20 14:00:00
 
 [1 rows x 5 columns]"
+2025-02-20 12:47:11,Add Reservation,chomphoonut_4607,"{'Name': 'chomphoonut_4607', 'Room': 'Hallway, 6th floor', 'Equipments': 'Autoclave 4 (Drain the water every 5 times after using)', 'Start_Time': datetime.datetime(2025, 2, 20, 13, 30), 'End_Time': datetime.datetime(2025, 2, 20, 15, 30)}"
