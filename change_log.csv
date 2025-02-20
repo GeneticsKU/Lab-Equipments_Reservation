@@ -8232,3 +8232,4 @@ Name: 1979, dtype: object"
 0  Chanikarn_4511  PCR Machines  ... 2025-02-21 14:00:00 2025-02-21 17:00:00
 
 [1 rows x 5 columns]"
+2025-02-20 20:24:11,Add Reservation,Khemrutai_4511,"{'Name': 'Khemrutai_4511', 'Room': 'BSL-2', 'Equipments': 'BSC-1', 'Start_Time': datetime.datetime(2025, 2, 21, 11, 0), 'End_Time': datetime.datetime(2025, 2, 21, 12, 0)}"
