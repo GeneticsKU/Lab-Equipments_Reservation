@@ -8224,3 +8224,7 @@ Name: 1979, dtype: object"
 2025-02-20 15:25:11,Add Reservation,Pee_4507,"       Name          Room Equipments          Start_Time            End_Time
 0  Pee_4507  PCR Machines     PCR 15 2025-02-20 14:00:00 2025-02-20 17:00:00"
 2025-02-20 15:30:44,Add Reservation,chomphoonut_4607,"{'Name': 'chomphoonut_4607', 'Room': 'Central Lab, 6th floor', 'Equipments': 'Incubator 2', 'Start_Time': datetime.datetime(2025, 2, 21, 0, 0), 'End_Time': datetime.datetime(2025, 2, 21, 23, 45)}"
+2025-02-20 17:29:38,Add Reservation,Chanikarn_4511,"             Name          Room  ...          Start_Time            End_Time
+0  Chanikarn_4511  PCR Machines  ... 2025-02-21 11:00:00 2025-02-21 14:00:00
+
+[1 rows x 5 columns]"
