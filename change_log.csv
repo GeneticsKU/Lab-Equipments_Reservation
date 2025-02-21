@@ -8237,3 +8237,4 @@ Name: 1979, dtype: object"
 0  Narumon_4511  PCR Machines  ... 2025-02-21 11:00:00 2025-02-21 14:00:00
 
 [1 rows x 5 columns]"
+2025-02-21 09:35:22,Add Reservation,Apimon_4612,"{'Name': 'Apimon_4612', 'Room': 'Central Lab, 6th floor', 'Equipments': 'Refrigerated Centrifuge 4', 'Start_Time': datetime.datetime(2025, 2, 21, 10, 0), 'End_Time': datetime.datetime(2025, 2, 21, 13, 0)}"
