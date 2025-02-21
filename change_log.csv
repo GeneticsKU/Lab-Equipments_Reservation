@@ -8248,3 +8248,7 @@ Name: 1979, dtype: object"
 0  Phasanat_4615  PCR Machines  ... 2025-02-21 11:00:00 2025-02-21 14:00:00
 
 [1 rows x 5 columns]"
+2025-02-21 11:49:53,Add Reservation,Jantanipa_4607,"             Name          Room  ...          Start_Time            End_Time
+0  Jantanipa_4607  PCR Machines  ... 2025-02-21 11:00:00 2025-02-21 14:00:00
+
+[1 rows x 5 columns]"
