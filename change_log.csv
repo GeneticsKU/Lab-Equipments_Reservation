@@ -8283,3 +8283,9 @@ Equipments                 PCR 13
 Start_Time    2025-02-22 11:00:00
 End_Time      2025-02-22 14:00:00
 Name: 1213, dtype: object"
+2025-02-22 08:52:16,Delete Reservation,Chanikarn_4511,"Details: Name               Chanikarn_4511
+Room                 PCR Machines
+Equipments                 PCR 10
+Start_Time    2025-02-22 11:00:00
+End_Time      2025-02-22 14:00:00
+Name: 1213, dtype: object"
