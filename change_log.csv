@@ -8366,3 +8366,9 @@ Name: 2010, dtype: object"
 2025-02-24 13:59:12,Add Reservation,Kanyarat_4607,"{'Name': 'Kanyarat_4607', 'Room': 'Hallway, 6th floor', 'Equipments': 'Autoclave 3 (Drain the water every 5 times after using)', 'Start_Time': datetime.datetime(2025, 2, 24, 14, 0), 'End_Time': datetime.datetime(2025, 2, 24, 16, 0)}"
 2025-02-24 14:16:55,Add Reservation,Leela_4606,"{'Name': 'Leela_4606', 'Room': 'Hallway, 6th floor', 'Equipments': 'Autoclave 5 (Drain the water every 5 times after using)', 'Start_Time': datetime.datetime(2025, 2, 24, 14, 30), 'End_Time': datetime.datetime(2025, 2, 24, 16, 15)}"
 2025-02-24 14:39:51,Add Reservation,Viroj_4511,"{'Name': 'Viroj_4511', 'Room': 'Central Lab, 6th floor', 'Equipments': 'BioSpectrometer', 'Start_Time': datetime.datetime(2025, 2, 24, 15, 30), 'End_Time': datetime.datetime(2025, 2, 24, 16, 0)}"
+2025-02-24 14:45:25,Delete Reservation,Viroj_4511,"Details: Name                      Viroj_4511
+Room          Central Lab, 6th floor
+Equipments           BioSpectrometer
+Start_Time       2025-02-24 15:30:00
+End_Time         2025-02-24 16:00:00
+Name: 2012, dtype: object"
