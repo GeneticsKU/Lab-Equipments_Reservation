@@ -8310,3 +8310,7 @@ Start_Time       2025-02-25 00:00:00
 End_Time         2025-02-25 23:45:00
 Name: 2002, dtype: object"
 2025-02-24 07:36:33,Add Reservation,Kanyarat_4607,"{'Name': 'Kanyarat_4607', 'Room': 'Central Lab, 6th floor', 'Equipments': 'Incubator 2', 'Start_Time': datetime.datetime(2025, 2, 24, 8, 0), 'End_Time': datetime.datetime(2025, 2, 24, 23, 45)}"
+2025-02-24 08:13:45,Add Reservation,Narumon_4511,"           Name          Room  ...          Start_Time            End_Time
+0  Narumon_4511  PCR Machines  ... 2025-02-24 11:00:00 2025-02-24 14:00:00
+
+[1 rows x 5 columns]"
