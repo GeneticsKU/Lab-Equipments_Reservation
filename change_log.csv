@@ -8340,3 +8340,7 @@ Name: 1214, dtype: object"
 
 [1 rows x 5 columns]"
 2025-02-24 13:13:25,Add Reservation,Chiratchaya_4511,"{'Name': 'Chiratchaya_4511', 'Room': 'BSL-2', 'Equipments': 'BSC-2', 'Start_Time': datetime.datetime(2025, 2, 24, 13, 45), 'End_Time': datetime.datetime(2025, 2, 24, 17, 15)}"
+2025-02-24 13:17:28,Add Reservation,Phasanat_4615,"            Name          Room  ...          Start_Time            End_Time
+0  Phasanat_4615  PCR Machines  ... 2025-02-24 14:00:00 2025-02-24 17:00:00
+
+[1 rows x 5 columns]"
