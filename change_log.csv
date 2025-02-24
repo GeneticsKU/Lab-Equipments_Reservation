@@ -8319,3 +8319,9 @@ Name: 2002, dtype: object"
 2025-02-24 08:57:26,Add Reservation,Apimon_4612,"{'Name': 'Apimon_4612', 'Room': 'Hallway, 6th floor', 'Equipments': 'Autoclave 4 (Drain the water every 5 times after using)', 'Start_Time': datetime.datetime(2025, 2, 24, 14, 30), 'End_Time': datetime.datetime(2025, 2, 24, 16, 30)}"
 2025-02-24 09:15:08,Add Reservation,Tanatad_4606,"{'Name': 'Tanatad_4606', 'Room': 'Central Lab, 6th floor', 'Equipments': 'Digital Dry Bath 2', 'Start_Time': datetime.datetime(2025, 2, 24, 11, 0), 'End_Time': datetime.datetime(2025, 2, 24, 13, 0)}"
 2025-02-24 09:19:48,Add Reservation,Akkharadet_Piyasaengthong,"{'Name': 'Akkharadet_Piyasaengthong', 'Room': 'BSL-2', 'Equipments': 'BSC-2', 'Start_Time': datetime.datetime(2025, 2, 24, 11, 0), 'End_Time': datetime.datetime(2025, 2, 24, 13, 0)}"
+2025-02-24 10:17:06,Delete Reservation,Janejira_4612,"Details: Name                Janejira_4612
+Room                 PCR Machines
+Equipments                 PCR 10
+Start_Time    2025-02-24 11:00:00
+End_Time      2025-02-24 14:00:00
+Name: 1214, dtype: object"
