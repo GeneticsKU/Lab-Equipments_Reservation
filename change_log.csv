@@ -8339,3 +8339,4 @@ Name: 1214, dtype: object"
 0  Danthai_4606  PCR Machines  ... 2025-02-24 14:00:00 2025-02-24 17:00:00
 
 [1 rows x 5 columns]"
+2025-02-24 13:13:25,Add Reservation,Chiratchaya_4511,"{'Name': 'Chiratchaya_4511', 'Room': 'BSL-2', 'Equipments': 'BSC-2', 'Start_Time': datetime.datetime(2025, 2, 24, 13, 45), 'End_Time': datetime.datetime(2025, 2, 24, 17, 15)}"
