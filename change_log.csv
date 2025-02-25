@@ -8423,3 +8423,4 @@ Name: 2012, dtype: object"
 0  Phasanat_4615  PCR Machines  ... 2025-02-25 14:00:00 2025-02-25 17:00:00
 
 [1 rows x 5 columns]"
+2025-02-25 13:57:44,Add Reservation,Janejira_4612,"{'Name': 'Janejira_4612', 'Room': 'Central Lab, 6th floor', 'Equipments': 'Fume Hood', 'Start_Time': datetime.datetime(2025, 2, 25, 14, 0), 'End_Time': datetime.datetime(2025, 2, 25, 16, 0)}"
