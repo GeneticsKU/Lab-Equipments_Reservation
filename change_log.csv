@@ -8419,3 +8419,7 @@ Name: 2012, dtype: object"
 [1 rows x 5 columns]"
 2025-02-25 12:59:22,Add Reservation,Pee_4507,"       Name          Room Equipments          Start_Time            End_Time
 0  Pee_4507  PCR Machines     PCR 16 2025-02-25 14:00:00 2025-02-25 17:00:00"
+2025-02-25 13:37:42,Add Reservation,Phasanat_4615,"            Name          Room  ...          Start_Time            End_Time
+0  Phasanat_4615  PCR Machines  ... 2025-02-25 14:00:00 2025-02-25 17:00:00
+
+[1 rows x 5 columns]"
