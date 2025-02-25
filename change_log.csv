@@ -8444,3 +8444,4 @@ Equipments    Autoclave For Waste (Drain the water everytime...
 Start_Time                                  2025-02-26 09:00:00
 End_Time                                    2025-02-26 11:15:00
 Name: 2027, dtype: object"
+2025-02-25 22:36:14,Add Reservation,Khemrutai_4511,"{'Name': 'Khemrutai_4511', 'Room': 'BSL-2', 'Equipments': 'BSC-1', 'Start_Time': datetime.datetime(2025, 2, 26, 9, 0), 'End_Time': datetime.datetime(2025, 2, 26, 10, 30)}"
