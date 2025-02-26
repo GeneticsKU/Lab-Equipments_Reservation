@@ -8450,3 +8450,7 @@ Name: 2027, dtype: object"
 2025-02-25 23:31:05,Add Reservation,Janejira_4612,"{'Name': 'Janejira_4612', 'Room': 'Central Lab, 6th floor', 'Equipments': 'Centrifuge 3', 'Start_Time': datetime.datetime(2025, 2, 26, 12, 0), 'End_Time': datetime.datetime(2025, 2, 26, 15, 0)}"
 2025-02-25 23:33:02,Add Reservation,Janejira_4612,"{'Name': 'Janejira_4612', 'Room': 'Central Lab, 6th floor', 'Equipments': 'Centrifuge 3', 'Start_Time': datetime.datetime(2025, 2, 27, 12, 0), 'End_Time': datetime.datetime(2025, 2, 27, 15, 0)}"
 2025-02-25 23:33:10,Add Reservation,Janejira_4612,"{'Name': 'Janejira_4612', 'Room': 'Central Lab, 6th floor', 'Equipments': 'Centrifuge 3', 'Start_Time': datetime.datetime(2025, 2, 28, 12, 0), 'End_Time': datetime.datetime(2025, 2, 28, 15, 0)}"
+2025-02-26 08:29:50,Add Reservation,Phasanat_4615,"            Name          Room  ...          Start_Time            End_Time
+0  Phasanat_4615  PCR Machines  ... 2025-02-26 11:00:00 2025-02-26 14:00:00
+
+[1 rows x 5 columns]"
