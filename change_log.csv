@@ -8473,3 +8473,7 @@ Name: 2027, dtype: object"
 0  Issariya_4612  PCR Machines  ... 2025-02-26 11:00:00 2025-02-26 14:00:00
 
 [1 rows x 5 columns]"
+2025-02-26 11:23:05,Add Reservation,Danthai_4606,"           Name          Room  ...          Start_Time            End_Time
+0  Danthai_4606  PCR Machines  ... 2025-02-26 14:00:00 2025-02-26 17:00:00
+
+[1 rows x 5 columns]"
