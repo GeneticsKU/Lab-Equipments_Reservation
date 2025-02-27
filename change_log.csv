@@ -8576,3 +8576,5 @@ Equipments                 PCR 15
 Start_Time    2025-02-27 14:00:00
 End_Time      2025-02-27 17:00:00
 Name: 1247, dtype: object"
+2025-02-27 14:08:33,Add Reservation,Pee_4507,"       Name          Room Equipments          Start_Time            End_Time
+0  Pee_4507  PCR Machines     PCR 13 2025-02-27 14:00:00 2025-02-27 17:00:00"
