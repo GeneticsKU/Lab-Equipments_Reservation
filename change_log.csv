@@ -8529,3 +8529,9 @@ Equipments    Autoclave 3 (Drain the water every 5 times aft...
 Start_Time                                  2025-02-27 13:30:00
 End_Time                                    2025-02-27 15:30:00
 Name: 2041, dtype: object"
+2025-02-27 12:40:17,Delete Reservation,Janejira_4612,"Details: Name                   Janejira_4612
+Room          Central Lab, 6th floor
+Equipments                 Fume Hood
+Start_Time       2025-02-27 11:00:00
+End_Time         2025-02-27 16:00:00
+Name: 1995, dtype: object"
