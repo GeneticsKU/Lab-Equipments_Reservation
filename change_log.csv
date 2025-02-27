@@ -8523,3 +8523,9 @@ Name: 2034, dtype: object"
 0  Tanatad_4606  PCR Machines  ... 2025-02-27 11:00:00 2025-02-27 14:00:00
 
 [1 rows x 5 columns]"
+2025-02-27 12:20:42,Delete Reservation,chomphoonut_4607,"Details: Name                                           chomphoonut_4607
+Room                                         Hallway, 6th floor
+Equipments    Autoclave 3 (Drain the water every 5 times aft...
+Start_Time                                  2025-02-27 13:30:00
+End_Time                                    2025-02-27 15:30:00
+Name: 2041, dtype: object"
