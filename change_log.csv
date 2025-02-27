@@ -8547,3 +8547,9 @@ Equipments              Centrifuge 3
 Start_Time       2025-02-27 12:00:00
 End_Time         2025-02-27 15:00:00
 Name: 2029, dtype: object"
+2025-02-27 12:40:49,Delete Reservation,Janejira_4612,"Details: Name                   Janejira_4612
+Room          Central Lab, 6th floor
+Equipments              Centrifuge 3
+Start_Time       2025-02-28 12:00:00
+End_Time         2025-02-28 15:00:00
+Name: 2029, dtype: object"
