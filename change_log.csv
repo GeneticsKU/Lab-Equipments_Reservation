@@ -8582,3 +8582,4 @@ Name: 1247, dtype: object"
 0  Chiratchaya_4511  PCR Machines  ... 2025-02-27 14:00:00 2025-02-27 17:00:00
 
 [1 rows x 5 columns]"
+2025-02-27 14:14:41,Add Reservation,chomphoonut_4607,"{'Name': 'chomphoonut_4607', 'Room': 'Central Lab, 6th floor', 'Equipments': 'Centrifuge 2', 'Start_Time': datetime.datetime(2025, 2, 27, 14, 30), 'End_Time': datetime.datetime(2025, 2, 27, 15, 30)}"
