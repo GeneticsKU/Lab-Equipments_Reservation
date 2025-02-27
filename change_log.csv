@@ -8568,3 +8568,5 @@ Name: 2029, dtype: object"
 
 [1 rows x 5 columns]"
 2025-02-27 13:51:52,Add Reservation,chomphoonut_4607,"{'Name': 'chomphoonut_4607', 'Room': 'Central Lab, 6th floor', 'Equipments': 'BioSpectrometer', 'Start_Time': datetime.datetime(2025, 2, 27, 14, 30), 'End_Time': datetime.datetime(2025, 2, 27, 17, 0)}"
+2025-02-27 14:07:28,Add Reservation,Pee_4507,"       Name          Room Equipments          Start_Time            End_Time
+0  Pee_4507  PCR Machines     PCR 15 2025-02-27 14:00:00 2025-02-27 17:00:00"
