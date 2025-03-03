@@ -8680,3 +8680,9 @@ End_Time                                    2025-03-03 16:30:00
 Name: 2074, dtype: object"
 2025-03-03 14:02:20,Add Reservation,Dechaphon_4612,"{'Name': 'Dechaphon_4612', 'Room': 'Hallway, 6th floor', 'Equipments': 'Autoclave 7 (Drain the water every 5 times after using)', 'Start_Time': datetime.datetime(2025, 3, 3, 14, 15), 'End_Time': datetime.datetime(2025, 3, 3, 16, 0)}"
 2025-03-03 14:21:07,Add Reservation,Pornchanok_4507,"{'Name': 'Pornchanok_4507', 'Room': 'Central Lab, 6th floor', 'Equipments': 'Microcentrifuge 1', 'Start_Time': datetime.datetime(2025, 3, 3, 14, 30), 'End_Time': datetime.datetime(2025, 3, 3, 18, 0)}"
+2025-03-03 14:21:08,Delete Reservation,Leela_4606,"Details: Name                      Leela_4606
+Room          Central Lab, 6th floor
+Equipments              Centrifuge 2
+Start_Time       2025-03-03 14:30:00
+End_Time         2025-03-03 16:30:00
+Name: 2073, dtype: object"
