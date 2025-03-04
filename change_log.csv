@@ -8712,3 +8712,9 @@ Name: 2081, dtype: object"
 0  Danthai_4606  PCR Machines  ... 2025-03-04 14:00:00 2025-03-04 17:00:00
 
 [1 rows x 5 columns]"
+2025-03-04 11:03:38,Delete Reservation,Ratchaphon_4607,"Details: Name                                            Ratchaphon_4607
+Room                                         Hallway, 6th floor
+Equipments    Autoclave 3 (Drain the water every 5 times aft...
+Start_Time                                  2025-03-04 13:30:00
+End_Time                                    2025-03-04 15:30:00
+Name: 2085, dtype: object"
