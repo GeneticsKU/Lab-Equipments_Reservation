@@ -8760,3 +8760,4 @@ Name: 2085, dtype: object"
 
 [1 rows x 5 columns]"
 2025-03-05 13:17:39,Add Reservation,Kanyarat_4607,"{'Name': 'Kanyarat_4607', 'Room': 'Central Lab, 6th floor', 'Equipments': 'Centrifuge 1', 'Start_Time': datetime.datetime(2025, 3, 5, 13, 20), 'End_Time': datetime.datetime(2025, 3, 5, 13, 40)}"
+2025-03-05 13:18:22,Add Reservation,Kanyarat_4607,"{'Name': 'Kanyarat_4607', 'Room': 'Central Lab, 6th floor', 'Equipments': 'Centrifuge 3', 'Start_Time': datetime.datetime(2025, 3, 5, 13, 20), 'End_Time': datetime.datetime(2025, 3, 5, 13, 40)}"
