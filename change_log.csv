@@ -8751,3 +8751,4 @@ Name: 2085, dtype: object"
 0  Tanatad_4606  PCR Machines  ... 2025-03-05 11:00:00 2025-03-05 14:00:00
 
 [1 rows x 5 columns]"
+2025-03-05 10:55:55,Add Reservation,Tanatad_4606,"{'Name': 'Tanatad_4606', 'Room': 'Hallway, 6th floor', 'Equipments': 'Autoclave 5 (Drain the water every 5 times after using)', 'Start_Time': datetime.datetime(2025, 3, 5, 11, 15), 'End_Time': datetime.datetime(2025, 3, 5, 13, 15)}"
