@@ -8737,3 +8737,4 @@ Name: 2085, dtype: object"
 
 [1 rows x 5 columns]"
 2025-03-05 08:27:34,Add Reservation,Pawida_4606,"{'Name': 'Pawida_4606', 'Room': 'Central Lab, 6th floor', 'Equipments': 'Centrifuge 1', 'Start_Time': datetime.datetime(2025, 3, 5, 10, 30), 'End_Time': datetime.datetime(2025, 3, 5, 11, 0)}"
+2025-03-05 09:38:40,Add Reservation,Pimmada_4511,"{'Name': 'Pimmada_4511', 'Room': 'BSL-2', 'Equipments': 'BSC-1', 'Start_Time': datetime.datetime(2025, 3, 5, 13, 0), 'End_Time': datetime.datetime(2025, 3, 5, 15, 0)}"
