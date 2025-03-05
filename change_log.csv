@@ -8767,3 +8767,4 @@ Equipments              Centrifuge 1
 Start_Time       2025-03-05 13:20:00
 End_Time         2025-03-05 13:40:00
 Name: 2102, dtype: object"
+2025-03-05 14:20:00,Add Reservation,Kanyarat_4607,"{'Name': 'Kanyarat_4607', 'Room': 'Central Lab, 6th floor', 'Equipments': 'BioSpectrometer', 'Start_Time': datetime.datetime(2025, 3, 5, 14, 20), 'End_Time': datetime.datetime(2025, 3, 5, 15, 0)}"
