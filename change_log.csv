@@ -8814,3 +8814,4 @@ Name: 1269, dtype: object"
 0  Chiratchaya_4511  PCR Machines  ... 2025-03-06 17:00:00 2025-03-06 20:00:00
 
 [1 rows x 5 columns]"
+2025-03-06 14:44:32,Add Reservation,chomphoonut_4607,"{'Name': 'chomphoonut_4607', 'Room': 'Central Lab, 6th floor', 'Equipments': 'BioSpectrometer', 'Start_Time': datetime.datetime(2025, 3, 6, 14, 45), 'End_Time': datetime.datetime(2025, 3, 6, 15, 0)}"
