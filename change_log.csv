@@ -8839,3 +8839,4 @@ Equipments        Real Time PCR 2
 Start_Time    2025-03-07 11:00:00
 End_Time      2025-03-07 14:00:00
 Name: 1273, dtype: object"
+2025-03-07 10:25:06,Add Reservation,Dechaphon_4612,"{'Name': 'Dechaphon_4612', 'Room': 'Hallway, 6th floor', 'Equipments': 'Autoclave 4 (Drain the water every 5 times after using)', 'Start_Time': datetime.datetime(2025, 3, 7, 11, 0), 'End_Time': datetime.datetime(2025, 3, 7, 13, 0)}"
