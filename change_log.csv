@@ -8940,3 +8940,7 @@ Name: 1282, dtype: object"
 
 [1 rows x 5 columns]"
 2025-03-11 12:20:38,Add Reservation,Siwapohn_4505,"{'Name': 'Siwapohn_4505', 'Room': 'Central Lab, 5th floor', 'Equipments': 'Incubator Shaker 1', 'Start_Time': datetime.datetime(2025, 3, 17, 10, 30), 'End_Time': datetime.datetime(2025, 3, 17, 23, 45)}"
+2025-03-11 13:19:14,Add Reservation,Phasanat_4615,"            Name          Room  ...          Start_Time            End_Time
+0  Phasanat_4615  PCR Machines  ... 2025-03-11 14:00:00 2025-03-11 17:00:00
+
+[1 rows x 5 columns]"
