@@ -8959,3 +8959,9 @@ Name: 1282, dtype: object"
 2025-03-11 13:41:29,Add Reservation,Dechaphon_4612,"{'Name': 'Dechaphon_4612', 'Room': 'Central Lab, 5th floor', 'Equipments': 'Incubator Shaker 1', 'Start_Time': datetime.datetime(2025, 3, 14, 9, 0), 'End_Time': datetime.datetime(2025, 3, 14, 23, 45)}"
 2025-03-11 13:41:36,Add Reservation,Dechaphon_4612,"{'Name': 'Dechaphon_4612', 'Room': 'Central Lab, 5th floor', 'Equipments': 'Incubator Shaker 1', 'Start_Time': datetime.datetime(2025, 3, 15, 9, 0), 'End_Time': datetime.datetime(2025, 3, 15, 23, 45)}"
 2025-03-11 13:41:40,Add Reservation,Dechaphon_4612,"{'Name': 'Dechaphon_4612', 'Room': 'Central Lab, 5th floor', 'Equipments': 'Incubator Shaker 1', 'Start_Time': datetime.datetime(2025, 3, 16, 9, 0), 'End_Time': datetime.datetime(2025, 3, 16, 23, 45)}"
+2025-03-11 13:42:58,Delete Reservation,Dechaphon_4612,"Details: Name               Dechaphon_4612
+Room                        BSL-2
+Equipments                  BSC-2
+Start_Time    2025-03-11 14:00:00
+End_Time      2025-03-11 16:00:00
+Name: 2160, dtype: object"
