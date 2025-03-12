@@ -9046,3 +9046,4 @@ Name: 2162, dtype: object"
 
 [1 rows x 5 columns]"
 2025-03-12 14:05:36,Add Reservation,Danthai_4606,"{'Name': 'Danthai_4606', 'Room': 'Central Lab, 6th floor', 'Equipments': 'Fume Hood', 'Start_Time': datetime.datetime(2025, 3, 12, 14, 15), 'End_Time': datetime.datetime(2025, 3, 12, 15, 0)}"
+2025-03-12 14:07:01,Add Reservation,Danthai_4606,"{'Name': 'Danthai_4606', 'Room': 'Central Lab, 6th floor', 'Equipments': 'Digital Dry Bath 2', 'Start_Time': datetime.datetime(2025, 3, 12, 14, 45), 'End_Time': datetime.datetime(2025, 3, 12, 15, 30)}"
