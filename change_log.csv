@@ -9114,3 +9114,5 @@ Equipments                 PCR 10
 Start_Time    2025-03-14 08:00:00
 End_Time      2025-03-14 11:00:00
 Name: 1296, dtype: object"
+2025-03-13 11:29:15,Add Reservation,Viroj_4511,"         Name          Room Equipments          Start_Time            End_Time
+0  Viroj_4511  PCR Machines    PCR 9.3 2025-03-14 08:00:00 2025-03-14 11:00:00"
