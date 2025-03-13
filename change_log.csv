@@ -9108,3 +9108,9 @@ Name: 1292, dtype: object"
 2025-03-13 11:21:45,Add Reservation,Wuthichai_4505,"{'Name': 'Wuthichai_4505', 'Room': 'Hallway, 6th floor', 'Equipments': 'Autoclave For Waste (Drain the water everytime after using)', 'Start_Time': datetime.datetime(2025, 3, 13, 13, 0), 'End_Time': datetime.datetime(2025, 3, 13, 15, 0)}"
 2025-03-13 11:28:05,Add Reservation,Viroj_4511,"         Name          Room Equipments          Start_Time            End_Time
 0  Viroj_4511  PCR Machines     PCR 10 2025-03-14 08:00:00 2025-03-14 11:00:00"
+2025-03-13 11:29:02,Delete Reservation,Viroj_4511,"Details: Name                   Viroj_4511
+Room                 PCR Machines
+Equipments                 PCR 10
+Start_Time    2025-03-14 08:00:00
+End_Time      2025-03-14 11:00:00
+Name: 1296, dtype: object"
