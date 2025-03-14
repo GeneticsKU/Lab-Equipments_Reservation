@@ -9172,3 +9172,7 @@ Name: 2215, dtype: object"
 2025-03-14 10:13:28,Add Reservation,Sukhita_4612,"{'Name': 'Sukhita_4612', 'Room': 'Central Lab, 6th floor', 'Equipments': 'Ultrasonic Processors', 'Start_Time': datetime.datetime(2025, 3, 14, 10, 45), 'End_Time': datetime.datetime(2025, 3, 14, 11, 15)}"
 2025-03-14 10:14:34,Add Reservation,Sukhita_4612,"{'Name': 'Sukhita_4612', 'Room': 'Central Lab, 6th floor', 'Equipments': 'Vacuum Pump', 'Start_Time': datetime.datetime(2025, 3, 14, 11, 30), 'End_Time': datetime.datetime(2025, 3, 14, 12, 30)}"
 2025-03-14 10:22:59,Add Reservation,Dechaphon_4612,"{'Name': 'Dechaphon_4612', 'Room': 'Hallway, 6th floor', 'Equipments': 'Autoclave 4 (Drain the water every 5 times after using)', 'Start_Time': datetime.datetime(2025, 3, 14, 10, 30), 'End_Time': datetime.datetime(2025, 3, 14, 12, 30)}"
+2025-03-14 10:34:39,Add Reservation,Danthai_4606,"           Name          Room  ...          Start_Time            End_Time
+0  Danthai_4606  PCR Machines  ... 2025-03-14 14:00:00 2025-03-14 17:00:00
+
+[1 rows x 5 columns]"
