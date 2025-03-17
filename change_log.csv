@@ -9258,3 +9258,4 @@ Equipments                 Fume Hood
 Start_Time       2025-03-18 13:00:00
 End_Time         2025-03-18 16:00:00
 Name: 2235, dtype: object"
+2025-03-18 06:59:58,Add Reservation,Viroj_4511,"{'Name': 'Viroj_4511', 'Room': 'BSL-2', 'Equipments': 'BSC-1', 'Start_Time': datetime.datetime(2025, 3, 18, 8, 30), 'End_Time': datetime.datetime(2025, 3, 18, 12, 0)}"
