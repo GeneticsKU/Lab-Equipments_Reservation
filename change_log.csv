@@ -9229,3 +9229,4 @@ Start_Time    2025-03-17 11:30:00
 End_Time      2025-03-17 13:30:00
 Name: 2229, dtype: object"
 2025-03-17 10:16:16,Add Reservation,Dechaphon_4612,"{'Name': 'Dechaphon_4612', 'Room': 'BSL-2', 'Equipments': 'BSC-1', 'Start_Time': datetime.datetime(2025, 3, 17, 13, 0), 'End_Time': datetime.datetime(2025, 3, 17, 16, 0)}"
+2025-03-17 10:16:40,Add Reservation,Dechaphon_4612,"{'Name': 'Dechaphon_4612', 'Room': 'Hallway, 6th floor', 'Equipments': 'Autoclave 4 (Drain the water every 5 times after using)', 'Start_Time': datetime.datetime(2025, 3, 17, 11, 30), 'End_Time': datetime.datetime(2025, 3, 17, 13, 30)}"
