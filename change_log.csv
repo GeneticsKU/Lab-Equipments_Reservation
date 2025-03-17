@@ -9222,3 +9222,9 @@ End_Time                                    2025-03-17 15:00:00
 Name: 2228, dtype: object"
 2025-03-17 09:56:05,Add Reservation,chomphoonut_4607,"{'Name': 'chomphoonut_4607', 'Room': 'Hallway, 6th floor', 'Equipments': 'Autoclave For Waste (Drain the water everytime after using)', 'Start_Time': datetime.datetime(2025, 3, 17, 13, 0), 'End_Time': datetime.datetime(2025, 3, 17, 15, 0)}"
 2025-03-17 10:15:22,Add Reservation,Dechaphon_4612,"{'Name': 'Dechaphon_4612', 'Room': 'BSL-2', 'Equipments': 'BSC-2', 'Start_Time': datetime.datetime(2025, 3, 17, 11, 30), 'End_Time': datetime.datetime(2025, 3, 17, 13, 30)}"
+2025-03-17 10:15:45,Delete Reservation,Dechaphon_4612,"Details: Name               Dechaphon_4612
+Room                        BSL-2
+Equipments                  BSC-2
+Start_Time    2025-03-17 11:30:00
+End_Time      2025-03-17 13:30:00
+Name: 2229, dtype: object"
