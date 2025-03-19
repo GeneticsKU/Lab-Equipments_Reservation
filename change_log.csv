@@ -9341,3 +9341,4 @@ Equipments                 PCR 10
 Start_Time    2025-03-19 14:00:00
 End_Time      2025-03-19 17:00:00
 Name: 1318, dtype: object"
+2025-03-19 13:42:43,Add Reservation,chomphoonut_4607,"{'Name': 'chomphoonut_4607', 'Room': 'Hallway, 6th floor', 'Equipments': 'Autoclave 3 (Drain the water every 5 times after using)', 'Start_Time': datetime.datetime(2025, 3, 19, 14, 0), 'End_Time': datetime.datetime(2025, 3, 19, 16, 0)}"
