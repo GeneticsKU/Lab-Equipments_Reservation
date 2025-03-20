@@ -9390,3 +9390,9 @@ Name: 1318, dtype: object"
 0  Phasanat_4615  PCR Machines  ... 2025-03-20 11:00:00 2025-03-20 14:00:00
 
 [1 rows x 5 columns]"
+2025-03-20 10:21:14,Delete Reservation,Jantanipa_4607,"Details: Name                                             Jantanipa_4607
+Room                                         Hallway, 6th floor
+Equipments    Autoclave 5 (Drain the water every 5 times aft...
+Start_Time                                  2025-03-20 10:30:00
+End_Time                                    2025-03-20 12:30:00
+Name: 2261, dtype: object"
