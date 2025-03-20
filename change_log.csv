@@ -9428,3 +9428,9 @@ Equipments                Heat Block
 Start_Time       2025-03-20 10:00:00
 End_Time         2025-03-20 15:15:00
 Name: 2266, dtype: object"
+2025-03-20 11:52:30,Delete Reservation,Kanyarat_4607,"Details: Name                   Kanyarat_4607
+Room          Central Lab, 6th floor
+Equipments              Centrifuge 2
+Start_Time       2025-03-20 11:00:00
+End_Time         2025-03-20 14:00:00
+Name: 2267, dtype: object"
