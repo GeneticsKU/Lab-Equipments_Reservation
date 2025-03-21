@@ -9457,3 +9457,5 @@ Start_Time    2025-03-21 09:00:00
 End_Time      2025-03-21 17:00:00
 Name: 2256, dtype: object"
 2025-03-21 08:29:04,Add Reservation,Khemrutai_4511,"{'Name': 'Khemrutai_4511', 'Room': 'BSL-2', 'Equipments': 'BSC-1', 'Start_Time': datetime.datetime(2025, 3, 21, 10, 0), 'End_Time': datetime.datetime(2025, 3, 21, 12, 0)}"
+2025-03-21 09:16:59,Add Reservation,Leela_4606,"         Name          Room Equipments          Start_Time            End_Time
+0  Leela_4606  PCR Machines     PCR 12 2025-03-21 11:00:00 2025-03-21 14:00:00"
