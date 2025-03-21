@@ -9474,3 +9474,7 @@ Name: 2256, dtype: object"
 2025-03-21 10:11:11,Add Reservation,Dechaphon_4612,"{'Name': 'Dechaphon_4612', 'Room': 'Central Lab, 6th floor', 'Equipments': 'Refrigerated Centrifuge 1', 'Start_Time': datetime.datetime(2025, 3, 21, 10, 30), 'End_Time': datetime.datetime(2025, 3, 21, 15, 0)}"
 2025-03-21 10:11:25,Add Reservation,Dechaphon_4612,"{'Name': 'Dechaphon_4612', 'Room': 'Central Lab, 6th floor', 'Equipments': 'Fume Hood', 'Start_Time': datetime.datetime(2025, 3, 21, 10, 30), 'End_Time': datetime.datetime(2025, 3, 21, 15, 0)}"
 2025-03-21 10:20:29,Add Reservation,Dechaphon_4612,"{'Name': 'Dechaphon_4612', 'Room': 'Hallway, 6th floor', 'Equipments': 'Autoclave For Waste (Drain the water everytime after using)', 'Start_Time': datetime.datetime(2025, 3, 21, 12, 30), 'End_Time': datetime.datetime(2025, 3, 21, 14, 30)}"
+2025-03-21 10:22:26,Add Reservation,Napassorn_4505,"             Name          Room  ...          Start_Time            End_Time
+0  Napassorn_4505  PCR Machines  ... 2025-03-21 14:00:00 2025-03-21 17:00:00
+
+[1 rows x 5 columns]"
