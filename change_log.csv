@@ -9524,3 +9524,4 @@ Name: 2289, dtype: object"
 
 [1 rows x 5 columns]"
 2025-03-23 19:00:22,Add Reservation,chomphoonut_4607,"{'Name': 'chomphoonut_4607', 'Room': 'BSL-2', 'Equipments': 'BSC-2', 'Start_Time': datetime.datetime(2025, 3, 24, 8, 0), 'End_Time': datetime.datetime(2025, 3, 24, 16, 30)}"
+2025-03-23 19:02:23,Add Reservation,chomphoonut_4607,"{'Name': 'chomphoonut_4607', 'Room': 'Central Lab, 6th floor', 'Equipments': 'Incubator 2', 'Start_Time': datetime.datetime(2025, 3, 24, 0, 0), 'End_Time': datetime.datetime(2025, 3, 24, 23, 45)}"
