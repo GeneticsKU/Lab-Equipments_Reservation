@@ -9570,3 +9570,9 @@ Name: 2289, dtype: object"
 
 [1 rows x 5 columns]"
 2025-03-24 16:28:36,Add Reservation,Wuthichai_4505,"{'Name': 'Wuthichai_4505', 'Room': 'Central Lab, 6th floor', 'Equipments': 'Refrigerated Centrifuge 4', 'Start_Time': datetime.datetime(2025, 3, 24, 16, 30), 'End_Time': datetime.datetime(2025, 3, 24, 17, 0)}"
+2025-03-24 17:49:13,Delete Reservation,Janejira_4612,"Details: Name                Janejira_4612
+Room                 PCR Machines
+Equipments                 PCR 10
+Start_Time    2025-03-25 11:00:00
+End_Time      2025-03-25 14:00:00
+Name: 1361, dtype: object"
