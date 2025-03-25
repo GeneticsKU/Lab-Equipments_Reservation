@@ -9654,3 +9654,4 @@ Name: 1361, dtype: object"
 
 [1 rows x 5 columns]"
 2025-03-25 16:01:25,Add Reservation,Kanyarat_4607,"{'Name': 'Kanyarat_4607', 'Room': 'Central Lab, 6th floor', 'Equipments': 'BioSpectrometer', 'Start_Time': datetime.datetime(2025, 3, 25, 16, 5), 'End_Time': datetime.datetime(2025, 3, 25, 17, 0)}"
+2025-03-25 16:54:28,Add Reservation,Sukhita_4612,"{'Name': 'Sukhita_4612', 'Room': 'Microscope Room, 5th floor', 'Equipments': 'Stereo Microscope', 'Start_Time': datetime.datetime(2025, 3, 27, 12, 30), 'End_Time': datetime.datetime(2025, 3, 27, 16, 30)}"
