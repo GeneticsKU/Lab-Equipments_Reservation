@@ -9609,3 +9609,9 @@ Name: 1361, dtype: object"
 0  Kanyarat_4607  PCR Machines  ... 2025-03-25 14:00:00 2025-03-25 17:00:00
 
 [1 rows x 5 columns]"
+2025-03-25 12:10:55,Delete Reservation,Kanyarat_4607,"Details: Name                Kanyarat_4607
+Room                 PCR Machines
+Equipments                 PCR 14
+Start_Time    2025-03-25 14:00:00
+End_Time      2025-03-25 17:00:00
+Name: 1366, dtype: object"
