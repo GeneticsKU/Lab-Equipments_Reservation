@@ -9742,3 +9742,9 @@ Equipments    Refrigerated Incubator Shaker
 Start_Time              2025-03-29 00:00:00
 End_Time                2025-03-29 23:45:00
 Name: 2323, dtype: object"
+2025-03-26 15:46:43,Delete Reservation,Siwapohn_4505,"Details: Name                          Siwapohn_4505
+Room                 Central Lab, 5th floor
+Equipments    Refrigerated Incubator Shaker
+Start_Time              2025-03-28 00:00:00
+End_Time                2025-03-28 23:45:00
+Name: 2322, dtype: object"
