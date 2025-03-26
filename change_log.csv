@@ -9719,3 +9719,7 @@ Name: 2318, dtype: object"
 
 [1 rows x 5 columns]"
 2025-03-26 14:20:54,Add Reservation,chomphoonut_4607,"{'Name': 'chomphoonut_4607', 'Room': 'Hallway, 6th floor', 'Equipments': 'Autoclave 5 (Drain the water every 5 times after using)', 'Start_Time': datetime.datetime(2025, 3, 26, 14, 30), 'End_Time': datetime.datetime(2025, 3, 26, 16, 30)}"
+2025-03-26 15:24:07,Add Reservation,Napassorn_4505,"             Name          Room  ...          Start_Time            End_Time
+0  Napassorn_4505  PCR Machines  ... 2025-03-26 14:00:00 2025-03-26 17:00:00
+
+[1 rows x 5 columns]"
