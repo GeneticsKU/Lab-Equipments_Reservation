@@ -9795,3 +9795,5 @@ Equipments    Autoclave 1 (Drain the water every 5 times aft...
 Start_Time                                  2025-03-27 11:00:00
 End_Time                                    2025-03-27 13:00:00
 Name: 2333, dtype: object"
+2025-03-27 08:58:21,Add Reservation,Leela_4606,"         Name          Room Equipments          Start_Time            End_Time
+0  Leela_4606  PCR Machines     PCR 11 2025-03-27 11:00:00 2025-03-27 14:00:00"
