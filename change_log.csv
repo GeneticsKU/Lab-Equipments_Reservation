@@ -9828,3 +9828,4 @@ Name: 1383, dtype: object"
 
 [1 rows x 5 columns]"
 2025-03-27 09:22:07,Add Reservation,Wilasinee_4612,"{'Name': 'Wilasinee_4612', 'Room': 'Microscope Room, 5th floor', 'Equipments': 'Stereo Microscope', 'Start_Time': datetime.datetime(2025, 3, 27, 9, 30), 'End_Time': datetime.datetime(2025, 3, 27, 11, 0)}"
+2025-03-27 09:33:12,Add Reservation,Supanut_4612,"{'Name': 'Supanut_4612', 'Room': 'Central Lab, 6th floor', 'Equipments': 'Laminar flow', 'Start_Time': datetime.datetime(2025, 3, 27, 12, 30), 'End_Time': datetime.datetime(2025, 3, 27, 16, 30)}"
