@@ -9781,3 +9781,9 @@ Name: 2320, dtype: object"
 2025-03-26 16:51:32,Add Reservation,chomphoonut_4607,"{'Name': 'chomphoonut_4607', 'Room': 'BSL-2', 'Equipments': 'BSC-2', 'Start_Time': datetime.datetime(2025, 3, 27, 8, 0), 'End_Time': datetime.datetime(2025, 3, 27, 15, 0)}"
 2025-03-26 23:12:25,Add Reservation,Pawida_4606,"          Name          Room Equipments          Start_Time            End_Time
 0  Pawida_4606  PCR Machines     PCR 15 2025-03-27 08:00:00 2025-03-27 11:00:00"
+2025-03-27 08:33:04,Delete Reservation,Kanyarat_4505,"Details: Name                                              Kanyarat_4505
+Room                                         Hallway, 6th floor
+Equipments    Autoclave For Waste (Drain the water everytime...
+Start_Time                                  2025-03-27 10:00:00
+End_Time                                    2025-03-27 12:00:00
+Name: 2318, dtype: object"
