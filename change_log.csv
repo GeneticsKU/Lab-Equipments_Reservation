@@ -10027,3 +10027,4 @@ Name: 1408, dtype: object"
 0  Janejira_4612  PCR Machines  ... 2025-04-08 11:00:00 2025-04-08 14:00:00
 
 [1 rows x 5 columns]"
+2025-04-08 08:49:47,Add Reservation,Leela_4606,"{'Name': 'Leela_4606', 'Room': 'Hallway, 6th floor', 'Equipments': 'Autoclave 4 (Drain the water every 5 times after using)', 'Start_Time': datetime.datetime(2025, 4, 8, 10, 0), 'End_Time': datetime.datetime(2025, 4, 8, 12, 0)}"
