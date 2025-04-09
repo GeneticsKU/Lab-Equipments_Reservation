@@ -10089,3 +10089,9 @@ Name: 2397, dtype: object"
 2025-04-09 12:48:20,Add Reservation,Supanut_4612,"{'Name': 'Supanut_4612', 'Room': 'Central Lab, 6th floor', 'Equipments': 'Speed Vacuum Concentrator', 'Start_Time': datetime.datetime(2025, 4, 9, 13, 0), 'End_Time': datetime.datetime(2025, 4, 9, 14, 0)}"
 2025-04-09 14:16:44,Add Reservation,Tanatad_4606,"{'Name': 'Tanatad_4606', 'Room': 'Central Lab, 6th floor', 'Equipments': 'Centrifuge 3', 'Start_Time': datetime.datetime(2025, 4, 9, 14, 30), 'End_Time': datetime.datetime(2025, 4, 9, 15, 0)}"
 2025-04-09 15:28:38,Add Reservation,Tanatad_4606,"{'Name': 'Tanatad_4606', 'Room': 'Central Lab, 6th floor', 'Equipments': 'Refrigerated Centrifuge 2', 'Start_Time': datetime.datetime(2025, 4, 9, 15, 30), 'End_Time': datetime.datetime(2025, 4, 9, 16, 15)}"
+2025-04-09 16:03:00,Delete Reservation,Dechaphon_4612,"Details: Name                  Dechaphon_4612
+Room          Central Lab, 5th floor
+Equipments        Incubator Shaker 1
+Start_Time       2025-04-09 00:00:00
+End_Time         2025-04-09 23:45:00
+Name: 2366, dtype: object"
