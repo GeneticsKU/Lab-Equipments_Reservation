@@ -10058,3 +10058,5 @@ Name: 2397, dtype: object"
 2025-04-08 18:26:02,Add Reservation,Sukhita_4612,"{'Name': 'Sukhita_4612', 'Room': 'Microscope Room, 5th floor', 'Equipments': 'Stereo Microscope', 'Start_Time': datetime.datetime(2025, 4, 9, 13, 30), 'End_Time': datetime.datetime(2025, 4, 9, 17, 0)}"
 2025-04-09 01:51:34,Add Reservation,Pawida_4606,"          Name          Room Equipments          Start_Time            End_Time
 0  Pawida_4606  PCR Machines     PCR 15 2025-04-09 11:00:00 2025-04-09 14:00:00"
+2025-04-09 07:49:44,Add Reservation,Leela_4606,"         Name          Room Equipments          Start_Time            End_Time
+0  Leela_4606  PCR Machines     PCR 13 2025-04-09 11:00:00 2025-04-09 14:00:00"
