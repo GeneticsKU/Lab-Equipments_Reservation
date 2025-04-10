@@ -10107,3 +10107,4 @@ Name: 2366, dtype: object"
 0  Akarapong_4606  PCR Machines  ... 2025-04-10 08:00:00 2025-04-10 11:00:00
 
 [1 rows x 5 columns]"
+2025-04-10 07:16:03,Add Reservation,Apimon_4612,"{'Name': 'Apimon_4612', 'Room': 'Central Lab, 6th floor', 'Equipments': 'Laminar flow', 'Start_Time': datetime.datetime(2025, 4, 10, 11, 0), 'End_Time': datetime.datetime(2025, 4, 10, 16, 0)}"
