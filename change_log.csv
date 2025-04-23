@@ -10296,3 +10296,4 @@ Name: 2444, dtype: object"
 2025-04-22 14:52:31,Add Reservation,Dechaphon_4612,"{'Name': 'Dechaphon_4612', 'Room': 'Microscope Room, 5th floor', 'Equipments': 'Stereo Microscope', 'Start_Time': datetime.datetime(2025, 4, 22, 15, 0), 'End_Time': datetime.datetime(2025, 4, 22, 16, 0)}"
 2025-04-23 00:22:19,Add Reservation,Pawida_4606,"          Name          Room Equipments          Start_Time            End_Time
 0  Pawida_4606  PCR Machines     PCR 15 2025-04-23 11:00:00 2025-04-23 14:00:00"
+2025-04-23 07:20:16,Add Reservation,Akarapong_4606,"{'Name': 'Akarapong_4606', 'Room': 'Central Lab, 6th floor', 'Equipments': 'Digital Dry Bath 1', 'Start_Time': datetime.datetime(2025, 4, 23, 7, 30), 'End_Time': datetime.datetime(2025, 4, 23, 12, 0)}"
