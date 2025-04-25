@@ -10396,3 +10396,9 @@ Name: 1479, dtype: object"
 0  Jantanipa_4607  PCR Machines  ... 2025-04-25 11:00:00 2025-04-25 14:00:00
 
 [1 rows x 5 columns]"
+2025-04-25 09:56:32,Delete Reservation,Jantanipa_4607,"Details: Name               Jantanipa_4607
+Room                 PCR Machines
+Equipments                  PCR 3
+Start_Time    2025-04-25 11:00:00
+End_Time      2025-04-25 14:00:00
+Name: 1479, dtype: object"
