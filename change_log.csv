@@ -10430,3 +10430,4 @@ End_Time      2025-04-25 14:00:00
 Name: 1478, dtype: object"
 2025-04-25 10:54:17,Add Reservation,Tanatad_4606,"{'Name': 'Tanatad_4606', 'Room': 'Central Lab, 6th floor', 'Equipments': 'Digital Dry Bath 2', 'Start_Time': datetime.datetime(2025, 4, 25, 11, 0), 'End_Time': datetime.datetime(2025, 4, 25, 12, 30)}"
 2025-04-25 11:13:24,Add Reservation,Dechaphon_4612,"{'Name': 'Dechaphon_4612', 'Room': 'Hallway, 6th floor', 'Equipments': 'Autoclave 4 (Drain the water every 5 times after using)', 'Start_Time': datetime.datetime(2025, 4, 25, 12, 0), 'End_Time': datetime.datetime(2025, 4, 25, 14, 0)}"
+2025-04-25 11:13:33,Add Reservation,Dechaphon_4612,"{'Name': 'Dechaphon_4612', 'Room': 'Hallway, 6th floor', 'Equipments': 'Autoclave 5 (Drain the water every 5 times after using)', 'Start_Time': datetime.datetime(2025, 4, 25, 12, 0), 'End_Time': datetime.datetime(2025, 4, 25, 14, 0)}"
