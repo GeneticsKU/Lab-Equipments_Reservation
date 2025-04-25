@@ -10434,3 +10434,4 @@ Name: 1478, dtype: object"
 2025-04-25 11:15:25,Add Reservation,Pawida_4606,"          Name          Room Equipments          Start_Time            End_Time
 0  Pawida_4606  PCR Machines     PCR 15 2025-04-25 11:00:00 2025-04-25 14:00:00"
 2025-04-25 12:20:35,Add Reservation,Tanatad_4606,"{'Name': 'Tanatad_4606', 'Room': 'Central Lab, 6th floor', 'Equipments': 'Centrifuge 3', 'Start_Time': datetime.datetime(2025, 4, 25, 12, 30), 'End_Time': datetime.datetime(2025, 4, 25, 13, 30)}"
+2025-04-25 13:04:12,Add Reservation,Danthai_4606,"{'Name': 'Danthai_4606', 'Room': 'Central Lab, 6th floor', 'Equipments': 'Centrifuge 2', 'Start_Time': datetime.datetime(2025, 4, 25, 13, 15), 'End_Time': datetime.datetime(2025, 4, 25, 13, 45)}"
