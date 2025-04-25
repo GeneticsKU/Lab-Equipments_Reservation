@@ -10428,3 +10428,4 @@ Equipments                 PCR 15
 Start_Time    2025-04-25 11:00:00
 End_Time      2025-04-25 14:00:00
 Name: 1478, dtype: object"
+2025-04-25 10:54:17,Add Reservation,Tanatad_4606,"{'Name': 'Tanatad_4606', 'Room': 'Central Lab, 6th floor', 'Equipments': 'Digital Dry Bath 2', 'Start_Time': datetime.datetime(2025, 4, 25, 11, 0), 'End_Time': datetime.datetime(2025, 4, 25, 12, 30)}"
