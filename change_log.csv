@@ -10450,3 +10450,7 @@ Name: 1478, dtype: object"
 [1 rows x 5 columns]"
 2025-04-25 14:12:37,Add Reservation,Danthai_4606,"{'Name': 'Danthai_4606', 'Room': 'Central Lab, 6th floor', 'Equipments': 'Digital Dry Bath 2', 'Start_Time': datetime.datetime(2025, 4, 25, 14, 15), 'End_Time': datetime.datetime(2025, 4, 25, 14, 30)}"
 2025-04-25 16:22:28,Add Reservation,Phasanat_4615,"{'Name': 'Phasanat_4615', 'Room': 'Hallway, 6th floor', 'Equipments': 'Autoclave 4 (Drain the water every 5 times after using)', 'Start_Time': datetime.datetime(2025, 4, 25, 16, 30), 'End_Time': datetime.datetime(2025, 4, 25, 18, 0)}"
+2025-04-26 08:20:59,Add Reservation,Chanikarn_4511,"             Name          Room  ...          Start_Time            End_Time
+0  Chanikarn_4511  PCR Machines  ... 2025-04-26 08:00:00 2025-04-26 11:00:00
+
+[1 rows x 5 columns]"
