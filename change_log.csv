@@ -10461,3 +10461,4 @@ Name: 1478, dtype: object"
 2025-04-28 08:03:27,Add Reservation,Pawida_4606,"          Name          Room Equipments          Start_Time            End_Time
 0  Pawida_4606  PCR Machines     PCR 15 2025-04-28 11:00:00 2025-04-28 14:00:00"
 2025-04-28 08:36:40,Add Reservation,Nicharee_4606,"{'Name': 'Nicharee_4606', 'Room': 'Central Lab, 6th floor', 'Equipments': 'Digital Dry Bath 1', 'Start_Time': datetime.datetime(2025, 4, 28, 10, 30), 'End_Time': datetime.datetime(2025, 4, 28, 13, 0)}"
+2025-04-28 09:22:06,Add Reservation,chomphoonut_4607,"{'Name': 'chomphoonut_4607', 'Room': 'Hallway, 6th floor', 'Equipments': 'Autoclave 3 (Drain the water every 5 times after using)', 'Start_Time': datetime.datetime(2025, 4, 28, 10, 30), 'End_Time': datetime.datetime(2025, 4, 28, 12, 30)}"
