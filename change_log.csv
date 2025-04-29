@@ -10512,3 +10512,7 @@ Name: 2488, dtype: object"
 [1 rows x 5 columns]"
 2025-04-29 10:07:01,Add Reservation,Leela_4606,"         Name          Room Equipments          Start_Time            End_Time
 0  Leela_4606  PCR Machines     PCR 15 2025-04-29 11:00:00 2025-04-29 14:00:00"
+2025-04-29 10:13:31,Add Reservation,Nicharee_4606,"            Name          Room  ...          Start_Time            End_Time
+0  Nicharee_4606  PCR Machines  ... 2025-04-29 11:00:00 2025-04-29 14:00:00
+
+[1 rows x 5 columns]"
