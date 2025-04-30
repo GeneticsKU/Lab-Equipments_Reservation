@@ -10623,3 +10623,4 @@ End_Time                                    2025-04-30 14:30:00
 Name: 2501, dtype: object"
 2025-04-30 10:23:34,Add Reservation,Pawida_4606,"          Name          Room Equipments          Start_Time            End_Time
 0  Pawida_4606  PCR Machines     PCR 14 2025-04-30 11:00:00 2025-04-30 14:00:00"
+2025-04-30 10:23:48,Add Reservation,Warunya_4503,"{'Name': 'Warunya_4503', 'Room': 'Hallway, 6th floor', 'Equipments': 'Autoclave For Waste (Drain the water everytime after using)', 'Start_Time': datetime.datetime(2025, 4, 30, 10, 30), 'End_Time': datetime.datetime(2025, 4, 30, 12, 30)}"
