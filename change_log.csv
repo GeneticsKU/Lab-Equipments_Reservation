@@ -10816,3 +10816,7 @@ Name: 2538, dtype: object"
 
 [1 rows x 5 columns]"
 2025-05-06 16:35:23,Add Reservation,Sukhita_4612,"{'Name': 'Sukhita_4612', 'Room': 'Microscope Room, 5th floor', 'Equipments': 'Stereo Microscope', 'Start_Time': datetime.datetime(2025, 5, 7, 13, 0), 'End_Time': datetime.datetime(2025, 5, 7, 17, 0)}"
+2025-05-06 18:03:30,Add Reservation,Sirithorn_4606,"             Name          Room  ...          Start_Time            End_Time
+0  Sirithorn_4606  PCR Machines  ... 2025-05-07 14:00:00 2025-05-07 17:00:00
+
+[1 rows x 5 columns]"
