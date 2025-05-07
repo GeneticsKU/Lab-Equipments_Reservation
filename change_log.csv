@@ -10832,3 +10832,7 @@ Name: 2538, dtype: object"
 
 [1 rows x 5 columns]"
 2025-05-07 12:50:58,Add Reservation,Tanatad_4606,"{'Name': 'Tanatad_4606', 'Room': 'Central Lab, 6th floor', 'Equipments': 'Digital Dry Bath 3', 'Start_Time': datetime.datetime(2025, 5, 7, 13, 0), 'End_Time': datetime.datetime(2025, 5, 7, 14, 30)}"
+2025-05-07 12:51:10,Add Reservation,Jantanipa_4607,"             Name          Room  ...          Start_Time            End_Time
+0  Jantanipa_4607  PCR Machines  ... 2025-05-07 14:00:00 2025-05-07 17:00:00
+
+[1 rows x 5 columns]"
