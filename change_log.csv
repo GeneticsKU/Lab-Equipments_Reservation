@@ -10954,3 +10954,9 @@ Name: 2568, dtype: object"
 0  chomphoonut_4607  PCR Machines  ... 2025-05-13 14:00:00 2025-05-13 17:00:00
 
 [1 rows x 5 columns]"
+2025-05-13 13:47:20,Delete Reservation,Sukhita_4612,"Details: Name                        Sukhita_4612
+Room          Microscope Room, 5th floor
+Equipments             Stereo Microscope
+Start_Time           2025-05-13 14:00:00
+End_Time             2025-05-13 16:30:00
+Name: 2569, dtype: object"
