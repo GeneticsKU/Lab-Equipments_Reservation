@@ -11008,3 +11008,9 @@ Name: 2569, dtype: object"
 
 [1 rows x 5 columns]"
 2025-05-15 12:10:47,Add Reservation,Pawida_4606,"{'Name': 'Pawida_4606', 'Room': 'Central Lab, 6th floor', 'Equipments': 'Refrigerated Centrifuge 1', 'Start_Time': datetime.datetime(2025, 5, 15, 13, 0), 'End_Time': datetime.datetime(2025, 5, 15, 13, 30)}"
+2025-05-15 12:19:32,Delete Reservation,Pawida_4606,"Details: Name                        Pawida_4606
+Room             Central Lab, 6th floor
+Equipments    Refrigerated Centrifuge 1
+Start_Time          2025-05-15 13:00:00
+End_Time            2025-05-15 13:30:00
+Name: 2590, dtype: object"
