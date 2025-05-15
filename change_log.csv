@@ -11003,3 +11003,7 @@ Name: 2569, dtype: object"
 0  Leela_4606  PCR Machines     PCR 13 2025-05-15 11:00:00 2025-05-15 14:00:00"
 2025-05-15 08:43:45,Add Reservation,Leela_4606,"         Name          Room Equipments          Start_Time            End_Time
 0  Leela_4606  PCR Machines     PCR 14 2025-05-15 11:00:00 2025-05-15 14:00:00"
+2025-05-15 10:45:35,Add Reservation,Phasanat_4615,"            Name          Room  ...          Start_Time            End_Time
+0  Phasanat_4615  PCR Machines  ... 2025-05-15 11:00:00 2025-05-15 14:00:00
+
+[1 rows x 5 columns]"
