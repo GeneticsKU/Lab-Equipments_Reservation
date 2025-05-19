@@ -11124,3 +11124,4 @@ Name: 1573, dtype: object"
 0  Nattawut_4507  PCR Machines  ... 2025-05-19 14:00:00 2025-05-19 17:00:00
 
 [1 rows x 5 columns]"
+2025-05-19 13:41:50,Add Reservation,Arisa_4505,"{'Name': 'Arisa_4505', 'Room': 'Central Lab, 5th floor', 'Equipments': 'Incubator Shaker 2', 'Start_Time': datetime.datetime(2025, 5, 19, 16, 0), 'End_Time': datetime.datetime(2025, 5, 19, 23, 45)}"
