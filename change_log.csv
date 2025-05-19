@@ -11101,3 +11101,4 @@ Name: 1573, dtype: object"
 2025-05-16 15:09:29,Add Reservation,Janejira_4612,"{'Name': 'Janejira_4612', 'Room': 'Microscope Room, 5th floor', 'Equipments': 'Fluorescence Microscope (Contact before use)', 'Start_Time': datetime.datetime(2025, 5, 21, 14, 0), 'End_Time': datetime.datetime(2025, 5, 21, 17, 0)}"
 2025-05-19 00:05:31,Add Reservation,Pawida_4606,"          Name          Room Equipments          Start_Time            End_Time
 0  Pawida_4606  PCR Machines     PCR 15 2025-05-19 11:00:00 2025-05-19 14:00:00"
+2025-05-19 08:25:41,Add Reservation,Apimon_4612,"{'Name': 'Apimon_4612', 'Room': 'Hallway, 6th floor', 'Equipments': 'Autoclave 5 (Drain the water every 5 times after using)', 'Start_Time': datetime.datetime(2025, 5, 19, 9, 0), 'End_Time': datetime.datetime(2025, 5, 19, 11, 0)}"
