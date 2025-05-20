@@ -11192,3 +11192,7 @@ Name: 2614, dtype: object"
 0  Leela_4606  PCR Machines     PCR 14 2025-05-20 11:00:00 2025-05-20 14:00:00"
 2025-05-20 10:24:15,Add Reservation,chomphoonut_4607,"{'Name': 'chomphoonut_4607', 'Room': 'Central Lab, 6th floor', 'Equipments': 'Fume Hood', 'Start_Time': datetime.datetime(2025, 5, 20, 10, 30), 'End_Time': datetime.datetime(2025, 5, 20, 12, 0)}"
 2025-05-20 10:41:17,Add Reservation,Karan_4503,"{'Name': 'Karan_4503', 'Room': 'Hallway, 6th floor', 'Equipments': 'Autoclave 3 (Drain the water every 5 times after using)', 'Start_Time': datetime.datetime(2025, 5, 20, 13, 0), 'End_Time': datetime.datetime(2025, 5, 20, 15, 30)}"
+2025-05-20 11:08:29,Add Reservation,Nicharee_4606,"            Name          Room  ...          Start_Time            End_Time
+0  Nicharee_4606  PCR Machines  ... 2025-05-21 11:00:00 2025-05-21 14:00:00
+
+[1 rows x 5 columns]"
