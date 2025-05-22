@@ -11247,3 +11247,4 @@ Equipments    Autoclave 5 (Drain the water every 5 times aft...
 Start_Time                                  2025-05-22 10:00:00
 End_Time                                    2025-05-22 12:00:00
 Name: 2631, dtype: object"
+2025-05-22 07:20:24,Add Reservation,Apimon_4612,"{'Name': 'Apimon_4612', 'Room': 'Hallway, 6th floor', 'Equipments': 'Autoclave 6 (Drain the water every 5 times after using)', 'Start_Time': datetime.datetime(2025, 5, 22, 10, 0), 'End_Time': datetime.datetime(2025, 5, 22, 12, 0)}"
