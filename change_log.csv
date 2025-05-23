@@ -11283,3 +11283,9 @@ Name: 1606, dtype: object"
 2025-05-23 08:41:51,Add Reservation,Apimon_4612,"{'Name': 'Apimon_4612', 'Room': 'Central Lab, 6th floor', 'Equipments': 'Laminar flow', 'Start_Time': datetime.datetime(2025, 5, 23, 11, 0), 'End_Time': datetime.datetime(2025, 5, 23, 14, 0)}"
 2025-05-23 09:26:43,Add Reservation,Kanjanabhorn_4615,"{'Name': 'Kanjanabhorn_4615', 'Room': 'Central Lab, 6th floor', 'Equipments': 'Digital Dry Bath 1', 'Start_Time': datetime.datetime(2025, 5, 23, 12, 45), 'End_Time': datetime.datetime(2025, 5, 23, 14, 0)}"
 2025-05-23 09:27:38,Add Reservation,Kanjanabhorn_4615,"{'Name': 'Kanjanabhorn_4615', 'Room': 'Central Lab, 6th floor', 'Equipments': 'Refrigerated Centrifuge 1', 'Start_Time': datetime.datetime(2025, 5, 23, 12, 30), 'End_Time': datetime.datetime(2025, 5, 23, 17, 0)}"
+2025-05-23 09:28:41,Delete Reservation,Kanjanabhorn_4615,"Details: Name               Kanjanabhorn_4615
+Room          Central Lab, 6th floor
+Equipments        Digital Dry Bath 1
+Start_Time       2025-05-23 12:45:00
+End_Time         2025-05-23 14:00:00
+Name: 2641, dtype: object"
