@@ -11333,3 +11333,9 @@ Equipments        Incubator Shaker 1
 Start_Time       2025-05-27 15:00:00
 End_Time         2025-05-27 23:45:00
 Name: 2650, dtype: object"
+2025-05-26 09:56:22,Delete Reservation,Sukhita_4612,"Details: Name                    Sukhita_4612
+Room          Central Lab, 5th floor
+Equipments        Incubator Shaker 1
+Start_Time       2025-05-28 00:00:00
+End_Time         2025-05-28 23:45:00
+Name: 2650, dtype: object"
