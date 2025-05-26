@@ -11384,3 +11384,4 @@ Name: 1611, dtype: object"
 
 [1 rows x 5 columns]"
 2025-05-26 17:06:10,Add Reservation,Janejira_4612,"{'Name': 'Janejira_4612', 'Room': 'Microscope Room, 5th floor', 'Equipments': 'Fluorescence Microscope (Contact before use)', 'Start_Time': datetime.datetime(2025, 5, 28, 10, 0), 'End_Time': datetime.datetime(2025, 5, 28, 12, 0)}"
+2025-05-26 17:41:42,Add Reservation,Sukhita_4612,"{'Name': 'Sukhita_4612', 'Room': 'Microscope Room, 5th floor', 'Equipments': 'Stereo Microscope', 'Start_Time': datetime.datetime(2025, 5, 28, 9, 30), 'End_Time': datetime.datetime(2025, 5, 28, 14, 30)}"
