@@ -11339,3 +11339,4 @@ Equipments        Incubator Shaker 1
 Start_Time       2025-05-28 00:00:00
 End_Time         2025-05-28 23:45:00
 Name: 2650, dtype: object"
+2025-05-26 09:58:06,Add Reservation,Sukhita_4612,"{'Name': 'Sukhita_4612', 'Room': 'Central Lab, 5th floor', 'Equipments': 'Incubator Shaker 1', 'Start_Time': datetime.datetime(2025, 5, 28, 15, 0), 'End_Time': datetime.datetime(2025, 5, 28, 23, 45)}"
