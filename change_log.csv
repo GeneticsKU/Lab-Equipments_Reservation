@@ -11315,3 +11315,9 @@ Name: 2641, dtype: object"
 2025-05-26 09:48:37,Add Reservation,Sukhita_4612,"{'Name': 'Sukhita_4612', 'Room': 'Central Lab, 5th floor', 'Equipments': 'Incubator Shaker 1', 'Start_Time': datetime.datetime(2025, 5, 28, 0, 0), 'End_Time': datetime.datetime(2025, 5, 28, 23, 45)}"
 2025-05-26 09:49:07,Add Reservation,Sukhita_4612,"{'Name': 'Sukhita_4612', 'Room': 'Central Lab, 5th floor', 'Equipments': 'Incubator Shaker 1', 'Start_Time': datetime.datetime(2025, 5, 29, 0, 0), 'End_Time': datetime.datetime(2025, 5, 29, 23, 45)}"
 2025-05-26 09:49:42,Add Reservation,Sukhita_4612,"{'Name': 'Sukhita_4612', 'Room': 'Central Lab, 5th floor', 'Equipments': 'Incubator Shaker 1', 'Start_Time': datetime.datetime(2025, 5, 30, 0, 0), 'End_Time': datetime.datetime(2025, 5, 30, 10, 0)}"
+2025-05-26 09:50:19,Delete Reservation,Sukhita_4612,"Details: Name                    Sukhita_4612
+Room          Central Lab, 5th floor
+Equipments        Incubator Shaker 1
+Start_Time       2025-05-30 00:00:00
+End_Time         2025-05-30 10:00:00
+Name: 2653, dtype: object"
