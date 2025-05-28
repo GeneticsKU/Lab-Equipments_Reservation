@@ -11444,3 +11444,4 @@ Name: 1611, dtype: object"
 
 [1 rows x 5 columns]"
 2025-05-28 17:52:52,Add Reservation,Sirithorn_4606,"{'Name': 'Sirithorn_4606', 'Room': 'Central Lab, 6th floor', 'Equipments': 'Digital Dry Bath 2', 'Start_Time': datetime.datetime(2025, 5, 29, 13, 0), 'End_Time': datetime.datetime(2025, 5, 29, 16, 0)}"
+2025-05-28 17:53:50,Add Reservation,Sirithorn_4606,"{'Name': 'Sirithorn_4606', 'Room': 'Central Lab, 6th floor', 'Equipments': 'Centrifuge 2', 'Start_Time': datetime.datetime(2025, 5, 29, 14, 30), 'End_Time': datetime.datetime(2025, 5, 29, 17, 0)}"
