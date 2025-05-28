@@ -11428,3 +11428,4 @@ Name: 1611, dtype: object"
 0  Jantanipa_4607  PCR Machines  ... 2025-05-28 14:00:00 2025-05-28 17:00:00
 
 [1 rows x 5 columns]"
+2025-05-28 12:45:57,Add Reservation,Jantanipa_4607,"{'Name': 'Jantanipa_4607', 'Room': 'Hallway, 6th floor', 'Equipments': 'Autoclave 3 (Drain the water every 5 times after using)', 'Start_Time': datetime.datetime(2025, 5, 28, 13, 0), 'End_Time': datetime.datetime(2025, 5, 28, 15, 0)}"
