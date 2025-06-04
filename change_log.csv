@@ -11580,3 +11580,9 @@ Name: 1641, dtype: object"
 0  Pawida_4606  PCR Machines     PCR 15 2025-06-05 11:00:00 2025-06-05 14:00:00"
 2025-06-04 22:08:22,Add Reservation,Pawida_4606,"          Name          Room Equipments          Start_Time            End_Time
 0  Pawida_4606  PCR Machines     PCR 16 2025-06-05 14:00:00 2025-06-05 17:00:00"
+2025-06-04 22:10:47,Delete Reservation,Pawida_4606,"Details: Name                  Pawida_4606
+Room                 PCR Machines
+Equipments                 PCR 15
+Start_Time    2025-06-05 11:00:00
+End_Time      2025-06-05 14:00:00
+Name: 1650, dtype: object"
