@@ -11576,3 +11576,5 @@ Name: 1641, dtype: object"
 
 [1 rows x 5 columns]"
 2025-06-04 21:11:33,Add Reservation,Chanikarn_4511,"{'Name': 'Chanikarn_4511', 'Room': 'Central Lab, 6th floor', 'Equipments': 'Laminar flow', 'Start_Time': datetime.datetime(2025, 6, 5, 10, 0), 'End_Time': datetime.datetime(2025, 6, 5, 15, 0)}"
+2025-06-04 21:58:54,Add Reservation,Pawida_4606,"          Name          Room Equipments          Start_Time            End_Time
+0  Pawida_4606  PCR Machines     PCR 15 2025-06-05 11:00:00 2025-06-05 14:00:00"
