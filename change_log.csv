@@ -11630,3 +11630,4 @@ Name: 1649, dtype: object"
 0  Sirithorn_4606  PCR Machines  ... 2025-06-06 14:00:00 2025-06-06 17:00:00
 
 [1 rows x 5 columns]"
+2025-06-05 15:41:01,Add Reservation,Apimon_4612,"{'Name': 'Apimon_4612', 'Room': 'Central Lab, 5th floor', 'Equipments': 'Incubator Shaker 1', 'Start_Time': datetime.datetime(2025, 6, 11, 13, 0), 'End_Time': datetime.datetime(2025, 6, 11, 23, 45)}"
