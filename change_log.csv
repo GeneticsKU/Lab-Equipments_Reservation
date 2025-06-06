@@ -11651,3 +11651,4 @@ Name: 2725, dtype: object"
 
 [1 rows x 5 columns]"
 2025-06-06 10:59:42,Add Reservation,Sukhita_4612,"{'Name': 'Sukhita_4612', 'Room': 'Central Lab, 6th floor', 'Equipments': 'Ultrasonic Processors', 'Start_Time': datetime.datetime(2025, 6, 6, 13, 0), 'End_Time': datetime.datetime(2025, 6, 6, 14, 0)}"
+2025-06-06 11:01:42,Add Reservation,Sukhita_4612,"{'Name': 'Sukhita_4612', 'Room': 'Central Lab, 6th floor', 'Equipments': 'Vacuum Pump', 'Start_Time': datetime.datetime(2025, 6, 6, 13, 30), 'End_Time': datetime.datetime(2025, 6, 6, 14, 45)}"
