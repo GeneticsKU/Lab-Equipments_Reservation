@@ -11671,3 +11671,9 @@ Equipments        Incubator Shaker 1
 Start_Time       2025-06-12 00:00:00
 End_Time         2025-06-12 23:45:00
 Name: 2725, dtype: object"
+2025-06-06 13:07:09,Delete Reservation,Apimon_4612,"Details: Name                     Apimon_4612
+Room          Central Lab, 5th floor
+Equipments        Incubator Shaker 1
+Start_Time       2025-06-13 00:00:00
+End_Time         2025-06-13 17:00:00
+Name: 2725, dtype: object"
