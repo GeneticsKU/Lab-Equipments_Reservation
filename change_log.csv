@@ -11680,3 +11680,7 @@ Name: 2725, dtype: object"
 2025-06-06 13:08:12,Add Reservation,Apimon_4612,"{'Name': 'Apimon_4612', 'Room': 'Central Lab, 5th floor', 'Equipments': 'Incubator Shaker 1', 'Start_Time': datetime.datetime(2025, 6, 9, 15, 0), 'End_Time': datetime.datetime(2025, 6, 9, 23, 45)}"
 2025-06-06 13:08:33,Add Reservation,Apimon_4612,"{'Name': 'Apimon_4612', 'Room': 'Central Lab, 5th floor', 'Equipments': 'Incubator Shaker 1', 'Start_Time': datetime.datetime(2025, 6, 10, 0, 0), 'End_Time': datetime.datetime(2025, 6, 10, 23, 45)}"
 2025-06-06 13:08:54,Add Reservation,Apimon_4612,"{'Name': 'Apimon_4612', 'Room': 'Central Lab, 5th floor', 'Equipments': 'Incubator Shaker 1', 'Start_Time': datetime.datetime(2025, 6, 11, 0, 0), 'End_Time': datetime.datetime(2025, 6, 11, 16, 0)}"
+2025-06-07 10:58:44,Add Reservation,Nattawut_4507,"            Name          Room  ...          Start_Time            End_Time
+0  Nattawut_4507  PCR Machines  ... 2025-06-07 11:00:00 2025-06-07 14:00:00
+
+[1 rows x 5 columns]"
