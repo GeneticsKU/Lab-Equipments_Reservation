@@ -11727,3 +11727,4 @@ Equipments              Laminar flow
 Start_Time       2025-06-13 13:00:00
 End_Time         2025-06-13 16:30:00
 Name: 2744, dtype: object"
+2025-06-10 15:52:37,Add Reservation,Karan_4503,"{'Name': 'Karan_4503', 'Room': 'Hallway, 6th floor', 'Equipments': 'Autoclave 6 (Drain the water every 5 times after using)', 'Start_Time': datetime.datetime(2025, 6, 11, 13, 0), 'End_Time': datetime.datetime(2025, 6, 11, 14, 30)}"
