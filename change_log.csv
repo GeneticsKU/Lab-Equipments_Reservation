@@ -11747,3 +11747,5 @@ Equipments                 PCR 16
 Start_Time    2025-06-11 08:00:00
 End_Time      2025-06-11 11:00:00
 Name: 1668, dtype: object"
+2025-06-11 08:40:39,Add Reservation,Pawida_4606,"          Name          Room Equipments          Start_Time            End_Time
+0  Pawida_4606  PCR Machines     PCR 16 2025-06-11 11:00:00 2025-06-11 14:00:00"
