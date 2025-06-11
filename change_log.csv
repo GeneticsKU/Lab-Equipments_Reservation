@@ -11762,3 +11762,7 @@ Equipments                 PCR 12
 Start_Time    2025-06-11 14:00:00
 End_Time      2025-06-11 17:00:00
 Name: 1667, dtype: object"
+2025-06-11 15:01:35,Add Reservation,Sukhita_4612,"           Name          Room  ...          Start_Time            End_Time
+0  Sukhita_4612  PCR Machines  ... 2025-06-12 11:00:00 2025-06-12 14:00:00
+
+[1 rows x 5 columns]"
