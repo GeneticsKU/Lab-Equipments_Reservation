@@ -11788,3 +11788,7 @@ Name: 2757, dtype: object"
 [1 rows x 5 columns]"
 2025-06-12 10:14:16,Add Reservation,Pawida_4606,"          Name          Room Equipments          Start_Time            End_Time
 0  Pawida_4606  PCR Machines     PCR 14 2025-06-12 11:00:00 2025-06-12 14:00:00"
+2025-06-12 11:07:24,Add Reservation,Tanatad_4606,"           Name          Room  ...          Start_Time            End_Time
+0  Tanatad_4606  PCR Machines  ... 2025-06-12 14:00:00 2025-06-12 17:00:00
+
+[1 rows x 5 columns]"
