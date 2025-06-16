@@ -11915,3 +11915,7 @@ Name: 2773, dtype: object"
 
 [1 rows x 5 columns]"
 2025-06-16 10:39:39,Add Reservation,Dechaphon_4612,"{'Name': 'Dechaphon_4612', 'Room': 'Central Lab, 5th floor', 'Equipments': 'Incubator Shaker 2', 'Start_Time': datetime.datetime(2025, 6, 22, 0, 0), 'End_Time': datetime.datetime(2025, 6, 22, 23, 45)}"
+2025-06-16 10:47:02,Add Reservation,Nattawut_4507,"            Name          Room  ...          Start_Time            End_Time
+0  Nattawut_4507  PCR Machines  ... 2025-06-16 11:00:00 2025-06-16 14:00:00
+
+[1 rows x 5 columns]"
