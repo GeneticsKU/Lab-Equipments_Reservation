@@ -11905,3 +11905,7 @@ Name: 2773, dtype: object"
 2025-06-16 10:39:13,Add Reservation,Tanatad_4606,"{'Name': 'Tanatad_4606', 'Room': 'Central Lab, 6th floor', 'Equipments': 'Digital Dry Bath 2', 'Start_Time': datetime.datetime(2025, 6, 16, 12, 0), 'End_Time': datetime.datetime(2025, 6, 16, 13, 0)}"
 2025-06-16 10:39:18,Add Reservation,Dechaphon_4612,"{'Name': 'Dechaphon_4612', 'Room': 'Central Lab, 5th floor', 'Equipments': 'Incubator Shaker 2', 'Start_Time': datetime.datetime(2025, 6, 19, 0, 0), 'End_Time': datetime.datetime(2025, 6, 19, 23, 45)}"
 2025-06-16 10:39:23,Add Reservation,Dechaphon_4612,"{'Name': 'Dechaphon_4612', 'Room': 'Central Lab, 5th floor', 'Equipments': 'Incubator Shaker 2', 'Start_Time': datetime.datetime(2025, 6, 20, 0, 0), 'End_Time': datetime.datetime(2025, 6, 20, 23, 45)}"
+2025-06-16 10:39:24,Add Reservation,Janejira_4612,"            Name          Room  ...          Start_Time            End_Time
+0  Janejira_4612  PCR Machines  ... 2025-06-16 11:00:00 2025-06-16 14:00:00
+
+[1 rows x 5 columns]"
