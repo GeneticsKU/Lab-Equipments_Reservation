@@ -11887,3 +11887,9 @@ Equipments        Incubator Shaker 1
 Start_Time       2025-06-17 00:00:00
 End_Time         2025-06-17 23:45:00
 Name: 2773, dtype: object"
+2025-06-16 10:01:53,Delete Reservation,Siwapohn_4505,"Details: Name                   Siwapohn_4505
+Room          Central Lab, 5th floor
+Equipments        Incubator Shaker 1
+Start_Time       2025-06-18 00:00:00
+End_Time         2025-06-18 23:45:00
+Name: 2773, dtype: object"
