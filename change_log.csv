@@ -11899,3 +11899,4 @@ Equipments        Incubator Shaker 1
 Start_Time       2025-06-19 00:00:00
 End_Time         2025-06-19 23:45:00
 Name: 2773, dtype: object"
+2025-06-16 10:06:24,Add Reservation,Dechaphon_4612,"{'Name': 'Dechaphon_4612', 'Room': 'Hallway, 6th floor', 'Equipments': 'Autoclave 5 (Drain the water every 5 times after using)', 'Start_Time': datetime.datetime(2025, 6, 16, 10, 15), 'End_Time': datetime.datetime(2025, 6, 16, 12, 0)}"
