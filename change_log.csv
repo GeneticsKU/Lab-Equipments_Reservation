@@ -11991,3 +11991,4 @@ Name: 1689, dtype: object"
 0  Wuthichai_4505  PCR Machines  ... 2025-06-17 11:00:00 2025-06-17 14:00:00
 
 [1 rows x 5 columns]"
+2025-06-17 11:20:34,Add Reservation,chomphoonut_4607,"{'Name': 'chomphoonut_4607', 'Room': 'Hallway, 6th floor', 'Equipments': 'Autoclave 3 (Drain the water every 5 times after using)', 'Start_Time': datetime.datetime(2025, 6, 17, 13, 0), 'End_Time': datetime.datetime(2025, 6, 17, 15, 0)}"
