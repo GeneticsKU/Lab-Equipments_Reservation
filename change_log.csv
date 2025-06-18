@@ -12098,3 +12098,4 @@ Equipments                 PCR 17
 Start_Time    2025-06-18 11:00:00
 End_Time      2025-06-18 14:00:00
 Name: 1711, dtype: object"
+2025-06-18 11:44:18,Add Reservation,Pawida_4606,"{'Name': 'Pawida_4606', 'Room': 'Central Lab, 6th floor', 'Equipments': 'Refrigerated Centrifuge 1', 'Start_Time': datetime.datetime(2025, 6, 18, 12, 15), 'End_Time': datetime.datetime(2025, 6, 18, 13, 15)}"
