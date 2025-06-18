@@ -12078,3 +12078,7 @@ Name: 2779, dtype: object"
 [1 rows x 5 columns]"
 2025-06-18 09:44:03,Add Reservation,Pawida_4606,"{'Name': 'Pawida_4606', 'Room': 'Central Lab, 6th floor', 'Equipments': 'Centrifuge 2', 'Start_Time': datetime.datetime(2025, 6, 18, 9, 45), 'End_Time': datetime.datetime(2025, 6, 18, 12, 0)}"
 2025-06-18 09:53:23,Add Reservation,Pawida_4606,"{'Name': 'Pawida_4606', 'Room': 'Central Lab, 6th floor', 'Equipments': 'Fume Hood', 'Start_Time': datetime.datetime(2025, 6, 18, 10, 0), 'End_Time': datetime.datetime(2025, 6, 18, 10, 15)}"
+2025-06-18 10:21:01,Add Reservation,Anongpat_4612,"            Name          Room  ...          Start_Time            End_Time
+0  Anongpat_4612  PCR Machines  ... 2025-06-18 14:00:00 2025-06-18 17:00:00
+
+[1 rows x 5 columns]"
