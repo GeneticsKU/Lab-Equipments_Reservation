@@ -12076,3 +12076,4 @@ Name: 2779, dtype: object"
 0  Tanatad_4606  PCR Machines  ... 2025-06-18 11:00:00 2025-06-18 14:00:00
 
 [1 rows x 5 columns]"
+2025-06-18 09:44:03,Add Reservation,Pawida_4606,"{'Name': 'Pawida_4606', 'Room': 'Central Lab, 6th floor', 'Equipments': 'Centrifuge 2', 'Start_Time': datetime.datetime(2025, 6, 18, 9, 45), 'End_Time': datetime.datetime(2025, 6, 18, 12, 0)}"
