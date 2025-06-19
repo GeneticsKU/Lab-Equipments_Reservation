@@ -12139,3 +12139,4 @@ Start_Time    2025-06-19 11:00:00
 End_Time      2025-06-19 14:00:00
 Name: 1718, dtype: object"
 2025-06-19 10:00:12,Add Reservation,Leela_4606,"{'Name': 'Leela_4606', 'Room': 'Central Lab, 6th floor', 'Equipments': 'Fume Hood', 'Start_Time': datetime.datetime(2025, 6, 19, 10, 30), 'End_Time': datetime.datetime(2025, 6, 19, 11, 0)}"
+2025-06-19 10:00:33,Add Reservation,Napassorn_4505,"{'Name': 'Napassorn_4505', 'Room': 'Central Lab, 5th floor', 'Equipments': 'Incubator Shaker 2', 'Start_Time': datetime.datetime(2025, 6, 19, 10, 30), 'End_Time': datetime.datetime(2025, 6, 19, 15, 0)}"
