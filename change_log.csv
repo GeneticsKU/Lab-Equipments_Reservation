@@ -12130,3 +12130,4 @@ Name: 1711, dtype: object"
 0  Pawida_4606  PCR Machines     PCR 15 2025-06-19 11:00:00 2025-06-19 14:00:00"
 2025-06-19 00:02:33,Add Reservation,Pawida_4606,"          Name          Room Equipments          Start_Time            End_Time
 0  Pawida_4606  PCR Machines     PCR 16 2025-06-19 11:00:00 2025-06-19 14:00:00"
+2025-06-19 08:33:08,Add Reservation,Leela_4606,"{'Name': 'Leela_4606', 'Room': 'Central Lab, 6th floor', 'Equipments': 'Digital Dry Bath 3', 'Start_Time': datetime.datetime(2025, 6, 19, 9, 0), 'End_Time': datetime.datetime(2025, 6, 19, 10, 15)}"
