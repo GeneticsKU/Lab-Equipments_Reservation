@@ -12167,3 +12167,7 @@ Name: 1718, dtype: object"
 0  Phasanat_4615  PCR Machines  ... 2025-06-22 08:00:00 2025-06-22 11:00:00
 
 [1 rows x 5 columns]"
+2025-06-22 11:22:49,Add Reservation,Phasanat_4615,"            Name          Room  ...          Start_Time            End_Time
+0  Phasanat_4615  PCR Machines  ... 2025-06-22 11:00:00 2025-06-22 14:00:00
+
+[1 rows x 5 columns]"
