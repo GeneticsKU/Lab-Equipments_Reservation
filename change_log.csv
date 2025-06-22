@@ -12163,3 +12163,7 @@ Name: 1718, dtype: object"
 2025-06-21 20:55:47,Add Reservation,Siwapohn_4505,"{'Name': 'Siwapohn_4505', 'Room': 'Central Lab, 5th floor', 'Equipments': 'Incubator Shaker 1', 'Start_Time': datetime.datetime(2025, 6, 22, 0, 0), 'End_Time': datetime.datetime(2025, 6, 22, 23, 45)}"
 2025-06-21 20:55:54,Add Reservation,Siwapohn_4505,"{'Name': 'Siwapohn_4505', 'Room': 'Central Lab, 5th floor', 'Equipments': 'Incubator Shaker 1', 'Start_Time': datetime.datetime(2025, 6, 23, 0, 0), 'End_Time': datetime.datetime(2025, 6, 23, 23, 45)}"
 2025-06-21 20:56:01,Add Reservation,Siwapohn_4505,"{'Name': 'Siwapohn_4505', 'Room': 'Central Lab, 5th floor', 'Equipments': 'Incubator Shaker 1', 'Start_Time': datetime.datetime(2025, 6, 24, 0, 0), 'End_Time': datetime.datetime(2025, 6, 24, 23, 45)}"
+2025-06-22 09:27:21,Add Reservation,Phasanat_4615,"            Name          Room  ...          Start_Time            End_Time
+0  Phasanat_4615  PCR Machines  ... 2025-06-22 08:00:00 2025-06-22 11:00:00
+
+[1 rows x 5 columns]"
