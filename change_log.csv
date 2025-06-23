@@ -12172,3 +12172,4 @@ Name: 1718, dtype: object"
 
 [1 rows x 5 columns]"
 2025-06-22 22:33:00,Add Reservation,Apimon_4612,"{'Name': 'Apimon_4612', 'Room': 'Central Lab, 6th floor', 'Equipments': 'Laminar flow', 'Start_Time': datetime.datetime(2025, 6, 23, 10, 0), 'End_Time': datetime.datetime(2025, 6, 23, 16, 0)}"
+2025-06-23 09:05:56,Add Reservation,Supanida_4511,"{'Name': 'Supanida_4511', 'Room': 'BSL-2', 'Equipments': 'BSC-1', 'Start_Time': datetime.datetime(2025, 6, 23, 10, 30), 'End_Time': datetime.datetime(2025, 6, 23, 13, 30)}"
