@@ -12187,3 +12187,5 @@ Name: 1718, dtype: object"
 2025-06-24 08:31:46,Add Reservation,Leela_4606,"         Name          Room Equipments          Start_Time            End_Time
 0  Leela_4606  PCR Machines     PCR 11 2025-06-24 11:00:00 2025-06-24 14:00:00"
 2025-06-24 08:38:26,Add Reservation,Supanida_4511,"{'Name': 'Supanida_4511', 'Room': 'BSL-2', 'Equipments': 'BSC-1', 'Start_Time': datetime.datetime(2025, 6, 24, 8, 40), 'End_Time': datetime.datetime(2025, 6, 24, 10, 0)}"
+2025-06-24 09:08:07,Add Reservation,Leela_4606,"         Name          Room Equipments          Start_Time            End_Time
+0  Leela_4606  PCR Machines     PCR 13 2025-06-24 11:00:00 2025-06-24 14:00:00"
