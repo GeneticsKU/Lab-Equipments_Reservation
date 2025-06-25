@@ -12231,3 +12231,9 @@ Equipments                  BSC-2
 Start_Time    2025-06-26 09:00:00
 End_Time      2025-06-26 16:00:00
 Name: 2837, dtype: object"
+2025-06-25 10:54:36,Delete Reservation,chomphoonut_4607,"Details: Name                                           chomphoonut_4607
+Room                                         Hallway, 6th floor
+Equipments    Autoclave 3 (Drain the water every 5 times aft...
+Start_Time                                  2025-06-25 11:00:00
+End_Time                                    2025-06-25 13:00:00
+Name: 2837, dtype: object"
