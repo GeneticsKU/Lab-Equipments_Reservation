@@ -12225,3 +12225,9 @@ Name: 2834, dtype: object"
 0  Phasanat_4615  PCR Machines  ... 2025-06-25 11:00:00 2025-06-25 14:00:00
 
 [1 rows x 5 columns]"
+2025-06-25 10:54:32,Delete Reservation,chomphoonut_4607,"Details: Name             chomphoonut_4607
+Room                        BSL-2
+Equipments                  BSC-2
+Start_Time    2025-06-26 09:00:00
+End_Time      2025-06-26 16:00:00
+Name: 2837, dtype: object"
