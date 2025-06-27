@@ -12311,3 +12311,9 @@ Name: 2853, dtype: object"
 0  Pawaree_4612  PCR Machines  ... 2025-06-27 11:00:00 2025-06-27 14:00:00
 
 [1 rows x 5 columns]"
+2025-06-27 09:30:08,Delete Reservation,Issariya_4612,"Details: Name                Issariya_4612
+Room                 PCR Machines
+Equipments                 PCR 15
+Start_Time    2025-06-27 11:00:00
+End_Time      2025-06-27 14:00:00
+Name: 1740, dtype: object"
