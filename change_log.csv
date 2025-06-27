@@ -12339,3 +12339,4 @@ End_Time                                    2025-06-27 14:30:00
 Name: 2859, dtype: object"
 2025-06-27 11:56:35,Add Reservation,Thanathip_4505,"{'Name': 'Thanathip_4505', 'Room': 'Hallway, 6th floor', 'Equipments': 'Autoclave For Waste (Drain the water everytime after using)', 'Start_Time': datetime.datetime(2025, 6, 27, 13, 30), 'End_Time': datetime.datetime(2025, 6, 27, 15, 0)}"
 2025-06-27 12:18:27,Add Reservation,Sukhita_4612,"{'Name': 'Sukhita_4612', 'Room': 'Central Lab, 6th floor', 'Equipments': 'Ultrasonic Processors', 'Start_Time': datetime.datetime(2025, 6, 27, 13, 0), 'End_Time': datetime.datetime(2025, 6, 27, 13, 45)}"
+2025-06-27 12:20:10,Add Reservation,Sukhita_4612,"{'Name': 'Sukhita_4612', 'Room': 'Central Lab, 6th floor', 'Equipments': 'Vacuum Pump', 'Start_Time': datetime.datetime(2025, 6, 27, 13, 15), 'End_Time': datetime.datetime(2025, 6, 27, 14, 15)}"
