@@ -12394,3 +12394,5 @@ Equipments        Digital Dry Bath 2
 Start_Time       2025-06-30 13:00:00
 End_Time         2025-06-30 14:00:00
 Name: 2871, dtype: object"
+2025-06-30 13:23:31,Add Reservation,Pasin_4607,"         Name          Room Equipments          Start_Time            End_Time
+0  Pasin_4607  PCR Machines     PCR 10 2025-06-30 14:00:00 2025-06-30 17:00:00"
