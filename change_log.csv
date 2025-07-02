@@ -12427,3 +12427,4 @@ Equipments    Refrigerated Centrifuge 1
 Start_Time          2025-07-02 13:00:00
 End_Time            2025-07-02 16:00:00
 Name: 2876, dtype: object"
+2025-07-02 07:52:30,Add Reservation,Janejira_4612,"{'Name': 'Janejira_4612', 'Room': 'Central Lab, 6th floor', 'Equipments': 'Refrigerated Centrifuge 1', 'Start_Time': datetime.datetime(2025, 7, 2, 13, 30), 'End_Time': datetime.datetime(2025, 7, 2, 16, 0)}"
