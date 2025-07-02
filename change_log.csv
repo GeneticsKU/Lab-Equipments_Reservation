@@ -12442,3 +12442,9 @@ Name: 2876, dtype: object"
 0  Wuthichai_4505  PCR Machines  ... 2025-07-02 11:00:00 2025-07-02 14:00:00
 
 [1 rows x 5 columns]"
+2025-07-02 10:24:26,Delete Reservation,Phasanat_4615,"Details: Name                   Phasanat_4615
+Room          Central Lab, 6th floor
+Equipments              Laminar flow
+Start_Time       2025-07-02 10:00:00
+End_Time         2025-07-02 17:00:00
+Name: 2878, dtype: object"
