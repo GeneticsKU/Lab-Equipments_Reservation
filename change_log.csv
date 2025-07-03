@@ -12470,3 +12470,9 @@ Name: 2878, dtype: object"
 0  Leela_4606  PCR Machines     PCR 15 2025-07-03 11:00:00 2025-07-03 14:00:00"
 2025-07-03 08:44:40,Add Reservation,Leela_4606,"         Name          Room Equipments          Start_Time            End_Time
 0  Leela_4606  PCR Machines     PCR 13 2025-07-03 11:00:00 2025-07-03 14:00:00"
+2025-07-03 09:26:44,Delete Reservation,chomphoonut_4607,"Details: Name                                           chomphoonut_4607
+Room                                         Hallway, 6th floor
+Equipments    Autoclave 5 (Drain the water every 5 times aft...
+Start_Time                                  2025-07-03 11:00:00
+End_Time                                    2025-07-03 13:00:00
+Name: 2884, dtype: object"
