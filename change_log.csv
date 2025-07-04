@@ -12506,3 +12506,7 @@ Equipments                 PCR 15
 Start_Time    2025-07-04 11:00:00
 End_Time      2025-07-04 14:00:00
 Name: 1770, dtype: object"
+2025-07-04 10:19:27,Add Reservation,Kanokwan_4507,"            Name          Room  ...          Start_Time            End_Time
+0  Kanokwan_4507  PCR Machines  ... 2025-07-04 14:00:00 2025-07-04 17:00:00
+
+[1 rows x 5 columns]"
