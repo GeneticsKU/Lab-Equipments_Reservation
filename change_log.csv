@@ -12524,3 +12524,4 @@ End_Time      2025-07-04 17:00:00
 Name: 1770, dtype: object"
 2025-07-04 13:49:10,Add Reservation,Wuthichai_4505,"{'Name': 'Wuthichai_4505', 'Room': 'BSL-2', 'Equipments': 'BSC-2', 'Start_Time': datetime.datetime(2025, 7, 4, 14, 0), 'End_Time': datetime.datetime(2025, 7, 4, 16, 0)}"
 2025-07-04 14:40:44,Add Reservation,Nghiep_Mai_Nguyen_4503,"{'Name': 'Nghiep_Mai_Nguyen_4503', 'Room': 'Central Lab, 6th floor', 'Equipments': 'BioSpectrometer', 'Start_Time': datetime.datetime(2025, 7, 4, 15, 0), 'End_Time': datetime.datetime(2025, 7, 4, 16, 0)}"
+2025-07-04 15:37:07,Add Reservation,chomphoonut_4607,"{'Name': 'chomphoonut_4607', 'Room': 'Hallway, 6th floor', 'Equipments': 'Autoclave 3 (Drain the water every 5 times after using)', 'Start_Time': datetime.datetime(2025, 7, 4, 16, 0), 'End_Time': datetime.datetime(2025, 7, 4, 18, 0)}"
