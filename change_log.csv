@@ -12539,3 +12539,7 @@ Name: 1770, dtype: object"
 2025-07-06 21:39:31,Add Reservation,Apimon_4612,"{'Name': 'Apimon_4612', 'Room': 'Central Lab, 6th floor', 'Equipments': 'Refrigerated Centrifuge 4', 'Start_Time': datetime.datetime(2025, 7, 7, 10, 30), 'End_Time': datetime.datetime(2025, 7, 7, 12, 0)}"
 2025-07-07 08:30:39,Add Reservation,Leela_4606,"         Name          Room Equipments          Start_Time            End_Time
 0  Leela_4606  PCR Machines     PCR 14 2025-07-07 11:00:00 2025-07-07 14:00:00"
+2025-07-07 08:54:02,Add Reservation,Janejira_4612,"            Name          Room  ...          Start_Time            End_Time
+0  Janejira_4612  PCR Machines  ... 2025-07-07 11:00:00 2025-07-07 14:00:00
+
+[1 rows x 5 columns]"
