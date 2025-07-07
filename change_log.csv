@@ -12589,3 +12589,9 @@ Equipments                 PCR 11
 Start_Time    2025-07-08 11:00:00
 End_Time      2025-07-08 14:00:00
 Name: 1782, dtype: object"
+2025-07-07 18:13:31,Delete Reservation,Janejira_4612,"Details: Name                Janejira_4612
+Room                 PCR Machines
+Equipments                 PCR 13
+Start_Time    2025-07-08 11:00:00
+End_Time      2025-07-08 14:00:00
+Name: 1782, dtype: object"
