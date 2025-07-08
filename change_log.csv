@@ -12610,3 +12610,4 @@ Name: 2906, dtype: object"
 0  Jantanipa_4607  PCR Machines  ... 2025-07-08 11:00:00 2025-07-08 14:00:00
 
 [1 rows x 5 columns]"
+2025-07-08 12:10:56,Add Reservation,Pasin_4607,"{'Name': 'Pasin_4607', 'Room': 'Central Lab, 6th floor', 'Equipments': 'Digital Dry Bath 2', 'Start_Time': datetime.datetime(2025, 7, 8, 12, 15), 'End_Time': datetime.datetime(2025, 7, 8, 14, 15)}"
