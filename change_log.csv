@@ -12626,3 +12626,7 @@ Name: 2906, dtype: object"
 2025-07-08 14:27:50,Add Reservation,Pasin_4607,"{'Name': 'Pasin_4607', 'Room': 'Central Lab, 6th floor', 'Equipments': 'Centrifuge 3', 'Start_Time': datetime.datetime(2025, 7, 8, 14, 45), 'End_Time': datetime.datetime(2025, 7, 8, 16, 0)}"
 2025-07-08 14:48:53,Add Reservation,Janejira_4612,"{'Name': 'Janejira_4612', 'Room': 'Microscope Room, 5th floor', 'Equipments': 'Fluorescence Microscope (Contact before use)', 'Start_Time': datetime.datetime(2025, 7, 9, 11, 0), 'End_Time': datetime.datetime(2025, 7, 9, 12, 0)}"
 2025-07-08 14:49:03,Add Reservation,Janejira_4612,"{'Name': 'Janejira_4612', 'Room': 'Microscope Room, 5th floor', 'Equipments': 'Fluorescence Microscope (Contact before use)', 'Start_Time': datetime.datetime(2025, 7, 14, 11, 0), 'End_Time': datetime.datetime(2025, 7, 14, 12, 0)}"
+2025-07-08 15:12:28,Add Reservation,Pornchanok_4507,"              Name          Room  ...          Start_Time            End_Time
+0  Pornchanok_4507  PCR Machines  ... 2025-07-08 14:00:00 2025-07-08 17:00:00
+
+[1 rows x 5 columns]"
