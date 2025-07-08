@@ -12595,3 +12595,4 @@ Equipments                 PCR 13
 Start_Time    2025-07-08 11:00:00
 End_Time      2025-07-08 14:00:00
 Name: 1782, dtype: object"
+2025-07-08 08:40:19,Add Reservation,Apimon_4612,"{'Name': 'Apimon_4612', 'Room': 'Central Lab, 6th floor', 'Equipments': 'Refrigerated Centrifuge 2', 'Start_Time': datetime.datetime(2025, 7, 8, 10, 0), 'End_Time': datetime.datetime(2025, 7, 8, 15, 0)}"
