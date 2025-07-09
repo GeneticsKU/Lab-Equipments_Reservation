@@ -12636,3 +12636,4 @@ Name: 2906, dtype: object"
 
 [1 rows x 5 columns]"
 2025-07-09 07:16:42,Add Reservation,Wuthichai_4505,"{'Name': 'Wuthichai_4505', 'Room': 'Central Lab, 6th floor', 'Equipments': 'Ultrasonic Processors', 'Start_Time': datetime.datetime(2025, 7, 9, 8, 30), 'End_Time': datetime.datetime(2025, 7, 9, 10, 30)}"
+2025-07-09 07:17:00,Add Reservation,Wuthichai_4505,"{'Name': 'Wuthichai_4505', 'Room': 'Central Lab, 6th floor', 'Equipments': 'Refrigerated Centrifuge 4', 'Start_Time': datetime.datetime(2025, 7, 9, 8, 30), 'End_Time': datetime.datetime(2025, 7, 9, 10, 30)}"
