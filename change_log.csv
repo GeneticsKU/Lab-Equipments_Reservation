@@ -12658,3 +12658,7 @@ Name: 2906, dtype: object"
 2025-07-09 15:18:48,Add Reservation,Wuthichai_4505,"{'Name': 'Wuthichai_4505', 'Room': 'Central Lab, 5th floor', 'Equipments': 'Centrifuge (swing rotor)', 'Start_Time': datetime.datetime(2025, 7, 9, 15, 30), 'End_Time': datetime.datetime(2025, 7, 9, 15, 45)}"
 2025-07-09 17:26:27,Add Reservation,chomphoonut_4607,"{'Name': 'chomphoonut_4607', 'Room': 'Hallway, 6th floor', 'Equipments': 'Autoclave 4 (Drain the water every 5 times after using)', 'Start_Time': datetime.datetime(2025, 7, 9, 17, 30), 'End_Time': datetime.datetime(2025, 7, 9, 19, 30)}"
 2025-07-10 09:57:23,Add Reservation,Chanikarn_4511,"{'Name': 'Chanikarn_4511', 'Room': 'Central Lab, 6th floor', 'Equipments': 'Laminar flow', 'Start_Time': datetime.datetime(2025, 7, 10, 12, 0), 'End_Time': datetime.datetime(2025, 7, 10, 13, 0)}"
+2025-07-11 08:57:20,Add Reservation,Chanikarn_4511,"             Name          Room  ...          Start_Time            End_Time
+0  Chanikarn_4511  PCR Machines  ... 2025-07-11 08:00:00 2025-07-11 11:00:00
+
+[1 rows x 5 columns]"
