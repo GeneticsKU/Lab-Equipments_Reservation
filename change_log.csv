@@ -12716,3 +12716,9 @@ Name: 1791, dtype: object"
 2025-07-14 15:09:29,Add Reservation,Karan_4503,"{'Name': 'Karan_4503', 'Room': 'Hallway, 6th floor', 'Equipments': 'Autoclave 4 (Drain the water every 5 times after using)', 'Start_Time': datetime.datetime(2025, 7, 14, 15, 15), 'End_Time': datetime.datetime(2025, 7, 14, 16, 45)}"
 2025-07-14 15:09:52,Add Reservation,Karan_4503,"{'Name': 'Karan_4503', 'Room': 'Hallway, 6th floor', 'Equipments': 'Autoclave 7 (Drain the water every 5 times after using)', 'Start_Time': datetime.datetime(2025, 7, 14, 15, 15), 'End_Time': datetime.datetime(2025, 7, 14, 17, 0)}"
 2025-07-14 15:34:38,Add Reservation,Karan_4503,"{'Name': 'Karan_4503', 'Room': 'Hallway, 6th floor', 'Equipments': 'Autoclave 5 (Drain the water every 5 times after using)', 'Start_Time': datetime.datetime(2025, 7, 14, 15, 45), 'End_Time': datetime.datetime(2025, 7, 14, 17, 0)}"
+2025-07-14 15:34:52,Delete Reservation,Karan_4503,"Details: Name                                                 Karan_4503
+Room                                         Hallway, 6th floor
+Equipments    Autoclave 4 (Drain the water every 5 times aft...
+Start_Time                                  2025-07-14 15:15:00
+End_Time                                    2025-07-14 16:45:00
+Name: 2942, dtype: object"
