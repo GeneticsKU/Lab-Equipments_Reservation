@@ -12732,3 +12732,5 @@ Name: 2942, dtype: object"
 0  Sirithorn_4606  PCR Machines  ... 2025-07-15 14:00:00 2025-07-15 17:00:00
 
 [1 rows x 5 columns]"
+2025-07-15 07:57:34,Add Reservation,Leela_4606,"         Name          Room Equipments          Start_Time            End_Time
+0  Leela_4606  PCR Machines     PCR 15 2025-07-15 11:00:00 2025-07-15 14:00:00"
