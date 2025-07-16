@@ -12782,3 +12782,4 @@ Start_Time           2025-07-16 09:45:00
 End_Time             2025-07-16 12:00:00
 Name: 2956, dtype: object"
 2025-07-16 09:44:45,Add Reservation,Wilasinee_4612,"{'Name': 'Wilasinee_4612', 'Room': 'Microscope Room, 5th floor', 'Equipments': 'Stereo Microscope', 'Start_Time': datetime.datetime(2025, 7, 16, 10, 0), 'End_Time': datetime.datetime(2025, 7, 16, 13, 0)}"
+2025-07-16 09:57:05,Add Reservation,Leela_4606,"{'Name': 'Leela_4606', 'Room': 'Central Lab, 6th floor', 'Equipments': 'Digital Dry Bath 3', 'Start_Time': datetime.datetime(2025, 7, 16, 10, 30), 'End_Time': datetime.datetime(2025, 7, 16, 12, 30)}"
