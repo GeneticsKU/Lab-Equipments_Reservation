@@ -12775,3 +12775,9 @@ Name: 2947, dtype: object"
 2025-07-16 09:12:22,Add Reservation,Apimon_4612,"{'Name': 'Apimon_4612', 'Room': 'Central Lab, 6th floor', 'Equipments': 'Laminar flow', 'Start_Time': datetime.datetime(2025, 7, 18, 10, 0), 'End_Time': datetime.datetime(2025, 7, 18, 16, 0)}"
 2025-07-16 09:13:19,Add Reservation,Apimon_4612,"{'Name': 'Apimon_4612', 'Room': 'Central Lab, 6th floor', 'Equipments': 'Refrigerated Centrifuge 4', 'Start_Time': datetime.datetime(2025, 7, 18, 10, 0), 'End_Time': datetime.datetime(2025, 7, 18, 11, 0)}"
 2025-07-16 09:44:11,Add Reservation,Wilasinee_4612,"{'Name': 'Wilasinee_4612', 'Room': 'Microscope Room, 5th floor', 'Equipments': 'Stereo Microscope', 'Start_Time': datetime.datetime(2025, 7, 16, 9, 45), 'End_Time': datetime.datetime(2025, 7, 16, 12, 0)}"
+2025-07-16 09:44:22,Delete Reservation,Wilasinee_4612,"Details: Name                      Wilasinee_4612
+Room          Microscope Room, 5th floor
+Equipments             Stereo Microscope
+Start_Time           2025-07-16 09:45:00
+End_Time             2025-07-16 12:00:00
+Name: 2956, dtype: object"
