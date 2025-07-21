@@ -12902,3 +12902,9 @@ Equipments        Real Time PCR 1
 Start_Time    2025-07-21 08:00:00
 End_Time      2025-07-21 11:00:00
 Name: 1815, dtype: object"
+2025-07-21 09:31:08,Delete Reservation,Tanatad_4606,"Details: Name                    Tanatad_4606
+Room          Central Lab, 6th floor
+Equipments        Digital Dry Bath 3
+Start_Time       2025-07-21 09:15:00
+End_Time         2025-07-21 10:15:00
+Name: 2983, dtype: object"
