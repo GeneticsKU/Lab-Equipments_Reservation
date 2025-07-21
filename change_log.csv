@@ -12915,3 +12915,4 @@ Start_Time       2025-07-21 10:00:00
 End_Time         2025-07-21 11:30:00
 Name: 2983, dtype: object"
 2025-07-21 09:31:51,Add Reservation,Tanatad_4606,"{'Name': 'Tanatad_4606', 'Room': 'Central Lab, 6th floor', 'Equipments': 'Centrifuge 3', 'Start_Time': datetime.datetime(2025, 7, 21, 9, 45), 'End_Time': datetime.datetime(2025, 7, 21, 10, 30)}"
+2025-07-21 09:33:26,Add Reservation,Sukhita_4612,"{'Name': 'Sukhita_4612', 'Room': 'Central Lab, 6th floor', 'Equipments': 'Refrigerated Centrifuge 4', 'Start_Time': datetime.datetime(2025, 7, 21, 9, 45), 'End_Time': datetime.datetime(2025, 7, 21, 10, 15)}"
