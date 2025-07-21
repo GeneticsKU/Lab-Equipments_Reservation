@@ -12896,3 +12896,9 @@ Name: 2973, dtype: object"
 0  Chiratchaya_4511  PCR Machines  ... 2025-07-21 08:00:00 2025-07-21 11:00:00
 
 [1 rows x 5 columns]"
+2025-07-21 09:24:21,Delete Reservation,Chiratchaya_4511,"Details: Name             Chiratchaya_4511
+Room                 PCR Machines
+Equipments        Real Time PCR 1
+Start_Time    2025-07-21 08:00:00
+End_Time      2025-07-21 11:00:00
+Name: 1815, dtype: object"
