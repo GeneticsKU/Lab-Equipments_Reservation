@@ -12963,3 +12963,9 @@ Name: 2981, dtype: object"
 0  Kanokwan_4507  PCR Machines  ... 2025-07-22 11:00:00 2025-07-22 14:00:00
 
 [1 rows x 5 columns]"
+2025-07-22 09:37:18,Delete Reservation,Kanokwan_4507,"Details: Name                Kanokwan_4507
+Room                 PCR Machines
+Equipments                 PCR 14
+Start_Time    2025-07-22 11:00:00
+End_Time      2025-07-22 14:00:00
+Name: 1825, dtype: object"
