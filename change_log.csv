@@ -12973,3 +12973,4 @@ Name: 1825, dtype: object"
 0  Kanokwan_4507  PCR Machines  ... 2025-07-22 08:00:00 2025-07-22 11:00:00
 
 [1 rows x 5 columns]"
+2025-07-22 09:46:09,Add Reservation,Tanatad_4606,"{'Name': 'Tanatad_4606', 'Room': 'Hallway, 6th floor', 'Equipments': 'Autoclave 4 (Drain the water every 5 times after using)', 'Start_Time': datetime.datetime(2025, 7, 22, 10, 0), 'End_Time': datetime.datetime(2025, 7, 22, 12, 0)}"
