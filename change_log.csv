@@ -12993,3 +12993,9 @@ Name: 1818, dtype: object"
 0  Sukhita_4612  PCR Machines  ... 2025-07-22 14:00:00 2025-07-22 17:00:00
 
 [1 rows x 5 columns]"
+2025-07-22 13:27:53,Delete Reservation,Janejira_4612,"Details: Name                      Janejira_4612
+Room             Central Lab, 6th floor
+Equipments    Refrigerated Centrifuge 1
+Start_Time          2025-07-22 13:30:00
+End_Time            2025-07-22 16:30:00
+Name: 2989, dtype: object"
