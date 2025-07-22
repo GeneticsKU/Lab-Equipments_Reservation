@@ -12986,3 +12986,4 @@ Equipments                 PCR 11
 Start_Time    2025-07-22 11:00:00
 End_Time      2025-07-22 14:00:00
 Name: 1818, dtype: object"
+2025-07-22 10:39:58,Add Reservation,Karan_4503,"{'Name': 'Karan_4503', 'Room': 'Central Lab, 6th floor', 'Equipments': 'Refrigerated Centrifuge 4', 'Start_Time': datetime.datetime(2025, 7, 22, 11, 15), 'End_Time': datetime.datetime(2025, 7, 22, 13, 15)}"
