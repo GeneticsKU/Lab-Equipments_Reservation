@@ -13053,3 +13053,9 @@ Equipments               Incubator 2
 Start_Time       2025-07-24 10:30:00
 End_Time         2025-07-24 17:00:00
 Name: 3008, dtype: object"
+2025-07-24 15:19:26,Delete Reservation,Sukhita_4612,"Details: Name                    Sukhita_4612
+Room          Central Lab, 6th floor
+Equipments               Incubator 2
+Start_Time       2025-07-25 09:00:00
+End_Time         2025-07-25 17:00:00
+Name: 3008, dtype: object"
