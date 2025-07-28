@@ -13096,3 +13096,9 @@ Equipments                 PCR 12
 Start_Time    2025-07-28 11:00:00
 End_Time      2025-07-28 14:00:00
 Name: 1835, dtype: object"
+2025-07-28 23:20:18,Delete Reservation,Sukhita_4612,"Details: Name                 Sukhita_4612
+Room                 PCR Machines
+Equipments                 PCR 12
+Start_Time    2025-07-29 11:00:00
+End_Time      2025-07-29 14:00:00
+Name: 1835, dtype: object"
