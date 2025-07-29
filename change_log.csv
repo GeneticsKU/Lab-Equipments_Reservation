@@ -13135,3 +13135,4 @@ Name: 1835, dtype: object"
 0  Sukhita_4612  PCR Machines  ... 2025-07-30 11:00:00 2025-07-30 14:00:00
 
 [1 rows x 5 columns]"
+2025-07-29 15:46:19,Add Reservation,Sukhita_4612,"{'Name': 'Sukhita_4612', 'Room': 'Central Lab, 5th floor', 'Equipments': 'Incubator Shaker 1', 'Start_Time': datetime.datetime(2025, 7, 30, 15, 0), 'End_Time': datetime.datetime(2025, 7, 30, 23, 45)}"
