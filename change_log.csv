@@ -13138,3 +13138,5 @@ Name: 1835, dtype: object"
 2025-07-29 15:46:19,Add Reservation,Sukhita_4612,"{'Name': 'Sukhita_4612', 'Room': 'Central Lab, 5th floor', 'Equipments': 'Incubator Shaker 1', 'Start_Time': datetime.datetime(2025, 7, 30, 15, 0), 'End_Time': datetime.datetime(2025, 7, 30, 23, 45)}"
 2025-07-29 15:46:39,Add Reservation,Sukhita_4612,"{'Name': 'Sukhita_4612', 'Room': 'Central Lab, 5th floor', 'Equipments': 'Incubator Shaker 1', 'Start_Time': datetime.datetime(2025, 7, 31, 0, 0), 'End_Time': datetime.datetime(2025, 7, 31, 23, 45)}"
 2025-07-29 15:47:00,Add Reservation,Sukhita_4612,"{'Name': 'Sukhita_4612', 'Room': 'Central Lab, 5th floor', 'Equipments': 'Incubator Shaker 1', 'Start_Time': datetime.datetime(2025, 8, 1, 0, 0), 'End_Time': datetime.datetime(2025, 8, 1, 10, 0)}"
+2025-07-30 07:44:18,Add Reservation,Pawida_4606,"          Name          Room Equipments          Start_Time            End_Time
+0  Pawida_4606  PCR Machines     PCR 14 2025-07-30 11:00:00 2025-07-30 14:00:00"
