@@ -13151,3 +13151,7 @@ Name: 1835, dtype: object"
 
 [1 rows x 5 columns]"
 2025-07-30 10:20:42,Add Reservation,Wilasinee_4612,"{'Name': 'Wilasinee_4612', 'Room': 'Microscope Room, 5th floor', 'Equipments': 'Stereo Microscope', 'Start_Time': datetime.datetime(2025, 7, 30, 13, 0), 'End_Time': datetime.datetime(2025, 7, 30, 16, 0)}"
+2025-07-30 11:04:58,Add Reservation,Jantanipa_4607,"             Name          Room  ...          Start_Time            End_Time
+0  Jantanipa_4607  PCR Machines  ... 2025-07-30 11:00:00 2025-07-30 14:00:00
+
+[1 rows x 5 columns]"
