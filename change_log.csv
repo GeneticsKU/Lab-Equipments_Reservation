@@ -13234,3 +13234,7 @@ Name: 1855, dtype: object"
 2025-07-31 19:01:57,Add Reservation,Apimon_4612,"{'Name': 'Apimon_4612', 'Room': 'Central Lab, 6th floor', 'Equipments': 'Laminar flow', 'Start_Time': datetime.datetime(2025, 8, 1, 12, 0), 'End_Time': datetime.datetime(2025, 8, 1, 17, 0)}"
 2025-07-31 21:16:27,Add Reservation,Supanut_4612,"{'Name': 'Supanut_4612', 'Room': 'Central Lab, 6th floor', 'Equipments': 'Laminar flow', 'Start_Time': datetime.datetime(2025, 8, 1, 9, 0), 'End_Time': datetime.datetime(2025, 8, 1, 12, 0)}"
 2025-08-01 08:41:15,Add Reservation,Wilasinee_4612,"{'Name': 'Wilasinee_4612', 'Room': 'Microscope Room, 5th floor', 'Equipments': 'Fluorescence Microscope (Contact before use)', 'Start_Time': datetime.datetime(2025, 8, 1, 10, 0), 'End_Time': datetime.datetime(2025, 8, 1, 16, 0)}"
+2025-08-01 10:01:26,Add Reservation,Jantanipa_4607,"             Name          Room  ...          Start_Time            End_Time
+0  Jantanipa_4607  PCR Machines  ... 2025-08-01 11:00:00 2025-08-01 14:00:00
+
+[1 rows x 5 columns]"
