@@ -13268,3 +13268,7 @@ Name: 1855, dtype: object"
 2025-08-04 10:37:51,Add Reservation,Tanatad_4606,"{'Name': 'Tanatad_4606', 'Room': 'Central Lab, 6th floor', 'Equipments': 'Digital Dry Bath 3', 'Start_Time': datetime.datetime(2025, 8, 4, 10, 45), 'End_Time': datetime.datetime(2025, 8, 4, 11, 15)}"
 2025-08-04 10:42:38,Add Reservation,chomphoonut_4607,"{'Name': 'chomphoonut_4607', 'Room': 'Hallway, 6th floor', 'Equipments': 'Autoclave 5 (Drain the water every 5 times after using)', 'Start_Time': datetime.datetime(2025, 8, 4, 11, 0), 'End_Time': datetime.datetime(2025, 8, 4, 13, 0)}"
 2025-08-04 15:44:27,Add Reservation,Sukhita_4612,"{'Name': 'Sukhita_4612', 'Room': 'Hallway, 6th floor', 'Equipments': 'Autoclave 6 (Drain the water every 5 times after using)', 'Start_Time': datetime.datetime(2025, 8, 4, 16, 0), 'End_Time': datetime.datetime(2025, 8, 4, 18, 0)}"
+2025-08-05 00:02:35,Add Reservation,Nattawut_4507,"            Name          Room  ...          Start_Time            End_Time
+0  Nattawut_4507  PCR Machines  ... 2025-08-05 11:00:00 2025-08-05 14:00:00
+
+[1 rows x 5 columns]"
