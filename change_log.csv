@@ -13310,3 +13310,7 @@ Name: 3080, dtype: object"
 0  Kanokwan_4507  PCR Machines  ... 2025-08-06 14:00:00 2025-08-06 17:00:00
 
 [1 rows x 5 columns]"
+2025-08-06 12:32:57,Add Reservation,Kanokwan_4507,"            Name          Room  ...          Start_Time            End_Time
+0  Kanokwan_4507  PCR Machines  ... 2025-08-06 14:00:00 2025-08-06 17:00:00
+
+[1 rows x 5 columns]"
