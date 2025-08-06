@@ -13322,3 +13322,4 @@ Name: 3080, dtype: object"
 0  Sukhita_4612  PCR Machines  ... 2025-08-07 11:00:00 2025-08-07 14:00:00
 
 [1 rows x 5 columns]"
+2025-08-06 17:38:04,Add Reservation,Nghiep_Mai_Nguyen_4503,"{'Name': 'Nghiep_Mai_Nguyen_4503', 'Room': 'Hallway, 6th floor', 'Equipments': 'Autoclave For Waste (Drain the water everytime after using)', 'Start_Time': datetime.datetime(2025, 8, 7, 13, 0), 'End_Time': datetime.datetime(2025, 8, 7, 14, 30)}"
