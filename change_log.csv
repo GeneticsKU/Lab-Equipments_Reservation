@@ -13348,3 +13348,5 @@ Name: 3080, dtype: object"
 2025-08-07 13:07:50,Add Reservation,Dechaphon_4612,"{'Name': 'Dechaphon_4612', 'Room': 'Hallway, 6th floor', 'Equipments': 'Autoclave 4 (Drain the water every 5 times after using)', 'Start_Time': datetime.datetime(2025, 8, 7, 13, 45), 'End_Time': datetime.datetime(2025, 8, 7, 14, 45)}"
 2025-08-07 13:26:02,Add Reservation,Pasin_4607,"         Name          Room Equipments          Start_Time            End_Time
 0  Pasin_4607  PCR Machines      PCR 1 2025-08-07 14:00:00 2025-08-07 17:00:00"
+2025-08-07 13:26:21,Add Reservation,Pasin_4607,"         Name          Room Equipments          Start_Time            End_Time
+0  Pasin_4607  PCR Machines     PCR 10 2025-08-07 14:00:00 2025-08-07 17:00:00"
