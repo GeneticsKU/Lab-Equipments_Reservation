@@ -13439,3 +13439,9 @@ Name: 1894, dtype: object"
 0  Napassorn_4505  PCR Machines  ... 2025-08-14 11:00:00 2025-08-14 14:00:00
 
 [1 rows x 5 columns]"
+2025-08-14 10:40:53,Delete Reservation,Napassorn_4505,"Details: Name               Napassorn_4505
+Room                 PCR Machines
+Equipments                 PCR 17
+Start_Time    2025-08-14 11:00:00
+End_Time      2025-08-14 14:00:00
+Name: 1896, dtype: object"
