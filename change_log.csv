@@ -13476,3 +13476,5 @@ Name: 1896, dtype: object"
 0  Tanatad_4606  PCR Machines  ... 2025-08-15 11:00:00 2025-08-15 14:00:00
 
 [1 rows x 5 columns]"
+2025-08-15 09:48:11,Add Reservation,Leela_4606,"         Name          Room Equipments          Start_Time            End_Time
+0  Leela_4606  PCR Machines     PCR 13 2025-08-15 11:00:00 2025-08-15 14:00:00"
