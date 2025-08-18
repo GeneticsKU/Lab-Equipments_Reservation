@@ -13550,3 +13550,9 @@ Name: 1896, dtype: object"
 2025-08-18 11:49:44,Add Reservation,Supanida_4511,"{'Name': 'Supanida_4511', 'Room': 'BSL-2', 'Equipments': 'BSC-1', 'Start_Time': datetime.datetime(2025, 8, 18, 13, 0), 'End_Time': datetime.datetime(2025, 8, 18, 14, 30)}"
 2025-08-18 12:09:43,Add Reservation,Phasanat_4615,"{'Name': 'Phasanat_4615', 'Room': 'Hallway, 6th floor', 'Equipments': 'Autoclave 7 (Drain the water every 5 times after using)', 'Start_Time': datetime.datetime(2025, 8, 18, 12, 45), 'End_Time': datetime.datetime(2025, 8, 18, 14, 15)}"
 2025-08-18 12:29:00,Add Reservation,Sukhita_4612,"{'Name': 'Sukhita_4612', 'Room': 'Hallway, 6th floor', 'Equipments': 'Autoclave 5 (Drain the water every 5 times after using)', 'Start_Time': datetime.datetime(2025, 8, 18, 13, 0), 'End_Time': datetime.datetime(2025, 8, 18, 14, 45)}"
+2025-08-18 12:31:58,Delete Reservation,Apimon_4612,"Details: Name                     Apimon_4612
+Room          Central Lab, 6th floor
+Equipments              Laminar flow
+Start_Time       2025-08-18 12:00:00
+End_Time         2025-08-18 16:00:00
+Name: 3130, dtype: object"
