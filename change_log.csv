@@ -13629,3 +13629,4 @@ Equipments    Autoclave 4 (Drain the water every 5 times aft...
 Start_Time                                  2025-08-19 15:45:00
 End_Time                                    2025-08-19 17:30:00
 Name: 3165, dtype: object"
+2025-08-19 15:43:26,Add Reservation,Phasanat_4615,"{'Name': 'Phasanat_4615', 'Room': 'Central Lab, 6th floor', 'Equipments': 'Refrigerated Centrifuge 4', 'Start_Time': datetime.datetime(2025, 8, 20, 9, 30), 'End_Time': datetime.datetime(2025, 8, 20, 13, 0)}"
