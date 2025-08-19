@@ -13603,3 +13603,7 @@ Name: 3150, dtype: object"
 2025-08-19 10:43:53,Add Reservation,Supanida_4511,"{'Name': 'Supanida_4511', 'Room': 'BSL-2', 'Equipments': 'BSC-1', 'Start_Time': datetime.datetime(2025, 8, 19, 13, 0), 'End_Time': datetime.datetime(2025, 8, 19, 14, 30)}"
 2025-08-19 11:06:04,Add Reservation,Phasanat_4615,"{'Name': 'Phasanat_4615', 'Room': 'Hallway, 6th floor', 'Equipments': 'Autoclave 6 (Drain the water every 5 times after using)', 'Start_Time': datetime.datetime(2025, 8, 19, 11, 15), 'End_Time': datetime.datetime(2025, 8, 19, 13, 15)}"
 2025-08-19 11:29:28,Add Reservation,Tanatad_4606,"{'Name': 'Tanatad_4606', 'Room': 'Central Lab, 6th floor', 'Equipments': 'Centrifuge 3', 'Start_Time': datetime.datetime(2025, 8, 19, 12, 0), 'End_Time': datetime.datetime(2025, 8, 19, 13, 0)}"
+2025-08-19 11:30:18,Add Reservation,Phasanat_4615,"            Name          Room  ...          Start_Time            End_Time
+0  Phasanat_4615  PCR Machines  ... 2025-08-19 11:00:00 2025-08-19 14:00:00
+
+[1 rows x 5 columns]"
