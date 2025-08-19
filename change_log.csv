@@ -13623,3 +13623,9 @@ Equipments    Autoclave 6 (Drain the water every 5 times aft...
 Start_Time                                  2025-08-19 15:45:00
 End_Time                                    2025-08-19 17:30:00
 Name: 3164, dtype: object"
+2025-08-19 15:36:15,Delete Reservation,Dechaphon_4612,"Details: Name                                             Dechaphon_4612
+Room                                         Hallway, 6th floor
+Equipments    Autoclave 4 (Drain the water every 5 times aft...
+Start_Time                                  2025-08-19 15:45:00
+End_Time                                    2025-08-19 17:30:00
+Name: 3165, dtype: object"
