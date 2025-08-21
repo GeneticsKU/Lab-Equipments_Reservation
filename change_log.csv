@@ -13692,3 +13692,4 @@ Name: 3165, dtype: object"
 0  Nattawut_4507  PCR Machines  ... 2025-08-21 14:00:00 2025-08-21 17:00:00
 
 [1 rows x 5 columns]"
+2025-08-21 13:11:08,Add Reservation,Nattawut_4507,"{'Name': 'Nattawut_4507', 'Room': 'Hallway, 6th floor', 'Equipments': 'Autoclave 5 (Drain the water every 5 times after using)', 'Start_Time': datetime.datetime(2025, 8, 21, 13, 30), 'End_Time': datetime.datetime(2025, 8, 21, 15, 30)}"
