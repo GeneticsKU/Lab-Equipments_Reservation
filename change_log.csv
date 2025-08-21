@@ -13700,3 +13700,9 @@ Name: 3165, dtype: object"
 
 [1 rows x 5 columns]"
 2025-08-21 17:04:17,Add Reservation,Pornchanok_4507,"{'Name': 'Pornchanok_4507', 'Room': 'Hallway, 6th floor', 'Equipments': 'Autoclave 4 (Drain the water every 5 times after using)', 'Start_Time': datetime.datetime(2025, 8, 21, 17, 15), 'End_Time': datetime.datetime(2025, 8, 21, 20, 0)}"
+2025-08-21 17:04:38,Delete Reservation,Pornchanok_4507,"Details: Name              Pornchanok_4507
+Room                 PCR Machines
+Equipments                 PCR 12
+Start_Time    2025-08-21 17:00:00
+End_Time      2025-08-21 20:00:00
+Name: 1936, dtype: object"
