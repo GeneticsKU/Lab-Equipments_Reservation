@@ -13680,3 +13680,7 @@ Name: 3165, dtype: object"
 2025-08-21 11:47:00,Add Reservation,Pee_4507,"       Name          Room Equipments          Start_Time            End_Time
 0  Pee_4507  PCR Machines     PCR 14 2025-08-21 14:00:00 2025-08-21 17:00:00"
 2025-08-21 12:11:16,Add Reservation,Tanatad_4606,"{'Name': 'Tanatad_4606', 'Room': 'Central Lab, 6th floor', 'Equipments': 'Digital Dry Bath 3', 'Start_Time': datetime.datetime(2025, 8, 21, 12, 30), 'End_Time': datetime.datetime(2025, 8, 21, 14, 0)}"
+2025-08-21 13:09:38,Add Reservation,Nattawut_4507,"            Name          Room  ...          Start_Time            End_Time
+0  Nattawut_4507  PCR Machines  ... 2025-08-21 14:00:00 2025-08-21 17:00:00
+
+[1 rows x 5 columns]"
