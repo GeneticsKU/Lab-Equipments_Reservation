@@ -13737,3 +13737,4 @@ Name: 1936, dtype: object"
 
 [1 rows x 5 columns]"
 2025-08-22 11:00:39,Add Reservation,Leela_4606,"{'Name': 'Leela_4606', 'Room': 'Central Lab, 6th floor', 'Equipments': 'TissueLyser II', 'Start_Time': datetime.datetime(2025, 8, 22, 11, 15), 'End_Time': datetime.datetime(2025, 8, 22, 12, 30)}"
+2025-08-22 11:01:13,Add Reservation,Leela_4606,"{'Name': 'Leela_4606', 'Room': 'Central Lab, 6th floor', 'Equipments': 'Centrifuge 3', 'Start_Time': datetime.datetime(2025, 8, 22, 11, 15), 'End_Time': datetime.datetime(2025, 8, 22, 14, 0)}"
