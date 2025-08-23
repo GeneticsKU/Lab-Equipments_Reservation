@@ -13745,3 +13745,5 @@ Name: 1936, dtype: object"
 2025-08-22 15:47:29,Add Reservation,Phasanat_4615,"{'Name': 'Phasanat_4615', 'Room': 'Hallway, 6th floor', 'Equipments': 'Autoclave 1 (Drain the water every 5 times after using)', 'Start_Time': datetime.datetime(2025, 8, 22, 16, 0), 'End_Time': datetime.datetime(2025, 8, 22, 18, 0)}"
 2025-08-23 09:41:00,Add Reservation,Chanikarn_4511,"{'Name': 'Chanikarn_4511', 'Room': 'Central Lab, 6th floor', 'Equipments': 'Refrigerated Centrifuge 3', 'Start_Time': datetime.datetime(2025, 8, 23, 10, 0), 'End_Time': datetime.datetime(2025, 8, 23, 12, 0)}"
 2025-08-23 09:41:58,Add Reservation,Chanikarn_4511,"{'Name': 'Chanikarn_4511', 'Room': 'Central Lab, 6th floor', 'Equipments': 'Laminar flow', 'Start_Time': datetime.datetime(2025, 8, 23, 10, 0), 'End_Time': datetime.datetime(2025, 8, 23, 14, 0)}"
+2025-08-23 09:55:20,Add Reservation,Leela_4606,"         Name          Room Equipments          Start_Time            End_Time
+0  Leela_4606  PCR Machines     PCR 12 2025-08-23 11:00:00 2025-08-23 14:00:00"
