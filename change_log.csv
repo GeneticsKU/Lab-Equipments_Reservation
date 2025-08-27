@@ -13886,3 +13886,4 @@ Name: 1961, dtype: object"
 0  Kanokwan_4507  PCR Machines  ... 2025-08-27 11:00:00 2025-08-27 14:00:00
 
 [1 rows x 5 columns]"
+2025-08-27 09:37:15,Add Reservation,Dechaphon_4612,"{'Name': 'Dechaphon_4612', 'Room': 'Hallway, 6th floor', 'Equipments': 'Autoclave For Waste (Drain the water everytime after using)', 'Start_Time': datetime.datetime(2025, 8, 27, 9, 45), 'End_Time': datetime.datetime(2025, 8, 27, 12, 0)}"
