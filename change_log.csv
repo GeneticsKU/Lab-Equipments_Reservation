@@ -13980,3 +13980,9 @@ Name: 1979, dtype: object"
 0  Supanut_4612  PCR Machines  ... 2025-08-29 08:00:00 2025-08-29 11:00:00
 
 [1 rows x 5 columns]"
+2025-08-29 09:15:44,Delete Reservation,Supanut_4612,"Details: Name                 Supanut_4612
+Room                 PCR Machines
+Equipments                 PCR 14
+Start_Time    2025-08-29 08:00:00
+End_Time      2025-08-29 11:00:00
+Name: 1980, dtype: object"
