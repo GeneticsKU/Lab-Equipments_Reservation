@@ -14043,3 +14043,4 @@ Start_Time    2025-09-01 11:00:00
 End_Time      2025-09-01 14:00:00
 Name: 1989, dtype: object"
 2025-09-01 10:28:20,Add Reservation,chomphoonut_4607,"{'Name': 'chomphoonut_4607', 'Room': 'Hallway, 6th floor', 'Equipments': 'Autoclave 3 (Drain the water every 5 times after using)', 'Start_Time': datetime.datetime(2025, 9, 1, 11, 0), 'End_Time': datetime.datetime(2025, 9, 1, 13, 0)}"
+2025-09-01 10:58:01,Add Reservation,Chanikarn_4511,"{'Name': 'Chanikarn_4511', 'Room': 'Hallway, 6th floor', 'Equipments': 'Autoclave For Waste (Drain the water everytime after using)', 'Start_Time': datetime.datetime(2025, 9, 1, 11, 0), 'End_Time': datetime.datetime(2025, 9, 1, 13, 30)}"
