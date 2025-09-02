@@ -14093,3 +14093,4 @@ Equipments    Autoclave 7 (Drain the water every 5 times aft...
 Start_Time                                  2025-09-02 12:00:00
 End_Time                                    2025-09-02 14:00:00
 Name: 3257, dtype: object"
+2025-09-02 10:45:59,Add Reservation,Apimon_4612,"{'Name': 'Apimon_4612', 'Room': 'Microscope Room, 5th floor', 'Equipments': 'Stereo Microscope', 'Start_Time': datetime.datetime(2025, 9, 2, 14, 0), 'End_Time': datetime.datetime(2025, 9, 2, 16, 0)}"
