@@ -14095,3 +14095,7 @@ End_Time                                    2025-09-02 14:00:00
 Name: 3257, dtype: object"
 2025-09-02 10:45:59,Add Reservation,Apimon_4612,"{'Name': 'Apimon_4612', 'Room': 'Microscope Room, 5th floor', 'Equipments': 'Stereo Microscope', 'Start_Time': datetime.datetime(2025, 9, 2, 14, 0), 'End_Time': datetime.datetime(2025, 9, 2, 16, 0)}"
 2025-09-02 10:52:24,Add Reservation,chomphoonut_4607,"{'Name': 'chomphoonut_4607', 'Room': 'BSL-2', 'Equipments': 'BSC-2', 'Start_Time': datetime.datetime(2025, 9, 3, 9, 0), 'End_Time': datetime.datetime(2025, 9, 3, 17, 0)}"
+2025-09-02 11:07:55,Add Reservation,Sukhita_4612,"           Name          Room  ...          Start_Time            End_Time
+0  Sukhita_4612  PCR Machines  ... 2025-09-02 14:00:00 2025-09-02 17:00:00
+
+[1 rows x 5 columns]"
