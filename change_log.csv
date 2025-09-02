@@ -14082,3 +14082,7 @@ Start_Time          2025-09-02 09:30:00
 End_Time            2025-09-02 10:15:00
 Name: 3258, dtype: object"
 2025-09-02 10:04:20,Add Reservation,Tanatad_4606,"{'Name': 'Tanatad_4606', 'Room': 'Central Lab, 6th floor', 'Equipments': 'Centrifuge 3', 'Start_Time': datetime.datetime(2025, 9, 2, 10, 30), 'End_Time': datetime.datetime(2025, 9, 2, 12, 30)}"
+2025-09-02 10:41:00,Add Reservation,Worrawit_4505,"            Name          Room  ...          Start_Time            End_Time
+0  Worrawit_4505  PCR Machines  ... 2025-09-02 11:00:00 2025-09-02 14:00:00
+
+[1 rows x 5 columns]"
