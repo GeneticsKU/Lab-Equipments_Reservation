@@ -14061,3 +14061,7 @@ Name: 1989, dtype: object"
 [1 rows x 5 columns]"
 2025-09-01 14:00:37,Add Reservation,Tanatad_4606,"{'Name': 'Tanatad_4606', 'Room': 'Central Lab, 6th floor', 'Equipments': 'Centrifuge 3', 'Start_Time': datetime.datetime(2025, 9, 1, 14, 15), 'End_Time': datetime.datetime(2025, 9, 1, 15, 30)}"
 2025-09-01 14:10:15,Add Reservation,Sukhita_4612,"{'Name': 'Sukhita_4612', 'Room': 'Hallway, 6th floor', 'Equipments': 'Autoclave 5 (Drain the water every 5 times after using)', 'Start_Time': datetime.datetime(2025, 9, 1, 14, 30), 'End_Time': datetime.datetime(2025, 9, 1, 16, 30)}"
+2025-09-02 08:57:55,Add Reservation,Kanokwan_4507,"            Name          Room  ...          Start_Time            End_Time
+0  Kanokwan_4507  PCR Machines  ... 2025-09-02 11:00:00 2025-09-02 14:00:00
+
+[1 rows x 5 columns]"
