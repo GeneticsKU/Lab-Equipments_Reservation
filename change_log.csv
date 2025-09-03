@@ -14125,3 +14125,5 @@ Name: 3257, dtype: object"
 2025-09-03 10:47:32,Add Reservation,Tanatad_4606,"{'Name': 'Tanatad_4606', 'Room': 'Central Lab, 6th floor', 'Equipments': 'Digital Dry Bath 3', 'Start_Time': datetime.datetime(2025, 9, 3, 11, 0), 'End_Time': datetime.datetime(2025, 9, 3, 13, 0)}"
 2025-09-03 11:55:49,Add Reservation,Yada_4507,"        Name          Room Equipments          Start_Time            End_Time
 0  Yada_4507  PCR Machines     PCR 10 2025-09-03 14:00:00 2025-09-03 17:00:00"
+2025-09-03 11:57:12,Add Reservation,Pee_4507,"       Name          Room Equipments          Start_Time            End_Time
+0  Pee_4507  PCR Machines     PCR 10 2025-09-03 11:00:00 2025-09-03 14:00:00"
