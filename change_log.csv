@@ -14179,3 +14179,4 @@ Name: 3275, dtype: object"
 0  Phasanat_4615  PCR Machines  ... 2025-09-04 11:00:00 2025-09-04 14:00:00
 
 [1 rows x 5 columns]"
+2025-09-04 10:22:24,Add Reservation,Kanokwan_4507,"{'Name': 'Kanokwan_4507', 'Room': 'Central Lab, 6th floor', 'Equipments': 'Centrifuge 2', 'Start_Time': datetime.datetime(2025, 9, 4, 11, 0), 'End_Time': datetime.datetime(2025, 9, 4, 13, 30)}"
