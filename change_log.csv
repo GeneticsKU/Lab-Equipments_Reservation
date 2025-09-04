@@ -14167,3 +14167,7 @@ Name: 3275, dtype: object"
 2025-09-04 09:50:42,Add Reservation,Tanatad_4606,"{'Name': 'Tanatad_4606', 'Room': 'Central Lab, 6th floor', 'Equipments': 'Centrifuge 3', 'Start_Time': datetime.datetime(2025, 9, 4, 10, 0), 'End_Time': datetime.datetime(2025, 9, 4, 14, 30)}"
 2025-09-04 09:51:38,Add Reservation,Dechaphon_4612,"{'Name': 'Dechaphon_4612', 'Room': 'Hallway, 6th floor', 'Equipments': 'Autoclave For Waste (Drain the water everytime after using)', 'Start_Time': datetime.datetime(2025, 9, 4, 11, 0), 'End_Time': datetime.datetime(2025, 9, 4, 13, 0)}"
 2025-09-04 09:52:01,Add Reservation,Supanut_4612,"{'Name': 'Supanut_4612', 'Room': 'Hallway, 6th floor', 'Equipments': 'Autoclave 7 (Drain the water every 5 times after using)', 'Start_Time': datetime.datetime(2025, 9, 4, 10, 0), 'End_Time': datetime.datetime(2025, 9, 4, 12, 0)}"
+2025-09-04 10:02:10,Add Reservation,Phasanat_4615,"            Name          Room  ...          Start_Time            End_Time
+0  Phasanat_4615  PCR Machines  ... 2025-09-04 11:00:00 2025-09-04 14:00:00
+
+[1 rows x 5 columns]"
