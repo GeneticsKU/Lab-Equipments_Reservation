@@ -14180,3 +14180,4 @@ Name: 3275, dtype: object"
 
 [1 rows x 5 columns]"
 2025-09-04 10:22:24,Add Reservation,Kanokwan_4507,"{'Name': 'Kanokwan_4507', 'Room': 'Central Lab, 6th floor', 'Equipments': 'Centrifuge 2', 'Start_Time': datetime.datetime(2025, 9, 4, 11, 0), 'End_Time': datetime.datetime(2025, 9, 4, 13, 30)}"
+2025-09-04 10:24:01,Add Reservation,Kanokwan_4507,"{'Name': 'Kanokwan_4507', 'Room': 'Central Lab, 6th floor', 'Equipments': 'Digital Dry Bath 2', 'Start_Time': datetime.datetime(2025, 9, 4, 11, 0), 'End_Time': datetime.datetime(2025, 9, 4, 12, 0)}"
