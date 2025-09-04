@@ -14136,3 +14136,9 @@ Name: 3257, dtype: object"
 0  Chanikarn_4511  PCR Machines  ... 2025-09-04 11:00:00 2025-09-04 14:00:00
 
 [1 rows x 5 columns]"
+2025-09-04 07:20:52,Delete Reservation,Apimon_4612,"Details: Name                        Apimon_4612
+Room             Central Lab, 6th floor
+Equipments    Refrigerated Centrifuge 4
+Start_Time          2025-09-04 09:30:00
+End_Time            2025-09-04 10:30:00
+Name: 3275, dtype: object"
