@@ -14324,3 +14324,7 @@ Name: 3276, dtype: object"
 2025-09-09 09:30:13,Add Reservation,Phasanat_4615,"{'Name': 'Phasanat_4615', 'Room': 'Microscope Room, 5th floor', 'Equipments': 'Stereo Microscope', 'Start_Time': datetime.datetime(2025, 9, 9, 9, 45), 'End_Time': datetime.datetime(2025, 9, 9, 12, 0)}"
 2025-09-09 09:30:20,Add Reservation,Pawida_4606,"          Name          Room Equipments          Start_Time            End_Time
 0  Pawida_4606  PCR Machines     PCR 15 2025-09-09 11:00:00 2025-09-09 14:00:00"
+2025-09-09 10:34:52,Add Reservation,Tanatad_4606,"           Name          Room  ...          Start_Time            End_Time
+0  Tanatad_4606  PCR Machines  ... 2025-09-09 11:00:00 2025-09-09 14:00:00
+
+[1 rows x 5 columns]"
