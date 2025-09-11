@@ -14400,3 +14400,4 @@ Name: 3335, dtype: object"
 2025-09-11 13:30:18,Add Reservation,Apimon_4612,"{'Name': 'Apimon_4612', 'Room': 'Central Lab, 6th floor', 'Equipments': 'Ultrasonic Processors', 'Start_Time': datetime.datetime(2025, 9, 12, 13, 0), 'End_Time': datetime.datetime(2025, 9, 12, 14, 0)}"
 2025-09-11 13:31:02,Add Reservation,Apimon_4612,"          Name          Room Equipments          Start_Time            End_Time
 0  Apimon_4612  PCR Machines     PCR 17 2025-09-12 11:00:00 2025-09-12 14:00:00"
+2025-09-11 13:44:11,Add Reservation,chomphoonut_4607,"{'Name': 'chomphoonut_4607', 'Room': 'Hallway, 6th floor', 'Equipments': 'Autoclave 4 (Drain the water every 5 times after using)', 'Start_Time': datetime.datetime(2025, 9, 11, 14, 30), 'End_Time': datetime.datetime(2025, 9, 11, 16, 30)}"
