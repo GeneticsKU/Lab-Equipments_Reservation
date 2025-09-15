@@ -14495,3 +14495,4 @@ Name: 3346, dtype: object"
 
 [1 rows x 5 columns]"
 2025-09-15 09:41:07,Add Reservation,Karan_4503,"{'Name': 'Karan_4503', 'Room': 'Central Lab, 6th floor', 'Equipments': 'Refrigerated Centrifuge 5', 'Start_Time': datetime.datetime(2025, 9, 15, 10, 0), 'End_Time': datetime.datetime(2025, 9, 15, 11, 30)}"
+2025-09-15 09:43:15,Add Reservation,Tanatad_4606,"{'Name': 'Tanatad_4606', 'Room': 'Central Lab, 6th floor', 'Equipments': 'Centrifuge 3', 'Start_Time': datetime.datetime(2025, 9, 15, 10, 30), 'End_Time': datetime.datetime(2025, 9, 15, 15, 30)}"
