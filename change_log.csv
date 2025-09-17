@@ -14650,3 +14650,9 @@ Equipments                 PCR 13
 Start_Time    2025-09-17 08:00:00
 End_Time      2025-09-17 11:00:00
 Name: 2085, dtype: object"
+2025-09-17 08:31:26,Delete Reservation,Jatupol_4612,"Details: Name                 Jatupol_4612
+Room                 PCR Machines
+Equipments                 PCR 13
+Start_Time    2025-09-17 08:00:00
+End_Time      2025-09-17 11:00:00
+Name: 2085, dtype: object"
