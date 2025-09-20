@@ -14813,3 +14813,9 @@ Name: 3393, dtype: object"
 0  Chanikarn_4511  PCR Machines  ... 2025-09-20 11:00:00 2025-09-20 14:00:00
 
 [1 rows x 5 columns]"
+2025-09-20 09:30:10,Delete Reservation,Chanikarn_4511,"Details: Name               Chanikarn_4511
+Room                 PCR Machines
+Equipments        Real Time PCR 2
+Start_Time    2025-09-20 11:00:00
+End_Time      2025-09-20 14:00:00
+Name: 2107, dtype: object"
