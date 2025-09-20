@@ -14823,3 +14823,4 @@ Name: 2107, dtype: object"
 0  Chanikarn_4511  PCR Machines  ... 2025-09-20 11:00:00 2025-09-20 14:00:00
 
 [1 rows x 5 columns]"
+2025-09-20 11:06:26,Add Reservation,Chanikarn_4511,"{'Name': 'Chanikarn_4511', 'Room': 'Central Lab, 6th floor', 'Equipments': 'Laminar flow', 'Start_Time': datetime.datetime(2025, 9, 20, 12, 30), 'End_Time': datetime.datetime(2025, 9, 20, 13, 15)}"
