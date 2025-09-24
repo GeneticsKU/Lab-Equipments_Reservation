@@ -14913,3 +14913,9 @@ Equipments     Ultrasonic Processors
 Start_Time       2025-09-26 13:00:00
 End_Time         2025-09-26 14:00:00
 Name: 3405, dtype: object"
+2025-09-24 16:01:34,Delete Reservation,Sukhita_4612,"Details: Name                    Sukhita_4612
+Room          Central Lab, 6th floor
+Equipments               Vacuum Pump
+Start_Time       2025-09-26 14:00:00
+End_Time         2025-09-26 15:00:00
+Name: 3405, dtype: object"
