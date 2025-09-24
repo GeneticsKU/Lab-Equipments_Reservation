@@ -14907,3 +14907,9 @@ Name: 2107, dtype: object"
 0  Nattawut_4507  PCR Machines  ... 2025-09-25 11:00:00 2025-09-25 14:00:00
 
 [1 rows x 5 columns]"
+2025-09-24 16:01:15,Delete Reservation,Sukhita_4612,"Details: Name                    Sukhita_4612
+Room          Central Lab, 6th floor
+Equipments     Ultrasonic Processors
+Start_Time       2025-09-26 13:00:00
+End_Time         2025-09-26 14:00:00
+Name: 3405, dtype: object"
