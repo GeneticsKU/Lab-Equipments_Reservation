@@ -14867,3 +14867,4 @@ Name: 2107, dtype: object"
 0  Tanatad_4606  PCR Machines  ... 2025-09-24 11:00:00 2025-09-24 14:00:00
 
 [1 rows x 5 columns]"
+2025-09-24 09:20:56,Add Reservation,chomphoonut_4607,"{'Name': 'chomphoonut_4607', 'Room': 'Central Lab, 6th floor', 'Equipments': 'TissueLyser II', 'Start_Time': datetime.datetime(2025, 9, 24, 9, 30), 'End_Time': datetime.datetime(2025, 9, 24, 18, 0)}"
