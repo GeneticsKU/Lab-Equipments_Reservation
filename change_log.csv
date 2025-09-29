@@ -14989,3 +14989,9 @@ Name: 2130, dtype: object"
 [1 rows x 5 columns]"
 2025-09-29 08:20:43,Add Reservation,Supanida_4511,"{'Name': 'Supanida_4511', 'Room': 'Hallway, 6th floor', 'Equipments': 'Autoclave 3 (Drain the water every 5 times after using)', 'Start_Time': datetime.datetime(2025, 9, 29, 8, 30), 'End_Time': datetime.datetime(2025, 9, 29, 10, 0)}"
 2025-09-29 08:22:09,Add Reservation,Supanida_4511,"{'Name': 'Supanida_4511', 'Room': 'BSL-2', 'Equipments': 'BSC-1', 'Start_Time': datetime.datetime(2025, 9, 29, 10, 0), 'End_Time': datetime.datetime(2025, 9, 29, 13, 0)}"
+2025-09-29 08:59:19,Delete Reservation,Supanida_4511,"Details: Name                Supanida_4511
+Room                        BSL-2
+Equipments                  BSC-1
+Start_Time    2025-09-29 10:00:00
+End_Time      2025-09-29 13:00:00
+Name: 3439, dtype: object"
