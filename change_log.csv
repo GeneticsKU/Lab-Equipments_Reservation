@@ -15110,3 +15110,7 @@ Name: 3453, dtype: object"
 [1 rows x 5 columns]"
 2025-10-01 15:59:12,Add Reservation,Karan_4503,"{'Name': 'Karan_4503', 'Room': 'Central Lab, 6th floor', 'Equipments': 'Refrigerated Centrifuge 5', 'Start_Time': datetime.datetime(2025, 10, 1, 16, 0), 'End_Time': datetime.datetime(2025, 10, 1, 17, 0)}"
 2025-10-01 16:45:39,Add Reservation,Jiraphat_4503,"{'Name': 'Jiraphat_4503', 'Room': 'Hallway, 6th floor', 'Equipments': 'Autoclave 7 (Drain the water every 5 times after using)', 'Start_Time': datetime.datetime(2025, 10, 1, 17, 0), 'End_Time': datetime.datetime(2025, 10, 1, 18, 0)}"
+2025-10-01 19:13:52,Add Reservation,Sukhita_4612,"           Name          Room  ...          Start_Time            End_Time
+0  Sukhita_4612  PCR Machines  ... 2025-10-02 11:00:00 2025-10-02 14:00:00
+
+[1 rows x 5 columns]"
