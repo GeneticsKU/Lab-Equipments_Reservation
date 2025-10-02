@@ -15188,3 +15188,9 @@ Equipments                 PCR 15
 Start_Time    2025-10-02 08:00:00
 End_Time      2025-10-02 11:00:00
 Name: 2150, dtype: object"
+2025-10-02 12:53:40,Delete Reservation,Apimon_4612,"Details: Name                     Apimon_4612
+Room          Central Lab, 6th floor
+Equipments              Laminar flow
+Start_Time       2025-10-02 14:00:00
+End_Time         2025-10-02 16:00:00
+Name: 3480, dtype: object"
