@@ -15131,3 +15131,4 @@ Name: 3453, dtype: object"
 0  Sukhita_4612  PCR Machines  ... 2025-10-02 11:00:00 2025-10-02 14:00:00
 
 [1 rows x 5 columns]"
+2025-10-02 10:15:52,Add Reservation,Apimon_4612,"{'Name': 'Apimon_4612', 'Room': 'Central Lab, 6th floor', 'Equipments': 'Laminar flow', 'Start_Time': datetime.datetime(2025, 10, 2, 14, 0), 'End_Time': datetime.datetime(2025, 10, 2, 16, 0)}"
