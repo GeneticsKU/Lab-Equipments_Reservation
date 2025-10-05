@@ -15243,3 +15243,4 @@ Name: 3480, dtype: object"
 
 [1 rows x 5 columns]"
 2025-10-05 12:35:14,Add Reservation,Sukhita_4612,"{'Name': 'Sukhita_4612', 'Room': 'Microscope Room, 5th floor', 'Equipments': 'Stereo Microscope', 'Start_Time': datetime.datetime(2025, 10, 6, 12, 30), 'End_Time': datetime.datetime(2025, 10, 6, 15, 0)}"
+2025-10-05 17:15:50,Add Reservation,Chanikarn_4511,"{'Name': 'Chanikarn_4511', 'Room': 'Hallway, 6th floor', 'Equipments': 'Autoclave 6 (Drain the water every 5 times after using)', 'Start_Time': datetime.datetime(2025, 10, 6, 9, 0), 'End_Time': datetime.datetime(2025, 10, 6, 11, 0)}"
