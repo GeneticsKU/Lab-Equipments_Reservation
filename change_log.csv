@@ -15314,3 +15314,9 @@ Equipments                 PCR 14
 Start_Time    2025-10-06 14:00:00
 End_Time      2025-10-06 17:00:00
 Name: 2180, dtype: object"
+2025-10-06 14:20:07,Delete Reservation,Phasanat_4615,"Details: Name                Phasanat_4615
+Room                 PCR Machines
+Equipments                 PCR 11
+Start_Time    2025-10-06 14:00:00
+End_Time      2025-10-06 17:00:00
+Name: 2175, dtype: object"
