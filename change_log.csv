@@ -15326,3 +15326,9 @@ Equipments                 PCR 16
 Start_Time    2025-10-06 11:00:00
 End_Time      2025-10-06 14:00:00
 Name: 2175, dtype: object"
+2025-10-06 14:21:37,Delete Reservation,Phasanat_4615,"Details: Name                                              Phasanat_4615
+Room                                         Hallway, 6th floor
+Equipments    Autoclave 4 (Drain the water every 5 times aft...
+Start_Time                                  2025-10-06 14:30:00
+End_Time                                    2025-10-06 16:30:00
+Name: 3498, dtype: object"
