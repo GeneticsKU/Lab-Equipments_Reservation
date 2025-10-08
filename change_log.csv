@@ -15417,3 +15417,9 @@ Equipments                 PCR 14
 Start_Time    2025-10-08 11:00:00
 End_Time      2025-10-08 14:00:00
 Name: 2188, dtype: object"
+2025-10-08 10:23:57,Delete Reservation,Tanatad_4606,"Details: Name                 Tanatad_4606
+Room                 PCR Machines
+Equipments                 PCR 15
+Start_Time    2025-10-08 11:00:00
+End_Time      2025-10-08 14:00:00
+Name: 2188, dtype: object"
