@@ -15435,3 +15435,9 @@ Name: 2188, dtype: object"
 0  Tanatad_4606  PCR Machines  ... 2025-10-08 08:00:00 2025-10-08 11:00:00
 
 [1 rows x 5 columns]"
+2025-10-08 10:25:53,Delete Reservation,Tanatad_4606,"Details: Name                 Tanatad_4606
+Room                 PCR Machines
+Equipments                 PCR 17
+Start_Time    2025-10-08 08:00:00
+End_Time      2025-10-08 11:00:00
+Name: 2192, dtype: object"
