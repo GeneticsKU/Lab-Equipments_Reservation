@@ -15569,3 +15569,4 @@ Name: 2187, dtype: object"
 
 [1 rows x 5 columns]"
 2025-10-10 10:35:51,Add Reservation,Apimon_4612,"{'Name': 'Apimon_4612', 'Room': 'Central Lab, 6th floor', 'Equipments': 'Laminar flow', 'Start_Time': datetime.datetime(2025, 10, 10, 13, 0), 'End_Time': datetime.datetime(2025, 10, 10, 16, 0)}"
+2025-10-10 10:35:54,Add Reservation,Wilasinee_4612,"{'Name': 'Wilasinee_4612', 'Room': 'Microscope Room, 5th floor', 'Equipments': 'Stereo Microscope', 'Start_Time': datetime.datetime(2025, 10, 10, 13, 0), 'End_Time': datetime.datetime(2025, 10, 10, 16, 0)}"
