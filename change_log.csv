@@ -15600,3 +15600,7 @@ Name: 3530, dtype: object"
 0  Tanatad_4606  PCR Machines  ... 2025-10-13 17:00:00 2025-10-13 20:00:00
 
 [1 rows x 5 columns]"
+2025-10-13 14:47:16,Add Reservation,Tanatad_4606,"           Name          Room  ...          Start_Time            End_Time
+0  Tanatad_4606  PCR Machines  ... 2025-10-13 17:00:00 2025-10-13 20:00:00
+
+[1 rows x 5 columns]"
