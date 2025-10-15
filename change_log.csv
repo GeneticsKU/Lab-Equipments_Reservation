@@ -15665,3 +15665,7 @@ Name: 3530, dtype: object"
 [1 rows x 5 columns]"
 2025-10-15 08:25:08,Add Reservation,Supanida_4511,"{'Name': 'Supanida_4511', 'Room': 'BSL-2', 'Equipments': 'BSC-1', 'Start_Time': datetime.datetime(2025, 10, 15, 8, 40), 'End_Time': datetime.datetime(2025, 10, 15, 10, 0)}"
 2025-10-15 08:30:17,Add Reservation,Apimon_4612,"{'Name': 'Apimon_4612', 'Room': 'Central Lab, 6th floor', 'Equipments': 'Laminar flow', 'Start_Time': datetime.datetime(2025, 10, 15, 9, 0), 'End_Time': datetime.datetime(2025, 10, 15, 17, 0)}"
+2025-10-15 09:03:43,Add Reservation,Nattawut_4507,"            Name          Room  ...          Start_Time            End_Time
+0  Nattawut_4507  PCR Machines  ... 2025-10-15 11:00:00 2025-10-15 14:00:00
+
+[1 rows x 5 columns]"
