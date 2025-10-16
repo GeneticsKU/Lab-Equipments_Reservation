@@ -15737,3 +15737,4 @@ Name: 2244, dtype: object"
 
 [1 rows x 5 columns]"
 2025-10-16 11:49:02,Add Reservation,Supanida_4511,"{'Name': 'Supanida_4511', 'Room': 'BSL-2', 'Equipments': 'BSC-1', 'Start_Time': datetime.datetime(2025, 10, 16, 12, 30), 'End_Time': datetime.datetime(2025, 10, 16, 14, 30)}"
+2025-10-16 12:44:43,Add Reservation,Chawit_4606,"{'Name': 'Chawit_4606', 'Room': 'Central Lab, 6th floor', 'Equipments': 'Digital Dry Bath 2', 'Start_Time': datetime.datetime(2025, 10, 16, 12, 45), 'End_Time': datetime.datetime(2025, 10, 16, 13, 0)}"
