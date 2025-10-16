@@ -15747,3 +15747,4 @@ Start_Time       2025-10-16 12:45:00
 End_Time         2025-10-16 13:00:00
 Name: 3556, dtype: object"
 2025-10-16 14:11:05,Add Reservation,Chawit_4606,"{'Name': 'Chawit_4606', 'Room': 'Central Lab, 6th floor', 'Equipments': 'Digital Dry Bath 3', 'Start_Time': datetime.datetime(2025, 10, 16, 14, 15), 'End_Time': datetime.datetime(2025, 10, 16, 15, 15)}"
+2025-10-16 14:11:29,Add Reservation,Chawit_4606,"{'Name': 'Chawit_4606', 'Room': 'Central Lab, 6th floor', 'Equipments': 'Centrifuge 2', 'Start_Time': datetime.datetime(2025, 10, 16, 14, 15), 'End_Time': datetime.datetime(2025, 10, 16, 15, 15)}"
