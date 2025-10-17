@@ -15760,3 +15760,7 @@ Name: 3556, dtype: object"
 [1 rows x 5 columns]"
 2025-10-17 09:52:33,Add Reservation,Tanatad_4606,"{'Name': 'Tanatad_4606', 'Room': 'Central Lab, 6th floor', 'Equipments': 'Digital Dry Bath 3', 'Start_Time': datetime.datetime(2025, 10, 17, 11, 0), 'End_Time': datetime.datetime(2025, 10, 17, 14, 0)}"
 2025-10-17 09:57:16,Add Reservation,chomphoonut_4607,"{'Name': 'chomphoonut_4607', 'Room': 'Hallway, 6th floor', 'Equipments': 'Autoclave 7 (Drain the water every 5 times after using)', 'Start_Time': datetime.datetime(2025, 10, 17, 10, 0), 'End_Time': datetime.datetime(2025, 10, 17, 12, 0)}"
+2025-10-17 10:06:52,Add Reservation,Tanatad_4606,"           Name          Room  ...          Start_Time            End_Time
+0  Tanatad_4606  PCR Machines  ... 2025-10-17 11:00:00 2025-10-17 14:00:00
+
+[1 rows x 5 columns]"
