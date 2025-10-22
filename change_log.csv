@@ -15874,3 +15874,7 @@ Name: 2263, dtype: object"
 2025-10-21 14:25:06,Add Reservation,Pasin_4607,"         Name          Room Equipments          Start_Time            End_Time
 0  Pasin_4607  PCR Machines     PCR 10 2025-10-21 14:00:00 2025-10-21 17:00:00"
 2025-10-22 08:53:33,Add Reservation,Supanida_4511,"{'Name': 'Supanida_4511', 'Room': 'BSL-2', 'Equipments': 'BSC-1', 'Start_Time': datetime.datetime(2025, 10, 22, 9, 10), 'End_Time': datetime.datetime(2025, 10, 22, 10, 0)}"
+2025-10-22 08:59:28,Add Reservation,Supanida_4511,"            Name          Room  ...          Start_Time            End_Time
+0  Supanida_4511  PCR Machines  ... 2025-10-22 11:00:00 2025-10-22 14:00:00
+
+[1 rows x 5 columns]"
