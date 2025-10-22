@@ -15907,3 +15907,9 @@ Name: 2263, dtype: object"
 0  Nattawut_4507  PCR Machines  ... 2025-10-22 14:00:00 2025-10-22 17:00:00
 
 [1 rows x 5 columns]"
+2025-10-22 10:40:23,Delete Reservation,Nattawut_4507,"Details: Name                Nattawut_4507
+Room                 PCR Machines
+Equipments                 PCR 16
+Start_Time    2025-10-22 14:00:00
+End_Time      2025-10-22 17:00:00
+Name: 2275, dtype: object"
