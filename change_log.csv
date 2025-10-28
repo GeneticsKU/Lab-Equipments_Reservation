@@ -16018,3 +16018,9 @@ Equipments    Autoclave 3 (Drain the water every 5 times aft...
 Start_Time                                  2025-10-28 08:30:00
 End_Time                                    2025-10-28 10:00:00
 Name: 3611, dtype: object"
+2025-10-28 08:47:37,Delete Reservation,Supanida_4511,"Details: Name                Supanida_4511
+Room                        BSL-2
+Equipments                  BSC-1
+Start_Time    2025-10-28 10:00:00
+End_Time      2025-10-28 13:00:00
+Name: 3611, dtype: object"
