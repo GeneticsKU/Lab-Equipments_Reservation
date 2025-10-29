@@ -16179,3 +16179,4 @@ Name: 2317, dtype: object"
 
 [1 rows x 5 columns]"
 2025-10-29 16:37:15,Add Reservation,Thanathip_4505,"{'Name': 'Thanathip_4505', 'Room': 'Central Lab, 5th floor', 'Equipments': 'Incubator Shaker 2', 'Start_Time': datetime.datetime(2025, 10, 31, 13, 0), 'End_Time': datetime.datetime(2025, 10, 31, 23, 45)}"
+2025-10-29 16:38:20,Add Reservation,Thanathip_4505,"{'Name': 'Thanathip_4505', 'Room': 'Central Lab, 5th floor', 'Equipments': 'Incubator Shaker 1', 'Start_Time': datetime.datetime(2025, 11, 1, 0, 0), 'End_Time': datetime.datetime(2025, 11, 1, 18, 0)}"
