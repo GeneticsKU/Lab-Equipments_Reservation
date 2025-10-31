@@ -16316,3 +16316,4 @@ Name: 2338, dtype: object"
 0  Nattawut_4507  PCR Machines  ... 2025-10-31 11:00:00 2025-10-31 14:00:00
 
 [1 rows x 5 columns]"
+2025-10-31 12:32:20,Add Reservation,Rabinthorn_4606,"{'Name': 'Rabinthorn_4606', 'Room': 'Central Lab, 6th floor', 'Equipments': 'Digital Dry Bath 2', 'Start_Time': datetime.datetime(2025, 10, 31, 12, 45), 'End_Time': datetime.datetime(2025, 10, 31, 16, 0)}"
