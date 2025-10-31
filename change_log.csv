@@ -16286,3 +16286,4 @@ Name: 3647, dtype: object"
 2025-10-31 10:01:58,Add Reservation,Chawit_4606,"          Name          Room Equipments          Start_Time            End_Time
 0  Chawit_4606  PCR Machines     PCR 15 2025-10-31 11:00:00 2025-10-31 14:00:00"
 2025-10-31 10:10:11,Add Reservation,chomphoonut_4607,"{'Name': 'chomphoonut_4607', 'Room': 'Hallway, 6th floor', 'Equipments': 'Autoclave 4 (Drain the water every 5 times after using)', 'Start_Time': datetime.datetime(2025, 10, 31, 10, 15), 'End_Time': datetime.datetime(2025, 10, 31, 12, 15)}"
+2025-10-31 10:19:39,Add Reservation,Tanatad_4606,"{'Name': 'Tanatad_4606', 'Room': 'Central Lab, 6th floor', 'Equipments': 'Digital Dry Bath 3', 'Start_Time': datetime.datetime(2025, 10, 31, 11, 0), 'End_Time': datetime.datetime(2025, 10, 31, 16, 0)}"
