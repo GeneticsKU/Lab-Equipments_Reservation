@@ -16258,3 +16258,4 @@ Name: 3647, dtype: object"
 0  Apimon_4612  PCR Machines     PCR 18 2025-10-31 11:00:00 2025-10-31 14:00:00"
 2025-10-31 08:17:34,Add Reservation,Apimon_4612,"          Name          Room Equipments          Start_Time            End_Time
 0  Apimon_4612  PCR Machines     PCR 17 2025-10-31 11:00:00 2025-10-31 14:00:00"
+2025-10-31 08:18:24,Add Reservation,Apimon_4612,"{'Name': 'Apimon_4612', 'Room': 'Central Lab, 6th floor', 'Equipments': 'Laminar flow', 'Start_Time': datetime.datetime(2025, 10, 31, 9, 30), 'End_Time': datetime.datetime(2025, 10, 31, 15, 0)}"
