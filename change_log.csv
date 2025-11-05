@@ -16526,3 +16526,9 @@ Equipments                Heat Block
 Start_Time       2025-11-05 10:45:00
 End_Time         2025-11-05 13:00:00
 Name: 3688, dtype: object"
+2025-11-05 10:39:36,Delete Reservation,Leela_4606,"Details: Name                   Leela_4606
+Room                 PCR Machines
+Equipments                 PCR 10
+Start_Time    2025-11-05 17:00:00
+End_Time      2025-11-05 20:00:00
+Name: 2381, dtype: object"
