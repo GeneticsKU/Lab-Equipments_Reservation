@@ -16532,3 +16532,5 @@ Equipments                 PCR 10
 Start_Time    2025-11-05 17:00:00
 End_Time      2025-11-05 20:00:00
 Name: 2381, dtype: object"
+2025-11-05 10:40:08,Add Reservation,Leela_4606,"         Name          Room Equipments          Start_Time            End_Time
+0  Leela_4606  PCR Machines     PCR 10 2025-11-05 14:00:00 2025-11-05 17:00:00"
