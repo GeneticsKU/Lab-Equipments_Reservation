@@ -16514,3 +16514,5 @@ Name: 2369, dtype: object"
 0  Rabinthorn_4606  PCR Machines  ... 2025-11-05 14:00:00 2025-11-05 17:00:00
 
 [1 rows x 5 columns]"
+2025-11-05 10:28:12,Add Reservation,Leela_4606,"         Name          Room Equipments          Start_Time            End_Time
+0  Leela_4606  PCR Machines     PCR 13 2025-11-05 11:00:00 2025-11-05 14:00:00"
