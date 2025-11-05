@@ -16520,3 +16520,9 @@ Name: 2369, dtype: object"
 2025-11-05 10:37:43,Add Reservation,Leela_4606,"         Name          Room Equipments          Start_Time            End_Time
 0  Leela_4606  PCR Machines     PCR 10 2025-11-05 17:00:00 2025-11-05 20:00:00"
 2025-11-05 10:39:05,Add Reservation,Apimon_4612,"{'Name': 'Apimon_4612', 'Room': 'Central Lab, 6th floor', 'Equipments': 'Digital Dry Bath 3', 'Start_Time': datetime.datetime(2025, 11, 5, 10, 45), 'End_Time': datetime.datetime(2025, 11, 5, 13, 0)}"
+2025-11-05 10:39:34,Delete Reservation,Apimon_4612,"Details: Name                     Apimon_4612
+Room          Central Lab, 6th floor
+Equipments                Heat Block
+Start_Time       2025-11-05 10:45:00
+End_Time         2025-11-05 13:00:00
+Name: 3688, dtype: object"
