@@ -16604,3 +16604,9 @@ Name: 2389, dtype: object"
 0  Supanida_4511  PCR Machines  ... 2025-11-06 11:00:00 2025-11-06 14:00:00
 
 [1 rows x 5 columns]"
+2025-11-06 09:02:59,Delete Reservation,Leela_4606,"Details: Name                   Leela_4606
+Room                 PCR Machines
+Equipments                 PCR 13
+Start_Time    2025-11-06 11:00:00
+End_Time      2025-11-06 14:00:00
+Name: 2389, dtype: object"
