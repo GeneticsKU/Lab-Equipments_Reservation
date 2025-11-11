@@ -16810,3 +16810,7 @@ Name: 3726, dtype: object"
 2025-11-11 14:20:17,Add Reservation,Rabinthorn_4606,"{'Name': 'Rabinthorn_4606', 'Room': 'Central Lab, 6th floor', 'Equipments': 'Centrifuge 3', 'Start_Time': datetime.datetime(2025, 11, 11, 14, 30), 'End_Time': datetime.datetime(2025, 11, 11, 15, 30)}"
 2025-11-11 15:31:12,Add Reservation,Rabinthorn_4606,"{'Name': 'Rabinthorn_4606', 'Room': 'Central Lab, 6th floor', 'Equipments': 'Refrigerated Centrifuge 1', 'Start_Time': datetime.datetime(2025, 11, 11, 15, 45), 'End_Time': datetime.datetime(2025, 11, 11, 16, 30)}"
 2025-11-11 16:41:34,Add Reservation,Janejira_4612,"{'Name': 'Janejira_4612', 'Room': 'Microscope Room, 5th floor', 'Equipments': 'Fluorescence Microscope (Contact before use)', 'Start_Time': datetime.datetime(2025, 11, 13, 10, 0), 'End_Time': datetime.datetime(2025, 11, 13, 12, 0)}"
+2025-11-11 21:39:41,Add Reservation,Nattawut_4507,"            Name          Room  ...          Start_Time            End_Time
+0  Nattawut_4507  PCR Machines  ... 2025-11-12 11:00:00 2025-11-12 14:00:00
+
+[1 rows x 5 columns]"
