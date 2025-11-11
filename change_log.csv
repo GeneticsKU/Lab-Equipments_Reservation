@@ -16751,3 +16751,9 @@ Name: 2418, dtype: object"
 2025-11-11 08:25:51,Add Reservation,Supanut_4612,"{'Name': 'Supanut_4612', 'Room': 'Hallway, 6th floor', 'Equipments': 'Autoclave 6 (Drain the water every 5 times after using)', 'Start_Time': datetime.datetime(2025, 11, 11, 8, 45), 'End_Time': datetime.datetime(2025, 11, 11, 10, 45)}"
 2025-11-11 08:27:06,Add Reservation,Supanida_4511,"{'Name': 'Supanida_4511', 'Room': 'Hallway, 6th floor', 'Equipments': 'Autoclave 5 (Drain the water every 5 times after using)', 'Start_Time': datetime.datetime(2025, 11, 11, 8, 45), 'End_Time': datetime.datetime(2025, 11, 11, 9, 15)}"
 2025-11-11 08:27:57,Add Reservation,Supanida_4511,"{'Name': 'Supanida_4511', 'Room': 'BSL-2', 'Equipments': 'BSC-1', 'Start_Time': datetime.datetime(2025, 11, 11, 9, 0), 'End_Time': datetime.datetime(2025, 11, 11, 12, 30)}"
+2025-11-11 08:50:50,Delete Reservation,Supanida_4511,"Details: Name                                              Supanida_4511
+Room                                         Hallway, 6th floor
+Equipments    Autoclave 5 (Drain the water every 5 times aft...
+Start_Time                                  2025-11-11 08:45:00
+End_Time                                    2025-11-11 09:15:00
+Name: 3726, dtype: object"
