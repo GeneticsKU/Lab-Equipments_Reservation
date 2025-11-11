@@ -16763,3 +16763,9 @@ Equipments                  BSC-1
 Start_Time    2025-11-11 09:00:00
 End_Time      2025-11-11 12:30:00
 Name: 3726, dtype: object"
+2025-11-11 08:50:58,Delete Reservation,Supanida_4511,"Details: Name                Supanida_4511
+Room                        BSL-2
+Equipments                  BSC-1
+Start_Time    2025-11-11 09:00:00
+End_Time      2025-11-11 12:30:00
+Name: 3726, dtype: object"
