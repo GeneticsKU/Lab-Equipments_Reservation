@@ -16833,3 +16833,9 @@ Name: 3726, dtype: object"
 0  Leela_4606  PCR Machines     PCR 12 2025-11-12 11:00:00 2025-11-12 14:00:00"
 2025-11-12 09:34:01,Add Reservation,Leela_4606,"         Name          Room Equipments          Start_Time            End_Time
 0  Leela_4606  PCR Machines     PCR 13 2025-11-12 11:00:00 2025-11-12 14:00:00"
+2025-11-12 10:22:34,Delete Reservation,Nattawut_4507,"Details: Name                Nattawut_4507
+Room                 PCR Machines
+Equipments                 PCR 11
+Start_Time    2025-11-12 11:00:00
+End_Time      2025-11-12 14:00:00
+Name: 2425, dtype: object"
