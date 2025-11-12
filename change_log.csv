@@ -16891,3 +16891,9 @@ Equipments                 PCR 13
 Start_Time    2025-11-12 14:00:00
 End_Time      2025-11-12 17:00:00
 Name: 2433, dtype: object"
+2025-11-12 12:29:30,Delete Reservation,chomphoonut_4607,"Details: Name                                           chomphoonut_4607
+Room                                         Hallway, 6th floor
+Equipments    Autoclave 3 (Drain the water every 5 times aft...
+Start_Time                                  2025-11-12 12:00:00
+End_Time                                    2025-11-12 14:00:00
+Name: 3750, dtype: object"
