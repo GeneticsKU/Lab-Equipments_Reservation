@@ -16879,3 +16879,9 @@ End_Time      2025-11-12 17:00:00
 Name: 2434, dtype: object"
 2025-11-12 12:20:31,Add Reservation,Chawit_4606,"          Name          Room Equipments          Start_Time            End_Time
 0  Chawit_4606  PCR Machines     PCR 10 2025-11-12 14:00:00 2025-11-12 17:00:00"
+2025-11-12 12:21:11,Delete Reservation,Tanatad_4606,"Details: Name                 Tanatad_4606
+Room                 PCR Machines
+Equipments                 PCR 10
+Start_Time    2025-11-12 11:00:00
+End_Time      2025-11-12 14:00:00
+Name: 2427, dtype: object"
