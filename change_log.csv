@@ -16871,3 +16871,9 @@ Equipments                 PCR 12
 Start_Time    2025-11-12 14:00:00
 End_Time      2025-11-12 17:00:00
 Name: 2434, dtype: object"
+2025-11-12 12:19:43,Delete Reservation,Chawit_4606,"Details: Name                  Chawit_4606
+Room                 PCR Machines
+Equipments                 PCR 12
+Start_Time    2025-11-12 14:00:00
+End_Time      2025-11-12 17:00:00
+Name: 2434, dtype: object"
