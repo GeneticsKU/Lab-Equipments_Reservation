@@ -16993,3 +16993,4 @@ Name: 3773, dtype: object"
 0  Janejira_4612  PCR Machines  ... 2025-11-14 11:00:00 2025-11-14 14:00:00
 
 [1 rows x 5 columns]"
+2025-11-13 17:29:20,Add Reservation,Sukhita_4612,"{'Name': 'Sukhita_4612', 'Room': 'Central Lab, 6th floor', 'Equipments': 'Refrigerated Centrifuge 4', 'Start_Time': datetime.datetime(2025, 11, 14, 9, 30), 'End_Time': datetime.datetime(2025, 11, 14, 10, 15)}"
