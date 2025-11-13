@@ -16976,3 +16976,9 @@ Name: 2438, dtype: object"
 2025-11-13 13:53:30,Add Reservation,Rabinthorn_4606,"{'Name': 'Rabinthorn_4606', 'Room': 'Central Lab, 6th floor', 'Equipments': 'Digital Dry Bath 3', 'Start_Time': datetime.datetime(2025, 11, 13, 14, 0), 'End_Time': datetime.datetime(2025, 11, 13, 15, 0)}"
 2025-11-13 13:53:55,Add Reservation,Rabinthorn_4606,"{'Name': 'Rabinthorn_4606', 'Room': 'Central Lab, 6th floor', 'Equipments': 'Centrifuge 3', 'Start_Time': datetime.datetime(2025, 11, 13, 14, 0), 'End_Time': datetime.datetime(2025, 11, 13, 15, 0)}"
 2025-11-13 14:08:41,Add Reservation,Jatupol_4612,"{'Name': 'Jatupol_4612', 'Room': 'Hallway, 6th floor', 'Equipments': 'Autoclave For Waste (Drain the water everytime after using)', 'Start_Time': datetime.datetime(2025, 11, 14, 14, 0), 'End_Time': datetime.datetime(2025, 11, 14, 15, 30)}"
+2025-11-13 14:10:12,Delete Reservation,Jathupat_4615,"Details: Name                      Jathupat_4615
+Room             Central Lab, 6th floor
+Equipments    Refrigerated Centrifuge 1
+Start_Time          2025-11-13 14:30:00
+End_Time            2025-11-13 18:00:00
+Name: 3773, dtype: object"
