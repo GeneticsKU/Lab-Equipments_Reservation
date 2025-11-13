@@ -16982,3 +16982,4 @@ Equipments    Refrigerated Centrifuge 1
 Start_Time          2025-11-13 14:30:00
 End_Time            2025-11-13 18:00:00
 Name: 3773, dtype: object"
+2025-11-13 14:11:36,Add Reservation,Jatupol_4612,"{'Name': 'Jatupol_4612', 'Room': 'Hallway, 6th floor', 'Equipments': 'Autoclave 4 (Drain the water every 5 times after using)', 'Start_Time': datetime.datetime(2025, 11, 13, 14, 30), 'End_Time': datetime.datetime(2025, 11, 13, 16, 0)}"
