@@ -17063,3 +17063,9 @@ Name: 2445, dtype: object"
 
 [1 rows x 5 columns]"
 2025-11-14 12:17:51,Add Reservation,Thanathip_4505,"{'Name': 'Thanathip_4505', 'Room': 'Hallway, 6th floor', 'Equipments': 'Autoclave For Waste (Drain the water everytime after using)', 'Start_Time': datetime.datetime(2025, 11, 14, 13, 30), 'End_Time': datetime.datetime(2025, 11, 14, 15, 30)}"
+2025-11-14 12:33:28,Delete Reservation,Issariya_4612,"Details: Name                Issariya_4612
+Room                 PCR Machines
+Equipments                 PCR 11
+Start_Time    2025-11-14 14:00:00
+End_Time      2025-11-14 17:00:00
+Name: 2447, dtype: object"
