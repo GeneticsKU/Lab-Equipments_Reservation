@@ -17018,3 +17018,4 @@ Name: 3780, dtype: object"
 2025-11-14 08:23:15,Add Reservation,Chawit_4606,"          Name          Room Equipments          Start_Time            End_Time
 0  Chawit_4606  PCR Machines     PCR 16 2025-11-14 11:00:00 2025-11-14 14:00:00"
 2025-11-14 08:38:23,Add Reservation,Supanida_4511,"{'Name': 'Supanida_4511', 'Room': 'BSL-2', 'Equipments': 'BSC-2', 'Start_Time': datetime.datetime(2025, 11, 14, 9, 0), 'End_Time': datetime.datetime(2025, 11, 14, 10, 30)}"
+2025-11-14 08:50:40,Add Reservation,Apimon_4612,"{'Name': 'Apimon_4612', 'Room': 'Hallway, 6th floor', 'Equipments': 'Autoclave 6 (Drain the water every 5 times after using)', 'Start_Time': datetime.datetime(2025, 11, 14, 11, 0), 'End_Time': datetime.datetime(2025, 11, 14, 13, 0)}"
