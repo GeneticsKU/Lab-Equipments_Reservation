@@ -17028,3 +17028,9 @@ Equipments                 PCR 10
 Start_Time    2025-11-14 14:00:00
 End_Time      2025-11-14 17:00:00
 Name: 2443, dtype: object"
+2025-11-14 09:52:54,Delete Reservation,Jatupol_4612,"Details: Name                                               Jatupol_4612
+Room                                         Hallway, 6th floor
+Equipments    Autoclave For Waste (Drain the water everytime...
+Start_Time                                  2025-11-14 14:00:00
+End_Time                                    2025-11-14 15:30:00
+Name: 3775, dtype: object"
