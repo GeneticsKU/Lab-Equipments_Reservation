@@ -17167,3 +17167,4 @@ Equipments             Stereo Microscope
 Start_Time           2025-11-18 11:00:00
 End_Time             2025-11-18 12:00:00
 Name: 3797, dtype: object"
+2025-11-17 17:04:36,Add Reservation,Phasanat_4615,"{'Name': 'Phasanat_4615', 'Room': 'Hallway, 6th floor', 'Equipments': 'Autoclave 4 (Drain the water every 5 times after using)', 'Start_Time': datetime.datetime(2025, 11, 18, 10, 45), 'End_Time': datetime.datetime(2025, 11, 18, 13, 0)}"
