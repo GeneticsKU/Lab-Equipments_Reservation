@@ -17121,3 +17121,9 @@ Name: 2447, dtype: object"
 
 [1 rows x 5 columns]"
 2025-11-17 10:10:21,Add Reservation,Jathupat_4615,"{'Name': 'Jathupat_4615', 'Room': 'Central Lab, 6th floor', 'Equipments': 'Heat Block', 'Start_Time': datetime.datetime(2025, 11, 17, 10, 15), 'End_Time': datetime.datetime(2025, 11, 17, 13, 30)}"
+2025-11-17 10:12:43,Delete Reservation,Jathupat_4615,"Details: Name                   Jathupat_4615
+Room          Central Lab, 6th floor
+Equipments                Heat Block
+Start_Time       2025-11-17 10:15:00
+End_Time         2025-11-17 13:30:00
+Name: 3806, dtype: object"
