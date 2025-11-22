@@ -17263,3 +17263,4 @@ Name: 2477, dtype: object"
 
 [1 rows x 5 columns]"
 2025-11-22 23:46:40,Add Reservation,Apimon_4612,"{'Name': 'Apimon_4612', 'Room': 'Central Lab, 6th floor', 'Equipments': 'Laminar flow', 'Start_Time': datetime.datetime(2025, 11, 24, 9, 0), 'End_Time': datetime.datetime(2025, 11, 24, 16, 0)}"
+2025-11-22 23:47:13,Add Reservation,Apimon_4612,"{'Name': 'Apimon_4612', 'Room': 'Central Lab, 6th floor', 'Equipments': 'Refrigerated Centrifuge 4', 'Start_Time': datetime.datetime(2025, 11, 24, 10, 0), 'End_Time': datetime.datetime(2025, 11, 24, 12, 0)}"
