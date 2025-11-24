@@ -17309,3 +17309,5 @@ Name: 2477, dtype: object"
 0  Issariya_4612  PCR Machines  ... 2025-11-24 14:00:00 2025-11-24 17:00:00
 
 [1 rows x 5 columns]"
+2025-11-24 10:15:27,Add Reservation,Chawit_4606,"          Name          Room Equipments          Start_Time            End_Time
+0  Chawit_4606  PCR Machines     PCR 16 2025-11-24 14:00:00 2025-11-24 17:00:00"
