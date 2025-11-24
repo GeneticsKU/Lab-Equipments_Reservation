@@ -17338,3 +17338,4 @@ Name: 3831, dtype: object"
 
 [1 rows x 5 columns]"
 2025-11-24 14:00:44,Add Reservation,Sukhita_4612,"{'Name': 'Sukhita_4612', 'Room': 'Hallway, 6th floor', 'Equipments': 'Autoclave 5 (Drain the water every 5 times after using)', 'Start_Time': datetime.datetime(2025, 11, 24, 14, 30), 'End_Time': datetime.datetime(2025, 11, 24, 16, 30)}"
+2025-11-24 14:02:51,Add Reservation,Dechaphon_4612,"{'Name': 'Dechaphon_4612', 'Room': 'Hallway, 6th floor', 'Equipments': 'Autoclave For Waste (Drain the water everytime after using)', 'Start_Time': datetime.datetime(2025, 11, 24, 14, 30), 'End_Time': datetime.datetime(2025, 11, 24, 16, 30)}"
