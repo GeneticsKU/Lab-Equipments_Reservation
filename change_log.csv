@@ -17347,3 +17347,7 @@ Name: 3831, dtype: object"
 0  Supanida_4511  PCR Machines  ... 2025-11-25 11:00:00 2025-11-25 14:00:00
 
 [1 rows x 5 columns]"
+2025-11-25 08:16:14,Add Reservation,Rabinthorn_4606,"              Name          Room  ...          Start_Time            End_Time
+0  Rabinthorn_4606  PCR Machines  ... 2025-11-25 14:00:00 2025-11-25 17:00:00
+
+[1 rows x 5 columns]"
