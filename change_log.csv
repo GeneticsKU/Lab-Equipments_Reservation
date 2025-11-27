@@ -17503,3 +17503,4 @@ Start_Time                                  2025-11-27 12:30:00
 End_Time                                    2025-11-27 14:30:00
 Name: 3884, dtype: object"
 2025-11-27 09:45:03,Add Reservation,Sukhita_4612,"{'Name': 'Sukhita_4612', 'Room': 'Hallway, 6th floor', 'Equipments': 'Autoclave 4 (Drain the water every 5 times after using)', 'Start_Time': datetime.datetime(2025, 11, 27, 13, 0), 'End_Time': datetime.datetime(2025, 11, 27, 15, 0)}"
+2025-11-27 09:45:40,Add Reservation,Sukhita_4612,"{'Name': 'Sukhita_4612', 'Room': 'Microscope Room, 5th floor', 'Equipments': 'Stereo Microscope', 'Start_Time': datetime.datetime(2025, 11, 27, 13, 30), 'End_Time': datetime.datetime(2025, 11, 27, 16, 30)}"
