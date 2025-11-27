@@ -17525,3 +17525,7 @@ Name: 3884, dtype: object"
 [1 rows x 5 columns]"
 2025-11-27 12:03:29,Add Reservation,Samita_4606,"{'Name': 'Samita_4606', 'Room': 'Central Lab, 6th floor', 'Equipments': 'Digital Dry Bath 3', 'Start_Time': datetime.datetime(2025, 11, 27, 12, 15), 'End_Time': datetime.datetime(2025, 11, 27, 15, 30)}"
 2025-11-27 12:03:52,Add Reservation,Samita_4606,"{'Name': 'Samita_4606', 'Room': 'Central Lab, 6th floor', 'Equipments': 'Centrifuge 3', 'Start_Time': datetime.datetime(2025, 11, 27, 13, 30), 'End_Time': datetime.datetime(2025, 11, 27, 15, 30)}"
+2025-11-27 12:35:49,Add Reservation,chomphoonut_4607,"               Name          Room  ...          Start_Time            End_Time
+0  chomphoonut_4607  PCR Machines  ... 2025-11-27 11:00:00 2025-11-27 14:00:00
+
+[1 rows x 5 columns]"
