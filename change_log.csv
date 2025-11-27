@@ -17496,3 +17496,9 @@ Equipments                  BSC-1
 Start_Time    2025-11-27 08:45:00
 End_Time      2025-11-27 09:30:00
 Name: 3883, dtype: object"
+2025-11-27 09:30:35,Delete Reservation,Supanida_4511,"Details: Name                                              Supanida_4511
+Room                                         Hallway, 6th floor
+Equipments    Autoclave For Waste (Drain the water everytime...
+Start_Time                                  2025-11-27 12:30:00
+End_Time                                    2025-11-27 14:30:00
+Name: 3884, dtype: object"
