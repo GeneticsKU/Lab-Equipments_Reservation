@@ -17631,3 +17631,9 @@ Equipments                 PCR 13
 Start_Time    2025-12-01 11:00:00
 End_Time      2025-12-01 14:00:00
 Name: 2536, dtype: object"
+2025-12-01 07:44:09,Delete Reservation,Apimon_4612,"Details: Name                  Apimon_4612
+Room                 PCR Machines
+Equipments                 PCR 14
+Start_Time    2025-12-01 11:00:00
+End_Time      2025-12-01 14:00:00
+Name: 2536, dtype: object"
