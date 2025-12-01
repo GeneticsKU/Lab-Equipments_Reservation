@@ -17638,3 +17638,5 @@ Start_Time    2025-12-01 11:00:00
 End_Time      2025-12-01 14:00:00
 Name: 2536, dtype: object"
 2025-12-01 08:03:41,Add Reservation,Supanut_4612,"{'Name': 'Supanut_4612', 'Room': 'Central Lab, 6th floor', 'Equipments': 'Refrigerated Centrifuge 4', 'Start_Time': datetime.datetime(2025, 12, 1, 9, 0), 'End_Time': datetime.datetime(2025, 12, 1, 10, 0)}"
+2025-12-01 08:33:35,Add Reservation,Samita_4606,"          Name          Room Equipments          Start_Time            End_Time
+0  Samita_4606  PCR Machines     PCR 16 2025-12-01 11:00:00 2025-12-01 14:00:00"
