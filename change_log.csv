@@ -17707,3 +17707,9 @@ Name: 2540, dtype: object"
 0  Nattawut_4507  PCR Machines  ... 2025-12-02 11:00:00 2025-12-02 14:00:00
 
 [1 rows x 5 columns]"
+2025-12-02 09:31:58,Delete Reservation,Worrawit_4505,"Details: Name                                              Worrawit_4505
+Room                                         Hallway, 6th floor
+Equipments    Autoclave For Waste (Drain the water everytime...
+Start_Time                                  2025-12-02 10:00:00
+End_Time                                    2025-12-02 12:00:00
+Name: 3924, dtype: object"
