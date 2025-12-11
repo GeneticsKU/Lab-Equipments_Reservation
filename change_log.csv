@@ -17913,3 +17913,9 @@ Name: 2572, dtype: object"
 2025-12-11 11:53:27,Add Reservation,Thanathip_4505,"{'Name': 'Thanathip_4505', 'Room': 'Central Lab, 5th floor', 'Equipments': 'Incubator Shaker 2', 'Start_Time': datetime.datetime(2025, 12, 19, 9, 0), 'End_Time': datetime.datetime(2025, 12, 19, 23, 45)}"
 2025-12-11 11:54:00,Add Reservation,Thanathip_4505,"{'Name': 'Thanathip_4505', 'Room': 'Central Lab, 5th floor', 'Equipments': 'Incubator Shaker 2', 'Start_Time': datetime.datetime(2025, 12, 20, 0, 0), 'End_Time': datetime.datetime(2025, 12, 20, 16, 0)}"
 2025-12-11 11:54:08,Add Reservation,Thanathip_4505,"{'Name': 'Thanathip_4505', 'Room': 'Central Lab, 5th floor', 'Equipments': 'Incubator Shaker 1', 'Start_Time': datetime.datetime(2025, 12, 20, 0, 0), 'End_Time': datetime.datetime(2025, 12, 20, 16, 0)}"
+2025-12-11 12:51:01,Delete Reservation,Phasanat_4615,"Details: Name                Phasanat_4615
+Room                 PCR Machines
+Equipments                 PCR 15
+Start_Time    2025-12-11 11:00:00
+End_Time      2025-12-11 14:00:00
+Name: 2582, dtype: object"
