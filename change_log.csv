@@ -18048,3 +18048,4 @@ Equipments                 PCR 11
 Start_Time    2025-12-15 14:00:00
 End_Time      2025-12-15 17:00:00
 Name: 2600, dtype: object"
+2025-12-15 13:17:36,Add Reservation,Teeradon_4606,"{'Name': 'Teeradon_4606', 'Room': 'Hallway, 6th floor', 'Equipments': 'Autoclave 7 (Drain the water every 5 times after using)', 'Start_Time': datetime.datetime(2025, 12, 15, 13, 30), 'End_Time': datetime.datetime(2025, 12, 15, 15, 30)}"
