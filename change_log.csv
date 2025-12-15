@@ -18029,3 +18029,4 @@ Name: 4005, dtype: object"
 0  Jatupol_4612  PCR Machines  ... 2025-12-15 11:00:00 2025-12-15 14:00:00
 
 [1 rows x 5 columns]"
+2025-12-15 10:21:37,Add Reservation,Malinee_4511,"{'Name': 'Malinee_4511', 'Room': 'Microscope Room, 5th floor', 'Equipments': 'Stereo Microscope', 'Start_Time': datetime.datetime(2025, 12, 15, 10, 30), 'End_Time': datetime.datetime(2025, 12, 15, 12, 30)}"
