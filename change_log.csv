@@ -18033,3 +18033,4 @@ Name: 4005, dtype: object"
 2025-12-15 10:53:07,Add Reservation,Malinee_4511,"{'Name': 'Malinee_4511', 'Room': 'Microscope Room, 5th floor', 'Equipments': 'Stereo Microscope', 'Start_Time': datetime.datetime(2025, 12, 15, 12, 30), 'End_Time': datetime.datetime(2025, 12, 15, 13, 30)}"
 2025-12-15 10:56:48,Add Reservation,Leela_4606,"         Name          Room Equipments          Start_Time            End_Time
 0  Leela_4606  PCR Machines     PCR 11 2025-12-15 14:00:00 2025-12-15 17:00:00"
+2025-12-15 11:10:10,Add Reservation,chomphoonut_4607,"{'Name': 'chomphoonut_4607', 'Room': 'Hallway, 6th floor', 'Equipments': 'Autoclave For Waste (Drain the water everytime after using)', 'Start_Time': datetime.datetime(2025, 12, 15, 14, 0), 'End_Time': datetime.datetime(2025, 12, 15, 16, 0)}"
