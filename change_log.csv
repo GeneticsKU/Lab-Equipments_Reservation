@@ -18062,3 +18062,7 @@ Name: 2600, dtype: object"
 2025-12-16 08:29:23,Add Reservation,Leela_4606,"         Name          Room Equipments          Start_Time            End_Time
 0  Leela_4606  PCR Machines     PCR 13 2025-12-16 11:00:00 2025-12-16 14:00:00"
 2025-12-16 09:59:20,Add Reservation,Wilasinee_4612,"{'Name': 'Wilasinee_4612', 'Room': 'Microscope Room, 5th floor', 'Equipments': 'Fluorescence Microscope (Contact before use)', 'Start_Time': datetime.datetime(2025, 12, 16, 10, 30), 'End_Time': datetime.datetime(2025, 12, 16, 16, 0)}"
+2025-12-16 10:27:20,Add Reservation,Nattawut_4507,"            Name          Room  ...          Start_Time            End_Time
+0  Nattawut_4507  PCR Machines  ... 2025-12-16 11:00:00 2025-12-16 14:00:00
+
+[1 rows x 5 columns]"
