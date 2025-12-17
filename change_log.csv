@@ -18156,3 +18156,4 @@ Equipments                 PCR 10
 Start_Time    2025-12-17 14:00:00
 End_Time      2025-12-17 17:00:00
 Name: 2618, dtype: object"
+2025-12-17 14:13:16,Add Reservation,Jathupat_4615,"{'Name': 'Jathupat_4615', 'Room': 'Central Lab, 6th floor', 'Equipments': 'Centrifuge 2', 'Start_Time': datetime.datetime(2025, 12, 17, 14, 15), 'End_Time': datetime.datetime(2025, 12, 17, 16, 0)}"
