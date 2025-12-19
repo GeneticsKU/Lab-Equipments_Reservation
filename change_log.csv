@@ -18218,3 +18218,9 @@ Name: 2625, dtype: object"
 
 [1 rows x 5 columns]"
 2025-12-19 09:29:04,Add Reservation,Wilasinee_4612,"{'Name': 'Wilasinee_4612', 'Room': 'Microscope Room, 5th floor', 'Equipments': 'Fluorescence Microscope (Contact before use)', 'Start_Time': datetime.datetime(2025, 12, 19, 9, 30), 'End_Time': datetime.datetime(2025, 12, 19, 14, 0)}"
+2025-12-19 09:45:50,Delete Reservation,Apimon_4612,"Details: Name                        Apimon_4612
+Room             Central Lab, 6th floor
+Equipments    Refrigerated Centrifuge 4
+Start_Time          2025-12-19 10:30:00
+End_Time            2025-12-19 12:30:00
+Name: 4034, dtype: object"
