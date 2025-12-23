@@ -18332,3 +18332,9 @@ End_Time                                    2025-12-23 14:30:00
 Name: 4061, dtype: object"
 2025-12-23 12:57:57,Add Reservation,Jathupat_4615,"{'Name': 'Jathupat_4615', 'Room': 'Hallway, 6th floor', 'Equipments': 'Autoclave 6 (Drain the water every 5 times after using)', 'Start_Time': datetime.datetime(2025, 12, 23, 13, 30), 'End_Time': datetime.datetime(2025, 12, 23, 15, 30)}"
 2025-12-23 14:12:33,Add Reservation,Tanatad_4606,"{'Name': 'Tanatad_4606', 'Room': 'Central Lab, 6th floor', 'Equipments': 'Refrigerated Centrifuge 2', 'Start_Time': datetime.datetime(2025, 12, 23, 14, 15), 'End_Time': datetime.datetime(2025, 12, 23, 17, 15)}"
+2025-12-23 14:15:45,Delete Reservation,Tanatad_4606,"Details: Name                       Tanatad_4606
+Room             Central Lab, 6th floor
+Equipments    Refrigerated Centrifuge 2
+Start_Time          2025-12-23 14:15:00
+End_Time            2025-12-23 17:15:00
+Name: 4062, dtype: object"
