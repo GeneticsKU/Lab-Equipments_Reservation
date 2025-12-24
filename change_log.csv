@@ -18390,3 +18390,4 @@ Equipments                 PCR 16
 Start_Time    2025-12-24 14:00:00
 End_Time      2025-12-24 17:00:00
 Name: 2657, dtype: object"
+2025-12-24 14:05:02,Add Reservation,Thanakorn_4612,"{'Name': 'Thanakorn_4612', 'Room': 'Hallway, 6th floor', 'Equipments': 'Autoclave 6 (Drain the water every 5 times after using)', 'Start_Time': datetime.datetime(2025, 12, 24, 15, 0), 'End_Time': datetime.datetime(2025, 12, 24, 17, 0)}"
