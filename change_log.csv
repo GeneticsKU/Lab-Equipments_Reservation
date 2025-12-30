@@ -18481,3 +18481,4 @@ Equipments    Autoclave 4 (Drain the water every 5 times aft...
 Start_Time                                  2025-12-30 10:30:00
 End_Time                                    2025-12-30 12:30:00
 Name: 4089, dtype: object"
+2025-12-30 10:20:00,Add Reservation,Tanatad_4606,"{'Name': 'Tanatad_4606', 'Room': 'Hallway, 6th floor', 'Equipments': 'Autoclave 6 (Drain the water every 5 times after using)', 'Start_Time': datetime.datetime(2025, 12, 30, 10, 30), 'End_Time': datetime.datetime(2025, 12, 30, 12, 30)}"
