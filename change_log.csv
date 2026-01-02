@@ -18500,3 +18500,4 @@ Name: 4089, dtype: object"
 
 [1 rows x 5 columns]"
 2026-01-02 14:43:53,Add Reservation,Jatupol_4612,"{'Name': 'Jatupol_4612', 'Room': 'Hallway, 6th floor', 'Equipments': 'Autoclave 6 (Drain the water every 5 times after using)', 'Start_Time': datetime.datetime(2026, 1, 2, 14, 45), 'End_Time': datetime.datetime(2026, 1, 2, 16, 15)}"
+2026-01-02 21:10:34,Add Reservation,Apimon_4612,"{'Name': 'Apimon_4612', 'Room': 'Central Lab, 6th floor', 'Equipments': 'Laminar flow', 'Start_Time': datetime.datetime(2026, 1, 5, 9, 0), 'End_Time': datetime.datetime(2026, 1, 5, 17, 0)}"
