@@ -18526,3 +18526,9 @@ Name: 4101, dtype: object"
 2026-01-05 15:13:01,Add Reservation,Sukhita_4612,"{'Name': 'Sukhita_4612', 'Room': 'Hallway, 6th floor', 'Equipments': 'Autoclave 6 (Drain the water every 5 times after using)', 'Start_Time': datetime.datetime(2026, 1, 5, 16, 0), 'End_Time': datetime.datetime(2026, 1, 5, 16, 30)}"
 2026-01-05 15:24:53,Add Reservation,Dechaphon_4612,"{'Name': 'Dechaphon_4612', 'Room': 'BSL-2', 'Equipments': 'BSC-2', 'Start_Time': datetime.datetime(2026, 1, 6, 9, 0), 'End_Time': datetime.datetime(2026, 1, 6, 16, 0)}"
 2026-01-05 15:47:51,Add Reservation,Apimon_4612,"{'Name': 'Apimon_4612', 'Room': 'Central Lab, 6th floor', 'Equipments': 'Laminar flow', 'Start_Time': datetime.datetime(2026, 1, 6, 9, 0), 'End_Time': datetime.datetime(2026, 1, 6, 16, 30)}"
+2026-01-05 15:48:04,Delete Reservation,Apimon_4612,"Details: Name                     Apimon_4612
+Room          Central Lab, 6th floor
+Equipments              Laminar flow
+Start_Time       2026-01-09 08:30:00
+End_Time         2026-01-09 12:30:00
+Name: 4110, dtype: object"
