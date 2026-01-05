@@ -18510,3 +18510,4 @@ End_Time                                    2026-01-03 15:30:00
 Name: 4101, dtype: object"
 2026-01-03 09:48:19,Add Reservation,Arisa_4505,"{'Name': 'Arisa_4505', 'Room': 'Hallway, 6th floor', 'Equipments': 'Autoclave 3 (Drain the water every 5 times after using)', 'Start_Time': datetime.datetime(2026, 1, 4, 14, 0), 'End_Time': datetime.datetime(2026, 1, 4, 15, 30)}"
 2026-01-04 19:03:12,Add Reservation,Sukhita_4612,"{'Name': 'Sukhita_4612', 'Room': 'Hallway, 6th floor', 'Equipments': 'Autoclave 6 (Drain the water every 5 times after using)', 'Start_Time': datetime.datetime(2026, 1, 5, 14, 0), 'End_Time': datetime.datetime(2026, 1, 5, 16, 0)}"
+2026-01-05 08:47:27,Add Reservation,Dechaphon_4612,"{'Name': 'Dechaphon_4612', 'Room': 'Hallway, 6th floor', 'Equipments': 'Autoclave 1 (Drain the water every 5 times after using)', 'Start_Time': datetime.datetime(2026, 1, 5, 9, 0), 'End_Time': datetime.datetime(2026, 1, 5, 11, 0)}"
