@@ -18584,3 +18584,7 @@ Name: 4126, dtype: object"
 [1 rows x 5 columns]"
 2026-01-07 11:12:43,Add Reservation,Samita_4606,"{'Name': 'Samita_4606', 'Room': 'Central Lab, 6th floor', 'Equipments': 'Digital Dry Bath 3', 'Start_Time': datetime.datetime(2026, 1, 7, 11, 15), 'End_Time': datetime.datetime(2026, 1, 7, 15, 0)}"
 2026-01-07 11:13:23,Add Reservation,Samita_4606,"{'Name': 'Samita_4606', 'Room': 'Central Lab, 6th floor', 'Equipments': 'Centrifuge 3', 'Start_Time': datetime.datetime(2026, 1, 7, 12, 30), 'End_Time': datetime.datetime(2026, 1, 7, 15, 15)}"
+2026-01-07 11:38:05,Add Reservation,Jathupat_4615,"            Name          Room  ...          Start_Time            End_Time
+0  Jathupat_4615  PCR Machines  ... 2026-01-07 11:00:00 2026-01-07 14:00:00
+
+[1 rows x 5 columns]"
