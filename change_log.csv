@@ -18602,3 +18602,9 @@ Name: 4126, dtype: object"
 
 [1 rows x 5 columns]"
 2026-01-07 14:45:03,Add Reservation,Jathupat_4615,"{'Name': 'Jathupat_4615', 'Room': 'Hallway, 6th floor', 'Equipments': 'Autoclave 4 (Drain the water every 5 times after using)', 'Start_Time': datetime.datetime(2026, 1, 7, 15, 0), 'End_Time': datetime.datetime(2026, 1, 7, 17, 0)}"
+2026-01-07 15:20:17,Delete Reservation,Sukhita_4612,"Details: Name                        Sukhita_4612
+Room          Microscope Room, 5th floor
+Equipments             Stereo Microscope
+Start_Time           2026-01-07 15:00:00
+End_Time             2026-01-07 16:30:00
+Name: 4126, dtype: object"
