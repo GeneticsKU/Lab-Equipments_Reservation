@@ -18667,3 +18667,5 @@ Name: 4140, dtype: object"
 2026-01-08 14:34:48,Add Reservation,Sukhita_4612,"{'Name': 'Sukhita_4612', 'Room': 'Microscope Room, 5th floor', 'Equipments': 'Stereo Microscope', 'Start_Time': datetime.datetime(2026, 1, 8, 14, 45), 'End_Time': datetime.datetime(2026, 1, 8, 16, 30)}"
 2026-01-08 14:57:06,Add Reservation,Siwapohn_4505,"{'Name': 'Siwapohn_4505', 'Room': 'Central Lab, 5th floor', 'Equipments': 'Incubator Shaker 2', 'Start_Time': datetime.datetime(2026, 1, 8, 15, 0), 'End_Time': datetime.datetime(2026, 1, 8, 23, 45)}"
 2026-01-08 14:57:30,Add Reservation,Siwapohn_4505,"{'Name': 'Siwapohn_4505', 'Room': 'Central Lab, 5th floor', 'Equipments': 'Incubator Shaker 2', 'Start_Time': datetime.datetime(2026, 1, 9, 0, 0), 'End_Time': datetime.datetime(2026, 1, 9, 15, 0)}"
+2026-01-08 15:22:06,Add Reservation,Apimon_4612,"          Name          Room Equipments          Start_Time            End_Time
+0  Apimon_4612  PCR Machines     PCR 13 2026-01-09 08:00:00 2026-01-09 11:00:00"
