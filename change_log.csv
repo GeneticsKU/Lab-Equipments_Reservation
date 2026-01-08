@@ -18655,3 +18655,9 @@ Name: 4143, dtype: object"
 2026-01-08 10:34:39,Add Reservation,Siwapohn_4505,"{'Name': 'Siwapohn_4505', 'Room': 'Central Lab, 6th floor', 'Equipments': 'Ultrasonic Processors', 'Start_Time': datetime.datetime(2026, 1, 8, 12, 0), 'End_Time': datetime.datetime(2026, 1, 8, 14, 0)}"
 2026-01-08 10:48:54,Add Reservation,Dechaphon_4612,"{'Name': 'Dechaphon_4612', 'Room': 'Hallway, 6th floor', 'Equipments': 'Autoclave 5 (Drain the water every 5 times after using)', 'Start_Time': datetime.datetime(2026, 1, 8, 11, 0), 'End_Time': datetime.datetime(2026, 1, 8, 13, 0)}"
 2026-01-08 11:19:53,Add Reservation,Sukhita_4612,"{'Name': 'Sukhita_4612', 'Room': 'Hallway, 6th floor', 'Equipments': 'Autoclave 7 (Drain the water every 5 times after using)', 'Start_Time': datetime.datetime(2026, 1, 8, 14, 0), 'End_Time': datetime.datetime(2026, 1, 8, 16, 0)}"
+2026-01-08 11:20:36,Delete Reservation,Sukhita_4612,"Details: Name                                               Sukhita_4612
+Room                                         Hallway, 6th floor
+Equipments    Autoclave 4 (Drain the water every 5 times aft...
+Start_Time                                  2026-01-08 14:15:00
+End_Time                                    2026-01-08 16:15:00
+Name: 4140, dtype: object"
