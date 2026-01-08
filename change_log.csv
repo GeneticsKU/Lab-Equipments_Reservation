@@ -18662,3 +18662,5 @@ Start_Time                                  2026-01-08 14:15:00
 End_Time                                    2026-01-08 16:15:00
 Name: 4140, dtype: object"
 2026-01-08 11:30:45,Add Reservation,Apimon_4612,"{'Name': 'Apimon_4612', 'Room': 'Hallway, 6th floor', 'Equipments': 'Autoclave 6 (Drain the water every 5 times after using)', 'Start_Time': datetime.datetime(2026, 1, 8, 13, 0), 'End_Time': datetime.datetime(2026, 1, 8, 15, 0)}"
+2026-01-08 11:50:28,Add Reservation,Chawit_4606,"          Name          Room Equipments          Start_Time            End_Time
+0  Chawit_4606  PCR Machines     PCR 16 2026-01-08 14:00:00 2026-01-08 17:00:00"
