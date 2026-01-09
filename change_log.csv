@@ -18676,3 +18676,7 @@ Name: 4140, dtype: object"
 2026-01-08 19:09:16,Add Reservation,Dechaphon_4612,"{'Name': 'Dechaphon_4612', 'Room': 'BSL-2', 'Equipments': 'BSC-2', 'Start_Time': datetime.datetime(2026, 1, 9, 13, 0), 'End_Time': datetime.datetime(2026, 1, 9, 17, 0)}"
 2026-01-09 08:45:47,Add Reservation,Samita_4606,"          Name          Room Equipments          Start_Time            End_Time
 0  Samita_4606  PCR Machines     PCR 16 2026-01-09 11:00:00 2026-01-09 14:00:00"
+2026-01-09 08:49:15,Add Reservation,Phasanat_4615,"            Name          Room  ...          Start_Time            End_Time
+0  Phasanat_4615  PCR Machines  ... 2026-01-09 11:00:00 2026-01-09 14:00:00
+
+[1 rows x 5 columns]"
