@@ -18708,3 +18708,7 @@ Name: 4140, dtype: object"
 2026-01-09 13:19:51,Add Reservation,Supanida_4511,"{'Name': 'Supanida_4511', 'Room': 'BSL-2', 'Equipments': 'BSC-1', 'Start_Time': datetime.datetime(2026, 1, 9, 13, 30), 'End_Time': datetime.datetime(2026, 1, 9, 14, 30)}"
 2026-01-09 13:48:12,Add Reservation,Rabinthorn_4606,"{'Name': 'Rabinthorn_4606', 'Room': 'Central Lab, 6th floor', 'Equipments': 'Digital Dry Bath 2', 'Start_Time': datetime.datetime(2026, 1, 9, 14, 0), 'End_Time': datetime.datetime(2026, 1, 9, 15, 0)}"
 2026-01-09 13:48:38,Add Reservation,Rabinthorn_4606,"{'Name': 'Rabinthorn_4606', 'Room': 'Central Lab, 6th floor', 'Equipments': 'Centrifuge 3', 'Start_Time': datetime.datetime(2026, 1, 9, 14, 0), 'End_Time': datetime.datetime(2026, 1, 9, 15, 0)}"
+2026-01-09 15:12:17,Add Reservation,Thanakorn_4612,"             Name          Room  ...          Start_Time            End_Time
+0  Thanakorn_4612  PCR Machines  ... 2026-01-09 14:00:00 2026-01-09 17:00:00
+
+[1 rows x 5 columns]"
