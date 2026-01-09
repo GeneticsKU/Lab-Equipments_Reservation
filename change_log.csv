@@ -18706,3 +18706,4 @@ Name: 4140, dtype: object"
 
 [1 rows x 5 columns]"
 2026-01-09 13:19:51,Add Reservation,Supanida_4511,"{'Name': 'Supanida_4511', 'Room': 'BSL-2', 'Equipments': 'BSC-1', 'Start_Time': datetime.datetime(2026, 1, 9, 13, 30), 'End_Time': datetime.datetime(2026, 1, 9, 14, 30)}"
+2026-01-09 13:48:12,Add Reservation,Rabinthorn_4606,"{'Name': 'Rabinthorn_4606', 'Room': 'Central Lab, 6th floor', 'Equipments': 'Digital Dry Bath 2', 'Start_Time': datetime.datetime(2026, 1, 9, 14, 0), 'End_Time': datetime.datetime(2026, 1, 9, 15, 0)}"
