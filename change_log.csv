@@ -18736,3 +18736,9 @@ Name: 4140, dtype: object"
 
 [1 rows x 5 columns]"
 2026-01-10 13:43:58,Add Reservation,Supanida_4511,"{'Name': 'Supanida_4511', 'Room': 'Central Lab, 6th floor', 'Equipments': 'Digital Dry Bath 1', 'Start_Time': datetime.datetime(2026, 1, 10, 14, 0), 'End_Time': datetime.datetime(2026, 1, 10, 15, 0)}"
+2026-01-10 14:13:01,Delete Reservation,Supanida_4511,"Details: Name                Supanida_4511
+Room                 PCR Machines
+Equipments                 PCR 13
+Start_Time    2026-01-10 14:00:00
+End_Time      2026-01-10 17:00:00
+Name: 2705, dtype: object"
