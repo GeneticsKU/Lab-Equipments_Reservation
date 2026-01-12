@@ -18760,3 +18760,9 @@ Equipments                  PCR 2
 Start_Time    2026-01-12 14:00:00
 End_Time      2026-01-12 17:00:00
 Name: 2706, dtype: object"
+2026-01-12 11:36:21,Delete Reservation,Rabinthorn_4606,"Details: Name              Rabinthorn_4606
+Room                 PCR Machines
+Equipments                 PCR 10
+Start_Time    2026-01-12 11:00:00
+End_Time      2026-01-12 14:00:00
+Name: 2705, dtype: object"
