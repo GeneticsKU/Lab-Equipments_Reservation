@@ -18778,3 +18778,5 @@ Name: 2705, dtype: object"
 0  Thanakorn_4612  PCR Machines  ... 2026-01-12 14:00:00 2026-01-12 17:00:00
 
 [1 rows x 5 columns]"
+2026-01-12 11:47:45,Add Reservation,Chawit_4606,"          Name          Room Equipments          Start_Time            End_Time
+0  Chawit_4606  PCR Machines     PCR 12 2026-01-12 14:00:00 2026-01-12 17:00:00"
