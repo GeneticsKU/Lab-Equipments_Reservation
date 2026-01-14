@@ -18865,3 +18865,4 @@ Name: 2705, dtype: object"
 
 [1 rows x 5 columns]"
 2026-01-14 12:08:38,Add Reservation,Janejira_4612,"{'Name': 'Janejira_4612', 'Room': 'Microscope Room, 5th floor', 'Equipments': 'Fluorescence Microscope (Contact before use)', 'Start_Time': datetime.datetime(2026, 1, 14, 14, 0), 'End_Time': datetime.datetime(2026, 1, 14, 16, 0)}"
+2026-01-14 12:41:43,Add Reservation,Samita_4606,"{'Name': 'Samita_4606', 'Room': 'Central Lab, 6th floor', 'Equipments': 'Digital Dry Bath 3', 'Start_Time': datetime.datetime(2026, 1, 14, 12, 45), 'End_Time': datetime.datetime(2026, 1, 14, 14, 15)}"
