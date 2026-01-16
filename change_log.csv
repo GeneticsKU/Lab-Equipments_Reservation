@@ -18915,3 +18915,9 @@ Name: 2730, dtype: object"
 0  Phasanat_4615  PCR Machines  ... 2026-01-16 11:00:00 2026-01-16 14:00:00
 
 [1 rows x 5 columns]"
+2026-01-16 08:35:52,Delete Reservation,Phasanat_4615,"Details: Name                Phasanat_4615
+Room                 PCR Machines
+Equipments                 PCR 10
+Start_Time    2026-01-16 11:00:00
+End_Time      2026-01-16 14:00:00
+Name: 2733, dtype: object"
