@@ -18968,3 +18968,4 @@ Name: 2733, dtype: object"
 0  Malinee_4511  PCR Machines  ... 2026-01-17 11:00:00 2026-01-17 14:00:00
 
 [1 rows x 5 columns]"
+2026-01-17 11:41:49,Add Reservation,Phasanat_4615,"{'Name': 'Phasanat_4615', 'Room': 'Central Lab, 6th floor', 'Equipments': 'Laminar flow', 'Start_Time': datetime.datetime(2026, 1, 22, 8, 15), 'End_Time': datetime.datetime(2026, 1, 22, 16, 30)}"
