@@ -18982,3 +18982,4 @@ Name: 4225, dtype: object"
 2026-01-18 09:48:21,Add Reservation,Piriya_4511,"          Name          Room Equipments          Start_Time            End_Time
 0  Piriya_4511  PCR Machines     PCR 11 2026-01-18 11:00:00 2026-01-18 14:00:00"
 2026-01-19 08:49:50,Add Reservation,Issariya_4612,"{'Name': 'Issariya_4612', 'Room': 'Central Lab, 6th floor', 'Equipments': 'Refrigerated Centrifuge 3', 'Start_Time': datetime.datetime(2026, 1, 20, 9, 0), 'End_Time': datetime.datetime(2026, 1, 20, 16, 0)}"
+2026-01-19 09:13:36,Add Reservation,chomphoonut_4607,"{'Name': 'chomphoonut_4607', 'Room': 'BSL-2', 'Equipments': 'BSC-2', 'Start_Time': datetime.datetime(2026, 1, 19, 10, 0), 'End_Time': datetime.datetime(2026, 1, 19, 17, 0)}"
