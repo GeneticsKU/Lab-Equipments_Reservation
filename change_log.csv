@@ -18989,3 +18989,9 @@ Name: 4225, dtype: object"
 0  Jatupol_4612  PCR Machines  ... 2026-01-19 11:00:00 2026-01-19 14:00:00
 
 [1 rows x 5 columns]"
+2026-01-19 10:21:57,Delete Reservation,Jatupol_4612,"Details: Name                 Jatupol_4612
+Room                 PCR Machines
+Equipments                 PCR 16
+Start_Time    2026-01-19 11:00:00
+End_Time      2026-01-19 14:00:00
+Name: 2743, dtype: object"
