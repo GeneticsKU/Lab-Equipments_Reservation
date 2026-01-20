@@ -19070,3 +19070,7 @@ Name: 4235, dtype: object"
 2026-01-20 11:03:04,Add Reservation,Wilasinee_4612,"{'Name': 'Wilasinee_4612', 'Room': 'Microscope Room, 5th floor', 'Equipments': 'Fluorescence Microscope (Contact before use)', 'Start_Time': datetime.datetime(2026, 1, 20, 13, 0), 'End_Time': datetime.datetime(2026, 1, 20, 16, 0)}"
 2026-01-20 11:51:25,Add Reservation,Issariya_4612,"{'Name': 'Issariya_4612', 'Room': 'Central Lab, 6th floor', 'Equipments': 'Refrigerated Centrifuge 4', 'Start_Time': datetime.datetime(2026, 1, 20, 12, 0), 'End_Time': datetime.datetime(2026, 1, 20, 16, 0)}"
 2026-01-20 12:10:04,Add Reservation,Siwapohn_4505,"{'Name': 'Siwapohn_4505', 'Room': 'Hallway, 6th floor', 'Equipments': 'Autoclave For Waste (Drain the water everytime after using)', 'Start_Time': datetime.datetime(2026, 1, 20, 13, 0), 'End_Time': datetime.datetime(2026, 1, 20, 15, 0)}"
+2026-01-20 12:20:46,Add Reservation,chomphoonut_4607,"               Name          Room  ...          Start_Time            End_Time
+0  chomphoonut_4607  PCR Machines  ... 2026-01-20 11:00:00 2026-01-20 14:00:00
+
+[1 rows x 5 columns]"
