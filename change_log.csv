@@ -19074,3 +19074,9 @@ Name: 4235, dtype: object"
 0  chomphoonut_4607  PCR Machines  ... 2026-01-20 11:00:00 2026-01-20 14:00:00
 
 [1 rows x 5 columns]"
+2026-01-20 13:14:59,Delete Reservation,chomphoonut_4607,"Details: Name             chomphoonut_4607
+Room                 PCR Machines
+Equipments        Real Time PCR 1
+Start_Time    2026-01-20 11:00:00
+End_Time      2026-01-20 14:00:00
+Name: 2753, dtype: object"
