@@ -19148,3 +19148,4 @@ Name: 2753, dtype: object"
 0  Jatupol_4612  PCR Machines  ... 2026-01-22 17:00:00 2026-01-22 20:00:00
 
 [1 rows x 5 columns]"
+2026-01-22 18:01:15,Add Reservation,Thanakorn_4612,"{'Name': 'Thanakorn_4612', 'Room': 'Central Lab, 6th floor', 'Equipments': 'Refrigerated Centrifuge 4', 'Start_Time': datetime.datetime(2026, 1, 22, 18, 30), 'End_Time': datetime.datetime(2026, 1, 22, 20, 0)}"
