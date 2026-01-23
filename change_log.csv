@@ -19163,3 +19163,9 @@ Name: 2753, dtype: object"
 0  Chawit_4606  PCR Machines     PCR 16 2026-01-23 11:00:00 2026-01-23 14:00:00"
 2026-01-23 08:27:12,Add Reservation,Apimon_4612,"          Name          Room Equipments          Start_Time            End_Time
 0  Apimon_4612  PCR Machines     PCR 13 2026-01-23 11:00:00 2026-01-23 14:00:00"
+2026-01-23 08:42:12,Delete Reservation,Phasanat_4615,"Details: Name                Phasanat_4615
+Room                 PCR Machines
+Equipments                 PCR 10
+Start_Time    2026-01-23 11:00:00
+End_Time      2026-01-23 14:00:00
+Name: 2768, dtype: object"
