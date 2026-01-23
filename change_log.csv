@@ -19173,3 +19173,4 @@ Name: 2768, dtype: object"
 0  Phasanat_4615  PCR Machines  ... 2026-01-23 08:00:00 2026-01-23 11:00:00
 
 [1 rows x 5 columns]"
+2026-01-23 09:52:54,Add Reservation,Dechaphon_4612,"{'Name': 'Dechaphon_4612', 'Room': 'BSL-2', 'Equipments': 'BSC-2', 'Start_Time': datetime.datetime(2026, 1, 23, 10, 30), 'End_Time': datetime.datetime(2026, 1, 23, 17, 0)}"
