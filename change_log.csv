@@ -19208,3 +19208,5 @@ Name: 2768, dtype: object"
 2026-01-23 16:56:42,Add Reservation,Sukhita_4612,"{'Name': 'Sukhita_4612', 'Room': 'Hallway, 6th floor', 'Equipments': 'Autoclave 5 (Drain the water every 5 times after using)', 'Start_Time': datetime.datetime(2026, 1, 23, 17, 30), 'End_Time': datetime.datetime(2026, 1, 23, 19, 0)}"
 2026-01-23 21:45:53,Add Reservation,Sukhita_4612,"{'Name': 'Sukhita_4612', 'Room': 'Microscope Room, 5th floor', 'Equipments': 'Stereo Microscope', 'Start_Time': datetime.datetime(2026, 1, 26, 13, 0), 'End_Time': datetime.datetime(2026, 1, 26, 17, 0)}"
 2026-01-23 21:47:32,Add Reservation,Sukhita_4612,"{'Name': 'Sukhita_4612', 'Room': 'Microscope Room, 5th floor', 'Equipments': 'Stereo Microscope', 'Start_Time': datetime.datetime(2026, 1, 27, 13, 0), 'End_Time': datetime.datetime(2026, 1, 27, 17, 0)}"
+2026-01-24 09:16:44,Add Reservation,Piriya_4511,"          Name          Room Equipments          Start_Time            End_Time
+0  Piriya_4511  PCR Machines     PCR 10 2026-01-24 08:00:00 2026-01-24 11:00:00"
