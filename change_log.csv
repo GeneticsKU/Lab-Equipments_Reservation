@@ -19237,3 +19237,7 @@ Name: 4278, dtype: object"
 [1 rows x 5 columns]"
 2026-01-26 09:29:36,Add Reservation,Samita_4606,"          Name          Room Equipments          Start_Time            End_Time
 0  Samita_4606  PCR Machines     PCR 16 2026-01-26 11:00:00 2026-01-26 14:00:00"
+2026-01-26 09:30:24,Add Reservation,Rabinthorn_4606,"              Name          Room  ...          Start_Time            End_Time
+0  Rabinthorn_4606  PCR Machines  ... 2026-01-26 14:00:00 2026-01-26 17:00:00
+
+[1 rows x 5 columns]"
