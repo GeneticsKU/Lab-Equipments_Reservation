@@ -19241,3 +19241,4 @@ Name: 4278, dtype: object"
 0  Rabinthorn_4606  PCR Machines  ... 2026-01-26 14:00:00 2026-01-26 17:00:00
 
 [1 rows x 5 columns]"
+2026-01-26 09:46:32,Add Reservation,Sukhita_4612,"{'Name': 'Sukhita_4612', 'Room': 'Central Lab, 6th floor', 'Equipments': 'Fume Hood', 'Start_Time': datetime.datetime(2026, 1, 26, 10, 0), 'End_Time': datetime.datetime(2026, 1, 26, 16, 0)}"
