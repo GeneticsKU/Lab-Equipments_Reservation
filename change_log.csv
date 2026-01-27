@@ -19320,3 +19320,7 @@ Start_Time           2026-01-28 09:30:00
 End_Time             2026-01-28 15:00:00
 Name: 4296, dtype: object"
 2026-01-27 15:43:26,Add Reservation,Sukhita_4612,"{'Name': 'Sukhita_4612', 'Room': 'Microscope Room, 5th floor', 'Equipments': 'Stereo Microscope', 'Start_Time': datetime.datetime(2026, 1, 28, 10, 0), 'End_Time': datetime.datetime(2026, 1, 28, 16, 0)}"
+2026-01-27 21:57:51,Add Reservation,Janejira_4612,"            Name          Room  ...          Start_Time            End_Time
+0  Janejira_4612  PCR Machines  ... 2026-01-28 11:00:00 2026-01-28 14:00:00
+
+[1 rows x 5 columns]"
