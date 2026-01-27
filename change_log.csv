@@ -19280,3 +19280,4 @@ Equipments                 PCR 11
 Start_Time    2026-01-27 11:00:00
 End_Time      2026-01-27 14:00:00
 Name: 2782, dtype: object"
+2026-01-27 08:52:17,Add Reservation,Apimon_4612,"{'Name': 'Apimon_4612', 'Room': 'Central Lab, 6th floor', 'Equipments': 'Laminar flow', 'Start_Time': datetime.datetime(2026, 1, 28, 9, 0), 'End_Time': datetime.datetime(2026, 1, 28, 17, 0)}"
