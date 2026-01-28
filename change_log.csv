@@ -19349,3 +19349,7 @@ Name: 4290, dtype: object"
 2026-01-28 10:58:50,Add Reservation,Chawit_4606,"{'Name': 'Chawit_4606', 'Room': 'Central Lab, 6th floor', 'Equipments': 'Centrifuge 2', 'Start_Time': datetime.datetime(2026, 1, 28, 11, 15), 'End_Time': datetime.datetime(2026, 1, 28, 13, 30)}"
 2026-01-28 11:23:05,Add Reservation,Samita_4606,"{'Name': 'Samita_4606', 'Room': 'Central Lab, 6th floor', 'Equipments': 'Digital Dry Bath 2', 'Start_Time': datetime.datetime(2026, 1, 28, 11, 30), 'End_Time': datetime.datetime(2026, 1, 28, 15, 0)}"
 2026-01-28 11:24:17,Add Reservation,Samita_4606,"{'Name': 'Samita_4606', 'Room': 'Central Lab, 6th floor', 'Equipments': 'Centrifuge 2', 'Start_Time': datetime.datetime(2026, 1, 28, 13, 30), 'End_Time': datetime.datetime(2026, 1, 28, 15, 30)}"
+2026-01-28 12:39:22,Add Reservation,Phasanat_4615,"            Name          Room  ...          Start_Time            End_Time
+0  Phasanat_4615  PCR Machines  ... 2026-01-28 14:00:00 2026-01-28 17:00:00
+
+[1 rows x 5 columns]"
