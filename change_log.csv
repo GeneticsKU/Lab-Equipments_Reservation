@@ -19391,3 +19391,7 @@ Name: 4290, dtype: object"
 [1 rows x 5 columns]"
 2026-01-29 12:43:57,Add Reservation,Chawit_4606,"          Name          Room Equipments          Start_Time            End_Time
 0  Chawit_4606  PCR Machines     PCR 17 2026-01-29 14:00:00 2026-01-29 17:00:00"
+2026-01-29 13:03:29,Add Reservation,Phasanat_4615,"            Name          Room  ...          Start_Time            End_Time
+0  Phasanat_4615  PCR Machines  ... 2026-01-29 14:00:00 2026-01-29 17:00:00
+
+[1 rows x 5 columns]"
