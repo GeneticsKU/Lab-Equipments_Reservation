@@ -19416,3 +19416,9 @@ Name: 4290, dtype: object"
 [1 rows x 5 columns]"
 2026-02-02 09:09:15,Add Reservation,Wuthichai_4505,"{'Name': 'Wuthichai_4505', 'Room': 'Microscope Room, 5th floor', 'Equipments': 'Fluorescence Microscope (Contact before use)', 'Start_Time': datetime.datetime(2026, 2, 2, 13, 30), 'End_Time': datetime.datetime(2026, 2, 2, 16, 30)}"
 2026-02-02 09:35:58,Add Reservation,Phasanat_4615,"{'Name': 'Phasanat_4615', 'Room': 'Hallway, 6th floor', 'Equipments': 'Autoclave 4 (Drain the water every 5 times after using)', 'Start_Time': datetime.datetime(2026, 2, 2, 11, 0), 'End_Time': datetime.datetime(2026, 2, 2, 14, 15)}"
+2026-02-02 10:48:33,Delete Reservation,Phasanat_4615,"Details: Name                Phasanat_4615
+Room                 PCR Machines
+Equipments                 PCR 10
+Start_Time    2026-02-02 08:00:00
+End_Time      2026-02-02 11:00:00
+Name: 2814, dtype: object"
