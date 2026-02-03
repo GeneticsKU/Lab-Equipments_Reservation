@@ -19477,3 +19477,9 @@ Name: 2814, dtype: object"
 0  Worrawit_4505  PCR Machines  ... 2026-02-03 14:00:00 2026-02-03 17:00:00
 
 [1 rows x 5 columns]"
+2026-02-03 15:19:27,Delete Reservation,Worrawit_4505,"Details: Name                Worrawit_4505
+Room                 PCR Machines
+Equipments                 PCR 11
+Start_Time    2026-02-03 14:00:00
+End_Time      2026-02-03 17:00:00
+Name: 2825, dtype: object"
