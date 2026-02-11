@@ -19599,3 +19599,7 @@ Name: 4377, dtype: object"
 2026-02-10 17:46:50,Add Reservation,Jathupat_4615,"{'Name': 'Jathupat_4615', 'Room': 'Hallway, 6th floor', 'Equipments': 'Autoclave 6 (Drain the water every 5 times after using)', 'Start_Time': datetime.datetime(2026, 2, 10, 18, 0), 'End_Time': datetime.datetime(2026, 2, 10, 19, 15)}"
 2026-02-10 18:58:20,Add Reservation,Thanathip_4505,"{'Name': 'Thanathip_4505', 'Room': 'Central Lab, 6th floor', 'Equipments': 'Incubator Shaker', 'Start_Time': datetime.datetime(2026, 2, 11, 0, 0), 'End_Time': datetime.datetime(2026, 2, 11, 10, 0)}"
 2026-02-10 18:58:40,Add Reservation,Thanathip_4505,"{'Name': 'Thanathip_4505', 'Room': 'Central Lab, 6th floor', 'Equipments': 'Incubator Shaker', 'Start_Time': datetime.datetime(2026, 2, 10, 19, 0), 'End_Time': datetime.datetime(2026, 2, 10, 23, 45)}"
+2026-02-11 07:38:18,Add Reservation,Janejira_4612,"            Name          Room  ...          Start_Time            End_Time
+0  Janejira_4612  PCR Machines  ... 2026-02-12 11:00:00 2026-02-12 14:00:00
+
+[1 rows x 5 columns]"
