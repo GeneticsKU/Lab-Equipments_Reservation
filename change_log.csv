@@ -19641,3 +19641,5 @@ Equipments                 PCR 12
 Start_Time    2026-02-11 11:00:00
 End_Time      2026-02-11 14:00:00
 Name: 2847, dtype: object"
+2026-02-11 12:18:16,Add Reservation,Samita_4606,"          Name          Room Equipments          Start_Time            End_Time
+0  Samita_4606  PCR Machines     PCR 16 2026-02-11 14:00:00 2026-02-11 17:00:00"
