@@ -19703,3 +19703,7 @@ Name: 4408, dtype: object"
 2026-02-12 14:10:54,Add Reservation,chomphoonut_4607,"{'Name': 'chomphoonut_4607', 'Room': 'BSL-2', 'Equipments': 'BSC-2', 'Start_Time': datetime.datetime(2026, 2, 13, 9, 0), 'End_Time': datetime.datetime(2026, 2, 13, 17, 0)}"
 2026-02-12 16:54:50,Add Reservation,Rutchanon_4505,"{'Name': 'Rutchanon_4505', 'Room': 'Central Lab, 5th floor', 'Equipments': 'Incubator Shaker 1', 'Start_Time': datetime.datetime(2026, 2, 13, 8, 0), 'End_Time': datetime.datetime(2026, 2, 13, 14, 15)}"
 2026-02-12 18:07:27,Add Reservation,Dechaphon_4612,"{'Name': 'Dechaphon_4612', 'Room': 'BSL-2', 'Equipments': 'BSC-1', 'Start_Time': datetime.datetime(2026, 2, 13, 10, 0), 'End_Time': datetime.datetime(2026, 2, 13, 16, 0)}"
+2026-02-12 21:06:07,Add Reservation,Janejira_4612,"            Name          Room  ...          Start_Time            End_Time
+0  Janejira_4612  PCR Machines  ... 2026-02-13 11:00:00 2026-02-13 14:00:00
+
+[1 rows x 5 columns]"
