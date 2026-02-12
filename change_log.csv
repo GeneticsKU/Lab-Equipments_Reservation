@@ -19687,3 +19687,9 @@ Name: 4390, dtype: object"
 2026-02-12 12:07:04,Add Reservation,Siwapohn_4505,"{'Name': 'Siwapohn_4505', 'Room': 'Central Lab, 5th floor', 'Equipments': 'Incubator Shaker 2', 'Start_Time': datetime.datetime(2026, 2, 20, 0, 0), 'End_Time': datetime.datetime(2026, 2, 20, 23, 45)}"
 2026-02-12 12:22:25,Add Reservation,Jathupat_4615,"{'Name': 'Jathupat_4615', 'Room': 'Hallway, 6th floor', 'Equipments': 'Autoclave 3 (Drain the water every 5 times after using)', 'Start_Time': datetime.datetime(2026, 2, 12, 12, 30), 'End_Time': datetime.datetime(2026, 2, 12, 14, 30)}"
 2026-02-12 12:41:01,Add Reservation,Thanakorn_4612,"{'Name': 'Thanakorn_4612', 'Room': 'Hallway, 6th floor', 'Equipments': 'Autoclave 2 (Drain the water every 5 times after using)', 'Start_Time': datetime.datetime(2026, 2, 12, 13, 0), 'End_Time': datetime.datetime(2026, 2, 12, 14, 0)}"
+2026-02-12 12:41:19,Delete Reservation,Thanakorn_4612,"Details: Name                                             Thanakorn_4612
+Room                                         Hallway, 6th floor
+Equipments    Autoclave 2 (Drain the water every 5 times aft...
+Start_Time                                  2026-02-12 13:00:00
+End_Time                                    2026-02-12 14:00:00
+Name: 4408, dtype: object"
