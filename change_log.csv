@@ -19660,3 +19660,9 @@ Start_Time       2026-02-13 09:00:00
 End_Time         2026-02-13 13:00:00
 Name: 4346, dtype: object"
 2026-02-12 08:59:50,Add Reservation,Apimon_4612,"{'Name': 'Apimon_4612', 'Room': 'Central Lab, 6th floor', 'Equipments': 'Laminar flow', 'Start_Time': datetime.datetime(2026, 2, 13, 9, 0), 'End_Time': datetime.datetime(2026, 2, 13, 16, 0)}"
+2026-02-12 09:00:41,Delete Reservation,Apimon_4612,"Details: Name                     Apimon_4612
+Room          Central Lab, 6th floor
+Equipments              Laminar flow
+Start_Time       2026-02-12 09:00:00
+End_Time         2026-02-12 14:00:00
+Name: 4390, dtype: object"
