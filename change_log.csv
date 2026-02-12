@@ -19653,3 +19653,9 @@ Name: 2847, dtype: object"
 [1 rows x 5 columns]"
 2026-02-12 08:49:59,Add Reservation,Leela_4606,"         Name          Room Equipments          Start_Time            End_Time
 0  Leela_4606  PCR Machines     PCR 13 2026-02-12 11:00:00 2026-02-12 14:00:00"
+2026-02-12 08:58:54,Delete Reservation,Apimon_4612,"Details: Name                     Apimon_4612
+Room          Central Lab, 6th floor
+Equipments              Laminar flow
+Start_Time       2026-02-13 09:00:00
+End_Time         2026-02-13 13:00:00
+Name: 4346, dtype: object"
