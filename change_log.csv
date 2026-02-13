@@ -19738,3 +19738,4 @@ Name: 4411, dtype: object"
 0  Jatupol_4612  PCR Machines  ... 2026-02-13 11:00:00 2026-02-13 14:00:00
 
 [1 rows x 5 columns]"
+2026-02-13 11:14:28,Add Reservation,Wilasinee_4612,"{'Name': 'Wilasinee_4612', 'Room': 'Hallway, 6th floor', 'Equipments': 'Autoclave 1 (Drain the water every 5 times after using)', 'Start_Time': datetime.datetime(2026, 2, 13, 11, 30), 'End_Time': datetime.datetime(2026, 2, 13, 13, 0)}"
