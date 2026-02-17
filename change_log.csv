@@ -19814,3 +19814,5 @@ Name: 4412, dtype: object"
 0  Worrawit_4505  PCR Machines  ... 2026-02-18 11:00:00 2026-02-18 14:00:00
 
 [1 rows x 5 columns]"
+2026-02-17 11:33:08,Add Reservation,Chawit_4606,"          Name          Room Equipments          Start_Time            End_Time
+0  Chawit_4606  PCR Machines     PCR 16 2026-02-17 14:00:00 2026-02-17 17:00:00"
