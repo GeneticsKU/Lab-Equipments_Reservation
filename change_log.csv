@@ -19868,3 +19868,5 @@ Name: 4441, dtype: object"
 2026-02-17 20:37:08,Add Reservation,Akkharadet_Piyasaengthong,"{'Name': 'Akkharadet_Piyasaengthong', 'Room': 'BSL-2', 'Equipments': 'BSC-2', 'Start_Time': datetime.datetime(2026, 2, 20, 12, 0), 'End_Time': datetime.datetime(2026, 2, 20, 13, 0)}"
 2026-02-17 20:37:15,Add Reservation,Akkharadet_Piyasaengthong,"{'Name': 'Akkharadet_Piyasaengthong', 'Room': 'BSL-2', 'Equipments': 'BSC-2', 'Start_Time': datetime.datetime(2026, 2, 23, 12, 0), 'End_Time': datetime.datetime(2026, 2, 23, 13, 0)}"
 2026-02-18 08:40:06,Add Reservation,Dechaphon_4612,"{'Name': 'Dechaphon_4612', 'Room': 'Hallway, 6th floor', 'Equipments': 'Autoclave For Waste (Drain the water everytime after using)', 'Start_Time': datetime.datetime(2026, 2, 18, 9, 0), 'End_Time': datetime.datetime(2026, 2, 18, 10, 30)}"
+2026-02-18 08:49:57,Add Reservation,Leela_4606,"         Name          Room Equipments          Start_Time            End_Time
+0  Leela_4606  PCR Machines     PCR 14 2026-02-18 11:00:00 2026-02-18 14:00:00"
