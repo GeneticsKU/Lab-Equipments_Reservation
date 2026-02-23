@@ -19877,3 +19877,5 @@ Name: 4441, dtype: object"
 0  Thanathip_4505  PCR Machines  ... 2026-02-21 17:00:00 2026-02-21 20:00:00
 
 [1 rows x 5 columns]"
+2026-02-23 08:30:50,Add Reservation,Leela_4606,"         Name          Room Equipments          Start_Time            End_Time
+0  Leela_4606  PCR Machines     PCR 13 2026-02-23 11:00:00 2026-02-23 14:00:00"
