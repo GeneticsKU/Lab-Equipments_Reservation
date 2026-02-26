@@ -19976,3 +19976,4 @@ Name: 4441, dtype: object"
 2026-02-26 09:29:54,Add Reservation,Apimon_4612,"          Name          Room Equipments          Start_Time            End_Time
 0  Apimon_4612  PCR Machines     PCR 13 2026-02-26 11:00:00 2026-02-26 14:00:00"
 2026-02-26 09:31:17,Add Reservation,Apimon_4612,"{'Name': 'Apimon_4612', 'Room': 'Central Lab, 6th floor', 'Equipments': 'Laminar flow', 'Start_Time': datetime.datetime(2026, 2, 26, 13, 0), 'End_Time': datetime.datetime(2026, 2, 26, 16, 0)}"
+2026-02-26 09:46:57,Add Reservation,Dechaphon_4612,"{'Name': 'Dechaphon_4612', 'Room': 'BSL-2', 'Equipments': 'BSC-1', 'Start_Time': datetime.datetime(2026, 2, 26, 10, 0), 'End_Time': datetime.datetime(2026, 2, 26, 16, 0)}"
