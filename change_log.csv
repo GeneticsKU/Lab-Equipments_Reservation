@@ -20015,3 +20015,7 @@ Name: 2892, dtype: object"
 [1 rows x 5 columns]"
 2026-02-26 10:59:17,Add Reservation,Teeradon_4606,"{'Name': 'Teeradon_4606', 'Room': 'Central Lab, 6th floor', 'Equipments': 'Laminar flow', 'Start_Time': datetime.datetime(2026, 2, 27, 14, 0), 'End_Time': datetime.datetime(2026, 2, 27, 16, 0)}"
 2026-02-26 12:19:31,Add Reservation,Tanatad_4606,"{'Name': 'Tanatad_4606', 'Room': 'Central Lab, 6th floor', 'Equipments': 'Centrifuge 3', 'Start_Time': datetime.datetime(2026, 2, 26, 13, 0), 'End_Time': datetime.datetime(2026, 2, 26, 14, 0)}"
+2026-02-26 12:29:22,Add Reservation,Thanathip_4505,"             Name          Room  ...          Start_Time            End_Time
+0  Thanathip_4505  PCR Machines  ... 2026-02-26 11:00:00 2026-02-26 14:00:00
+
+[1 rows x 5 columns]"
