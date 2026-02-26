@@ -20030,3 +20030,7 @@ Name: 4496, dtype: object"
 2026-02-26 14:49:09,Add Reservation,Nattawut_4507,"{'Name': 'Nattawut_4507', 'Room': 'Central Lab, 6th floor', 'Equipments': 'Centrifuge 3', 'Start_Time': datetime.datetime(2026, 2, 26, 14, 50), 'End_Time': datetime.datetime(2026, 2, 26, 15, 30)}"
 2026-02-26 15:09:35,Add Reservation,Leela_4606,"{'Name': 'Leela_4606', 'Room': 'Central Lab, 6th floor', 'Equipments': 'Fume Hood', 'Start_Time': datetime.datetime(2026, 2, 26, 15, 30), 'End_Time': datetime.datetime(2026, 2, 26, 16, 15)}"
 2026-02-26 16:38:40,Add Reservation,Apimon_4612,"{'Name': 'Apimon_4612', 'Room': 'Central Lab, 6th floor', 'Equipments': 'Bombard (Contact before use)', 'Start_Time': datetime.datetime(2026, 2, 27, 9, 0), 'End_Time': datetime.datetime(2026, 2, 27, 16, 0)}"
+2026-02-26 17:17:27,Add Reservation,Napassorn_4505,"             Name          Room  ...          Start_Time            End_Time
+0  Napassorn_4505  PCR Machines  ... 2026-02-27 08:00:00 2026-02-27 11:00:00
+
+[1 rows x 5 columns]"
