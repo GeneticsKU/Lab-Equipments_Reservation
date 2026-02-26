@@ -20025,3 +20025,4 @@ Equipments              Centrifuge 3
 Start_Time       2026-02-26 13:00:00
 End_Time         2026-02-26 14:00:00
 Name: 4496, dtype: object"
+2026-02-26 13:23:04,Add Reservation,Tanatad_4606,"{'Name': 'Tanatad_4606', 'Room': 'Central Lab, 6th floor', 'Equipments': 'Refrigerated Centrifuge 1', 'Start_Time': datetime.datetime(2026, 2, 26, 13, 45), 'End_Time': datetime.datetime(2026, 2, 26, 14, 45)}"
