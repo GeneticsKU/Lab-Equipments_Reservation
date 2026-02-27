@@ -20056,3 +20056,4 @@ Equipments        Digital Dry Bath 3
 Start_Time       2026-02-27 10:30:00
 End_Time         2026-02-27 12:00:00
 Name: 4504, dtype: object"
+2026-02-27 09:49:17,Add Reservation,Supanut_4612,"{'Name': 'Supanut_4612', 'Room': 'Central Lab, 6th floor', 'Equipments': 'Laminar flow', 'Start_Time': datetime.datetime(2026, 2, 27, 10, 0), 'End_Time': datetime.datetime(2026, 2, 27, 12, 0)}"
