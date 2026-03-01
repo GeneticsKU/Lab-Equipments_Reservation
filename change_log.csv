@@ -20080,3 +20080,4 @@ Name: 4504, dtype: object"
 0  Thanathip_4505  PCR Machines  ... 2026-02-28 17:00:00 2026-02-28 20:00:00
 
 [1 rows x 5 columns]"
+2026-03-01 16:27:45,Add Reservation,Jatupol_4612,"{'Name': 'Jatupol_4612', 'Room': 'Hallway, 6th floor', 'Equipments': 'Autoclave 6 (Drain the water every 5 times after using)', 'Start_Time': datetime.datetime(2026, 3, 1, 16, 30), 'End_Time': datetime.datetime(2026, 3, 1, 18, 30)}"
