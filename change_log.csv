@@ -20245,3 +20245,4 @@ Name: 4529, dtype: object"
 0  Thanakorn_4612  PCR Machines  ... 2026-03-05 14:00:00 2026-03-05 17:00:00
 
 [1 rows x 5 columns]"
+2026-03-05 15:09:45,Add Reservation,Chawit_4606,"{'Name': 'Chawit_4606', 'Room': 'Central Lab, 6th floor', 'Equipments': 'Digital Dry Bath 3', 'Start_Time': datetime.datetime(2026, 3, 5, 15, 15), 'End_Time': datetime.datetime(2026, 3, 5, 16, 30)}"
