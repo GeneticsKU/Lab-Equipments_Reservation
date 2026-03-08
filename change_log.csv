@@ -20291,3 +20291,7 @@ Name: 2953, dtype: object"
 
 [1 rows x 5 columns]"
 2026-03-07 15:14:15,Add Reservation,Phasanat_4615,"{'Name': 'Phasanat_4615', 'Room': 'Central Lab, 6th floor', 'Equipments': 'Laminar flow', 'Start_Time': datetime.datetime(2026, 3, 10, 9, 30), 'End_Time': datetime.datetime(2026, 3, 10, 17, 45)}"
+2026-03-08 19:44:00,Add Reservation,Nattawut_4507,"            Name          Room  ...          Start_Time            End_Time
+0  Nattawut_4507  PCR Machines  ... 2026-03-09 11:00:00 2026-03-09 14:00:00
+
+[1 rows x 5 columns]"
