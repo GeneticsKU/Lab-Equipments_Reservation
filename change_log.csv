@@ -20333,3 +20333,4 @@ Equipments                 PCR 11
 Start_Time    2026-03-10 11:00:00
 End_Time      2026-03-10 14:00:00
 Name: 2960, dtype: object"
+2026-03-09 15:21:39,Add Reservation,Phasanat_4615,"{'Name': 'Phasanat_4615', 'Room': 'Hallway, 6th floor', 'Equipments': 'Autoclave 4 (Drain the water every 5 times after using)', 'Start_Time': datetime.datetime(2026, 3, 9, 15, 30), 'End_Time': datetime.datetime(2026, 3, 9, 17, 30)}"
