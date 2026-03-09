@@ -20304,3 +20304,5 @@ Name: 2953, dtype: object"
 0  Phasanat_4615  PCR Machines  ... 2026-03-09 11:00:00 2026-03-09 14:00:00
 
 [1 rows x 5 columns]"
+2026-03-09 09:49:29,Add Reservation,Samita_4606,"          Name          Room Equipments          Start_Time            End_Time
+0  Samita_4606  PCR Machines     PCR 16 2026-03-09 11:00:00 2026-03-09 14:00:00"
