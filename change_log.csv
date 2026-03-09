@@ -20350,3 +20350,4 @@ Name: 4545, dtype: object"
 0  Nattawut_4507  PCR Machines  ... 2026-03-10 14:00:00 2026-03-10 17:00:00
 
 [1 rows x 5 columns]"
+2026-03-09 19:19:32,Add Reservation,Janejira_4612,"{'Name': 'Janejira_4612', 'Room': 'Microscope Room, 5th floor', 'Equipments': 'Fluorescence Microscope (Contact before use)', 'Start_Time': datetime.datetime(2026, 3, 13, 9, 0), 'End_Time': datetime.datetime(2026, 3, 13, 11, 0)}"
