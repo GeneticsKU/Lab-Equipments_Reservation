@@ -20310,3 +20310,4 @@ Name: 2953, dtype: object"
 0  Rabinthorn_4606  PCR Machines  ... 2026-03-09 14:00:00 2026-03-09 17:00:00
 
 [1 rows x 5 columns]"
+2026-03-09 10:03:37,Add Reservation,Dechaphon_4612,"{'Name': 'Dechaphon_4612', 'Room': 'BSL-2', 'Equipments': 'BSC-1', 'Start_Time': datetime.datetime(2026, 3, 9, 10, 30), 'End_Time': datetime.datetime(2026, 3, 9, 16, 0)}"
