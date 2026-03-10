@@ -20398,3 +20398,4 @@ Equipments                 PCR 10
 Start_Time    2026-03-10 14:00:00
 End_Time      2026-03-10 17:00:00
 Name: 2968, dtype: object"
+2026-03-10 12:08:12,Add Reservation,Samita_4606,"{'Name': 'Samita_4606', 'Room': 'Hallway, 6th floor', 'Equipments': 'Autoclave 7 (Drain the water every 5 times after using)', 'Start_Time': datetime.datetime(2026, 3, 10, 12, 15), 'End_Time': datetime.datetime(2026, 3, 10, 14, 30)}"
