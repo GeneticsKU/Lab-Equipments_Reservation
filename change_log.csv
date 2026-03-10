@@ -20355,3 +20355,4 @@ Name: 4545, dtype: object"
 0  Phasanat_4615  PCR Machines  ... 2026-03-10 11:00:00 2026-03-10 14:00:00
 
 [1 rows x 5 columns]"
+2026-03-10 08:08:50,Add Reservation,Akkharadet_Piyasaengthong,"{'Name': 'Akkharadet_Piyasaengthong', 'Room': 'BSL-2', 'Equipments': 'BSC-2', 'Start_Time': datetime.datetime(2026, 3, 10, 9, 15), 'End_Time': datetime.datetime(2026, 3, 10, 11, 30)}"
