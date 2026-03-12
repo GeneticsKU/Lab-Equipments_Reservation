@@ -20440,3 +20440,7 @@ Name: 2968, dtype: object"
 
 [1 rows x 5 columns]"
 2026-03-12 07:41:33,Add Reservation,Apimon_4612,"{'Name': 'Apimon_4612', 'Room': 'Central Lab, 6th floor', 'Equipments': 'Laminar flow', 'Start_Time': datetime.datetime(2026, 3, 12, 10, 0), 'End_Time': datetime.datetime(2026, 3, 12, 17, 0)}"
+2026-03-12 09:01:49,Add Reservation,Tanatad_4606,"           Name          Room  ...          Start_Time            End_Time
+0  Tanatad_4606  PCR Machines  ... 2026-03-12 11:00:00 2026-03-12 14:00:00
+
+[1 rows x 5 columns]"
