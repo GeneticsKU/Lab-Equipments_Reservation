@@ -20494,3 +20494,4 @@ Name: 2968, dtype: object"
 2026-03-13 08:41:57,Add Reservation,Leela_4606,"         Name          Room Equipments          Start_Time            End_Time
 0  Leela_4606  PCR Machines     PCR 14 2026-03-13 11:00:00 2026-03-13 14:00:00"
 2026-03-13 09:13:52,Add Reservation,Akkharadet_Piyasaengthong,"{'Name': 'Akkharadet_Piyasaengthong', 'Room': 'Hallway, 6th floor', 'Equipments': 'Autoclave 4 (Drain the water every 5 times after using)', 'Start_Time': datetime.datetime(2026, 3, 13, 9, 30), 'End_Time': datetime.datetime(2026, 3, 13, 11, 0)}"
+2026-03-13 09:41:14,Add Reservation,Akkharadet_Piyasaengthong,"{'Name': 'Akkharadet_Piyasaengthong', 'Room': 'BSL-2', 'Equipments': 'BSC-1', 'Start_Time': datetime.datetime(2026, 3, 13, 12, 0), 'End_Time': datetime.datetime(2026, 3, 13, 13, 0)}"
