@@ -20618,3 +20618,9 @@ Name: 2999, dtype: object"
 2026-03-16 11:19:53,Add Reservation,Chawit_4606,"          Name          Room Equipments          Start_Time            End_Time
 0  Chawit_4606  PCR Machines     PCR 10 2026-03-16 14:00:00 2026-03-16 17:00:00"
 2026-03-16 11:34:06,Add Reservation,Jatupol_4612,"{'Name': 'Jatupol_4612', 'Room': 'Hallway, 6th floor', 'Equipments': 'Autoclave 4 (Drain the water every 5 times after using)', 'Start_Time': datetime.datetime(2026, 3, 16, 11, 45), 'End_Time': datetime.datetime(2026, 3, 16, 13, 45)}"
+2026-03-16 11:52:19,Delete Reservation,Chawit_4606,"Details: Name                  Chawit_4606
+Room                 PCR Machines
+Equipments                 PCR 10
+Start_Time    2026-03-16 14:00:00
+End_Time      2026-03-16 17:00:00
+Name: 3007, dtype: object"
