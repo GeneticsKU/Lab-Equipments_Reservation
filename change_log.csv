@@ -20632,3 +20632,5 @@ Name: 3007, dtype: object"
 [1 rows x 5 columns]"
 2026-03-16 12:46:25,Add Reservation,Akkharadet_Piyasaengthong,"{'Name': 'Akkharadet_Piyasaengthong', 'Room': 'Hallway, 6th floor', 'Equipments': 'Autoclave For Waste (Drain the water everytime after using)', 'Start_Time': datetime.datetime(2026, 3, 16, 13, 0), 'End_Time': datetime.datetime(2026, 3, 16, 14, 30)}"
 2026-03-16 12:49:34,Add Reservation,Akkharadet_Piyasaengthong,"{'Name': 'Akkharadet_Piyasaengthong', 'Room': 'Hallway, 6th floor', 'Equipments': 'Autoclave For Waste (Drain the water everytime after using)', 'Start_Time': datetime.datetime(2026, 3, 17, 9, 0), 'End_Time': datetime.datetime(2026, 3, 17, 11, 0)}"
+2026-03-16 13:05:51,Add Reservation,Piriya_4511,"          Name          Room Equipments          Start_Time            End_Time
+0  Piriya_4511  PCR Machines     PCR 10 2026-03-16 14:00:00 2026-03-16 17:00:00"
