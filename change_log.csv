@@ -20756,3 +20756,4 @@ Start_Time       2026-03-18 15:00:00
 End_Time         2026-03-18 15:15:00
 Name: 4598, dtype: object"
 2026-03-18 14:45:25,Add Reservation,Rutchanon_4505,"{'Name': 'Rutchanon_4505', 'Room': 'Central Lab, 5th floor', 'Equipments': 'Incubator Shaker 1', 'Start_Time': datetime.datetime(2026, 3, 18, 15, 0), 'End_Time': datetime.datetime(2026, 3, 18, 23, 45)}"
+2026-03-18 14:45:55,Add Reservation,Rutchanon_4505,"{'Name': 'Rutchanon_4505', 'Room': 'Central Lab, 5th floor', 'Equipments': 'Incubator Shaker 1', 'Start_Time': datetime.datetime(2026, 3, 19, 0, 0), 'End_Time': datetime.datetime(2026, 3, 19, 15, 15)}"
