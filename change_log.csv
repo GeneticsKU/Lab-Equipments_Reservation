@@ -9663,3 +9663,9 @@ Name: 1361, dtype: object"
 0  Janejira_4612  PCR Machines  ... 2025-03-25 17:00:00 2025-03-25 20:00:00
 
 [1 rows x 5 columns]"
+2026-03-19 09:36:35,Delete Reservation,Samita_4606,"Details: Name                  Samita_4606
+Room                 PCR Machines
+Equipments                 PCR 10
+Start_Time    2026-03-19 08:00:00
+End_Time      2026-03-19 11:00:00
+Name: 3040, dtype: object"
