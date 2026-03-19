@@ -9687,3 +9687,7 @@ Name: 3040, dtype: object"
 2026-03-19 10:54:50,Add Reservation,Phasanat_4615,"{'Name': 'Phasanat_4615', 'Room': 'Hallway, 6th floor', 'Equipments': 'Autoclave 5 (Drain the water every 5 times after using)', 'Start_Time': datetime.datetime(2026, 3, 19, 13, 0), 'End_Time': datetime.datetime(2026, 3, 19, 15, 45)}"
 2026-03-19 11:04:00,Add Reservation,Leela_4606,"         Name          Room Equipments          Start_Time            End_Time
 0  Leela_4606  PCR Machines     PCR 17 2026-03-19 14:00:00 2026-03-19 17:00:00"
+2026-03-19 11:04:45,Add Reservation,Jatupol_4612,"           Name          Room  ...          Start_Time            End_Time
+0  Jatupol_4612  PCR Machines  ... 2026-03-19 11:00:00 2026-03-19 14:00:00
+
+[1 rows x 5 columns]"
