@@ -9699,3 +9699,5 @@ End_Time      2026-03-19 17:00:00
 Name: 3044, dtype: object"
 2026-03-19 11:56:39,Add Reservation,Leela_4606,"         Name          Room Equipments          Start_Time            End_Time
 0  Leela_4606  PCR Machines     PCR 16 2026-03-19 14:00:00 2026-03-19 17:00:00"
+2026-03-19 12:27:19,Add Reservation,Chawit_4606,"          Name          Room Equipments          Start_Time            End_Time
+0  Chawit_4606  PCR Machines     PCR 10 2026-03-19 14:00:00 2026-03-19 17:00:00"
