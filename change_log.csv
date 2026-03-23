@@ -9811,3 +9811,4 @@ Name: 4612, dtype: object"
 0  Leela_4606  PCR Machines     PCR 13 2026-03-23 11:00:00 2026-03-23 14:00:00"
 2026-03-23 08:43:30,Add Reservation,Leela_4606,"         Name          Room Equipments          Start_Time            End_Time
 0  Leela_4606  PCR Machines     PCR 14 2026-03-23 11:00:00 2026-03-23 14:00:00"
+2026-03-23 08:43:48,Add Reservation,Akkharadet_Piyasaengthong,"{'Name': 'Akkharadet_Piyasaengthong', 'Room': 'BSL-2', 'Equipments': 'BSC-1', 'Start_Time': datetime.datetime(2026, 3, 23, 10, 0), 'End_Time': datetime.datetime(2026, 3, 23, 12, 30)}"
