@@ -9849,3 +9849,4 @@ Equipments    Autoclave 4 (Drain the water every 5 times aft...
 Start_Time                                  2026-03-23 12:45:00
 End_Time                                    2026-03-23 14:00:00
 Name: 4627, dtype: object"
+2026-03-23 12:57:33,Add Reservation,Akkharadet_Piyasaengthong,"{'Name': 'Akkharadet_Piyasaengthong', 'Room': 'Hallway, 6th floor', 'Equipments': 'Autoclave For Waste (Drain the water everytime after using)', 'Start_Time': datetime.datetime(2026, 3, 23, 13, 0), 'End_Time': datetime.datetime(2026, 3, 23, 14, 0)}"
