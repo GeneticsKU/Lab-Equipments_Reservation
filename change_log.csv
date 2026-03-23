@@ -9837,3 +9837,9 @@ Equipments                        BSC-1
 Start_Time          2026-03-23 10:00:00
 End_Time            2026-03-23 12:30:00
 Name: 4617, dtype: object"
+2026-03-23 12:56:40,Delete Reservation,Akkharadet_Piyasaengthong,"Details: Name                                  Akkharadet_Piyasaengthong
+Room                                         Hallway, 6th floor
+Equipments    Autoclave For Waste (Drain the water everytime...
+Start_Time                                  2026-03-23 12:30:00
+End_Time                                    2026-03-23 14:00:00
+Name: 4623, dtype: object"
