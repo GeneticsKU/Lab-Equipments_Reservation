@@ -9920,3 +9920,4 @@ Name: 4627, dtype: object"
 0  Apimon_4612  PCR Machines  ... 2026-03-25 11:00:00 2026-03-25 14:00:00
 
 [1 rows x 5 columns]"
+2026-03-25 08:57:15,Add Reservation,Leela_4606,"{'Name': 'Leela_4606', 'Room': 'Central Lab, 6th floor', 'Equipments': 'Laminar flow', 'Start_Time': datetime.datetime(2026, 3, 25, 9, 15), 'End_Time': datetime.datetime(2026, 3, 25, 11, 0)}"
