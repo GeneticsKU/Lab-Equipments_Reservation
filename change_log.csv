@@ -9959,3 +9959,5 @@ Name: 4627, dtype: object"
 
 [1 rows x 5 columns]"
 2026-03-26 09:16:32,Add Reservation,Leela_4606,"{'Name': 'Leela_4606', 'Room': 'Central Lab, 6th floor', 'Equipments': 'Laminar flow', 'Start_Time': datetime.datetime(2026, 3, 26, 9, 30), 'End_Time': datetime.datetime(2026, 3, 26, 11, 30)}"
+2026-03-26 09:17:10,Add Reservation,Leela_4606,"         Name          Room Equipments          Start_Time            End_Time
+0  Leela_4606  PCR Machines     PCR 14 2026-03-26 11:00:00 2026-03-26 14:00:00"
