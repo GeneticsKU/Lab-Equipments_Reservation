@@ -10025,3 +10025,7 @@ Name: 3104, dtype: object"
 2026-03-27 16:09:26,Add Reservation,chomphoonut_4607,"{'Name': 'chomphoonut_4607', 'Room': 'Central Lab, 6th floor', 'Equipments': 'Incubator 2', 'Start_Time': datetime.datetime(2026, 4, 3, 0, 0), 'End_Time': datetime.datetime(2026, 4, 3, 23, 45)}"
 2026-03-28 10:14:05,Add Reservation,Piriya_4511,"{'Name': 'Piriya_4511', 'Room': 'Hallway, 6th floor', 'Equipments': 'Autoclave 5 (Drain the water every 5 times after using)', 'Start_Time': datetime.datetime(2026, 3, 28, 10, 15), 'End_Time': datetime.datetime(2026, 3, 28, 12, 15)}"
 2026-03-30 11:27:47,Add Reservation,Thanakorn_4612,"{'Name': 'Thanakorn_4612', 'Room': 'Hallway, 6th floor', 'Equipments': 'Autoclave 7 (Drain the water every 5 times after using)', 'Start_Time': datetime.datetime(2026, 3, 30, 11, 30), 'End_Time': datetime.datetime(2026, 3, 30, 13, 30)}"
+2026-03-30 11:28:29,Add Reservation,Phasanat_4615,"            Name          Room  ...          Start_Time            End_Time
+0  Phasanat_4615  PCR Machines  ... 2026-03-30 14:00:00 2026-03-30 17:00:00
+
+[1 rows x 5 columns]"
