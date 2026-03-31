@@ -10047,3 +10047,5 @@ Name: 3104, dtype: object"
 0  Janejira_4612  PCR Machines  ... 2026-04-01 11:00:00 2026-04-01 14:00:00
 
 [1 rows x 5 columns]"
+2026-03-31 08:38:42,Add Reservation,Leela_4606,"         Name          Room Equipments          Start_Time            End_Time
+0  Leela_4606  PCR Machines     PCR 15 2026-03-31 11:00:00 2026-03-31 14:00:00"
