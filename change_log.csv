@@ -10236,3 +10236,7 @@ Equipments                 Fume Hood
 Start_Time       2026-04-02 13:30:00
 End_Time         2026-04-02 17:00:00
 Name: 4682, dtype: object"
+2026-04-02 13:42:37,Add Reservation,Jathupat_4615,"            Name          Room  ...          Start_Time            End_Time
+0  Jathupat_4615  PCR Machines  ... 2026-04-02 14:00:00 2026-04-02 17:00:00
+
+[1 rows x 5 columns]"
