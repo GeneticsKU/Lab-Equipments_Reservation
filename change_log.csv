@@ -10174,3 +10174,4 @@ End_Time      2026-04-02 14:00:00
 Name: 3126, dtype: object"
 2026-04-02 12:09:16,Add Reservation,Leela_4606,"         Name          Room Equipments          Start_Time            End_Time
 0  Leela_4606  PCR Machines     PCR 12 2026-04-02 14:00:00 2026-04-02 17:00:00"
+2026-04-02 12:31:22,Add Reservation,Apimon_4612,"{'Name': 'Apimon_4612', 'Room': 'Central Lab, 6th floor', 'Equipments': 'Laminar flow', 'Start_Time': datetime.datetime(2026, 4, 3, 9, 0), 'End_Time': datetime.datetime(2026, 4, 3, 16, 0)}"
