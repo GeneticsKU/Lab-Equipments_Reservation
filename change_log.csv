@@ -10181,3 +10181,9 @@ Equipments                 PCR 12
 Start_Time    2026-04-02 14:00:00
 End_Time      2026-04-02 17:00:00
 Name: 3135, dtype: object"
+2026-04-02 12:47:37,Delete Reservation,Nattawut_4507,"Details: Name                Nattawut_4507
+Room                 PCR Machines
+Equipments                 PCR 18
+Start_Time    2026-04-02 14:00:00
+End_Time      2026-04-02 17:00:00
+Name: 3134, dtype: object"
