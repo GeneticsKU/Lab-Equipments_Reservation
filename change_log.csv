@@ -10509,3 +10509,4 @@ End_Time            2026-04-19 14:00:00
 Name: 4741, dtype: object"
 2026-04-19 12:42:50,Add Reservation,Piriya_4511,"{'Name': 'Piriya_4511', 'Room': 'Central Lab, 6th floor', 'Equipments': 'Refrigerated Centrifuge 4', 'Start_Time': datetime.datetime(2026, 4, 19, 12, 45), 'End_Time': datetime.datetime(2026, 4, 19, 13, 30)}"
 2026-04-19 17:02:55,Add Reservation,Apimon_4612,"{'Name': 'Apimon_4612', 'Room': 'Central Lab, 6th floor', 'Equipments': 'Laminar flow', 'Start_Time': datetime.datetime(2026, 4, 20, 9, 0), 'End_Time': datetime.datetime(2026, 4, 20, 16, 0)}"
+2026-04-20 08:21:37,Add Reservation,Akkharadet_Piyasaengthong,"{'Name': 'Akkharadet_Piyasaengthong', 'Room': 'Hallway, 6th floor', 'Equipments': 'Autoclave 4 (Drain the water every 5 times after using)', 'Start_Time': datetime.datetime(2026, 4, 20, 8, 30), 'End_Time': datetime.datetime(2026, 4, 20, 9, 45)}"
