@@ -10562,3 +10562,9 @@ Name: 4748, dtype: object"
 2026-04-24 14:55:24,Add Reservation,Akkharadet_Piyasaengthong,"{'Name': 'Akkharadet_Piyasaengthong', 'Room': 'BSL-2', 'Equipments': 'BSC-1', 'Start_Time': datetime.datetime(2026, 4, 24, 15, 0), 'End_Time': datetime.datetime(2026, 4, 24, 16, 0)}"
 2026-04-24 15:03:17,Add Reservation,Piriya_4511,"{'Name': 'Piriya_4511', 'Room': 'Central Lab, 5th floor', 'Equipments': 'Incubator Shaker 1', 'Start_Time': datetime.datetime(2026, 4, 24, 16, 30), 'End_Time': datetime.datetime(2026, 4, 24, 23, 45)}"
 2026-04-24 15:04:02,Add Reservation,Piriya_4511,"{'Name': 'Piriya_4511', 'Room': 'Central Lab, 5th floor', 'Equipments': 'Incubator Shaker 1', 'Start_Time': datetime.datetime(2026, 4, 25, 0, 0), 'End_Time': datetime.datetime(2026, 4, 25, 15, 30)}"
+2026-04-24 16:23:13,Delete Reservation,Piriya_4511,"Details: Name                     Piriya_4511
+Room          Central Lab, 5th floor
+Equipments        Incubator Shaker 1
+Start_Time       2026-04-24 16:30:00
+End_Time         2026-04-24 23:45:00
+Name: 4761, dtype: object"
