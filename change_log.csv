@@ -10558,3 +10558,4 @@ Name: 4748, dtype: object"
 0  Jathupat_4615  PCR Machines  ... 2026-04-24 14:00:00 2026-04-24 17:00:00
 
 [1 rows x 5 columns]"
+2026-04-24 14:30:17,Add Reservation,Akkharadet_Piyasaengthong,"{'Name': 'Akkharadet_Piyasaengthong', 'Room': 'Hallway, 6th floor', 'Equipments': 'Autoclave 4 (Drain the water every 5 times after using)', 'Start_Time': datetime.datetime(2026, 4, 24, 14, 45), 'End_Time': datetime.datetime(2026, 4, 24, 16, 0)}"
