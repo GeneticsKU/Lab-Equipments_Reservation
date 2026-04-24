@@ -10559,3 +10559,4 @@ Name: 4748, dtype: object"
 
 [1 rows x 5 columns]"
 2026-04-24 14:30:17,Add Reservation,Akkharadet_Piyasaengthong,"{'Name': 'Akkharadet_Piyasaengthong', 'Room': 'Hallway, 6th floor', 'Equipments': 'Autoclave 4 (Drain the water every 5 times after using)', 'Start_Time': datetime.datetime(2026, 4, 24, 14, 45), 'End_Time': datetime.datetime(2026, 4, 24, 16, 0)}"
+2026-04-24 14:55:24,Add Reservation,Akkharadet_Piyasaengthong,"{'Name': 'Akkharadet_Piyasaengthong', 'Room': 'BSL-2', 'Equipments': 'BSC-1', 'Start_Time': datetime.datetime(2026, 4, 24, 15, 0), 'End_Time': datetime.datetime(2026, 4, 24, 16, 0)}"
