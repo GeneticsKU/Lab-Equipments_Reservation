@@ -10551,3 +10551,4 @@ Equipments        Incubator Shaker 2
 Start_Time       2026-04-22 00:00:00
 End_Time         2026-04-22 23:45:00
 Name: 4748, dtype: object"
+2026-04-24 11:17:39,Add Reservation,Narumon_4511,"{'Name': 'Narumon_4511', 'Room': 'Hallway, 6th floor', 'Equipments': 'Autoclave 4 (Drain the water every 5 times after using)', 'Start_Time': datetime.datetime(2026, 4, 24, 11, 30), 'End_Time': datetime.datetime(2026, 4, 24, 13, 0)}"
