@@ -10575,3 +10575,5 @@ Start_Time       2026-04-25 00:00:00
 End_Time         2026-04-25 15:30:00
 Name: 4761, dtype: object"
 2026-04-25 08:45:12,Add Reservation,Piriya_4511,"{'Name': 'Piriya_4511', 'Room': 'Hallway, 6th floor', 'Equipments': 'Autoclave 7 (Drain the water every 5 times after using)', 'Start_Time': datetime.datetime(2026, 4, 25, 9, 0), 'End_Time': datetime.datetime(2026, 4, 25, 11, 0)}"
+2026-04-26 08:53:36,Add Reservation,Piriya_4511,"          Name          Room Equipments          Start_Time            End_Time
+0  Piriya_4511  PCR Machines     PCR 13 2026-04-26 08:00:00 2026-04-26 11:00:00"
