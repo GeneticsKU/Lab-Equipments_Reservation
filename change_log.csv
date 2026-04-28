@@ -10640,3 +10640,9 @@ Equipments                 PCR 13
 Start_Time    2026-04-28 11:00:00
 End_Time      2026-04-28 14:00:00
 Name: 3173, dtype: object"
+2026-04-28 11:45:30,Delete Reservation,Jatupol_4612,"Details: Name                 Jatupol_4612
+Room                 PCR Machines
+Equipments                 PCR 14
+Start_Time    2026-04-28 11:00:00
+End_Time      2026-04-28 14:00:00
+Name: 3173, dtype: object"
