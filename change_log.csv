@@ -10729,3 +10729,4 @@ Name: 3175, dtype: object"
 0  chomphoonut_4607  PCR Machines  ... 2026-04-30 14:00:00 2026-04-30 17:00:00
 
 [1 rows x 5 columns]"
+2026-04-30 12:02:03,Add Reservation,Wilasinee_4612,"{'Name': 'Wilasinee_4612', 'Room': 'Hallway, 6th floor', 'Equipments': 'Autoclave For Waste (Drain the water everytime after using)', 'Start_Time': datetime.datetime(2026, 4, 30, 12, 15), 'End_Time': datetime.datetime(2026, 4, 30, 13, 0)}"
