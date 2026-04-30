@@ -10741,3 +10741,7 @@ Name: 3175, dtype: object"
 
 [1 rows x 5 columns]"
 2026-04-30 16:52:37,Add Reservation,Janejira_4612,"{'Name': 'Janejira_4612', 'Room': 'Microscope Room, 5th floor', 'Equipments': 'Fluorescence Microscope (Contact before use)', 'Start_Time': datetime.datetime(2026, 5, 5, 10, 0), 'End_Time': datetime.datetime(2026, 5, 5, 12, 0)}"
+2026-04-30 19:37:41,Add Reservation,Nattawut_4507,"            Name          Room  ...          Start_Time            End_Time
+0  Nattawut_4507  PCR Machines  ... 2026-05-01 11:00:00 2026-05-01 14:00:00
+
+[1 rows x 5 columns]"
