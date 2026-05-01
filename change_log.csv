@@ -10782,3 +10782,4 @@ End_Time         2026-05-02 23:45:00
 Name: 4791, dtype: object"
 2026-05-01 13:11:03,Add Reservation,Piriya_4511,"{'Name': 'Piriya_4511', 'Room': 'Central Lab, 5th floor', 'Equipments': 'Incubator Shaker 2', 'Start_Time': datetime.datetime(2026, 5, 2, 8, 0), 'End_Time': datetime.datetime(2026, 5, 2, 17, 0)}"
 2026-05-01 14:18:52,Add Reservation,Dechaphon_4612,"{'Name': 'Dechaphon_4612', 'Room': 'Hallway, 6th floor', 'Equipments': 'Autoclave For Waste (Drain the water everytime after using)', 'Start_Time': datetime.datetime(2026, 5, 1, 14, 30), 'End_Time': datetime.datetime(2026, 5, 1, 16, 0)}"
+2026-05-01 16:34:39,Add Reservation,Piriya_4511,"{'Name': 'Piriya_4511', 'Room': 'Central Lab, 5th floor', 'Equipments': 'Refrigerated Incubator Shaker', 'Start_Time': datetime.datetime(2026, 5, 1, 16, 45), 'End_Time': datetime.datetime(2026, 5, 1, 23, 45)}"
