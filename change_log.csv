@@ -10813,3 +10813,9 @@ Name: 4791, dtype: object"
 0  Apimon_4612  PCR Machines     PCR 13 2026-05-06 11:00:00 2026-05-06 14:00:00"
 2026-05-06 09:02:30,Add Reservation,Apimon_4612,"{'Name': 'Apimon_4612', 'Room': 'Central Lab, 6th floor', 'Equipments': 'Laminar flow', 'Start_Time': datetime.datetime(2026, 5, 6, 11, 0), 'End_Time': datetime.datetime(2026, 5, 6, 16, 30)}"
 2026-05-06 11:04:20,Add Reservation,Wilasinee_4612,"{'Name': 'Wilasinee_4612', 'Room': 'Hallway, 6th floor', 'Equipments': 'Autoclave 5 (Drain the water every 5 times after using)', 'Start_Time': datetime.datetime(2026, 5, 6, 11, 15), 'End_Time': datetime.datetime(2026, 5, 6, 13, 15)}"
+2026-05-06 11:51:03,Delete Reservation,Apimon_4612,"Details: Name                  Apimon_4612
+Room                 PCR Machines
+Equipments                 PCR 13
+Start_Time    2026-05-06 11:00:00
+End_Time      2026-05-06 14:00:00
+Name: 3204, dtype: object"
