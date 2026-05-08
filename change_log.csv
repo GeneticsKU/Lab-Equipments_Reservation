@@ -10840,3 +10840,9 @@ Start_Time       2026-05-08 16:00:00
 End_Time         2026-05-08 23:45:00
 Name: 4806, dtype: object"
 2026-05-08 17:14:03,Add Reservation,Piriya_4511,"{'Name': 'Piriya_4511', 'Room': 'Central Lab, 5th floor', 'Equipments': 'Refrigerated Incubator Shaker', 'Start_Time': datetime.datetime(2026, 5, 8, 17, 30), 'End_Time': datetime.datetime(2026, 5, 8, 23, 45)}"
+2026-05-08 17:14:17,Delete Reservation,Piriya_4511,"Details: Name                     Piriya_4511
+Room          Central Lab, 5th floor
+Equipments        Incubator Shaker 2
+Start_Time       2026-05-09 00:00:00
+End_Time         2026-05-09 23:45:00
+Name: 4806, dtype: object"
