@@ -10912,3 +10912,9 @@ Name: 4806, dtype: object"
 2026-05-14 15:14:59,Add Reservation,Nghiep Mai Nguyen_4503,"{'Name': 'Nghiep Mai Nguyen_4503', 'Room': 'Hallway, 6th floor', 'Equipments': 'Autoclave 5 (Drain the water every 5 times after using)', 'Start_Time': datetime.datetime(2026, 5, 14, 15, 45), 'End_Time': datetime.datetime(2026, 5, 14, 16, 30)}"
 2026-05-14 18:16:45,Add Reservation,Jathupat_4615,"{'Name': 'Jathupat_4615', 'Room': 'Central Lab, 6th floor', 'Equipments': 'Digital Dry Bath 1', 'Start_Time': datetime.datetime(2026, 5, 16, 9, 0), 'End_Time': datetime.datetime(2026, 5, 16, 17, 0)}"
 2026-05-14 18:16:52,Add Reservation,Jathupat_4615,"{'Name': 'Jathupat_4615', 'Room': 'Central Lab, 6th floor', 'Equipments': 'Digital Dry Bath 1', 'Start_Time': datetime.datetime(2026, 5, 15, 9, 0), 'End_Time': datetime.datetime(2026, 5, 15, 17, 0)}"
+2026-05-14 18:16:59,Delete Reservation,Jathupat_4615,"Details: Name                   Jathupat_4615
+Room          Central Lab, 6th floor
+Equipments        Digital Dry Bath 1
+Start_Time       2026-05-16 09:00:00
+End_Time         2026-05-16 17:00:00
+Name: 4826, dtype: object"
