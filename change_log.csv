@@ -10907,3 +10907,4 @@ Name: 4806, dtype: object"
 
 [1 rows x 5 columns]"
 2026-05-14 13:41:13,Add Reservation,Nghiep Mai Nguyen_4503,"{'Name': 'Nghiep Mai Nguyen_4503', 'Room': 'Hallway, 6th floor', 'Equipments': 'Autoclave 5 (Drain the water every 5 times after using)', 'Start_Time': datetime.datetime(2026, 5, 14, 14, 30), 'End_Time': datetime.datetime(2026, 5, 14, 15, 45)}"
+2026-05-14 14:42:26,Add Reservation,Janejira_4612,"{'Name': 'Janejira_4612', 'Room': 'Microscope Room, 5th floor', 'Equipments': 'Fluorescence Microscope (Contact before use)', 'Start_Time': datetime.datetime(2026, 5, 15, 14, 0), 'End_Time': datetime.datetime(2026, 5, 15, 16, 0)}"
