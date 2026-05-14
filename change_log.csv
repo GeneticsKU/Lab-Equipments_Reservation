@@ -10918,3 +10918,4 @@ Equipments        Digital Dry Bath 1
 Start_Time       2026-05-16 09:00:00
 End_Time         2026-05-16 17:00:00
 Name: 4826, dtype: object"
+2026-05-14 18:17:24,Add Reservation,Jathupat_4615,"{'Name': 'Jathupat_4615', 'Room': 'Central Lab, 6th floor', 'Equipments': 'Refrigerated Centrifuge 1', 'Start_Time': datetime.datetime(2026, 5, 15, 9, 0), 'End_Time': datetime.datetime(2026, 5, 15, 17, 0)}"
