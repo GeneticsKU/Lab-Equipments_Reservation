@@ -10928,3 +10928,5 @@ Name: 4826, dtype: object"
 
 [1 rows x 5 columns]"
 2026-05-17 15:20:46,Add Reservation,Nghiep Mai Nguyen_4503,"{'Name': 'Nghiep Mai Nguyen_4503', 'Room': 'Hallway, 6th floor', 'Equipments': 'Autoclave 5 (Drain the water every 5 times after using)', 'Start_Time': datetime.datetime(2026, 5, 17, 15, 30), 'End_Time': datetime.datetime(2026, 5, 17, 16, 45)}"
+2026-05-18 08:06:09,Add Reservation,Apimon_4612,"          Name          Room Equipments          Start_Time            End_Time
+0  Apimon_4612  PCR Machines     PCR 13 2026-05-18 11:00:00 2026-05-18 14:00:00"
