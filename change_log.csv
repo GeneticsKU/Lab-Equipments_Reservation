@@ -11130,3 +11130,4 @@ Name: 3244, dtype: object"
 0  Anongpat_4612  PCR Machines  ... 2026-05-26 14:00:00 2026-05-26 17:00:00
 
 [1 rows x 5 columns]"
+2026-05-26 11:16:51,Add Reservation,Thanakorn_4612,"{'Name': 'Thanakorn_4612', 'Room': 'Hallway, 6th floor', 'Equipments': 'Autoclave 6 (Drain the water every 5 times after using)', 'Start_Time': datetime.datetime(2026, 5, 26, 11, 30), 'End_Time': datetime.datetime(2026, 5, 26, 13, 15)}"
