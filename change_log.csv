@@ -11158,3 +11158,4 @@ Name: 3244, dtype: object"
 
 [1 rows x 5 columns]"
 2026-05-26 16:17:56,Add Reservation,Apimon_4612,"{'Name': 'Apimon_4612', 'Room': 'Central Lab, 6th floor', 'Equipments': 'Laminar flow', 'Start_Time': datetime.datetime(2026, 5, 27, 9, 0), 'End_Time': datetime.datetime(2026, 5, 27, 14, 0)}"
+2026-05-27 09:33:20,Add Reservation,Thanakorn_4612,"{'Name': 'Thanakorn_4612', 'Room': 'Hallway, 6th floor', 'Equipments': 'Autoclave 5 (Drain the water every 5 times after using)', 'Start_Time': datetime.datetime(2026, 5, 27, 10, 0), 'End_Time': datetime.datetime(2026, 5, 27, 12, 0)}"
