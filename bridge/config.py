@@ -14,6 +14,8 @@ class BridgeSettings:
     smtp_from_email: str
     smtp_use_ssl: bool
     app_base_url: str
+    deployment_label: str | None = None
+    deployment_notice: str | None = None
     session_cookie_name: str = "genetics_lab_bridge_session"
     session_ttl_hours: int = 12
     login_code_ttl_minutes: int = 10
@@ -75,6 +77,8 @@ def load_bridge_settings() -> BridgeSettings | None:
         smtp_from_email=smtp_from_email,
         smtp_use_ssl=smtp_use_ssl,
         app_base_url=app_base_url.rstrip("/"),
+        deployment_label=_get_setting("DEPLOYMENT_LABEL"),
+        deployment_notice=_get_setting("DEPLOYMENT_NOTICE"),
         session_cookie_name=_get_setting("SESSION_COOKIE_NAME", "genetics_lab_bridge_session"),
         session_ttl_hours=int(_get_setting("SESSION_TTL_HOURS", 12)),
         login_code_ttl_minutes=int(_get_setting("LOGIN_CODE_TTL_MINUTES", 10)),

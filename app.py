@@ -21,7 +21,7 @@ from bridge.ui_access_requests import (
     render_sponsor_request_history,
     render_sponsor_review,
 )
-from bridge.ui_auth import render_bridge_login
+from bridge.ui_auth import render_bridge_login, render_deployment_banner
 
 st.set_page_config(layout="wide")
 
@@ -383,6 +383,8 @@ def require_bridge_user():
         st.error(error_message)
         st.stop()
 
+    st.session_state["bridge_settings"] = settings
+
     user = hydrate_bridge_user(settings, auth_store)
     if user is None:
         render_bridge_login(settings, auth_store, st.session_state)
@@ -395,6 +397,7 @@ def require_bridge_user():
 mobile = st.toggle('Mobile Version')
 announcement_text = read_announcement()
 settings, auth_store, bridge_user = require_bridge_user()
+render_deployment_banner(settings)
 approval_request_id = get_approval_request_id()
 
 if approval_request_id:

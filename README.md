@@ -26,6 +26,8 @@ The current implementation is in transition from manual `st.secrets` registratio
 - `SMTP_PASSWORD`
 - `SMTP_FROM_EMAIL`
 - `APP_BASE_URL`
+- `DEPLOYMENT_LABEL` (optional, useful for a pilot deployment)
+- `DEPLOYMENT_NOTICE` (optional, useful for a pilot deployment)
 - `SMTP_HOST` (optional, default: `smtp.gmail.com`)
 - `SMTP_PORT` (optional, default: `465`)
 - `SMTP_USE_SSL` (optional, default: `true`)
@@ -131,3 +133,8 @@ The bridge upgrades identity and approval only. It does not replace the reservat
 Operator smoke checklist:
 
 - [bridge_phase1_smoke_checklist.md](/Users/nydeyanawat/PycharmProjects/Sandbox/Genetics_Lab_Equipement_Reservation_App/Genetics_Lab_Equipement_Reservation_App/output/bridge_phase1_smoke_checklist.md)
+
+Parallel pilot deploy checklist:
+
+- [parallel_bridge_deploy_checklist.md](/Users/nydeyanawat/PycharmProjects/Sandbox/Genetics_Lab_Equipement_Reservation_App/Genetics_Lab_Equipement_Reservation_App/output/parallel_bridge_deploy_checklist.md)
+- [streamlit_bridge_pilot_secrets_template.toml](/Users/nydeyanawat/PycharmProjects/Sandbox/Genetics_Lab_Equipement_Reservation_App/Genetics_Lab_Equipement_Reservation_App/output/streamlit_bridge_pilot_secrets_template.toml)

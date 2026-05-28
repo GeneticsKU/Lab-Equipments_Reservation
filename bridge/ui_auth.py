@@ -10,7 +10,15 @@ from bridge.emailer import send_login_code_email
 from bridge.session_cookie import set_session_cookie
 
 
+def render_deployment_banner(settings) -> None:
+    if settings.deployment_label:
+        st.caption(settings.deployment_label)
+    if settings.deployment_notice:
+        st.warning(settings.deployment_notice)
+
+
 def render_bridge_login(settings, auth_store, session_state) -> None:
+    render_deployment_banner(settings)
     st.title("Login")
     email_input = st.text_input("KU Email", value=session_state.get("bridge_pending_email", ""), key="bridge_login_email")
 
@@ -42,4 +50,3 @@ def render_bridge_login(settings, auth_store, session_state) -> None:
                 st.error(str(exc))
             except Exception as exc:
                 st.error(f"Unable to complete sign-in: {exc}")
-

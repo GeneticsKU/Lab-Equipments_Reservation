@@ -4,6 +4,7 @@ import streamlit as st
 
 from bridge.auth_store import InvalidAccessRequestError
 from bridge.emailer import send_sponsor_approval_email
+from bridge.ui_auth import render_deployment_banner
 
 
 APPLICANT_CATEGORIES = [
@@ -24,6 +25,7 @@ def get_approval_request_id() -> str | None:
 
 
 def render_applicant_pending_access(settings, auth_store, user, logout_callback) -> None:
+    render_deployment_banner(settings)
     st.title("Access Pending")
     st.write(f"Signed in as: {user.email}")
 
@@ -81,6 +83,9 @@ def render_applicant_pending_access(settings, auth_store, user, logout_callback)
 
 
 def render_sponsor_review(auth_store, sponsor_user) -> None:
+    settings = st.session_state.get("bridge_settings")
+    if settings is not None:
+        render_deployment_banner(settings)
     request_id = get_approval_request_id()
     if not request_id:
         return
