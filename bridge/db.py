@@ -263,6 +263,19 @@ class PostgresBridgeRepository:
             )
             return cur.fetchall()
 
+    def list_all_access_requests(self) -> list[dict]:
+        with self._connect() as conn, conn.cursor() as cur:
+            cur.execute(
+                """
+                SELECT *
+                FROM bridge_access_requests
+                ORDER BY
+                    CASE WHEN status = 'Pending' THEN 0 ELSE 1 END,
+                    created_at DESC
+                """
+            )
+            return cur.fetchall()
+
     def get_access_request_by_id(self, request_id: str) -> dict | None:
         with self._connect() as conn, conn.cursor() as cur:
             cur.execute(

@@ -204,14 +204,21 @@ class AuthStore:
     def list_sponsor_requests(self, sponsor_user_id: str) -> list[dict]:
         return self.repository.list_access_requests_for_sponsor(sponsor_user_id)
 
+    def list_reviewable_requests(self, reviewer_user: BridgeUser) -> list[dict]:
+        if reviewer_user.is_admin:
+            return self.repository.list_all_access_requests()
+        if reviewer_user.is_sponsor:
+            return self.repository.list_access_requests_for_sponsor(reviewer_user.id)
+        return []
+
     def list_applicant_requests(self, applicant_user_id: str) -> list[dict]:
         return self.repository.list_access_requests_for_applicant(applicant_user_id)
 
     def get_access_request(self, request_id: str) -> dict | None:
         return self.repository.get_access_request_by_id(request_id)
 
-    def approve_access_request(self, request_id: str, sponsor_user_id: str, *, approved_user_category: str) -> dict:
-        request_record = self._get_pending_request_for_sponsor(request_id, sponsor_user_id)
+    def approve_access_request(self, request_id: str, reviewer_user_id: str, *, approved_user_category: str) -> dict:
+        request_record = self._get_pending_request_for_reviewer(request_id, reviewer_user_id)
         applicant = self.repository.get_user_by_id(request_record["applicant_user_id"])
         if applicant is None:
             raise InvalidAccessRequestError("Applicant for the request no longer exists.")
@@ -225,12 +232,12 @@ class AuthStore:
 
         request_record["approved_user_category"] = approved_user_category
         request_record["status"] = "Approved"
-        request_record["decision_by_user_id"] = sponsor_user_id
+        request_record["decision_by_user_id"] = reviewer_user_id
         request_record["decision_at"] = self.now()
         return self.repository.update_access_request(request_record)
 
-    def deny_access_request(self, request_id: str, sponsor_user_id: str) -> dict:
-        request_record = self._get_pending_request_for_sponsor(request_id, sponsor_user_id)
+    def deny_access_request(self, request_id: str, reviewer_user_id: str) -> dict:
+        request_record = self._get_pending_request_for_reviewer(request_id, reviewer_user_id)
         applicant = self.repository.get_user_by_id(request_record["applicant_user_id"])
         if applicant is None:
             raise InvalidAccessRequestError("Applicant for the request no longer exists.")
@@ -239,19 +246,22 @@ class AuthStore:
         self.repository.update_user(updated_applicant)
 
         request_record["status"] = "Denied"
-        request_record["decision_by_user_id"] = sponsor_user_id
+        request_record["decision_by_user_id"] = reviewer_user_id
         request_record["decision_at"] = self.now()
         return self.repository.update_access_request(request_record)
 
     def list_sponsors(self) -> list[BridgeUser]:
         return self.repository.list_sponsors()
 
-    def _get_pending_request_for_sponsor(self, request_id: str, sponsor_user_id: str) -> dict:
+    def _get_pending_request_for_reviewer(self, request_id: str, reviewer_user_id: str) -> dict:
         request_record = self.repository.get_access_request_by_id(request_id)
         if request_record is None:
             raise InvalidAccessRequestError("Access request was not found.")
-        if request_record["chosen_sponsor_user_id"] != sponsor_user_id:
-            raise PermissionError("Only the selected sponsor can decide this request.")
+        reviewer = self.repository.get_user_by_id(reviewer_user_id)
+        if reviewer is None:
+            raise PermissionError("Reviewer user was not found.")
+        if not reviewer.is_admin and request_record["chosen_sponsor_user_id"] != reviewer_user_id:
+            raise PermissionError("Only the selected sponsor or an admin can decide this request.")
         if request_record["status"] != "Pending":
             raise InvalidAccessRequestError("This access request has already been decided.")
         return request_record

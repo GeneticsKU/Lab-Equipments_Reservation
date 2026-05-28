@@ -401,10 +401,10 @@ render_deployment_banner(settings)
 approval_request_id = get_approval_request_id()
 
 if approval_request_id:
-    if bridge_user.is_sponsor:
+    if bridge_user.is_sponsor or bridge_user.is_admin:
         render_sponsor_review(auth_store, bridge_user)
     else:
-        st.error("Only sponsors can review access requests.")
+        st.error("Only sponsors or admins can review access requests.")
     st.stop()
 
 if bridge_user.approval_state != "approved" or not bridge_user.is_email_verified:

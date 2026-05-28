@@ -82,7 +82,7 @@ def render_applicant_pending_access(settings, auth_store, user, logout_callback)
         st.rerun()
 
 
-def render_sponsor_review(auth_store, sponsor_user) -> None:
+def render_sponsor_review(auth_store, reviewer_user) -> None:
     settings = st.session_state.get("bridge_settings")
     if settings is not None:
         render_deployment_banner(settings)
@@ -95,8 +95,8 @@ def render_sponsor_review(auth_store, sponsor_user) -> None:
     if request_record is None:
         st.error("This access request was not found.")
         return
-    if request_record["chosen_sponsor_user_id"] != sponsor_user.id:
-        st.error("You are not the selected sponsor for this request.")
+    if not reviewer_user.is_admin and request_record["chosen_sponsor_user_id"] != reviewer_user.id:
+        st.error("You are not allowed to review this request.")
         return
 
     applicant = auth_store.repository.get_user_by_id(request_record["applicant_user_id"])
@@ -123,7 +123,7 @@ def render_sponsor_review(auth_store, sponsor_user) -> None:
     with approval_col:
         if st.button("Approve request", key=f"bridge_approve_{request_id}"):
             try:
-                auth_store.approve_access_request(request_id, sponsor_user.id, approved_user_category=approved_category)
+                auth_store.approve_access_request(request_id, reviewer_user.id, approved_user_category=approved_category)
                 st.success("Access request approved.")
                 st.rerun()
             except (InvalidAccessRequestError, PermissionError) as exc:
@@ -131,24 +131,26 @@ def render_sponsor_review(auth_store, sponsor_user) -> None:
     with denial_col:
         if st.button("Deny request", key=f"bridge_deny_{request_id}"):
             try:
-                auth_store.deny_access_request(request_id, sponsor_user.id)
+                auth_store.deny_access_request(request_id, reviewer_user.id)
                 st.success("Access request denied.")
                 st.rerun()
             except (InvalidAccessRequestError, PermissionError) as exc:
                 st.error(str(exc))
 
 
-def render_sponsor_request_history(auth_store, sponsor_user) -> None:
-    if not sponsor_user.is_sponsor:
+def render_sponsor_request_history(auth_store, reviewer_user) -> None:
+    if not reviewer_user.is_sponsor and not reviewer_user.is_admin:
         return
 
-    sponsor_requests = auth_store.list_sponsor_requests(sponsor_user.id)
-    with st.expander("Sponsor requests", expanded=False):
-        if not sponsor_requests:
+    reviewable_requests = auth_store.list_reviewable_requests(reviewer_user)
+    heading = "Approval requests" if reviewer_user.is_admin else "Sponsor requests"
+    with st.expander(heading, expanded=False):
+        if not reviewable_requests:
             st.write("No access requests yet.")
             return
-        for request in sponsor_requests:
+        for request in reviewable_requests:
+            review_link = f"?approve_request={request['id']}"
             st.write(
                 f"- {request['status']}: {request['suggested_user_category']} "
-                f"({request['affiliation']})"
+                f"({request['affiliation']}) [Open request]({review_link})"
             )
