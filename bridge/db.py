@@ -237,6 +237,43 @@ class PostgresBridgeRepository:
             conn.commit()
         return row
 
+    def list_reservations(self, reservation_type: str) -> list[dict]:
+        with self._connect() as conn, conn.cursor() as cur:
+            cur.execute(
+                """
+                SELECT reservation_type, name, room, equipments, start_time, end_time
+                FROM bridge_reservations
+                WHERE reservation_type = %s
+                ORDER BY start_time ASC, end_time ASC, id ASC
+                """,
+                (reservation_type,),
+            )
+            return cur.fetchall()
+
+    def replace_reservations(self, reservation_type: str, rows: list[dict]) -> None:
+        with self._connect() as conn, conn.cursor() as cur:
+            cur.execute(
+                """
+                DELETE FROM bridge_reservations
+                WHERE reservation_type = %s
+                """,
+                (reservation_type,),
+            )
+            if rows:
+                cur.executemany(
+                    """
+                    INSERT INTO bridge_reservations (
+                        reservation_type, name, room, equipments, start_time, end_time
+                    )
+                    VALUES (
+                        %(reservation_type)s, %(name)s, %(room)s, %(equipments)s,
+                        %(start_time)s, %(end_time)s
+                    )
+                    """,
+                    rows,
+                )
+            conn.commit()
+
     def list_access_requests_for_sponsor(self, sponsor_user_id: str) -> list[dict]:
         with self._connect() as conn, conn.cursor() as cur:
             cur.execute(

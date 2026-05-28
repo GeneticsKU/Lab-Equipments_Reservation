@@ -17,6 +17,12 @@ from bridge.bootstrap import (
 )
 from bridge.github_backup import build_push_refspec, build_repo_url, resolve_github_backup_settings
 from bridge.session_cookie import clear_session_cookie, get_session_cookie, set_session_cookie
+from bridge.reservation_store import (
+    BridgeReservationStore,
+    PCR_FILE_PATH as BRIDGE_PCR_FILE_PATH,
+    NON_PCR_FILE_PATH as BRIDGE_NON_PCR_FILE_PATH,
+    reservation_type_for_file_path,
+)
 from bridge.ui_access_requests import (
     render_applicant_pending_access,
     render_sponsor_request_history,
@@ -30,8 +36,8 @@ os.environ['TZ'] = 'Asia/Bangkok'
 time.tzset()
 
 # Constants
-PCR_FILE_PATH = 'pcr_data.csv'
-NON_PCR_FILE_PATH = 'non_pcr_data.csv'
+PCR_FILE_PATH = BRIDGE_PCR_FILE_PATH
+NON_PCR_FILE_PATH = BRIDGE_NON_PCR_FILE_PATH
 ANNOUNCEMENT_FILE_PATH = 'announcement.txt'
 AUTOCLAVES_PATH = 'autoclaves_count.csv'
 LOG_FILE_PATH = "change_log.csv"
@@ -39,6 +45,8 @@ EQUIPMENT_DETAILS_FILE_PATH = 'equipment_details.json'
 
 # Initialize files if they don't exist
 def init_file(file_path, columns=None):
+    if use_bridge_reservation_store(file_path):
+        return
     if not os.path.exists(file_path):
         df = pd.DataFrame(columns=columns) if columns else pd.DataFrame()
         df.to_csv(file_path, index=False)
@@ -74,6 +82,9 @@ def update_announcement(text, file_path=ANNOUNCEMENT_FILE_PATH):
 # Load data from CSV
 def load_data(file_path):
     try:
+        reservation_type = reservation_type_for_file_path(file_path)
+        if reservation_type and use_bridge_reservation_store(file_path):
+            return build_bridge_reservation_store().load_dataframe(reservation_type)
         if os.path.exists(file_path):
             return pd.read_csv(file_path)
         return pd.DataFrame(columns=['Equipments', 'Start_Time', 'End_Time', 'Name'])  # Return an empty DataFrame if the file does not exist
@@ -84,10 +95,26 @@ def load_data(file_path):
 # Save data to CSV
 def save_data(df, file_path):
     try:
+        reservation_type = reservation_type_for_file_path(file_path)
+        if reservation_type and use_bridge_reservation_store(file_path):
+            build_bridge_reservation_store().save_dataframe(reservation_type, df)
+            return
         df.to_csv(file_path, index=False)
         backup_to_github(file_path, commit_message=f"Update {os.path.basename(file_path)}")
     except Exception as e:
         st.error(f"Error saving data: {e}")
+
+
+def use_bridge_reservation_store(file_path: str) -> bool:
+    return reservation_type_for_file_path(file_path) is not None and load_app_settings() is not None
+
+
+def build_bridge_reservation_store() -> BridgeReservationStore:
+    settings = load_app_settings()
+    if settings is None:
+        raise RuntimeError("Bridge settings are required for DB-backed reservations.")
+    ensure_bridge_schema_once(settings)
+    return BridgeReservationStore(settings)
 
 def fetch_data(file_path):
     df = load_data(file_path)
