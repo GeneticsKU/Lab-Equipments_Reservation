@@ -4,8 +4,8 @@
 
 See: .planning/PROJECT.md (updated 2026-05-27)
 
-**Core value:** Eligible KU users can get approved and reserve lab equipment through a reliable, low-maintenance system with clear governance and auditable operations.
-**Current focus:** Phase 1 - Foundation And Core Data
+**Core value:** Eligible KU users can get approved and reserve lab equipment without manual account registration, while the system evolves toward a reliable long-term architecture with clear governance and auditable operations.
+**Current focus:** Phase 1 - Streamlit Bridge For Registration And Approval (planned)
 
 ## Status
 
@@ -20,9 +20,14 @@ See: .planning/PROJECT.md (updated 2026-05-27)
 ## Current Reality
 
 - Legacy system is a Streamlit app with CSV-backed persistence, manual secrets-based credentials, and in-app Git push behavior.
-- Rewrite target is a Next.js + Postgres + Prisma + Auth.js integrated full-stack application on Vercel + Neon + Resend.
+- Immediate target is a temporary Streamlit bridge using Neon + Resend for identity and approval state while leaving reservations on CSV.
+- Long-term rewrite target is a Next.js + Postgres + Prisma + Auth.js integrated full-stack application on Vercel + Neon + Resend.
 - Domain language has been established in `CONTEXT.md` and should be treated as the canonical glossary for future phases.
+- Phase 1 planning artifacts now exist under `.planning/phases/01-streamlit-bridge-for-registration-and-approval/`.
 
 ## Next Step
 
-- Run `$gsd-plan-phase 1` to plan the foundation and core data phase in detail.
+- Execute Phase 1 plans in order:
+  - `01-01-PLAN.md` bridge auth foundation and session persistence
+  - `01-02-PLAN.md` Streamlit access request and sponsor approval flow
+  - `01-03-PLAN.md` legacy migration, bootstrap, and smoke verification

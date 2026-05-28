@@ -2,11 +2,11 @@
 
 ## What This Is
 
-This project is a clean rewrite of the current Streamlit-based Genetics Department equipment reservation app into a production-grade integrated web application for Kasetsart University users. The new system is for students, researchers, lecturers, and lab operators who need reliable reservation workflows, sponsor-based access approval, operational controls, and durable audit history without depending on manual account registration or CSV files.
+This project delivers two stages for the Genetics Department equipment reservation system at Kasetsart University. First, it ships a temporary Streamlit bridge that removes manual user registration by adding `@ku.th` one-time-code login, sponsor approval, and database-backed identity state; second, it delivers the full production rewrite as an integrated web application with durable governance, audit, and reservation modeling.
 
 ## Core Value
 
-Eligible KU users can get approved and reserve lab equipment through a reliable, low-maintenance system with clear governance and auditable operations.
+Eligible KU users can get approved and reserve lab equipment without manual account registration, while the system evolves toward a reliable long-term architecture with clear governance and auditable operations.
 
 ## Requirements
 
@@ -18,7 +18,7 @@ Eligible KU users can get approved and reserve lab equipment through a reliable,
 
 ### Active
 
-- [ ] Replace secrets-based manual login with passwordless `@ku.th` email authentication, while preserving a future path to KU SSO.
+- [ ] Ship a temporary Streamlit bridge that replaces manual registration with passwordless `@ku.th` email authentication and sponsor approval.
 - [ ] Implement sponsor-based approval, renewable access, explicit user categories, and separated capability assignments.
 - [ ] Move reservation, user, policy, and audit data from CSV files into Postgres with durable history and status models.
 - [ ] Preserve the dual reservation model: slot reservations for PCR-like equipment and timed reservations for general equipment.
@@ -28,10 +28,11 @@ Eligible KU users can get approved and reserve lab equipment through a reliable,
 ### Out of Scope
 
 - Native mobile apps — web-first launch is the lowest-maintenance path for this volunteer project.
-- Separate frontend and backend services — a single integrated full-stack app is the chosen launch architecture.
+- Separate frontend and backend services for the long-term system — a single integrated full-stack app is the chosen launch architecture.
 - KU SSO-specific implementation before KU confirms support — launch must work with a verified `@ku.th` fallback identity.
 - Equipment-specific hard access rules at launch — advisory notes remain advisory until there is real evidence for tighter enforcement.
 - In-app check-in or no-show enforcement — current lab operations do not support reliable detection.
+- Full governance UI inside the temporary Streamlit bridge — the bridge stays intentionally narrow.
 
 ## Context
 
@@ -40,10 +41,12 @@ Eligible KU users can get approved and reserve lab equipment through a reliable,
 - The domain model has now been clarified in [CONTEXT.md](/Users/nydeyanawat/PycharmProjects/Sandbox/Genetics_Lab_Equipement_Reservation_App/Genetics_Lab_Equipement_Reservation_App/CONTEXT.md), including sponsor approval, user categories, capability assignments, audit rules, migration rules, and launch policy defaults.
 - This is a volunteer project. Low operational burden and low hosting cost are first-class constraints, which is why the launch platform targets Vercel, Neon, and Resend.
 - The launch auth fallback is `@ku.th` one-time-code email login. If KU later provides SSO, the identity layer should be replaceable without rewriting the domain model.
+- The temporary bridge stays on the current Streamlit deployment target, reuses Neon and Resend, keeps reservation CSVs in place, authorizes directly from database state, and keeps sponsor-list management manual.
 
 ## Constraints
 
 - **Budget**: Near-zero recurring cost at launch — this is a volunteer project with no paid maintenance budget.
+- **Delivery strategy**: Bridge first, rewrite second — the immediate milestone is removing manual registration without rebuilding the full system in Streamlit.
 - **Tech stack**: Next.js, Postgres, Prisma, Auth.js — chosen to fit the integrated full-stack architecture and low-ops deployment target.
 - **Hosting**: Vercel, Neon, Resend — selected as the launch platform unless KU or departmental policy forbids external managed hosting.
 - **Governance**: Sponsor approval is the final gate for ordinary applicants — operational roles cannot silently replace sponsor decisions.
@@ -54,6 +57,7 @@ Eligible KU users can get approved and reserve lab equipment through a reliable,
 
 | Decision | Rationale | Outcome |
 |----------|-----------|---------|
+| Temporary Streamlit bridge before rewrite | Removes manual registration sooner without forcing the full rewrite into Streamlit | — Pending |
 | Clean rewrite instead of evolving Streamlit in place | The current app’s storage, auth, and role model are too far from the target system | — Pending |
 | Integrated full-stack app instead of split services | Lowest operational burden for a volunteer-maintained rewrite | — Pending |
 | Next.js + Postgres + Prisma + Auth.js | Best fit for integrated deploy, email auth, and relational domain model | — Pending |

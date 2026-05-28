@@ -5,49 +5,68 @@
 **Execution:** parallel
 **Project Mode:** standard
 
-## Phase 1: Foundation And Core Data
+## Phase 1: Streamlit Bridge For Registration And Approval
 
-**Goal:** Establish the integrated full-stack application foundation, database schema, bootstrap admin model, and immutable audit backbone.
+**Goal:** Remove manual registration in the existing Streamlit app by adding passwordless `@ku.th` login, sponsor approval, and database-backed identity state.
 
-**Why now:** Every later phase depends on a correct data model and trusted system boundaries. The current Streamlit app stores mutable CSV rows, runs Git commands from inside the app, and models access as one string role, so the rewrite needs a clean structural base first.
+**Why now:** This is the user’s immediate pain, and the bridge must deliver that relief before the full rewrite. The bridge stays intentionally narrow: reservations remain on CSV, coarse admin or operator powers remain coarse, and sponsor list management stays manual.
 
-**Covers requirements:** AUTH-01, AUTH-02, AUTH-03, GOV-01, GOV-06, GOV-07, AUDT-01, AUDT-02
+**Covers requirements:** AUTH-00, AUTH-01, AUTH-02, AUTH-03, ACCS-01, ACCS-05, ACCS-09, GOV-01, GOV-10, MIGR-00
+
+**Key deliverables:**
+- Neon-backed identity and approval tables for the Streamlit app
+- Resend-backed one-time-code login flow for `@ku.th`
+- Simple sponsor approval screen inside Streamlit
+- Direct database-backed authorization replacing `st.secrets` as the user source of truth
+- Migration path for existing manually registered users into bridge identity state
+
+**Exit criteria:**
+- New users no longer require manual registration in `st.secrets`
+- Existing manually registered users can activate through one `@ku.th` verification
+- Sponsor approval gates access for new users
+- Reservation CSV flows still work against the existing Streamlit UI
+
+## Phase 2: Rewrite Foundation And Core Data
+
+**Goal:** Establish the integrated full-stack rewrite foundation, database schema, bootstrap admin model, and immutable audit backbone.
+
+**Why now:** Once the bridge removes the immediate pain, the rewrite still needs a correct structural base that does not inherit Streamlit-era storage or role assumptions.
+
+**Covers requirements:** GOV-06, GOV-07, AUDT-01, AUDT-02
 
 **Key deliverables:**
 - Next.js app scaffold with Prisma, Postgres, Auth.js, and environment management
-- Core schema for users, capability assignments, access requests, reservations, policies, equipment, and audit log
+- Core rewrite schema for users, capability assignments, access requests, reservations, policies, equipment, and audit log
 - Bootstrap-only admin initialization flow
 - Base shared authorization primitives and domain enums
 
 **Exit criteria:**
-- App boots locally with database-backed persistence
+- Rewrite app boots locally with database-backed persistence
 - Bootstrap admin exists and is protected from ordinary in-app deactivation or reassignment
 - Audit log writes for sensitive system actions exist and are queryable
-- Core schema expresses user category plus capability assignments instead of a single role string
 
-## Phase 2: Identity, Access Requests, And Approval Policy
+## Phase 3: Rewrite Identity, Approval Policy, And User Classification
 
-**Goal:** Implement passwordless `@ku.th` login, sponsor-driven access approval, access lifecycle rules, and category-based reservation policy assignment.
+**Goal:** Implement the full approval model, lecturer classification rules, ordinary user categorization, access-term defaults, and reservation policy defaults in the rewrite.
 
-**Why now:** The user’s biggest pain is manual account registration, and the domain model now depends on access request states, sponsor approval, lecturer-specific rules, and category-based policy defaults.
+**Why now:** The bridge keeps a coarse permission model on purpose. The rewrite is where the full trust model becomes durable and explicit.
 
-**Covers requirements:** ACCS-01, ACCS-02, ACCS-03, ACCS-04, ACCS-05, ACCS-06, ACCS-08, GOV-02, GOV-03, LIFE-01, LIFE-02, POL-01, POL-02, POL-03, POL-04, POL-05, POL-06
+**Covers requirements:** ACCS-02, ACCS-03, ACCS-04, ACCS-06, ACCS-08, GOV-02, GOV-03, LIFE-01, LIFE-02, POL-01, POL-02, POL-03, POL-04, POL-05, POL-06
 
 **Key deliverables:**
-- `@ku.th` one-time-code authentication flow
-- Access request submission and sponsor approval UI
-- Sponsor-scoped request visibility
-- User category suggestion and sponsor confirmation flow
-- Access-term assignment and lecturer exception handling
-- Category-based reservation policy defaults
+- Full access request lifecycle
+- Sponsor-scoped request history
+- Applicant category suggestion and sponsor confirmation
+- Lecturer assignment boundary
+- User-category-driven access terms and reservation policy defaults
 
 **Exit criteria:**
-- New applicant can authenticate, submit a request, and reach a sponsor approval decision flow
-- Sponsor must act from their own authenticated account
-- Lecturer automatically receives sponsor capability once classified as lecturer
-- Approved user receives the correct access term and reservation policy defaults
+- Rewrite access request model matches the agreed domain states and boundaries
+- Sponsor decisions remain non-delegable
+- Lecturer and non-lecturer user classification rules are enforced
+- Approved users receive the correct launch policy defaults
 
-## Phase 3: Governance, Operations, And Recovery Controls
+## Phase 4: Governance, Operations, And Recovery Controls
 
 **Goal:** Implement the operational and governance surfaces for directory management, operations, restrictions, recovery, and read visibility boundaries.
 
@@ -68,7 +87,7 @@
 - Admin can perform recovery overrides across all governance domains
 - Sensitive governance changes require and store an audit reason
 
-## Phase 4: Reservation Engine And Operational Actions
+## Phase 5: Reservation Engine And Operational Actions
 
 **Goal:** Rebuild the reservation engine around durable status-based records, dual reservation models, policy enforcement, and delegated staff actions.
 
@@ -90,7 +109,7 @@
 - Delegated staff actions are explicitly attributed
 - Slot and timed models behave differently where required
 
-## Phase 5: Notifications And Legacy Migration
+## Phase 6: Notifications And Legacy Migration
 
 **Goal:** Deliver the mandatory launch email notifications and migrate legacy data into the new system safely.
 
@@ -103,6 +122,7 @@
 - Legacy import scripts and mapping rules
 - Matching logic for approved legacy users
 - Legacy-marked history import path
+- Bridge-to-rewrite migration notes where the bridge identity state feeds the rewrite
 
 **Exit criteria:**
 - All mandatory launch notification types are sent correctly
@@ -111,7 +131,7 @@
 - Matched users activate after email verification
 - Historical legacy reservations are explicitly marked as imported history
 
-## Phase 6: Cutover, Validation, And Retirement Of Streamlit
+## Phase 7: Cutover, Validation, And Retirement Of Streamlit
 
 **Goal:** Execute the controlled cutover period, validate the new system end-to-end, and retire the old Streamlit app from active use.
 
@@ -133,18 +153,20 @@
 
 ## Parallelism Notes
 
-- Phase 1 must complete before the later phases can build on the shared schema and bootstrap auth boundaries.
-- Phase 2 and Phase 3 can overlap once the shared foundation exists.
-- Phase 4 depends on Phases 1 and 2, and partially on Phase 3 for delegated operations behavior.
-- Phase 5 depends on stable domain flows from Phases 2 through 4.
-- Phase 6 depends on all earlier phases being implementation-complete and verified.
+- Phase 1 is the bridge milestone and should land before the rewrite phases proceed in earnest.
+- Phase 2 must complete before the later rewrite phases can build on the shared schema and bootstrap auth boundaries.
+- Phase 3 and Phase 4 can overlap once the rewrite foundation exists.
+- Phase 5 depends on rewrite identity, access, and governance being stable.
+- Phase 6 depends on stable domain flows from Phases 3 through 5.
+- Phase 7 depends on all earlier phases being implementation-complete and verified.
 
 ## Risks To Watch
 
-- KU may later provide SSO, so auth must be replaceable without rewriting the domain layer.
+- KU may later provide SSO, so both bridge auth and rewrite auth must be replaceable without rewriting the domain layer.
 - The automatic sponsor-capability rule for all lecturers makes lecturer classification a high-trust operation.
 - The 168-hour timed reservation default may prove too generous operationally; the system must make later tightening easy.
 - Legacy data quality may limit how much approved-user history can be trusted automatically.
+- The bridge must stay narrow; otherwise it risks becoming a partial rewrite trapped inside Streamlit.
 
 ---
 *Roadmap defined: 2026-05-27*

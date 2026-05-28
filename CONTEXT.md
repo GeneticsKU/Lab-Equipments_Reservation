@@ -236,6 +236,14 @@ _Avoid_: native record, current audit event
 A short transition window in which the old and new systems both exist while the new system becomes the active one.
 _Avoid_: indefinite dual operation, direct blind switch
 
+**Bridge Release**:
+A temporary Streamlit-based upgrade that solves the manual registration problem before the full rewrite is delivered.
+_Avoid_: final architecture, full rewrite
+
+**Bridge Approval Flow**:
+The simplified sponsor approval mechanism used in the Bridge Release.
+_Avoid_: full governance dashboard, open self-registration
+
 ## Relationships
 
 - An **Applicant** must have a **KU Identity**
@@ -292,6 +300,13 @@ _Avoid_: indefinite dual operation, direct blind switch
 - the rewrite is delivered as one **Integrated Full-Stack App**
 - the launch **Application Stack** is Next.js, Postgres, Prisma, and Auth.js
 - the launch **Launch Platform** is Vercel, Neon, and Resend
+- the temporary **Bridge Release** stays on the current Streamlit deployment target
+- the temporary **Bridge Release** reuses Neon and Resend for identity and approval state
+- the temporary **Bridge Approval Flow** is a simple sponsor approval flow inside Streamlit
+- the temporary **Bridge Release** authorizes approved users directly from the database, not from `st.secrets`
+- the temporary **Bridge Release** keeps a minimal permission model: approved users can reserve, sponsors can approve requests, and existing coarse admin or operator powers remain coarse
+- existing manually registered users are migrated into the bridge auth database too
+- existing manually registered users are treated as already approved in the bridge after one `@ku.th` email verification
 - **Legacy Migration** includes the equipment catalog, enabled status, future reservations, and reliably matched approved users
 - imported historical reservations are preserved as **Legacy-Imported History**
 - reliably matched imported approved users keep access after one **KU Email Verification**
@@ -372,6 +387,13 @@ _Avoid_: indefinite dual operation, direct blind switch
 - "production rewrite" could have been split into multiple services too early — resolved: launch uses one **Integrated Full-Stack App**.
 - "rewrite stack" could have remained open-ended — resolved: the launch **Application Stack** is Next.js, Postgres, Prisma, and Auth.js.
 - "managed deployment" could still have remained abstract — resolved: the launch **Launch Platform** is Vercel, Neon, and Resend.
+- "temporary upgrade path" is resolved: a **Bridge Release** comes first and stays on the current Streamlit deployment target.
+- "temporary backend" is resolved: the **Bridge Release** reuses Neon and Resend instead of introducing a separate short-lived service stack.
+- "bridge governance scope" is resolved: the **Bridge Release** starts with a simple **Bridge Approval Flow**, not a broad operator dashboard.
+- "bridge authorization source" is resolved: the **Bridge Release** authorizes users directly from database state rather than mirroring approvals back into `st.secrets`.
+- "bridge permissions" are intentionally coarse: approval and reservation are upgraded first, while fine-grained capability modeling stays in the rewrite.
+- "bridge user rollout" is resolved: existing manually registered users are migrated into the bridge auth database instead of keeping two parallel user systems.
+- "existing manual users" keep trust continuity in the bridge: they are treated as already approved after one `@ku.th` verification.
 - "migration" could have implied a full blind carryover from weak CSV records — resolved: **Legacy Migration** is selective and reliability-driven.
 - "imported history" could have been mistaken for native audited data — resolved: old historical reservations are marked as **Legacy-Imported History**.
 - "imported approved user" could have implied silent trust carryover — resolved: reliably matched imported users keep access only after one **KU Email Verification**.
