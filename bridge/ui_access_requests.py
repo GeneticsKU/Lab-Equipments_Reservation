@@ -90,7 +90,6 @@ def render_sponsor_review(auth_store, reviewer_user) -> None:
     if not request_id:
         return
 
-    st.write("### Sponsor approval request")
     request_record = auth_store.get_access_request(request_id)
     if request_record is None:
         st.error("This access request was not found.")
@@ -98,44 +97,8 @@ def render_sponsor_review(auth_store, reviewer_user) -> None:
     if not reviewer_user.is_admin and request_record["chosen_sponsor_user_id"] != reviewer_user.id:
         st.error("You are not allowed to review this request.")
         return
-
-    applicant = auth_store.repository.get_user_by_id(request_record["applicant_user_id"])
-    st.write(f"Applicant: {(applicant.full_name if applicant else None) or 'Unknown applicant'}")
-    st.write(f"Applicant email: {(applicant.email if applicant else 'Unknown email')}")
-    st.write(f"Suggested category: {request_record['suggested_user_category']}")
-    st.write(f"Affiliation: {request_record['affiliation']}")
-    st.write(f"Current status: {request_record['status']}")
-
-    if request_record["status"] != "Pending":
-        st.info("This request has already been decided.")
-        return
-
-    approved_category = st.selectbox(
-        "Approved user category",
-        APPLICANT_CATEGORIES,
-        index=APPLICANT_CATEGORIES.index(request_record["suggested_user_category"])
-        if request_record["suggested_user_category"] in APPLICANT_CATEGORIES
-        else 0,
-        key=f"bridge_sponsor_category_{request_id}",
-    )
-
-    approval_col, denial_col = st.columns(2)
-    with approval_col:
-        if st.button("Approve request", key=f"bridge_approve_{request_id}"):
-            try:
-                auth_store.approve_access_request(request_id, reviewer_user.id, approved_user_category=approved_category)
-                st.success("Access request approved.")
-                st.rerun()
-            except (InvalidAccessRequestError, PermissionError) as exc:
-                st.error(str(exc))
-    with denial_col:
-        if st.button("Deny request", key=f"bridge_deny_{request_id}"):
-            try:
-                auth_store.deny_access_request(request_id, reviewer_user.id)
-                st.success("Access request denied.")
-                st.rerun()
-            except (InvalidAccessRequestError, PermissionError) as exc:
-                st.error(str(exc))
+    st.write("### Sponsor approval request")
+    _render_request_review_body(auth_store, reviewer_user, request_record, highlighted=True)
 
 
 def render_sponsor_request_history(auth_store, reviewer_user) -> None:
@@ -144,13 +107,76 @@ def render_sponsor_request_history(auth_store, reviewer_user) -> None:
 
     reviewable_requests = auth_store.list_reviewable_requests(reviewer_user)
     heading = "Approval requests" if reviewer_user.is_admin else "Sponsor requests"
-    with st.expander(heading, expanded=False):
+    selected_request_id = get_approval_request_id()
+    has_pending_requests = any(request["status"] == "Pending" for request in reviewable_requests)
+    sorted_requests = sorted(
+        reviewable_requests,
+        key=lambda request: (
+            0 if request["id"] == selected_request_id else 1,
+            0 if request["status"] == "Pending" else 1,
+            str(request.get("created_at")),
+        ),
+    )
+    with st.expander(heading, expanded=bool(selected_request_id or has_pending_requests)):
         if not reviewable_requests:
             st.write("No access requests yet.")
             return
-        for request in reviewable_requests:
-            review_link = f"?approve_request={request['id']}"
-            st.write(
-                f"- {request['status']}: {request['suggested_user_category']} "
-                f"({request['affiliation']}) [Open request]({review_link})"
+        if selected_request_id:
+            st.info("Request opened from email is highlighted below. You can review it directly here.")
+        for request in sorted_requests:
+            _render_request_review_body(
+                auth_store,
+                reviewer_user,
+                request,
+                highlighted=request["id"] == selected_request_id,
             )
+
+
+def _render_request_review_body(auth_store, reviewer_user, request_record, *, highlighted: bool = False) -> None:
+    request_id = request_record["id"]
+    applicant = auth_store.repository.get_user_by_id(request_record["applicant_user_id"])
+    applicant_name = (applicant.full_name if applicant else None) or "Unknown applicant"
+    applicant_email = applicant.email if applicant else "Unknown email"
+
+    container = st.container()
+    with container:
+        st.markdown("---")
+        header = "Selected request" if highlighted else "Request"
+        st.write(f"**{header}:** {applicant_name}")
+        st.write(f"Applicant email: {applicant_email}")
+        st.write(f"Suggested category: {request_record['suggested_user_category']}")
+        st.write(f"Affiliation: {request_record['affiliation']}")
+        st.write(f"Current status: {request_record['status']}")
+
+        if request_record["status"] != "Pending":
+            if request_record.get("approved_user_category"):
+                st.write(f"Approved category: {request_record['approved_user_category']}")
+            st.info("This request has already been decided.")
+            return
+
+        approved_category = st.selectbox(
+            "Approved user category",
+            APPLICANT_CATEGORIES,
+            index=APPLICANT_CATEGORIES.index(request_record["suggested_user_category"])
+            if request_record["suggested_user_category"] in APPLICANT_CATEGORIES
+            else 0,
+            key=f"bridge_sponsor_category_{request_id}",
+        )
+
+        approval_col, denial_col = st.columns(2)
+        with approval_col:
+            if st.button("Approve request", key=f"bridge_approve_{request_id}"):
+                try:
+                    auth_store.approve_access_request(request_id, reviewer_user.id, approved_user_category=approved_category)
+                    st.success("Access request approved.")
+                    st.rerun()
+                except (InvalidAccessRequestError, PermissionError) as exc:
+                    st.error(str(exc))
+        with denial_col:
+            if st.button("Deny request", key=f"bridge_deny_{request_id}"):
+                try:
+                    auth_store.deny_access_request(request_id, reviewer_user.id)
+                    st.success("Access request denied.")
+                    st.rerun()
+                except (InvalidAccessRequestError, PermissionError) as exc:
+                    st.error(str(exc))

@@ -16,10 +16,8 @@ from bridge.bootstrap import (
 )
 from bridge.session_cookie import clear_session_cookie, get_session_cookie, set_session_cookie
 from bridge.ui_access_requests import (
-    get_approval_request_id,
     render_applicant_pending_access,
     render_sponsor_request_history,
-    render_sponsor_review,
 )
 from bridge.ui_auth import render_bridge_login, render_deployment_banner
 
@@ -398,14 +396,6 @@ mobile = st.toggle('Mobile Version')
 announcement_text = read_announcement()
 settings, auth_store, bridge_user = require_bridge_user()
 render_deployment_banner(settings)
-approval_request_id = get_approval_request_id()
-
-if approval_request_id:
-    if bridge_user.is_sponsor or bridge_user.is_admin:
-        render_sponsor_review(auth_store, bridge_user)
-    else:
-        st.error("Only sponsors or admins can review access requests.")
-    st.stop()
 
 if bridge_user.approval_state != "approved" or not bridge_user.is_email_verified:
     render_applicant_pending_access(
