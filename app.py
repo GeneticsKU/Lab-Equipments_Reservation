@@ -43,6 +43,17 @@ AUTOCLAVES_PATH = 'autoclaves_count.csv'
 LOG_FILE_PATH = "change_log.csv"
 EQUIPMENT_DETAILS_FILE_PATH = 'equipment_details.json'
 
+def use_bridge_reservation_store(file_path: str) -> bool:
+    return reservation_type_for_file_path(file_path) is not None and load_app_settings() is not None
+
+
+def build_bridge_reservation_store() -> BridgeReservationStore:
+    settings = load_app_settings()
+    if settings is None:
+        raise RuntimeError("Bridge settings are required for DB-backed reservations.")
+    ensure_bridge_schema_once(settings)
+    return BridgeReservationStore(settings)
+
 # Initialize files if they don't exist
 def init_file(file_path, columns=None):
     if use_bridge_reservation_store(file_path):
@@ -103,18 +114,6 @@ def save_data(df, file_path):
         backup_to_github(file_path, commit_message=f"Update {os.path.basename(file_path)}")
     except Exception as e:
         st.error(f"Error saving data: {e}")
-
-
-def use_bridge_reservation_store(file_path: str) -> bool:
-    return reservation_type_for_file_path(file_path) is not None and load_app_settings() is not None
-
-
-def build_bridge_reservation_store() -> BridgeReservationStore:
-    settings = load_app_settings()
-    if settings is None:
-        raise RuntimeError("Bridge settings are required for DB-backed reservations.")
-    ensure_bridge_schema_once(settings)
-    return BridgeReservationStore(settings)
 
 def fetch_data(file_path):
     df = load_data(file_path)
