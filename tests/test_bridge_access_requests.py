@@ -103,6 +103,25 @@ def test_create_access_request_updates_applicant_details() -> None:
     assert updated_user.affiliation == "Genetics Room 101"
 
 
+def test_create_access_request_accepts_admin_as_selected_reviewer() -> None:
+    repository = FakeAccessRequestRepository()
+    admin = seed_user(repository, id="admin-1", email="admin@ku.th", is_admin=True, approval_state="approved")
+    applicant = seed_user(repository, id="user-1", email="student@ku.th", approval_state="pending", is_email_verified=True)
+    store = build_store(repository)
+
+    request_record = store.create_access_request(
+        applicant_user_id=applicant.id,
+        full_name="Student User",
+        email="student@ku.th",
+        chosen_sponsor_user_id=admin.id,
+        suggested_user_category="Master Student",
+        affiliation="Genetics Room 101",
+    )
+
+    assert request_record["chosen_sponsor_user_id"] == admin.id
+    assert request_record["status"] == "Pending"
+
+
 def test_list_sponsor_requests_only_returns_their_requests() -> None:
     repository = FakeAccessRequestRepository()
     sponsor_one = seed_user(repository, id="sponsor-1", email="lecturer1@ku.th", is_sponsor=True, approval_state="approved")

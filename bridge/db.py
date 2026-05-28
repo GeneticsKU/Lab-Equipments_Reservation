@@ -315,7 +315,7 @@ class PostgresBridgeRepository:
                 SELECT id, email, full_name, user_category, affiliation, is_email_verified,
                        approval_state, is_sponsor, is_admin, is_operator, legacy_username, legacy_source
                 FROM bridge_users
-                WHERE is_sponsor = TRUE
+                WHERE is_sponsor = TRUE OR is_admin = TRUE
                 ORDER BY COALESCE(full_name, email), email
                 """
             )

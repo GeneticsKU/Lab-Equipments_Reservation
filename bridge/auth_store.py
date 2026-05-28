@@ -174,7 +174,7 @@ class AuthStore:
         sponsor = self.repository.get_user_by_id(chosen_sponsor_user_id)
         if applicant is None:
             raise InvalidAccessRequestError("Applicant user does not exist.")
-        if sponsor is None or not sponsor.is_sponsor:
+        if sponsor is None or (not sponsor.is_sponsor and not sponsor.is_admin):
             raise InvalidAccessRequestError("Selected sponsor is not valid.")
         if applicant.email != normalized_email:
             raise InvalidAccessRequestError("Applicant email does not match the signed-in user.")
