@@ -26,7 +26,9 @@ def build_auth_store(settings: BridgeSettings) -> AuthStore:
 def ensure_bridge_schema(settings: BridgeSettings) -> None:
     sql_text = schema_sql_path().read_text(encoding="utf-8")
     with connect_database(settings.database_url) as conn, conn.cursor() as cur:
-        cur.execute(sql_text)
+        statements = [statement.strip() for statement in sql_text.split(";") if statement.strip()]
+        for statement in statements:
+            cur.execute(statement)
         conn.commit()
 
 
@@ -115,7 +117,7 @@ def main() -> int:
     args = parser.parse_args()
     settings = load_app_settings()
     if settings is None:
-        raise SystemExit("Missing bridge configuration. Set DATABASE_URL, RESEND_API_KEY, RESEND_FROM_EMAIL, and APP_BASE_URL.")
+        raise SystemExit("Missing bridge configuration. Set DATABASE_URL, SMTP_USERNAME, SMTP_PASSWORD, SMTP_FROM_EMAIL, and APP_BASE_URL.")
 
     if args.command == "init-schema":
         ensure_bridge_schema(settings)

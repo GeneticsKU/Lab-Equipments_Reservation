@@ -20,13 +20,13 @@ See: .planning/PROJECT.md (updated 2026-05-27)
 ## Current Reality
 
 - Legacy system is a Streamlit app with CSV-backed persistence, manual secrets-based credentials, and in-app Git push behavior.
-- Immediate target is a temporary Streamlit bridge using Neon + Resend for identity and approval state while leaving reservations on CSV.
+- Immediate target is a temporary Streamlit bridge using Neon + SMTP email for identity and approval state while leaving reservations on CSV.
 - Long-term rewrite target is a Next.js + Postgres + Prisma + Auth.js integrated full-stack application on Vercel + Neon + Resend.
 - Domain language has been established in `CONTEXT.md` and should be treated as the canonical glossary for future phases.
 - Phase 1 bridge code is implemented in `app.py`, `bridge/`, `scripts/`, `sql/`, and `tests/`.
 - Phase 1 planning artifacts exist under `.planning/phases/01-streamlit-bridge-for-registration-and-approval/`.
 - Automated verification currently passes for bridge auth, access-request, and legacy-migration tests.
-- Full live smoke verification still requires real `DATABASE_URL`, `RESEND_API_KEY`, `RESEND_FROM_EMAIL`, and `APP_BASE_URL` configuration.
+- Full live smoke verification now requires real `DATABASE_URL`, `SMTP_USERNAME`, `SMTP_PASSWORD`, `SMTP_FROM_EMAIL`, and `APP_BASE_URL` configuration.
 
 ## Next Step
 

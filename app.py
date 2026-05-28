@@ -350,7 +350,7 @@ def init_bridge_state():
 def get_bridge_runtime():
     settings = load_app_settings()
     if settings is None:
-        return None, None, "Missing bridge configuration. Set DATABASE_URL, RESEND_API_KEY, RESEND_FROM_EMAIL, and APP_BASE_URL."
+        return None, None, "Missing bridge configuration. Set DATABASE_URL, SMTP_USERNAME, SMTP_PASSWORD, SMTP_FROM_EMAIL, and APP_BASE_URL."
 
     try:
         ensure_bridge_schema(settings)

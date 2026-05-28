@@ -39,16 +39,16 @@ Eligible KU users can get approved and reserve lab equipment without manual acco
 - The current app is a single-file Streamlit application in [app.py](/Users/nydeyanawat/PycharmProjects/Sandbox/Genetics_Lab_Equipement_Reservation_App/Genetics_Lab_Equipement_Reservation_App/app.py) with duplicated mobile and desktop flows, secrets-based username/password login, CSV persistence, and Git-based backup from inside the running app.
 - The current reservation data model is split across `pcr_data.csv`, `non_pcr_data.csv`, `change_log.csv`, and `equipment_details.json`, with destructive cancellation and no durable reservation status model.
 - The domain model has now been clarified in [CONTEXT.md](/Users/nydeyanawat/PycharmProjects/Sandbox/Genetics_Lab_Equipement_Reservation_App/Genetics_Lab_Equipement_Reservation_App/CONTEXT.md), including sponsor approval, user categories, capability assignments, audit rules, migration rules, and launch policy defaults.
-- This is a volunteer project. Low operational burden and low hosting cost are first-class constraints, which is why the launch platform targets Vercel, Neon, and Resend.
+- This is a volunteer project. Low operational burden and low hosting cost are first-class constraints. For the temporary bridge, the email path must work without paid services or a custom domain.
 - The launch auth fallback is `@ku.th` one-time-code email login. If KU later provides SSO, the identity layer should be replaceable without rewriting the domain model.
-- The temporary bridge stays on the current Streamlit deployment target, reuses Neon and Resend, keeps reservation CSVs in place, authorizes directly from database state, and keeps sponsor-list management manual.
+- The temporary bridge stays on the current Streamlit deployment target, reuses Neon, sends email through SMTP so it can run from a dedicated Gmail account, keeps reservation CSVs in place, authorizes directly from database state, and keeps sponsor-list management manual.
 
 ## Constraints
 
 - **Budget**: Near-zero recurring cost at launch — this is a volunteer project with no paid maintenance budget.
 - **Delivery strategy**: Bridge first, rewrite second — the immediate milestone is removing manual registration without rebuilding the full system in Streamlit.
 - **Tech stack**: Next.js, Postgres, Prisma, Auth.js — chosen to fit the integrated full-stack architecture and low-ops deployment target.
-- **Hosting**: Vercel, Neon, Resend — selected as the launch platform unless KU or departmental policy forbids external managed hosting.
+- **Hosting**: Vercel, Neon, and an SMTP-capable sender for the long-term rewrite. For the temporary bridge, SMTP is preferred over Resend because the project may have no domain and no KU mail support.
 - **Governance**: Sponsor approval is the final gate for ordinary applicants — operational roles cannot silently replace sponsor decisions.
 - **Operational model**: Low monitoring after launch — policies and defaults must work without constant manual supervision.
 - **Migration**: Legacy import must be selective and reliability-driven — old CSV history cannot be treated as native audited data by default.
@@ -61,7 +61,7 @@ Eligible KU users can get approved and reserve lab equipment without manual acco
 | Clean rewrite instead of evolving Streamlit in place | The current app’s storage, auth, and role model are too far from the target system | — Pending |
 | Integrated full-stack app instead of split services | Lowest operational burden for a volunteer-maintained rewrite | — Pending |
 | Next.js + Postgres + Prisma + Auth.js | Best fit for integrated deploy, email auth, and relational domain model | — Pending |
-| Vercel + Neon + Resend launch platform | Cheapest practical managed stack for this architecture | — Pending |
+| Vercel + Neon + SMTP-capable sender launch platform | Cheapest practical managed stack for this architecture when KU support is absent | — Pending |
 | Passwordless `@ku.th` one-time-code auth fallback | KU SSO may be unavailable; passwords would add more maintenance burden | — Pending |
 | Sponsor approval as the final access gate | Matches lab policy while removing manual account registration bottlenecks | — Pending |
 | Separate user category from capability assignments | Needed to model lecturers, sponsors, operations, directory managers, and admin cleanly | — Pending |

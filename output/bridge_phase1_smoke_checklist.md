@@ -5,7 +5,7 @@ Use this after bridge setup and before relying on the Streamlit bridge in normal
 ## Preconditions
 
 - `.venv` exists and dependencies are installed
-- `DATABASE_URL`, `RESEND_API_KEY`, `RESEND_FROM_EMAIL`, and `APP_BASE_URL` are set
+- `DATABASE_URL`, `SMTP_USERNAME`, `SMTP_PASSWORD`, `SMTP_FROM_EMAIL`, and `APP_BASE_URL` are set
 - bridge schema is initialized
 - at least one sponsor is seeded
 - a legacy user export JSON is available

@@ -22,12 +22,38 @@ The current implementation is in transition from manual `st.secrets` registratio
 ### Required environment variables
 
 - `DATABASE_URL`
-- `RESEND_API_KEY`
-- `RESEND_FROM_EMAIL`
+- `SMTP_USERNAME`
+- `SMTP_PASSWORD`
+- `SMTP_FROM_EMAIL`
 - `APP_BASE_URL`
+- `SMTP_HOST` (optional, default: `smtp.gmail.com`)
+- `SMTP_PORT` (optional, default: `465`)
+- `SMTP_USE_SSL` (optional, default: `true`)
 - `SESSION_COOKIE_NAME` (optional, default: `genetics_lab_bridge_session`)
 - `SESSION_TTL_HOURS` (optional, default: `12`)
 - `LOGIN_CODE_TTL_MINUTES` (optional, default: `10`)
+
+### Free email path
+
+For the lowest-cost path without KU support, the bridge uses standard SMTP and is designed to work with a dedicated Gmail sender account.
+
+Recommended Gmail setup:
+
+1. Create or choose a dedicated Gmail account for the app.
+2. Enable 2-Step Verification on that Google account.
+3. Create an App Password for Mail.
+4. Set:
+
+```env
+SMTP_HOST=smtp.gmail.com
+SMTP_PORT=465
+SMTP_USE_SSL=true
+SMTP_USERNAME=your-sender@gmail.com
+SMTP_PASSWORD=your-google-app-password
+SMTP_FROM_EMAIL=your-sender@gmail.com
+```
+
+This keeps the bridge free at small scale and avoids needing a custom domain.
 
 ### Bridge setup
 
@@ -66,6 +92,23 @@ Or run the migration script directly:
 ```bash
 .venv/bin/python -m scripts.migrate_legacy_users --input legacy_users.json
 ```
+
+If you already have the historical Google Form export workbook, generate both the sponsor seed and legacy-user import files from it:
+
+```bash
+.venv/bin/python -m scripts.export_bridge_seed_from_registration_xlsx \
+  --input "Registration Form for Lab Equipment Reservation App (Responses).xlsx" \
+  --sponsors-output scratch/sponsors_from_registration.json \
+  --legacy-output scratch/legacy_users_from_registration.json \
+  --report-output scratch/registration_import_report.json
+```
+
+This conversion treats:
+
+- `Lecturer` rows as sponsor records
+- `Admin` rows as bridge admins
+- all other rows as already approved legacy users
+- only `@ku.th` emails as valid bridge login identities
 
 The legacy export must contain either:
 

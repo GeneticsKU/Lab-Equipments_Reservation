@@ -15,7 +15,7 @@
 
 **Key deliverables:**
 - Neon-backed identity and approval tables for the Streamlit app
-- Resend-backed one-time-code login flow for `@ku.th`
+- SMTP-backed one-time-code login flow for `@ku.th`
 - Simple sponsor approval screen inside Streamlit
 - Direct database-backed authorization replacing `st.secrets` as the user source of truth
 - Migration path for existing manually registered users into bridge identity state
@@ -118,7 +118,7 @@
 **Covers requirements:** AUTH-04, LIFE-05, OPER-04, OPER-05, MIGR-01, MIGR-02, MIGR-03, MIGR-04, MIGR-05
 
 **Key deliverables:**
-- Resend-backed launch notification flows
+- SMTP-backed launch notification flows
 - Legacy import scripts and mapping rules
 - Matching logic for approved legacy users
 - Legacy-marked history import path

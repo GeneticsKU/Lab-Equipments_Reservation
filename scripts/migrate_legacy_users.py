@@ -79,7 +79,7 @@ def main() -> int:
 
     settings = load_bridge_settings()
     if settings is None:
-        raise SystemExit("Missing bridge configuration. Set DATABASE_URL, RESEND_API_KEY, RESEND_FROM_EMAIL, and APP_BASE_URL.")
+        raise SystemExit("Missing bridge configuration. Set DATABASE_URL, SMTP_USERNAME, SMTP_PASSWORD, SMTP_FROM_EMAIL, and APP_BASE_URL.")
 
     repository = PostgresBridgeRepository(settings)
     payload = load_legacy_payload(args.input)
