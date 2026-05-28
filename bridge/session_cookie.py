@@ -17,7 +17,10 @@ def _cookie_manager():
 
 def get_session_cookie(cookie_name: str) -> str | None:
     manager = _cookie_manager()
-    return manager.get(cookie_name)
+    # Refresh browser cookies on each rerun so we do not keep the empty
+    # constructor snapshot from the first post-refresh render.
+    cookies = manager.get_all(key=f"bridge_cookie_get_all_{cookie_name}")
+    return cookies.get(cookie_name)
 
 
 def set_session_cookie(cookie_name: str, token: str, expires_at: datetime) -> None:
