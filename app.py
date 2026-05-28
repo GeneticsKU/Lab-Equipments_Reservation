@@ -10,7 +10,7 @@ import subprocess
 from bridge.bootstrap import (
     build_auth_store,
     clear_bridge_session_state,
-    ensure_bridge_schema,
+    ensure_bridge_schema_once,
     hydrate_bridge_session_state,
     load_app_settings,
 )
@@ -351,7 +351,7 @@ def get_bridge_runtime():
         return None, None, "Missing bridge configuration. Set DATABASE_URL, SMTP_USERNAME, SMTP_PASSWORD, SMTP_FROM_EMAIL, and APP_BASE_URL."
 
     try:
-        ensure_bridge_schema(settings)
+        ensure_bridge_schema_once(settings)
         auth_store = build_auth_store(settings)
         return settings, auth_store, None
     except Exception as exc:

@@ -2,6 +2,7 @@ from __future__ import annotations
 
 import argparse
 from datetime import timedelta
+from functools import lru_cache
 import json
 from pathlib import Path
 
@@ -25,7 +26,21 @@ def build_auth_store(settings: BridgeSettings) -> AuthStore:
 
 def ensure_bridge_schema(settings: BridgeSettings) -> None:
     sql_text = schema_sql_path().read_text(encoding="utf-8")
-    with connect_database(settings.database_url) as conn, conn.cursor() as cur:
+    _apply_bridge_schema(settings.database_url, sql_text)
+
+
+def ensure_bridge_schema_once(settings: BridgeSettings) -> None:
+    _ensure_bridge_schema_once_cached(settings.database_url, str(schema_sql_path()))
+
+
+@lru_cache(maxsize=8)
+def _ensure_bridge_schema_once_cached(database_url: str, schema_path: str) -> None:
+    sql_text = Path(schema_path).read_text(encoding="utf-8")
+    _apply_bridge_schema(database_url, sql_text)
+
+
+def _apply_bridge_schema(database_url: str, sql_text: str) -> None:
+    with connect_database(database_url) as conn, conn.cursor() as cur:
         statements = [statement.strip() for statement in sql_text.split(";") if statement.strip()]
         for statement in statements:
             cur.execute(statement)
