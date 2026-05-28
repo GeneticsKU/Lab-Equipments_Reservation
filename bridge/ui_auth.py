@@ -20,9 +20,15 @@ def render_deployment_banner(settings) -> None:
 def render_bridge_login(settings, auth_store, session_state) -> None:
     render_deployment_banner(settings)
     st.title("Login")
-    email_input = st.text_input("KU Email", value=session_state.get("bridge_pending_email", ""), key="bridge_login_email")
+    with st.form("bridge_send_code_form"):
+        email_input = st.text_input(
+            "KU Email",
+            value=session_state.get("bridge_pending_email", ""),
+            key="bridge_login_email",
+        )
+        send_code = st.form_submit_button("Send one-time code")
 
-    if st.button("Send one-time code", key="bridge_send_code"):
+    if send_code:
         try:
             normalized_email = normalize_email(email_input)
             login_code = auth_store.issue_login_code(normalized_email)
@@ -36,8 +42,11 @@ def render_bridge_login(settings, auth_store, session_state) -> None:
 
     pending_email = session_state.get("bridge_pending_email", "")
     if pending_email:
-        login_code = st.text_input("One-time code", key="bridge_login_code")
-        if st.button("Verify code", key="bridge_verify_code"):
+        with st.form("bridge_verify_code_form"):
+            login_code = st.text_input("One-time code", key="bridge_login_code")
+            verify_code = st.form_submit_button("Verify code")
+
+        if verify_code:
             try:
                 user = auth_store.verify_login_code(pending_email, login_code)
                 raw_session_token = auth_store.create_session(user.id)
