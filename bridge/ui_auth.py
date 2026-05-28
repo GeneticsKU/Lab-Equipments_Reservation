@@ -20,6 +20,10 @@ def render_deployment_banner(settings) -> None:
 def render_bridge_login(settings, auth_store, session_state) -> None:
     render_deployment_banner(settings)
     st.title("Login")
+    flash_message = session_state.pop("bridge_login_notice", None)
+    if flash_message:
+        st.success(flash_message)
+
     with st.form("bridge_send_code_form"):
         email_input = st.text_input(
             "KU Email",
@@ -34,7 +38,9 @@ def render_bridge_login(settings, auth_store, session_state) -> None:
             login_code = auth_store.issue_login_code(normalized_email)
             send_login_code_email(settings, normalized_email, login_code)
             session_state["bridge_pending_email"] = normalized_email
-            st.success(f"A login code was sent to {normalized_email}.")
+            session_state["bridge_login_notice"] = f"A login code was sent to {normalized_email}."
+            session_state["bridge_login_code"] = ""
+            st.rerun()
         except ValueError as exc:
             st.error(str(exc))
         except Exception as exc:
