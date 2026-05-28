@@ -61,6 +61,7 @@ def clear_bridge_session_state(session_state) -> None:
     session_state["name"] = None
     session_state["bridge_user"] = None
     session_state["bridge_role"] = None
+    session_state["bridge_cookie_restore_reruns"] = 0
 
 
 def write_authenticated_user(session_state, user: BridgeUser) -> None:
@@ -69,6 +70,7 @@ def write_authenticated_user(session_state, user: BridgeUser) -> None:
     session_state["name"] = user.full_name or user.email
     session_state["bridge_user"] = user
     session_state["bridge_role"] = derive_legacy_role(user)
+    session_state["bridge_cookie_restore_reruns"] = 0
 
 
 def hydrate_bridge_session_state(session_state, auth_store: AuthStore, raw_session_token: str | None) -> BridgeUser | None:
@@ -78,6 +80,30 @@ def hydrate_bridge_session_state(session_state, auth_store: AuthStore, raw_sessi
         return None
     write_authenticated_user(session_state, user)
     return user
+
+
+def should_retry_cookie_restore(session_state, *, raw_session_token: str | None) -> bool:
+    """Give the browser cookie component one extra rerun after a hard refresh.
+
+    On Streamlit Cloud, the cookie component can return its default empty value
+    on the first render after a page reload, then provide the real browser
+    cookies on the next rerun. We only retry once, and never when the user is
+    already in the middle of the explicit OTP login flow.
+    """
+
+    if raw_session_token:
+        session_state["bridge_cookie_restore_reruns"] = 0
+        return False
+
+    if session_state.get("bridge_pending_email"):
+        return False
+
+    reruns = session_state.get("bridge_cookie_restore_reruns", 0)
+    if reruns >= 1:
+        return False
+
+    session_state["bridge_cookie_restore_reruns"] = reruns + 1
+    return True
 
 
 def seed_sponsors(settings: BridgeSettings, sponsor_records: list[dict], *, source: str = "manual-sponsor-seed") -> dict[str, int]:

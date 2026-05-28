@@ -42,3 +42,22 @@ def test_cached_schema_init_repeats_for_different_database(tmp_path, monkeypatch
         ("postgres://db-one", "CREATE TABLE test_table(id INT);"),
         ("postgres://db-two", "CREATE TABLE test_table(id INT);"),
     ]
+
+
+def test_should_retry_cookie_restore_only_once_without_cookie() -> None:
+    session_state = {}
+
+    assert bootstrap.should_retry_cookie_restore(session_state, raw_session_token=None) is True
+    assert session_state["bridge_cookie_restore_reruns"] == 1
+
+    assert bootstrap.should_retry_cookie_restore(session_state, raw_session_token=None) is False
+
+
+def test_should_retry_cookie_restore_skips_active_login_flow_and_resets_on_cookie() -> None:
+    session_state = {"bridge_pending_email": "user@ku.th"}
+
+    assert bootstrap.should_retry_cookie_restore(session_state, raw_session_token=None) is False
+
+    session_state = {"bridge_cookie_restore_reruns": 1}
+    assert bootstrap.should_retry_cookie_restore(session_state, raw_session_token="token-123") is False
+    assert session_state["bridge_cookie_restore_reruns"] == 0

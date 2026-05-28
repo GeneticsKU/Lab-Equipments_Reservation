@@ -13,6 +13,7 @@ from bridge.bootstrap import (
     ensure_bridge_schema_once,
     hydrate_bridge_session_state,
     load_app_settings,
+    should_retry_cookie_restore,
 )
 from bridge.github_backup import build_push_refspec, build_repo_url, resolve_github_backup_settings
 from bridge.session_cookie import clear_session_cookie, get_session_cookie, set_session_cookie
@@ -395,10 +396,13 @@ def get_bridge_runtime():
 def hydrate_bridge_user(settings, auth_store):
     current_user = st.session_state.get("bridge_user")
     if current_user is not None:
-        return current_user
+        return current_user, None
 
     raw_session_token = get_session_cookie(settings.session_cookie_name)
-    return hydrate_bridge_session_state(st.session_state, auth_store, raw_session_token)
+    if raw_session_token is None:
+        return None, None
+
+    return hydrate_bridge_session_state(st.session_state, auth_store, raw_session_token), raw_session_token
 
 
 def logout_bridge_user(settings, auth_store):
@@ -417,8 +421,10 @@ def require_bridge_user():
 
     st.session_state["bridge_settings"] = settings
 
-    user = hydrate_bridge_user(settings, auth_store)
+    user, raw_session_token = hydrate_bridge_user(settings, auth_store)
     if user is None:
+        if should_retry_cookie_restore(st.session_state, raw_session_token=raw_session_token):
+            st.rerun()
         user = render_bridge_login(settings, auth_store, st.session_state)
         if user is None:
             st.stop()
