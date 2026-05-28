@@ -1,6 +1,7 @@
 from __future__ import annotations
 
 from datetime import datetime
+import math
 
 
 def _cookie_manager():
@@ -21,7 +22,16 @@ def get_session_cookie(cookie_name: str) -> str | None:
 
 def set_session_cookie(cookie_name: str, token: str, expires_at: datetime) -> None:
     manager = _cookie_manager()
-    manager.set(cookie_name, token, key=f"bridge_cookie_set_{cookie_name}", expires_at=expires_at)
+    max_age_seconds = max(1, math.ceil((expires_at - datetime.now(expires_at.tzinfo)).total_seconds()))
+    manager.set(
+        cookie_name,
+        token,
+        key=f"bridge_cookie_set_{cookie_name}",
+        expires_at=expires_at,
+        max_age=max_age_seconds,
+        secure=True,
+        same_site="lax",
+    )
 
 
 def clear_session_cookie(cookie_name: str) -> None:
