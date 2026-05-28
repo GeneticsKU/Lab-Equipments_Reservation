@@ -11,7 +11,7 @@
 
 **Why now:** This is the user’s immediate pain, and the bridge must deliver that relief before the full rewrite. The bridge stays intentionally narrow: reservations remain on CSV, coarse admin or operator powers remain coarse, and sponsor list management stays manual.
 
-**Covers requirements:** AUTH-00, AUTH-01, AUTH-02, AUTH-03, ACCS-01, ACCS-05, ACCS-09, GOV-01, GOV-10, MIGR-00
+**Covers requirements:** AUTH-00, AUTH-01, AUTH-02, AUTH-03, AUTH-04, ACCS-01, ACCS-05, ACCS-09, GOV-01, GOV-10, MIGR-00
 
 **Key deliverables:**
 - Neon-backed identity and approval tables for the Streamlit app

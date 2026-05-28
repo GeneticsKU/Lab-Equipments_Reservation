@@ -7,27 +7,27 @@
 
 ### Authentication
 
-- [ ] **AUTH-00**: Temporary Streamlit bridge replaces manual registration before the full rewrite is complete.
-- [ ] **AUTH-01**: User can start sign-in only with an email address ending in `@ku.th`.
-- [ ] **AUTH-02**: User can complete passwordless authentication with a one-time code sent to their verified `@ku.th` email.
-- [ ] **AUTH-03**: User session persists across browser refresh and protected navigation.
-- [ ] **AUTH-04**: Imported approved users can activate their migrated access after one successful `@ku.th` email verification.
+- [x] **AUTH-00**: Temporary Streamlit bridge replaces manual registration before the full rewrite is complete.
+- [x] **AUTH-01**: User can start sign-in only with an email address ending in `@ku.th`.
+- [x] **AUTH-02**: User can complete passwordless authentication with a one-time code sent to their verified `@ku.th` email.
+- [x] **AUTH-03**: User session persists across browser refresh and protected navigation.
+- [x] **AUTH-04**: Imported approved users can activate their migrated access after one successful `@ku.th` email verification.
 
 ### Access Requests
 
-- [ ] **ACCS-01**: Applicant can submit an access request with full name, `@ku.th` email, chosen sponsor, suggested user category, and lab room number or department affiliation.
+- [x] **ACCS-01**: Applicant can submit an access request with full name, `@ku.th` email, chosen sponsor, suggested user category, and lab room number or department affiliation.
 - [ ] **ACCS-02**: Access request status is tracked as exactly `Pending`, `Approved`, `Denied`, or `Expired`.
 - [ ] **ACCS-03**: Changing the chosen sponsor requires a new access request.
 - [ ] **ACCS-04**: Sponsor can see only their own pending and past approval decisions, with the minimum applicant details needed to decide.
-- [ ] **ACCS-05**: Sponsor must sign in from their own authenticated `@ku.th` account before approving or denying a request.
+- [x] **ACCS-05**: Sponsor must sign in from their own authenticated `@ku.th` account before approving or denying a request.
 - [ ] **ACCS-06**: Sponsor approves ordinary users by confirming or changing the applicant’s suggested user category.
 - [ ] **ACCS-07**: Operations Manager has read-only access to all access requests for troubleshooting.
 - [ ] **ACCS-08**: Sponsor decisions cannot be delegated to Operations Manager or Admin.
-- [ ] **ACCS-09**: The temporary Streamlit bridge supports a simple sponsor approval flow inside Streamlit.
+- [x] **ACCS-09**: The temporary Streamlit bridge supports a simple sponsor approval flow inside Streamlit.
 
 ### Governance And Roles
 
-- [ ] **GOV-01**: System models one user category plus independent capability assignments instead of one exclusive role string.
+- [x] **GOV-01**: System models one user category plus independent capability assignments instead of one exclusive role string.
 - [ ] **GOV-02**: All Lecturer users automatically receive Sponsor Capability.
 - [ ] **GOV-03**: Only Directory Manager or Admin can assign the Lecturer user category.
 - [ ] **GOV-04**: Directory Manager can assign Lecturer, Sponsor Capability, Directory Manager, and Operations Manager, but cannot assign Admin.
@@ -36,7 +36,7 @@
 - [ ] **GOV-07**: Launch Admin cannot be deactivated or reassigned through ordinary in-app controls.
 - [ ] **GOV-08**: Admin has full visibility and override authority across users, requests, reservations, restrictions, sponsor data, announcements, and audit history.
 - [ ] **GOV-09**: High-trust assignment changes by Admin or Directory Manager require a short reason stored in the audit log.
-- [ ] **GOV-10**: The temporary Streamlit bridge keeps a deliberately coarse permission model: approved users can reserve, sponsors can approve, and existing admin or operator powers remain coarse.
+- [x] **GOV-10**: The temporary Streamlit bridge keeps a deliberately coarse permission model: approved users can reserve, sponsors can approve, and existing admin or operator powers remain coarse.
 
 ### Access Lifecycle
 
@@ -83,7 +83,7 @@
 
 ### Migration And Cutover
 
-- [ ] **MIGR-00**: Existing manually registered users are migrated into the bridge auth database and treated as already approved after one successful `@ku.th` email verification.
+- [x] **MIGR-00**: Existing manually registered users are migrated into the bridge auth database and treated as already approved after one successful `@ku.th` email verification.
 - [ ] **MIGR-01**: Legacy migration imports equipment catalog data and current enabled or disabled status.
 - [ ] **MIGR-02**: Legacy migration imports current future reservations.
 - [ ] **MIGR-03**: Reliably matched approved legacy users keep access after one successful `@ku.th` email verification.
@@ -122,21 +122,21 @@
 
 | Requirement | Phase | Status |
 |-------------|-------|--------|
-| AUTH-00 | Phase 1 | Pending |
-| AUTH-01 | Phase 1 | Pending |
-| AUTH-02 | Phase 1 | Pending |
-| AUTH-03 | Phase 1 | Pending |
-| AUTH-04 | Phase 6 | Pending |
-| ACCS-01 | Phase 1 | Pending |
+| AUTH-00 | Phase 1 | Complete |
+| AUTH-01 | Phase 1 | Complete |
+| AUTH-02 | Phase 1 | Complete |
+| AUTH-03 | Phase 1 | Complete |
+| AUTH-04 | Phase 1 | Complete |
+| ACCS-01 | Phase 1 | Complete |
 | ACCS-02 | Phase 2 | Pending |
 | ACCS-03 | Phase 2 | Pending |
 | ACCS-04 | Phase 2 | Pending |
-| ACCS-05 | Phase 1 | Pending |
+| ACCS-05 | Phase 1 | Complete |
 | ACCS-06 | Phase 3 | Pending |
 | ACCS-07 | Phase 4 | Pending |
 | ACCS-08 | Phase 2 | Pending |
-| ACCS-09 | Phase 1 | Pending |
-| GOV-01 | Phase 1 | Pending |
+| ACCS-09 | Phase 1 | Complete |
+| GOV-01 | Phase 1 | Complete |
 | GOV-02 | Phase 3 | Pending |
 | GOV-03 | Phase 3 | Pending |
 | GOV-04 | Phase 4 | Pending |
@@ -145,7 +145,7 @@
 | GOV-07 | Phase 2 | Pending |
 | GOV-08 | Phase 4 | Pending |
 | GOV-09 | Phase 4 | Pending |
-| GOV-10 | Phase 1 | Pending |
+| GOV-10 | Phase 1 | Complete |
 | LIFE-01 | Phase 3 | Pending |
 | LIFE-02 | Phase 3 | Pending |
 | LIFE-03 | Phase 4 | Pending |
@@ -174,7 +174,7 @@
 | AUDT-01 | Phase 2 | Pending |
 | AUDT-02 | Phase 2 | Pending |
 | AUDT-03 | Phase 5 | Pending |
-| MIGR-00 | Phase 1 | Pending |
+| MIGR-00 | Phase 1 | Complete |
 | MIGR-01 | Phase 6 | Pending |
 | MIGR-02 | Phase 6 | Pending |
 | MIGR-03 | Phase 6 | Pending |
