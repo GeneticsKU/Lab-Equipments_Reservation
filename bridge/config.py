@@ -17,7 +17,7 @@ class BridgeSettings:
     deployment_label: str | None = None
     deployment_notice: str | None = None
     session_cookie_name: str = "genetics_lab_bridge_session"
-    session_ttl_hours: int = 12
+    session_ttl_hours: int = 168
     login_code_ttl_minutes: int = 10
 
 
@@ -80,6 +80,6 @@ def load_bridge_settings() -> BridgeSettings | None:
         deployment_label=_get_setting("DEPLOYMENT_LABEL"),
         deployment_notice=_get_setting("DEPLOYMENT_NOTICE"),
         session_cookie_name=_get_setting("SESSION_COOKIE_NAME", "genetics_lab_bridge_session"),
-        session_ttl_hours=int(_get_setting("SESSION_TTL_HOURS", 12)),
+        session_ttl_hours=int(_get_setting("SESSION_TTL_HOURS", 168)),
         login_code_ttl_minutes=int(_get_setting("LOGIN_CODE_TTL_MINUTES", 10)),
     )

@@ -32,7 +32,7 @@ The current implementation is in transition from manual `st.secrets` registratio
 - `SMTP_PORT` (optional, default: `465`)
 - `SMTP_USE_SSL` (optional, default: `true`)
 - `SESSION_COOKIE_NAME` (optional, default: `genetics_lab_bridge_session`)
-- `SESSION_TTL_HOURS` (optional, default: `12`)
+- `SESSION_TTL_HOURS` (optional, default: `168` / 7 days)
 - `LOGIN_CODE_TTL_MINUTES` (optional, default: `10`)
 
 ### Free email path

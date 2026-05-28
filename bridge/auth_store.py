@@ -8,7 +8,7 @@ import uuid
 
 
 DEFAULT_LOGIN_CODE_TTL = timedelta(minutes=10)
-DEFAULT_SESSION_TTL = timedelta(hours=12)
+DEFAULT_SESSION_TTL = timedelta(days=7)
 
 
 class InvalidLoginCodeError(ValueError):
