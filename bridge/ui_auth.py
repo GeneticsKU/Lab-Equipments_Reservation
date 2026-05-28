@@ -44,7 +44,7 @@ def render_bridge_login(settings, auth_store, session_state):
             send_login_code_email(settings, normalized_email, login_code)
             session_state["bridge_pending_email"] = normalized_email
             session_state["bridge_login_notice"] = f"A login code was sent to {normalized_email}."
-            session_state["bridge_login_code"] = ""
+            session_state.pop("bridge_login_code", None)
             st.rerun()
         except ValueError as exc:
             st.error(str(exc))
@@ -73,7 +73,7 @@ def render_bridge_login(settings, auth_store, session_state):
 
         if st.button("Use a different email", key="bridge_reset_login_flow"):
             session_state["bridge_pending_email"] = ""
-            session_state["bridge_login_code"] = ""
+            session_state.pop("bridge_login_code", None)
             st.rerun()
 
     return None
