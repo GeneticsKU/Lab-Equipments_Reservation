@@ -17,7 +17,7 @@ def render_deployment_banner(settings) -> None:
         st.warning(settings.deployment_notice)
 
 
-def render_bridge_login(settings, auth_store, session_state) -> None:
+def render_bridge_login(settings, auth_store, session_state):
     render_deployment_banner(settings)
     st.title("Login")
     flash_message = session_state.pop("bridge_login_notice", None)
@@ -60,8 +60,10 @@ def render_bridge_login(settings, auth_store, session_state) -> None:
                 set_session_cookie(settings.session_cookie_name, raw_session_token, cookie_expiry)
                 write_authenticated_user(session_state, user)
                 session_state["bridge_pending_email"] = ""
-                st.rerun()
+                return user
             except InvalidLoginCodeError as exc:
                 st.error(str(exc))
             except Exception as exc:
                 st.error(f"Unable to complete sign-in: {exc}")
+
+    return None

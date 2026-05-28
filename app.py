@@ -385,8 +385,9 @@ def require_bridge_user():
 
     user = hydrate_bridge_user(settings, auth_store)
     if user is None:
-        render_bridge_login(settings, auth_store, st.session_state)
-        st.stop()
+        user = render_bridge_login(settings, auth_store, st.session_state)
+        if user is None:
+            st.stop()
 
     return settings, auth_store, user
 
