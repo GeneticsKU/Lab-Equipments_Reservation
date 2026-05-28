@@ -268,7 +268,6 @@ def log_action(action, user, details):
 
         log_df = pd.concat([log_df, pd.DataFrame([log_entry])], ignore_index=True)
         log_df.to_csv(LOG_FILE_PATH, index=False)
-        save_data(log_df, LOG_FILE_PATH)
     except Exception as e:
         st.error(f"Error logging action: {e}")
 
