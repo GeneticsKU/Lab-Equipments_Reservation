@@ -61,3 +61,30 @@ def test_should_retry_cookie_restore_skips_active_login_flow_and_resets_on_cooki
     session_state = {"bridge_cookie_restore_reruns": 1}
     assert bootstrap.should_retry_cookie_restore(session_state, raw_session_token="token-123") is False
     assert session_state["bridge_cookie_restore_reruns"] == 0
+
+
+def test_write_authenticated_user_tracks_raw_session_token() -> None:
+    session_state = {}
+    user = bootstrap.BridgeUser(id="user-1", email="user@ku.th", full_name="Bridge User")
+
+    bootstrap.write_authenticated_user(session_state, user, raw_session_token="session-token-123")
+
+    assert session_state["authentication_status"] is True
+    assert session_state["bridge_raw_session_token"] == "session-token-123"
+
+
+def test_clear_bridge_session_state_removes_raw_session_token() -> None:
+    session_state = {
+        "authentication_status": True,
+        "username": "user@ku.th",
+        "name": "Bridge User",
+        "bridge_user": object(),
+        "bridge_role": "User",
+        "bridge_raw_session_token": "session-token-123",
+        "bridge_cookie_restore_reruns": 1,
+    }
+
+    bootstrap.clear_bridge_session_state(session_state)
+
+    assert session_state["authentication_status"] is False
+    assert session_state["bridge_raw_session_token"] is None

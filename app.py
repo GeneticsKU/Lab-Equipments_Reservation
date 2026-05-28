@@ -401,6 +401,8 @@ def init_bridge_state():
         st.session_state['bridge_user'] = None
     if 'bridge_role' not in st.session_state:
         st.session_state['bridge_role'] = None
+    if 'bridge_raw_session_token' not in st.session_state:
+        st.session_state['bridge_raw_session_token'] = None
     if 'bridge_pending_email' not in st.session_state:
         st.session_state['bridge_pending_email'] = ''
 
@@ -423,7 +425,7 @@ def hydrate_bridge_user(settings, auth_store):
     if current_user is not None:
         return current_user, None
 
-    raw_session_token = get_session_cookie(settings.session_cookie_name)
+    raw_session_token = st.session_state.get("bridge_raw_session_token") or get_session_cookie(settings.session_cookie_name)
     if raw_session_token is None:
         return None, None
 

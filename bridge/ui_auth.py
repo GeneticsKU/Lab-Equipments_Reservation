@@ -17,6 +17,15 @@ def render_deployment_banner(settings) -> None:
         st.warning(settings.deployment_notice)
 
 
+def finish_successful_login(settings, session_state, user, raw_session_token: str):
+    session_state["bridge_pending_email"] = ""
+    session_state.pop("bridge_login_code", None)
+    write_authenticated_user(session_state, user, raw_session_token=raw_session_token)
+    cookie_expiry = datetime.datetime.now(datetime.timezone.utc) + datetime.timedelta(hours=settings.session_ttl_hours)
+    set_session_cookie(settings.session_cookie_name, raw_session_token, cookie_expiry)
+    return user
+
+
 def render_bridge_login(settings, auth_store, session_state):
     render_deployment_banner(settings)
     st.title("Login")
@@ -61,11 +70,7 @@ def render_bridge_login(settings, auth_store, session_state):
             try:
                 user = auth_store.verify_login_code(pending_email, login_code)
                 raw_session_token = auth_store.create_session(user.id)
-                cookie_expiry = datetime.datetime.now(datetime.timezone.utc) + datetime.timedelta(hours=settings.session_ttl_hours)
-                set_session_cookie(settings.session_cookie_name, raw_session_token, cookie_expiry)
-                write_authenticated_user(session_state, user)
-                session_state["bridge_pending_email"] = ""
-                return user
+                return finish_successful_login(settings, session_state, user, raw_session_token)
             except InvalidLoginCodeError as exc:
                 st.error(str(exc))
             except Exception as exc:

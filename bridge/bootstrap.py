@@ -61,15 +61,18 @@ def clear_bridge_session_state(session_state) -> None:
     session_state["name"] = None
     session_state["bridge_user"] = None
     session_state["bridge_role"] = None
+    session_state["bridge_raw_session_token"] = None
     session_state["bridge_cookie_restore_reruns"] = 0
 
 
-def write_authenticated_user(session_state, user: BridgeUser) -> None:
+def write_authenticated_user(session_state, user: BridgeUser, *, raw_session_token: str | None = None) -> None:
     session_state["authentication_status"] = True
     session_state["username"] = user.email
     session_state["name"] = user.full_name or user.email
     session_state["bridge_user"] = user
     session_state["bridge_role"] = derive_legacy_role(user)
+    if raw_session_token is not None:
+        session_state["bridge_raw_session_token"] = raw_session_token
     session_state["bridge_cookie_restore_reruns"] = 0
 
 
@@ -78,7 +81,7 @@ def hydrate_bridge_session_state(session_state, auth_store: AuthStore, raw_sessi
     if user is None:
         clear_bridge_session_state(session_state)
         return None
-    write_authenticated_user(session_state, user)
+    write_authenticated_user(session_state, user, raw_session_token=raw_session_token)
     return user
 
 
