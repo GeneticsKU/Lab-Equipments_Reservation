@@ -14,6 +14,7 @@ from bridge.bootstrap import (
     hydrate_bridge_session_state,
     load_app_settings,
 )
+from bridge.github_backup import build_push_refspec, build_repo_url, resolve_github_backup_settings
 from bridge.session_cookie import clear_session_cookie, get_session_cookie, set_session_cookie
 from bridge.ui_access_requests import (
     render_applicant_pending_access,
@@ -96,22 +97,46 @@ def fetch_data(file_path):
 # Configure Git
 def configure_git():
     try:
-        username = st.secrets["github"]["username"]
-        email = st.secrets["github"]["email"]
-        subprocess.run(["git", "config", "--global", "user.name", username], check=True)
-        subprocess.run(["git", "config", "--global", "user.email", email], check=True)
+        settings = load_github_backup_settings()
+        subprocess.run(["git", "config", "--global", "user.name", settings.username], check=True)
+        subprocess.run(["git", "config", "--global", "user.email", settings.email], check=True)
     except subprocess.CalledProcessError as e:
         st.error(f"An error occurred while configuring Git: {e}")
+
+
+def current_git_branch() -> str | None:
+    try:
+        result = subprocess.run(
+            ["git", "rev-parse", "--abbrev-ref", "HEAD"],
+            check=True,
+            capture_output=True,
+            text=True,
+        )
+    except subprocess.CalledProcessError:
+        return None
+
+    branch = result.stdout.strip()
+    return None if branch in {"", "HEAD"} else branch
+
+
+def load_github_backup_settings():
+    try:
+        github_secrets = st.secrets["github"]
+        return resolve_github_backup_settings(github_secrets, current_branch=current_git_branch())
+    except KeyError as exc:
+        missing_key = exc.args[0]
+        raise KeyError(
+            "Missing GitHub backup setting. Provide st.secrets['github'] with "
+            f"'username', 'email', 'token', and a branch or checked-out branch. Missing: {missing_key}"
+        ) from exc
+
 
 # Backup to GitHub
 def backup_to_github(file_path, commit_message="Update data"):
     try:
         configure_git()
-        username = st.secrets["github"]["username"]
-        token = st.secrets["github"]["token"]
-
-        # Set up the remote URL with the token for authentication
-        repo_url = f"https://{username}:{token}@github.com/{username}/Lab-Equipments_Reservation.git"
+        settings = load_github_backup_settings()
+        repo_url = build_repo_url(settings)
 
         # Set the remote URL
         subprocess.run(["git", "remote", "set-url", "origin", repo_url], check=True)
@@ -119,13 +144,22 @@ def backup_to_github(file_path, commit_message="Update data"):
         # Stage the file
         subprocess.run(["git", "add", file_path], check=True)
 
+        staged_diff = subprocess.run(
+            ["git", "diff", "--cached", "--quiet", "--", file_path],
+            check=False,
+        )
+        if staged_diff.returncode == 0:
+            return
+
         # Commit the changes
         subprocess.run(["git", "commit", "-m", commit_message], check=True)
 
-        # Push the changes
-        subprocess.run(["git", "push"], check=True)
+        # Push the changes to the configured backup branch explicitly.
+        subprocess.run(["git", "push", "origin", build_push_refspec(settings)], check=True)
 
         # st.success(f"Changes to {file_path} have been backed up to GitHub.")
+    except KeyError as e:
+        st.error(str(e))
     except subprocess.CalledProcessError as e:
         st.error(f"An error occurred while backing up to GitHub: {e}")
 

@@ -28,6 +28,12 @@ Use this to launch the bridge as a second Streamlit app alongside the current pr
 - `SESSION_COOKIE_NAME`
 - `SESSION_TTL_HOURS`
 - `LOGIN_CODE_TTL_MINUTES`
+- `[github].username`
+- `[github].email`
+- `[github].token`
+- `[github].branch`
+- `[github].repo_owner` (optional)
+- `[github].repo_name` (optional)
 
 ## Recommended pilot values
 
@@ -37,12 +43,25 @@ DEPLOYMENT_NOTICE = "Pilot deployment for login and approval testing. Keep using
 SESSION_COOKIE_NAME = "genetics_lab_bridge_pilot_session"
 ```
 
+Recommended GitHub backup target:
+
+```toml
+[github]
+username = "your-github-username"
+email = "your-github-email"
+token = "your-github-token"
+branch = "bridge-pilot"
+repo_owner = "GeneticsKU"
+repo_name = "Lab-Equipments_Reservation_Bridge"
+```
+
 ## Important separation rules
 
 1. Use a different `APP_BASE_URL` for the pilot app.
 2. Use a different `SESSION_COOKIE_NAME` for the pilot app.
-3. Do not announce the pilot URL broadly until smoke testing is complete.
-4. Treat the current app as the source of truth for normal users until cutover.
+3. Point reservation CSV backups at a dedicated bridge branch or dedicated bridge repo.
+4. Do not announce the pilot URL broadly until smoke testing is complete.
+5. Treat the current app as the source of truth for normal users until cutover.
 
 ## Operational warning
 

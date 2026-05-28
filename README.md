@@ -35,6 +35,26 @@ The current implementation is in transition from manual `st.secrets` registratio
 - `SESSION_TTL_HOURS` (optional, default: `168` / 7 days)
 - `LOGIN_CODE_TTL_MINUTES` (optional, default: `10`)
 
+### GitHub backup settings
+
+Reservation CSV changes are still backed up through Git in this bridge phase. Configure a `github` section in Streamlit secrets:
+
+```toml
+[github]
+username = "your-github-username"
+email = "your-github-email"
+token = "your-github-token"
+branch = "bridge-pilot"
+repo_owner = "GeneticsKU"
+repo_name = "Lab-Equipments_Reservation"
+```
+
+Notes:
+
+- `branch` is where reservation CSV commits will be pushed.
+- `repo_owner` and `repo_name` are optional. If omitted, they default to the GitHub username and `Lab-Equipments_Reservation`.
+- For the safest pilot, point these at a dedicated bridge repo or dedicated bridge branch so the current production app remains untouched.
+
 ### Free email path
 
 For the lowest-cost path without KU support, the bridge uses standard SMTP and is designed to work with a dedicated Gmail sender account.
