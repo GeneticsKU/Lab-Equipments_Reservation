@@ -24,13 +24,18 @@ def render_bridge_login(settings, auth_store, session_state):
     if flash_message:
         st.success(flash_message)
 
-    with st.form("bridge_send_code_form"):
-        email_input = st.text_input(
-            "KU Email",
-            value=session_state.get("bridge_pending_email", ""),
-            key="bridge_login_email",
-        )
-        send_code = st.form_submit_button("Send one-time code")
+    pending_email = session_state.get("bridge_pending_email", "")
+    if not pending_email:
+        with st.form("bridge_send_code_form"):
+            email_input = st.text_input(
+                "KU Email",
+                value=session_state.get("bridge_pending_email", ""),
+                key="bridge_login_email",
+            )
+            send_code = st.form_submit_button("Send one-time code")
+    else:
+        email_input = pending_email
+        send_code = False
 
     if send_code:
         try:
@@ -46,8 +51,8 @@ def render_bridge_login(settings, auth_store, session_state):
         except Exception as exc:
             st.error(f"Unable to send login code: {exc}")
 
-    pending_email = session_state.get("bridge_pending_email", "")
     if pending_email:
+        st.caption(f"Verifying code for: {pending_email}")
         with st.form("bridge_verify_code_form"):
             login_code = st.text_input("One-time code", key="bridge_login_code")
             verify_code = st.form_submit_button("Verify code")
@@ -65,5 +70,10 @@ def render_bridge_login(settings, auth_store, session_state):
                 st.error(str(exc))
             except Exception as exc:
                 st.error(f"Unable to complete sign-in: {exc}")
+
+        if st.button("Use a different email", key="bridge_reset_login_flow"):
+            session_state["bridge_pending_email"] = ""
+            session_state["bridge_login_code"] = ""
+            st.rerun()
 
     return None
