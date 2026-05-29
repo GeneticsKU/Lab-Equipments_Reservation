@@ -32,6 +32,7 @@ def set_session_cookie(cookie_name: str, token: str, expires_at: datetime) -> No
         key=f"bridge_cookie_set_{cookie_name}",
         expires_at=expires_at,
         max_age=max_age_seconds,
+        path="/",
         secure=True,
         same_site="lax",
     )
@@ -39,4 +40,4 @@ def set_session_cookie(cookie_name: str, token: str, expires_at: datetime) -> No
 
 def clear_session_cookie(cookie_name: str) -> None:
     manager = _cookie_manager()
-    manager.delete(cookie_name, key=f"bridge_cookie_delete_{cookie_name}")
+    manager.delete(cookie_name, key=f"bridge_cookie_delete_{cookie_name}", path="/")

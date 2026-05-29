@@ -23,6 +23,15 @@ class FakeCookieManager:
         self.calls.append({"method": "get_all", "key": key})
         return dict(self.cookies)
 
+    def delete(self, cookie_name, **kwargs) -> None:
+        self.calls.append(
+            {
+                "method": "delete",
+                "cookie_name": cookie_name,
+                **kwargs,
+            }
+        )
+
 
 def test_set_session_cookie_uses_secure_lax_cookie_with_max_age(monkeypatch) -> None:
     manager = FakeCookieManager()
@@ -35,6 +44,7 @@ def test_set_session_cookie_uses_secure_lax_cookie_with_max_age(monkeypatch) -> 
     call = manager.calls[0]
     assert call["cookie_name"] == "bridge_cookie"
     assert call["token"] == "token-123"
+    assert call["path"] == "/"
     assert call["secure"] is True
     assert call["same_site"] == "lax"
     assert call["max_age"] > 0
@@ -50,4 +60,20 @@ def test_get_session_cookie_refreshes_cookie_snapshot_each_rerun(monkeypatch) ->
     assert token == "token-123"
     assert manager.calls == [
         {"method": "get_all", "key": "bridge_cookie_get_all_bridge_cookie"}
+    ]
+
+
+def test_clear_session_cookie_deletes_root_scoped_cookie(monkeypatch) -> None:
+    manager = FakeCookieManager()
+    monkeypatch.setattr(session_cookie, "_cookie_manager", lambda: manager)
+
+    session_cookie.clear_session_cookie("bridge_cookie")
+
+    assert manager.calls == [
+        {
+            "method": "delete",
+            "cookie_name": "bridge_cookie",
+            "key": "bridge_cookie_delete_bridge_cookie",
+            "path": "/",
+        }
     ]
