@@ -25,6 +25,7 @@ from bridge.reservation_store import (
     reservation_type_for_file_path,
 )
 from bridge.ui_access_requests import (
+    get_approval_request_id,
     render_applicant_pending_access,
     render_sponsor_request_history,
 )
@@ -929,13 +930,14 @@ if mobile:
     # Usual app interface
     message = f"### Welcome <span class='welcome-message'>{st.session_state['name']}</span>"
     st.markdown(message, unsafe_allow_html=True)
-    render_sponsor_request_history(auth_store, bridge_user)
 
     if role in ["Admins", "Lecturer"]:
-        mobile_sections = ["Reservation Tables", "Reservation Forms", "Reservation Cancellation", "Announcement"]
+        mobile_sections = ["Reservation Tables", "Reservation Forms", "Reservation Cancellation", "Approval Requests", "Announcement"]
     else:
         mobile_sections = ["Reservation Tables", "Reservation Forms", "Reservation Cancellation"]
 
+    if get_approval_request_id():
+        st.session_state["mobile_selected_section"] = "Approval Requests"
     selected_tab = st.selectbox("### Select Actions", mobile_sections, key="mobile_selected_section")
 
     if selected_tab == "Reservation Tables":
@@ -951,6 +953,8 @@ if mobile:
         render_reservation_form_section("mobile", role, image_width=300)
     elif selected_tab == "Reservation Cancellation":
         render_reservation_cancellation_section("mobile")
+    elif selected_tab == "Approval Requests":
+        render_sponsor_request_history(auth_store, bridge_user, show_toggle=False)
     elif selected_tab == "Announcement":
         announcement_text = read_announcement()
         st.write("Admin and Lecturer Controls")
@@ -984,15 +988,17 @@ else:
 
     message = f"### Welcome <span class='welcome-message'>{st.session_state['name']}</span>"
     st.markdown(message, unsafe_allow_html=True)
-    render_sponsor_request_history(auth_store, bridge_user)
     if st.sidebar.button("Logout"):
         logout_bridge_user(settings, auth_store)
         st.rerun()  # Rerun the app to refresh the state
 
     if role == "Admins":
-        available_sections = ["Reservation Tables", "Reservation Forms", "Reservation Cancellation", "Admins Interface"]
+        available_sections = ["Reservation Tables", "Reservation Forms", "Reservation Cancellation", "Approval Requests", "Admins Interface"]
     else:
-        available_sections = ["Reservation Tables", "Reservation Forms", "Reservation Cancellation", "Contact Us"]
+        available_sections = ["Reservation Tables", "Reservation Forms", "Reservation Cancellation", "Approval Requests", "Contact Us"]
+
+    if get_approval_request_id():
+        st.session_state["desktop_selected_section"] = "Approval Requests"
 
     selected_section = st.radio(
         "### Select Actions",
@@ -1029,6 +1035,8 @@ else:
         render_reservation_form_section("web", role, image_width=450)
     elif selected_section == "Reservation Cancellation":
         render_reservation_cancellation_section("web")
+    elif selected_section == "Approval Requests":
+        render_sponsor_request_history(auth_store, bridge_user, show_toggle=False)
     elif selected_section == "Contact Us":
         st.subheader("Error reports or Inconvenient issues")
 

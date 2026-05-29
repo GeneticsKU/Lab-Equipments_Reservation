@@ -101,7 +101,7 @@ def render_sponsor_review(auth_store, reviewer_user) -> None:
     _render_request_review_body(auth_store, reviewer_user, request_record, highlighted=True)
 
 
-def render_sponsor_request_history(auth_store, reviewer_user) -> None:
+def render_sponsor_request_history(auth_store, reviewer_user, *, show_toggle: bool = True) -> None:
     if not reviewer_user.is_sponsor and not reviewer_user.is_admin:
         return
 
@@ -111,13 +111,17 @@ def render_sponsor_request_history(auth_store, reviewer_user) -> None:
     if selected_request_id:
         st.session_state[visibility_key] = True
 
-    show_requests = st.toggle(
-        heading,
-        value=bool(st.session_state.get(visibility_key, False)),
-        key=visibility_key,
-    )
-    if not show_requests:
-        return
+    if show_toggle:
+        show_requests = st.toggle(
+            heading,
+            value=bool(st.session_state.get(visibility_key, False)),
+            key=visibility_key,
+        )
+        if not show_requests:
+            return
+    else:
+        st.session_state[visibility_key] = True
+        st.subheader(heading)
 
     reviewable_requests = auth_store.list_reviewable_requests(reviewer_user)
     has_pending_requests = any(request["status"] == "Pending" for request in reviewable_requests)
