@@ -47,12 +47,25 @@ def use_bridge_reservation_store(file_path: str) -> bool:
     return reservation_type_for_file_path(file_path) is not None and load_app_settings() is not None
 
 
+@st.cache_resource(show_spinner=False)
 def build_bridge_reservation_store() -> BridgeReservationStore:
     settings = load_app_settings()
     if settings is None:
         raise RuntimeError("Bridge settings are required for DB-backed reservations.")
     ensure_bridge_schema_once(settings)
     return BridgeReservationStore(settings)
+
+
+def data_version_key(file_path: str) -> str:
+    return f"data_version::{file_path}"
+
+
+def current_data_version(file_path: str) -> int:
+    return int(st.session_state.get(data_version_key(file_path), 0))
+
+
+def bump_data_version(file_path: str) -> None:
+    st.session_state[data_version_key(file_path)] = current_data_version(file_path) + 1
 
 # Initialize files if they don't exist
 def init_file(file_path, columns=None):
@@ -93,15 +106,21 @@ def update_announcement(text, file_path=ANNOUNCEMENT_FILE_PATH):
 # Load data from CSV
 def load_data(file_path):
     try:
-        reservation_type = reservation_type_for_file_path(file_path)
-        if reservation_type and use_bridge_reservation_store(file_path):
-            return build_bridge_reservation_store().load_dataframe(reservation_type)
-        if os.path.exists(file_path):
-            return pd.read_csv(file_path)
-        return pd.DataFrame(columns=['Equipments', 'Start_Time', 'End_Time', 'Name'])  # Return an empty DataFrame if the file does not exist
+        return _load_data_cached(file_path, current_data_version(file_path)).copy()
     except Exception as e:
         st.error(f"Error reading data from file {file_path}: {e}")
         return pd.DataFrame()
+
+
+@st.cache_data(show_spinner=False)
+def _load_data_cached(file_path: str, data_version: int) -> pd.DataFrame:
+    reservation_type = reservation_type_for_file_path(file_path)
+    if reservation_type and use_bridge_reservation_store(file_path):
+        return build_bridge_reservation_store().load_dataframe(reservation_type)
+    if os.path.exists(file_path):
+        return pd.read_csv(file_path)
+    return pd.DataFrame(columns=['Equipments', 'Start_Time', 'End_Time', 'Name'])
+
 
 # Save data to CSV
 def save_data(df, file_path):
@@ -109,14 +128,22 @@ def save_data(df, file_path):
         reservation_type = reservation_type_for_file_path(file_path)
         if reservation_type and use_bridge_reservation_store(file_path):
             build_bridge_reservation_store().save_dataframe(reservation_type, df)
+            bump_data_version(file_path)
             return
         df.to_csv(file_path, index=False)
         backup_to_github(file_path, commit_message=f"Update {os.path.basename(file_path)}")
+        bump_data_version(file_path)
     except Exception as e:
         st.error(f"Error saving data: {e}")
 
 def fetch_data(file_path):
-    df = load_data(file_path)
+    df = _fetch_data_cached(file_path, current_data_version(file_path)).copy()
+    return df
+
+
+@st.cache_data(show_spinner=False)
+def _fetch_data_cached(file_path: str, data_version: int) -> pd.DataFrame:
+    df = _load_data_cached(file_path, data_version).copy()
     df['Start_Time'] = pd.to_datetime(df['Start_Time'], format='%Y/%m/%d %H:%M:%S', errors='coerce')
     df['End_Time'] = pd.to_datetime(df['End_Time'], format='%Y/%m/%d %H:%M:%S', errors='coerce')
     return df
@@ -223,15 +250,18 @@ def convert_df_to_csv(df):
     df.to_csv(output, index=False)
     return output.getvalue().encode('utf-8')
 
+
+@st.cache_data(show_spinner=False)
+def cached_csv_bytes(file_path: str, data_version: int) -> bytes:
+    return convert_df_to_csv(_fetch_data_cached(file_path, data_version))
+
 # Download non-PCR data
 def download_non_pcr():
-    df_non_pcr = fetch_data(NON_PCR_FILE_PATH)
-    return df_non_pcr
+    return cached_csv_bytes(NON_PCR_FILE_PATH, current_data_version(NON_PCR_FILE_PATH))
 
 # Download PCR data
 def download_pcr():
-    df_pcr = fetch_data(PCR_FILE_PATH)
-    return df_pcr
+    return cached_csv_bytes(PCR_FILE_PATH, current_data_version(PCR_FILE_PATH))
 
 # Generate time slots
 def generate_time_slots():
@@ -559,9 +589,64 @@ def render_reservation_tables_section(prefix: str, *, title_font_size: int, axis
 
 
 def render_reservation_form_section(prefix: str, role: str, *, image_width: int) -> None:
-    selected_room = st.selectbox("### Select a Room", list(st.session_state.equipment_details.keys()), key=f"{prefix}_selected_room")
+    rooms = list(st.session_state.equipment_details.keys())
+    room_state_key = f"{prefix}_selected_room"
+    equipment_state_key = f"{prefix}_selected_equipment"
+    pending_room_key = f"{prefix}_pending_room"
+    pending_equipment_key = f"{prefix}_pending_equipment"
+
+    if st.session_state.get(room_state_key) not in rooms:
+        st.session_state[room_state_key] = rooms[0]
+    if st.session_state.get(pending_room_key) not in rooms:
+        st.session_state[pending_room_key] = st.session_state[room_state_key]
+
+    selected_room = st.session_state[room_state_key]
+    pending_room = st.session_state[pending_room_key]
+
     enabled_equipments = enabled_equipment_map(selected_room)
-    selected_equipment = st.selectbox("### Select Equipments", list(enabled_equipments.keys()), key=f"{prefix}_selected_equipment")
+    pending_enabled_equipments = enabled_equipment_map(pending_room)
+
+    if st.session_state.get(equipment_state_key) not in enabled_equipments:
+        st.session_state[equipment_state_key] = next(iter(enabled_equipments))
+    if st.session_state.get(pending_equipment_key) not in pending_enabled_equipments:
+        st.session_state[pending_equipment_key] = (
+            st.session_state[equipment_state_key]
+            if st.session_state[equipment_state_key] in pending_enabled_equipments
+            else next(iter(pending_enabled_equipments))
+        )
+
+    with st.form(f"{prefix}_equipment_selection_form"):
+        next_room = st.selectbox(
+            "### Select a Room",
+            rooms,
+            index=rooms.index(st.session_state[pending_room_key]),
+        )
+        next_room_equipments = enabled_equipment_map(next_room)
+        current_pending_equipment = st.session_state.get(pending_equipment_key)
+        if current_pending_equipment not in next_room_equipments:
+            current_pending_equipment = next(iter(next_room_equipments))
+        next_equipment = st.selectbox(
+            "### Select Equipments",
+            list(next_room_equipments.keys()),
+            index=list(next_room_equipments.keys()).index(current_pending_equipment),
+        )
+        apply_selection = st.form_submit_button("Load equipment")
+
+    st.caption("Room and equipment changes apply when you click `Load equipment`, so the app does not rerun on every selector change.")
+
+    if apply_selection:
+        st.session_state[room_state_key] = next_room
+        st.session_state[equipment_state_key] = next_equipment
+        st.session_state[pending_room_key] = next_room
+        st.session_state[pending_equipment_key] = next_equipment
+
+    selected_room = st.session_state[room_state_key]
+    enabled_equipments = enabled_equipment_map(selected_room)
+    selected_equipment = st.session_state[equipment_state_key]
+    if selected_equipment not in enabled_equipments:
+        selected_equipment = next(iter(enabled_equipments))
+        st.session_state[equipment_state_key] = selected_equipment
+        st.session_state[pending_equipment_key] = selected_equipment
 
     equipment_info = enabled_equipments[selected_equipment]
     safe_display_image(equipment_info['image'], width=image_width, offset=0.5)
@@ -903,14 +988,14 @@ else:
 
     st.sidebar.download_button(
         label="Download General Reservations as CSV",
-        data=convert_df_to_csv(download_non_pcr()),
+        data=download_non_pcr(),
         file_name='general_reservations.csv',
         mime='text/csv'
     )
 
     st.sidebar.download_button(
         label="Download PCR Reservations as CSV",
-        data=convert_df_to_csv(download_pcr()),
+        data=download_pcr(),
         file_name='pcr_reservations.csv',
         mime='text/csv'
     )

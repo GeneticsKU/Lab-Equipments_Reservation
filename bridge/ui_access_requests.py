@@ -105,9 +105,21 @@ def render_sponsor_request_history(auth_store, reviewer_user) -> None:
     if not reviewer_user.is_sponsor and not reviewer_user.is_admin:
         return
 
-    reviewable_requests = auth_store.list_reviewable_requests(reviewer_user)
     heading = "Approval requests" if reviewer_user.is_admin else "Sponsor requests"
+    visibility_key = f"bridge_show_reviewable_requests_{reviewer_user.id}"
     selected_request_id = get_approval_request_id()
+    if selected_request_id:
+        st.session_state[visibility_key] = True
+
+    show_requests = st.toggle(
+        heading,
+        value=bool(st.session_state.get(visibility_key, False)),
+        key=visibility_key,
+    )
+    if not show_requests:
+        return
+
+    reviewable_requests = auth_store.list_reviewable_requests(reviewer_user)
     has_pending_requests = any(request["status"] == "Pending" for request in reviewable_requests)
     sorted_requests = sorted(
         reviewable_requests,
@@ -117,19 +129,20 @@ def render_sponsor_request_history(auth_store, reviewer_user) -> None:
             str(request.get("created_at")),
         ),
     )
-    with st.expander(heading, expanded=bool(selected_request_id or has_pending_requests)):
-        if not reviewable_requests:
-            st.write("No access requests yet.")
-            return
-        if selected_request_id:
-            st.info("Request opened from email is highlighted below. You can review it directly here.")
-        for request in sorted_requests:
-            _render_request_review_body(
-                auth_store,
-                reviewer_user,
-                request,
-                highlighted=request["id"] == selected_request_id,
-            )
+    if not reviewable_requests:
+        st.write("No access requests yet.")
+        return
+    if selected_request_id:
+        st.info("Request opened from email is highlighted below. You can review it directly here.")
+    elif has_pending_requests:
+        st.info("Pending approval requests are loaded below.")
+    for request in sorted_requests:
+        _render_request_review_body(
+            auth_store,
+            reviewer_user,
+            request,
+            highlighted=request["id"] == selected_request_id,
+        )
 
 
 def _render_request_review_body(auth_store, reviewer_user, request_record, *, highlighted: bool = False) -> None:
