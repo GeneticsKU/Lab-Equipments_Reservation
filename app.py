@@ -46,7 +46,17 @@ LOG_FILE_PATH = "change_log.csv"
 EQUIPMENT_DETAILS_FILE_PATH = 'equipment_details.json'
 
 def use_bridge_reservation_store(file_path: str) -> bool:
-    return reservation_type_for_file_path(file_path) is not None and load_app_settings() is not None
+    if reservation_type_for_file_path(file_path) is None:
+        return False
+    return reservation_storage_mode() in {"postgres", "db", "database", "neon"} and load_app_settings() is not None
+
+
+def reservation_storage_mode() -> str:
+    try:
+        configured_mode = st.secrets.get("RESERVATION_STORAGE_MODE")
+    except Exception:
+        configured_mode = None
+    return str(configured_mode or os.getenv("RESERVATION_STORAGE_MODE", "csv")).strip().lower()
 
 
 def build_bridge_reservation_store() -> BridgeReservationStore:
@@ -63,18 +73,6 @@ def _build_bridge_reservation_store_cached(database_url: str) -> BridgeReservati
         raise RuntimeError("Bridge settings are required for DB-backed reservations.")
     ensure_bridge_schema_once(settings)
     return BridgeReservationStore(settings)
-
-
-def data_version_key(file_path: str) -> str:
-    return f"data_version::{file_path}"
-
-
-def current_data_version(file_path: str) -> int:
-    return int(st.session_state.get(data_version_key(file_path), 0))
-
-
-def bump_data_version(file_path: str) -> None:
-    st.session_state[data_version_key(file_path)] = current_data_version(file_path) + 1
 
 # Initialize files if they don't exist
 def init_file(file_path, columns=None):
@@ -115,22 +113,15 @@ def update_announcement(text, file_path=ANNOUNCEMENT_FILE_PATH):
 # Load data from CSV
 def load_data(file_path):
     try:
-        settings = load_app_settings()
-        database_url = settings.database_url if settings is not None else ""
-        return _load_data_cached(file_path, current_data_version(file_path), database_url).copy()
+        reservation_type = reservation_type_for_file_path(file_path)
+        if reservation_type and use_bridge_reservation_store(file_path):
+            return build_bridge_reservation_store().load_dataframe(reservation_type)
+        if os.path.exists(file_path):
+            return pd.read_csv(file_path)
+        return pd.DataFrame(columns=['Equipments', 'Start_Time', 'End_Time', 'Name'])
     except Exception as e:
         st.error(f"Error reading data from file {file_path}: {e}")
         return pd.DataFrame()
-
-
-@lru_cache(maxsize=128)
-def _load_data_cached(file_path: str, data_version: int, database_url: str) -> pd.DataFrame:
-    reservation_type = reservation_type_for_file_path(file_path)
-    if reservation_type and use_bridge_reservation_store(file_path):
-        return build_bridge_reservation_store().load_dataframe(reservation_type)
-    if os.path.exists(file_path):
-        return pd.read_csv(file_path)
-    return pd.DataFrame(columns=['Equipments', 'Start_Time', 'End_Time', 'Name'])
 
 
 # Save data to CSV
@@ -139,24 +130,17 @@ def save_data(df, file_path):
         reservation_type = reservation_type_for_file_path(file_path)
         if reservation_type and use_bridge_reservation_store(file_path):
             build_bridge_reservation_store().save_dataframe(reservation_type, df)
-            bump_data_version(file_path)
             return
         df.to_csv(file_path, index=False)
         backup_to_github(file_path, commit_message=f"Update {os.path.basename(file_path)}")
-        bump_data_version(file_path)
     except Exception as e:
         st.error(f"Error saving data: {e}")
 
 def fetch_data(file_path):
-    settings = load_app_settings()
-    database_url = settings.database_url if settings is not None else ""
-    df = _fetch_data_cached(file_path, current_data_version(file_path), database_url).copy()
-    return df
-
-
-@lru_cache(maxsize=128)
-def _fetch_data_cached(file_path: str, data_version: int, database_url: str) -> pd.DataFrame:
-    df = _load_data_cached(file_path, data_version, database_url).copy()
+    df = load_data(file_path).copy()
+    for column in ("Start_Time", "End_Time"):
+        if column not in df.columns:
+            df[column] = pd.NaT
     df['Start_Time'] = pd.to_datetime(df['Start_Time'], format='%Y/%m/%d %H:%M:%S', errors='coerce')
     df['End_Time'] = pd.to_datetime(df['End_Time'], format='%Y/%m/%d %H:%M:%S', errors='coerce')
     return df
@@ -264,21 +248,13 @@ def convert_df_to_csv(df):
     return output.getvalue().encode('utf-8')
 
 
-@lru_cache(maxsize=32)
-def cached_csv_bytes(file_path: str, data_version: int, database_url: str) -> bytes:
-    return convert_df_to_csv(_fetch_data_cached(file_path, data_version, database_url))
-
 # Download non-PCR data
 def download_non_pcr():
-    settings = load_app_settings()
-    database_url = settings.database_url if settings is not None else ""
-    return cached_csv_bytes(NON_PCR_FILE_PATH, current_data_version(NON_PCR_FILE_PATH), database_url)
+    return convert_df_to_csv(fetch_data(NON_PCR_FILE_PATH))
 
 # Download PCR data
 def download_pcr():
-    settings = load_app_settings()
-    database_url = settings.database_url if settings is not None else ""
-    return cached_csv_bytes(PCR_FILE_PATH, current_data_version(PCR_FILE_PATH), database_url)
+    return convert_df_to_csv(fetch_data(PCR_FILE_PATH))
 
 # Generate time slots
 def generate_time_slots():
@@ -607,63 +583,12 @@ def render_reservation_tables_section(prefix: str, *, title_font_size: int, axis
 
 def render_reservation_form_section(prefix: str, role: str, *, image_width: int) -> None:
     rooms = list(st.session_state.equipment_details.keys())
-    room_state_key = f"{prefix}_selected_room"
     equipment_state_key = f"{prefix}_selected_equipment"
-    pending_room_key = f"{prefix}_pending_room"
-    pending_equipment_key = f"{prefix}_pending_equipment"
-
-    if st.session_state.get(room_state_key) not in rooms:
-        st.session_state[room_state_key] = rooms[0]
-    if st.session_state.get(pending_room_key) not in rooms:
-        st.session_state[pending_room_key] = st.session_state[room_state_key]
-
-    selected_room = st.session_state[room_state_key]
-    pending_room = st.session_state[pending_room_key]
-
+    selected_room = st.selectbox("### Select a Room", rooms, key=f"{prefix}_selected_room")
     enabled_equipments = enabled_equipment_map(selected_room)
-    pending_enabled_equipments = enabled_equipment_map(pending_room)
-
     if st.session_state.get(equipment_state_key) not in enabled_equipments:
         st.session_state[equipment_state_key] = next(iter(enabled_equipments))
-    if st.session_state.get(pending_equipment_key) not in pending_enabled_equipments:
-        st.session_state[pending_equipment_key] = (
-            st.session_state[equipment_state_key]
-            if st.session_state[equipment_state_key] in pending_enabled_equipments
-            else next(iter(pending_enabled_equipments))
-        )
-
-    with st.form(f"{prefix}_equipment_selection_form"):
-        next_room = st.selectbox(
-            "### Select a Room",
-            rooms,
-            index=rooms.index(st.session_state[pending_room_key]),
-        )
-        next_room_equipments = enabled_equipment_map(next_room)
-        current_pending_equipment = st.session_state.get(pending_equipment_key)
-        if current_pending_equipment not in next_room_equipments:
-            current_pending_equipment = next(iter(next_room_equipments))
-        next_equipment = st.selectbox(
-            "### Select Equipments",
-            list(next_room_equipments.keys()),
-            index=list(next_room_equipments.keys()).index(current_pending_equipment),
-        )
-        apply_selection = st.form_submit_button("Load equipment")
-
-    st.caption("Room and equipment changes apply when you click `Load equipment`, so the app does not rerun on every selector change.")
-
-    if apply_selection:
-        st.session_state[room_state_key] = next_room
-        st.session_state[equipment_state_key] = next_equipment
-        st.session_state[pending_room_key] = next_room
-        st.session_state[pending_equipment_key] = next_equipment
-
-    selected_room = st.session_state[room_state_key]
-    enabled_equipments = enabled_equipment_map(selected_room)
-    selected_equipment = st.session_state[equipment_state_key]
-    if selected_equipment not in enabled_equipments:
-        selected_equipment = next(iter(enabled_equipments))
-        st.session_state[equipment_state_key] = selected_equipment
-        st.session_state[pending_equipment_key] = selected_equipment
+    selected_equipment = st.selectbox("### Select Equipments", list(enabled_equipments.keys()), key=equipment_state_key)
 
     equipment_info = enabled_equipments[selected_equipment]
     safe_display_image(equipment_info['image'], width=image_width, offset=0.5)
