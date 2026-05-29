@@ -6,6 +6,7 @@ import json
 from io import StringIO
 import os, time
 import subprocess
+from functools import lru_cache
 
 from bridge.bootstrap import (
     build_auth_store,
@@ -47,8 +48,15 @@ def use_bridge_reservation_store(file_path: str) -> bool:
     return reservation_type_for_file_path(file_path) is not None and load_app_settings() is not None
 
 
-@st.cache_resource(show_spinner=False)
 def build_bridge_reservation_store() -> BridgeReservationStore:
+    settings = load_app_settings()
+    if settings is None:
+        raise RuntimeError("Bridge settings are required for DB-backed reservations.")
+    return _build_bridge_reservation_store_cached(settings.database_url)
+
+
+@lru_cache(maxsize=8)
+def _build_bridge_reservation_store_cached(database_url: str) -> BridgeReservationStore:
     settings = load_app_settings()
     if settings is None:
         raise RuntimeError("Bridge settings are required for DB-backed reservations.")
@@ -106,14 +114,16 @@ def update_announcement(text, file_path=ANNOUNCEMENT_FILE_PATH):
 # Load data from CSV
 def load_data(file_path):
     try:
-        return _load_data_cached(file_path, current_data_version(file_path)).copy()
+        settings = load_app_settings()
+        database_url = settings.database_url if settings is not None else ""
+        return _load_data_cached(file_path, current_data_version(file_path), database_url).copy()
     except Exception as e:
         st.error(f"Error reading data from file {file_path}: {e}")
         return pd.DataFrame()
 
 
-@st.cache_data(show_spinner=False)
-def _load_data_cached(file_path: str, data_version: int) -> pd.DataFrame:
+@lru_cache(maxsize=128)
+def _load_data_cached(file_path: str, data_version: int, database_url: str) -> pd.DataFrame:
     reservation_type = reservation_type_for_file_path(file_path)
     if reservation_type and use_bridge_reservation_store(file_path):
         return build_bridge_reservation_store().load_dataframe(reservation_type)
@@ -137,13 +147,15 @@ def save_data(df, file_path):
         st.error(f"Error saving data: {e}")
 
 def fetch_data(file_path):
-    df = _fetch_data_cached(file_path, current_data_version(file_path)).copy()
+    settings = load_app_settings()
+    database_url = settings.database_url if settings is not None else ""
+    df = _fetch_data_cached(file_path, current_data_version(file_path), database_url).copy()
     return df
 
 
-@st.cache_data(show_spinner=False)
-def _fetch_data_cached(file_path: str, data_version: int) -> pd.DataFrame:
-    df = _load_data_cached(file_path, data_version).copy()
+@lru_cache(maxsize=128)
+def _fetch_data_cached(file_path: str, data_version: int, database_url: str) -> pd.DataFrame:
+    df = _load_data_cached(file_path, data_version, database_url).copy()
     df['Start_Time'] = pd.to_datetime(df['Start_Time'], format='%Y/%m/%d %H:%M:%S', errors='coerce')
     df['End_Time'] = pd.to_datetime(df['End_Time'], format='%Y/%m/%d %H:%M:%S', errors='coerce')
     return df
@@ -251,17 +263,21 @@ def convert_df_to_csv(df):
     return output.getvalue().encode('utf-8')
 
 
-@st.cache_data(show_spinner=False)
-def cached_csv_bytes(file_path: str, data_version: int) -> bytes:
-    return convert_df_to_csv(_fetch_data_cached(file_path, data_version))
+@lru_cache(maxsize=32)
+def cached_csv_bytes(file_path: str, data_version: int, database_url: str) -> bytes:
+    return convert_df_to_csv(_fetch_data_cached(file_path, data_version, database_url))
 
 # Download non-PCR data
 def download_non_pcr():
-    return cached_csv_bytes(NON_PCR_FILE_PATH, current_data_version(NON_PCR_FILE_PATH))
+    settings = load_app_settings()
+    database_url = settings.database_url if settings is not None else ""
+    return cached_csv_bytes(NON_PCR_FILE_PATH, current_data_version(NON_PCR_FILE_PATH), database_url)
 
 # Download PCR data
 def download_pcr():
-    return cached_csv_bytes(PCR_FILE_PATH, current_data_version(PCR_FILE_PATH))
+    settings = load_app_settings()
+    database_url = settings.database_url if settings is not None else ""
+    return cached_csv_bytes(PCR_FILE_PATH, current_data_version(PCR_FILE_PATH), database_url)
 
 # Generate time slots
 def generate_time_slots():
