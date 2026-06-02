@@ -50,6 +50,11 @@ def is_allowed_email(email: str) -> bool:
     return normalize_email(email).endswith("@ku.th")
 
 
+def is_allowed_login_email(email: str, allowed_extra_emails: set[str] | None = None) -> bool:
+    normalized_email = normalize_email(email)
+    return is_allowed_email(normalized_email) or normalized_email in (allowed_extra_emails or set())
+
+
 def hash_secret(raw_value: str) -> str:
     return hashlib.sha256(raw_value.encode("utf-8")).hexdigest()
 
@@ -68,6 +73,7 @@ class AuthStore:
         code_daily_limit_per_email: int = DEFAULT_LOGIN_CODE_DAILY_LIMIT_PER_EMAIL,
         code_daily_limit_global: int = DEFAULT_LOGIN_CODE_DAILY_LIMIT_GLOBAL,
         code_rate_limit_bypass_emails: set[str] | None = None,
+        allowed_extra_login_emails: set[str] | None = None,
     ) -> None:
         self.repository = repository
         self.now = now or (lambda: datetime.now(timezone.utc))
@@ -83,11 +89,16 @@ class AuthStore:
             for email in (code_rate_limit_bypass_emails or set())
             if email
         }
+        self.allowed_extra_login_emails = {
+            normalize_email(email)
+            for email in (allowed_extra_login_emails or set())
+            if email
+        }
 
     def issue_login_code(self, email: str, purpose: str = "login") -> str:
         normalized_email = normalize_email(email)
-        if not is_allowed_email(normalized_email):
-            raise ValueError("Only @ku.th email addresses can request a login code.")
+        if not is_allowed_login_email(normalized_email, self.allowed_extra_login_emails):
+            raise ValueError("Only @ku.th email addresses or configured testing emails can request a login code.")
 
         timestamp = self.now()
         user = self.repository.get_user_by_email(normalized_email)

@@ -130,12 +130,43 @@ def build_limited_store_with_bypass(repository: FakeBridgeRepository, *, now, by
     )
 
 
+def build_store_with_extra_login_emails(repository: FakeBridgeRepository, extra_emails: set[str]) -> AuthStore:
+    fixed_now = datetime(2026, 5, 28, 10, 0, tzinfo=timezone.utc)
+    return AuthStore(
+        repository=repository,
+        now=lambda: fixed_now,
+        code_generator=lambda: "123456",
+        token_generator=lambda: "session-token-123",
+        code_ttl=timedelta(minutes=10),
+        session_ttl=timedelta(hours=12),
+        allowed_extra_login_emails=extra_emails,
+    )
+
+
 def test_issue_login_code_rejects_non_ku_domain() -> None:
     repository = FakeBridgeRepository()
     store = build_store(repository)
 
     with pytest.raises(ValueError, match="@ku.th"):
         store.issue_login_code("user@example.com")
+
+
+def test_issue_login_code_accepts_configured_non_ku_testing_email() -> None:
+    repository = FakeBridgeRepository()
+    store = build_store_with_extra_login_emails(repository, {"geneticsku.services@gmail.com"})
+
+    plain_code = store.issue_login_code("geneticsku.services@gmail.com")
+
+    assert plain_code == "123456"
+    assert repository.get_user_by_email("geneticsku.services@gmail.com") is not None
+
+
+def test_issue_login_code_still_rejects_unconfigured_non_ku_email() -> None:
+    repository = FakeBridgeRepository()
+    store = build_store_with_extra_login_emails(repository, {"geneticsku.services@gmail.com"})
+
+    with pytest.raises(ValueError, match="configured testing emails"):
+        store.issue_login_code("other@gmail.com")
 
 
 def test_issue_and_verify_login_code_marks_user_verified() -> None:

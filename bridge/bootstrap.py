@@ -25,6 +25,7 @@ def build_auth_store(settings: BridgeSettings) -> AuthStore:
         code_daily_limit_per_email=settings.login_code_daily_limit_per_email,
         code_daily_limit_global=settings.login_code_daily_limit_global,
         code_rate_limit_bypass_emails=set(settings.login_code_rate_limit_bypass_emails),
+        allowed_extra_login_emails=set(settings.login_code_allowed_extra_emails),
     )
 
 

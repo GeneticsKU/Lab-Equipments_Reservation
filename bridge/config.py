@@ -23,6 +23,7 @@ class BridgeSettings:
     login_code_daily_limit_per_email: int = 5
     login_code_daily_limit_global: int = 80
     login_code_rate_limit_bypass_emails: tuple[str, ...] = ()
+    login_code_allowed_extra_emails: tuple[str, ...] = ()
 
 
 def _read_streamlit_secret(name: str):
@@ -101,5 +102,9 @@ def load_bridge_settings() -> BridgeSettings | None:
         login_code_rate_limit_bypass_emails=_get_csv_setting(
             "LOGIN_CODE_RATE_LIMIT_BYPASS_EMAILS",
             default="yanawat.pa@ku.th",
+        ),
+        login_code_allowed_extra_emails=_get_csv_setting(
+            "LOGIN_CODE_ALLOWED_EXTRA_EMAILS",
+            default="geneticsku.services@gmail.com",
         ),
     )
