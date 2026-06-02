@@ -62,9 +62,8 @@ def render_bridge_login(settings, auth_store, session_state):
 
     if pending_email:
         st.caption(f"Verifying code for: {pending_email}")
-        with st.form("bridge_verify_code_form"):
-            login_code = st.text_input("One-time code", key="bridge_login_code")
-            verify_code = st.form_submit_button("Verify code")
+        login_code = st.text_input("One-time code", key="bridge_login_code")
+        verify_code = st.button("Verify code", key="bridge_verify_code_button")
 
         if verify_code:
             try:
