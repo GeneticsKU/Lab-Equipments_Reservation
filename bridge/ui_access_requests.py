@@ -28,6 +28,9 @@ def render_applicant_pending_access(settings, auth_store, user, logout_callback)
     render_deployment_banner(settings)
     st.title("Access Pending")
     st.write(f"Signed in as: {user.email}")
+    flash_message = st.session_state.pop("bridge_access_request_notice", None)
+    if flash_message:
+        st.success(flash_message)
 
     applicant_requests = auth_store.list_applicant_requests(user.id)
     pending_request = next((request for request in applicant_requests if request["status"] == "Pending"), None)
@@ -57,7 +60,9 @@ def render_applicant_pending_access(settings, auth_store, user, logout_callback)
                         affiliation=affiliation.strip(),
                     )
                     send_sponsor_approval_email(settings, selected_sponsor.email, created_request["id"])
-                    st.success("Access request submitted. Your sponsor has been emailed.")
+                    st.session_state["bridge_access_request_notice"] = (
+                        "Access request submitted. Your sponsor or admin reviewer can approve it from the app."
+                    )
                     st.rerun()
                 except (InvalidAccessRequestError, ValueError) as exc:
                     st.error(str(exc))
@@ -140,6 +145,9 @@ def render_sponsor_request_history(auth_store, reviewer_user, *, show_toggle: bo
         st.info("Request opened from email is highlighted below. You can review it directly here.")
     elif has_pending_requests:
         st.info("Pending approval requests are loaded below.")
+    flash_message = st.session_state.pop("bridge_approval_notice", None)
+    if flash_message:
+        st.success(flash_message)
     for request in sorted_requests:
         _render_request_review_body(
             auth_store,
@@ -185,7 +193,7 @@ def _render_request_review_body(auth_store, reviewer_user, request_record, *, hi
             if st.button("Approve request", key=f"bridge_approve_{request_id}"):
                 try:
                     auth_store.approve_access_request(request_id, reviewer_user.id, approved_user_category=approved_category)
-                    st.success("Access request approved.")
+                    st.session_state["bridge_approval_notice"] = "Access request approved."
                     st.rerun()
                 except (InvalidAccessRequestError, PermissionError) as exc:
                     st.error(str(exc))
@@ -193,7 +201,7 @@ def _render_request_review_body(auth_store, reviewer_user, request_record, *, hi
             if st.button("Deny request", key=f"bridge_deny_{request_id}"):
                 try:
                     auth_store.deny_access_request(request_id, reviewer_user.id)
-                    st.success("Access request denied.")
+                    st.session_state["bridge_approval_notice"] = "Access request denied."
                     st.rerun()
                 except (InvalidAccessRequestError, PermissionError) as exc:
                     st.error(str(exc))

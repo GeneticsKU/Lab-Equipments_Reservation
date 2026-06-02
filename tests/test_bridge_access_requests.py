@@ -41,6 +41,9 @@ class FakeAccessRequestRepository:
     def list_all_access_requests(self) -> list[dict]:
         return list(self.requests)
 
+    def list_users(self) -> list[BridgeUser]:
+        return list(self.users.values())
+
     def get_access_request_by_id(self, request_id: str) -> dict | None:
         return next((request for request in self.requests if request["id"] == request_id), None)
 
@@ -101,6 +104,30 @@ def test_create_access_request_updates_applicant_details() -> None:
     updated_user = repository.get_user_by_id(applicant.id)
     assert updated_user.full_name == "Student User"
     assert updated_user.affiliation == "Genetics Room 101"
+
+
+def test_status_list_methods_delegate_to_repository() -> None:
+    repository = FakeAccessRequestRepository()
+    admin = seed_user(repository, id="admin-1", email="admin@ku.th", is_admin=True, approval_state="approved")
+    applicant = seed_user(repository, id="user-1", email="student@ku.th", approval_state="pending")
+    store = build_store(repository)
+    request_record = {
+        "id": "access-request-1",
+        "applicant_user_id": applicant.id,
+        "chosen_sponsor_user_id": admin.id,
+        "suggested_user_category": "Master Student",
+        "approved_user_category": None,
+        "affiliation": "4511",
+        "status": "Pending",
+        "decision_at": None,
+        "decision_by_user_id": None,
+        "created_at": datetime(2026, 5, 28, 12, 0, tzinfo=timezone.utc),
+        "expires_at": datetime(2026, 6, 11, 12, 0, tzinfo=timezone.utc),
+    }
+    repository.create_access_request(request_record)
+
+    assert store.list_users() == [admin, applicant]
+    assert store.list_all_access_requests() == [request_record]
 
 
 def test_create_access_request_accepts_admin_as_selected_reviewer() -> None:

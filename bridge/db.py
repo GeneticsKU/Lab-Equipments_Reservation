@@ -359,6 +359,22 @@ class PostgresBridgeRepository:
             rows = cur.fetchall()
         return [self._row_to_user(row) for row in rows if row is not None]
 
+    def list_users(self) -> list[BridgeUser]:
+        with self._connect() as conn, conn.cursor() as cur:
+            cur.execute(
+                """
+                SELECT id, email, full_name, user_category, affiliation, is_email_verified,
+                       approval_state, is_sponsor, is_admin, is_operator, legacy_username, legacy_source
+                FROM bridge_users
+                ORDER BY
+                    CASE WHEN approval_state = 'pending' THEN 0 ELSE 1 END,
+                    COALESCE(full_name, email),
+                    email
+                """
+            )
+            rows = cur.fetchall()
+        return [self._row_to_user(row) for row in rows if row is not None]
+
     @staticmethod
     def _row_to_user(row: dict | None) -> BridgeUser | None:
         if row is None:

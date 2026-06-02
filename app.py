@@ -3,6 +3,7 @@ import pandas as pd
 import datetime
 import plotly.express as px
 import json
+from dataclasses import asdict
 from io import StringIO
 import os, time
 import subprocess
@@ -771,6 +772,88 @@ def render_reservation_cancellation_section(prefix: str) -> None:
         st.success("Reservation canceled successfully.")
 
 
+def bridge_json_default(value):
+    if isinstance(value, (datetime.datetime, datetime.date)):
+        return value.isoformat()
+    return str(value)
+
+
+def render_bridge_status_panel(auth_store, bridge_user) -> None:
+    if not bridge_user.is_admin:
+        st.info("Bridge status is available to admins only.")
+        return
+
+    st.subheader("Bridge Status")
+    st.caption("Pilot monitoring for login, approval, and current reservation storage.")
+    st.info("Reservation storage mode: CSV files. Neon is used only for identity, sessions, and approval state.")
+
+    try:
+        users = auth_store.list_users()
+        access_requests = auth_store.list_all_access_requests()
+    except Exception as exc:
+        st.error(f"Unable to load bridge status: {exc}")
+        return
+
+    pending_requests = [request for request in access_requests if request["status"] == "Pending"]
+    approved_users = [user for user in users if user.approval_state == "approved"]
+    pending_users = [user for user in users if user.approval_state == "pending"]
+    sponsors = [user for user in users if user.is_sponsor or user.is_admin]
+
+    metric_cols = st.columns(4)
+    metric_cols[0].metric("Pending requests", len(pending_requests))
+    metric_cols[1].metric("Approved users", len(approved_users))
+    metric_cols[2].metric("Pending users", len(pending_users))
+    metric_cols[3].metric("Sponsors/admins", len(sponsors))
+
+    if pending_requests:
+        st.write("### Pending approval queue")
+        pending_rows = []
+        for request in pending_requests:
+            applicant = auth_store.repository.get_user_by_id(request["applicant_user_id"])
+            sponsor = auth_store.repository.get_user_by_id(request["chosen_sponsor_user_id"])
+            pending_rows.append(
+                {
+                    "Applicant": applicant.full_name or applicant.email if applicant else "Unknown",
+                    "Email": applicant.email if applicant else "",
+                    "Sponsor/Admin reviewer": sponsor.full_name or sponsor.email if sponsor else "Unknown",
+                    "Suggested category": request["suggested_user_category"],
+                    "Affiliation": request["affiliation"],
+                    "Requested at": request["created_at"],
+                }
+            )
+        st.dataframe(pd.DataFrame(pending_rows), use_container_width=True)
+    else:
+        st.success("No pending access requests.")
+
+    with st.expander("Approved bridge users"):
+        user_rows = [
+            {
+                "Name": user.full_name or "",
+                "Email": user.email,
+                "Category": user.user_category or "",
+                "Affiliation": user.affiliation or "",
+                "Sponsor": user.is_sponsor,
+                "Admin": user.is_admin,
+                "Email verified": user.is_email_verified,
+            }
+            for user in approved_users
+        ]
+        st.dataframe(pd.DataFrame(user_rows), use_container_width=True)
+
+    snapshot = {
+        "generated_at": datetime.datetime.now(datetime.timezone.utc),
+        "reservation_storage_mode": reservation_storage_mode(),
+        "users": [asdict(user) for user in users],
+        "access_requests": access_requests,
+    }
+    st.download_button(
+        "Download identity and approval snapshot",
+        data=json.dumps(snapshot, default=bridge_json_default, indent=2).encode("utf-8"),
+        file_name=f"bridge_identity_approval_snapshot_{datetime.date.today().isoformat()}.json",
+        mime="application/json",
+    )
+
+
 def hydrate_bridge_user(settings, auth_store):
     current_user = st.session_state.get("bridge_user")
     if current_user is not None:
@@ -845,7 +928,9 @@ if mobile:
     message = f"### Welcome <span class='welcome-message'>{st.session_state['name']}</span>"
     st.markdown(message, unsafe_allow_html=True)
 
-    if role in ["Admins", "Lecturer"]:
+    if role == "Admins":
+        mobile_sections = ["Reservation Tables", "Reservation Forms", "Reservation Cancellation", "Approval Requests", "Bridge Status", "Announcement"]
+    elif role == "Lecturer":
         mobile_sections = ["Reservation Tables", "Reservation Forms", "Reservation Cancellation", "Approval Requests", "Announcement"]
     else:
         mobile_sections = ["Reservation Tables", "Reservation Forms", "Reservation Cancellation"]
@@ -869,6 +954,8 @@ if mobile:
         render_reservation_cancellation_section("mobile")
     elif selected_tab == "Approval Requests":
         render_sponsor_request_history(auth_store, bridge_user, show_toggle=False)
+    elif selected_tab == "Bridge Status":
+        render_bridge_status_panel(auth_store, bridge_user)
     elif selected_tab == "Announcement":
         announcement_text = read_announcement()
         st.write("Admin and Lecturer Controls")
@@ -907,7 +994,7 @@ else:
         st.rerun()  # Rerun the app to refresh the state
 
     if role == "Admins":
-        available_sections = ["Reservation Tables", "Reservation Forms", "Reservation Cancellation", "Approval Requests", "Admins Interface"]
+        available_sections = ["Reservation Tables", "Reservation Forms", "Reservation Cancellation", "Approval Requests", "Bridge Status", "Admins Interface"]
     else:
         available_sections = ["Reservation Tables", "Reservation Forms", "Reservation Cancellation", "Approval Requests", "Contact Us"]
 
@@ -951,6 +1038,8 @@ else:
         render_reservation_cancellation_section("web")
     elif selected_section == "Approval Requests":
         render_sponsor_request_history(auth_store, bridge_user, show_toggle=False)
+    elif selected_section == "Bridge Status":
+        render_bridge_status_panel(auth_store, bridge_user)
     elif selected_section == "Contact Us":
         st.subheader("Error reports or Inconvenient issues")
 

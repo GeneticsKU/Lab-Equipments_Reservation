@@ -206,10 +206,13 @@ class AuthStore:
 
     def list_reviewable_requests(self, reviewer_user: BridgeUser) -> list[dict]:
         if reviewer_user.is_admin:
-            return self.repository.list_all_access_requests()
+            return self.list_all_access_requests()
         if reviewer_user.is_sponsor:
             return self.repository.list_access_requests_for_sponsor(reviewer_user.id)
         return []
+
+    def list_all_access_requests(self) -> list[dict]:
+        return self.repository.list_all_access_requests()
 
     def list_applicant_requests(self, applicant_user_id: str) -> list[dict]:
         return self.repository.list_access_requests_for_applicant(applicant_user_id)
@@ -252,6 +255,9 @@ class AuthStore:
 
     def list_sponsors(self) -> list[BridgeUser]:
         return self.repository.list_sponsors()
+
+    def list_users(self) -> list[BridgeUser]:
+        return self.repository.list_users()
 
     def _get_pending_request_for_reviewer(self, request_id: str, reviewer_user_id: str) -> dict:
         request_record = self.repository.get_access_request_by_id(request_id)
