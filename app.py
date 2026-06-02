@@ -466,20 +466,9 @@ def render_reservation_tables_section(prefix: str, *, title_font_size: int, axis
     if st.session_state.get(date_state_key) not in dates:
         st.session_state[date_state_key] = dates[0]
 
-    current_room = st.session_state[room_state_key]
-    current_date = st.session_state[date_state_key]
-
-    with st.form(f"{prefix}_table_filters_form"):
-        selected_room = st.selectbox("### Select a Room", rooms, index=rooms.index(current_room))
-        view_date = st.selectbox("### View reservations for", dates, index=dates.index(current_date))
-        apply_filters = st.form_submit_button("Update view")
-
-    if apply_filters:
-        st.session_state[room_state_key] = selected_room
-        st.session_state[date_state_key] = view_date
-
-    room_selection = st.session_state[room_state_key]
-    selected_date = datetime.datetime.strptime(st.session_state[date_state_key], '%Y-%m-%d').date()
+    room_selection = st.selectbox("### Select a Room", rooms, key=room_state_key)
+    selected_date_text = st.selectbox("### View reservations for", dates, key=date_state_key)
+    selected_date = datetime.datetime.strptime(selected_date_text, '%Y-%m-%d').date()
 
     full_day_start = datetime.datetime.combine(selected_date, datetime.time(0, 0))
     full_day_end = datetime.datetime.combine(selected_date, datetime.time(23, 59))
