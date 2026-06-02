@@ -40,4 +40,4 @@ def set_session_cookie(cookie_name: str, token: str, expires_at: datetime) -> No
 
 def clear_session_cookie(cookie_name: str) -> None:
     manager = _cookie_manager()
-    manager.delete(cookie_name, key=f"bridge_cookie_delete_{cookie_name}", path="/")
+    manager.delete(cookie_name, key=f"bridge_cookie_delete_{cookie_name}")

@@ -63,7 +63,7 @@ def test_get_session_cookie_refreshes_cookie_snapshot_each_rerun(monkeypatch) ->
     ]
 
 
-def test_clear_session_cookie_deletes_root_scoped_cookie(monkeypatch) -> None:
+def test_clear_session_cookie_deletes_cookie(monkeypatch) -> None:
     manager = FakeCookieManager()
     monkeypatch.setattr(session_cookie, "_cookie_manager", lambda: manager)
 
@@ -74,6 +74,5 @@ def test_clear_session_cookie_deletes_root_scoped_cookie(monkeypatch) -> None:
             "method": "delete",
             "cookie_name": "bridge_cookie",
             "key": "bridge_cookie_delete_bridge_cookie",
-            "path": "/",
         }
     ]
