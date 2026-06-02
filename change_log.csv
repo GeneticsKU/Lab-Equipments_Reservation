@@ -11211,3 +11211,9 @@ Name: 4887, dtype: object"
 2026-06-02 10:15:51,Add Reservation,Wilasinee_4612,"{'Name': 'Wilasinee_4612', 'Room': 'Hallway, 6th floor', 'Equipments': 'Autoclave 4 (Drain the water every 5 times after using)', 'Start_Time': datetime.datetime(2026, 6, 2, 10, 30), 'End_Time': datetime.datetime(2026, 6, 2, 12, 30)}"
 2026-06-02 11:05:40,Add Reservation,Dechaphon_4612,"{'Name': 'Dechaphon_4612', 'Room': 'Hallway, 6th floor', 'Equipments': 'Autoclave 6 (Drain the water every 5 times after using)', 'Start_Time': datetime.datetime(2026, 6, 2, 11, 30), 'End_Time': datetime.datetime(2026, 6, 2, 13, 0)}"
 2026-06-02 11:27:26,Add Reservation,Jatupol_4612,"{'Name': 'Jatupol_4612', 'Room': 'Hallway, 6th floor', 'Equipments': 'Autoclave 3 (Drain the water every 5 times after using)', 'Start_Time': datetime.datetime(2026, 6, 2, 11, 30), 'End_Time': datetime.datetime(2026, 6, 2, 12, 30)}"
+2026-06-02 11:27:41,Delete Reservation,Jatupol_4612,"Details: Name                                               Jatupol_4612
+Room                                         Hallway, 6th floor
+Equipments    Autoclave 3 (Drain the water every 5 times aft...
+Start_Time                                  2026-06-02 11:30:00
+End_Time                                    2026-06-02 12:30:00
+Name: 4900, dtype: object"
