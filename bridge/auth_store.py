@@ -9,10 +9,17 @@ import uuid
 
 DEFAULT_LOGIN_CODE_TTL = timedelta(minutes=10)
 DEFAULT_SESSION_TTL = timedelta(days=7)
+DEFAULT_LOGIN_CODE_COOLDOWN = timedelta(minutes=2)
+DEFAULT_LOGIN_CODE_DAILY_LIMIT_PER_EMAIL = 5
+DEFAULT_LOGIN_CODE_DAILY_LIMIT_GLOBAL = 80
 
 
 class InvalidLoginCodeError(ValueError):
     """Raised when a one-time code is missing, expired, replayed, or invalid."""
+
+
+class LoginCodeRateLimitError(ValueError):
+    """Raised when one-time code sending is throttled to protect email quota."""
 
 
 class InvalidAccessRequestError(ValueError):
@@ -57,6 +64,9 @@ class AuthStore:
         token_generator=None,
         code_ttl: timedelta = DEFAULT_LOGIN_CODE_TTL,
         session_ttl: timedelta = DEFAULT_SESSION_TTL,
+        code_cooldown: timedelta = DEFAULT_LOGIN_CODE_COOLDOWN,
+        code_daily_limit_per_email: int = DEFAULT_LOGIN_CODE_DAILY_LIMIT_PER_EMAIL,
+        code_daily_limit_global: int = DEFAULT_LOGIN_CODE_DAILY_LIMIT_GLOBAL,
     ) -> None:
         self.repository = repository
         self.now = now or (lambda: datetime.now(timezone.utc))
@@ -64,11 +74,17 @@ class AuthStore:
         self.token_generator = token_generator or (lambda: secrets.token_urlsafe(32))
         self.code_ttl = code_ttl
         self.session_ttl = session_ttl
+        self.code_cooldown = code_cooldown
+        self.code_daily_limit_per_email = code_daily_limit_per_email
+        self.code_daily_limit_global = code_daily_limit_global
 
     def issue_login_code(self, email: str, purpose: str = "login") -> str:
         normalized_email = normalize_email(email)
         if not is_allowed_email(normalized_email):
             raise ValueError("Only @ku.th email addresses can request a login code.")
+
+        timestamp = self.now()
+        self._enforce_login_code_rate_limits(normalized_email, purpose, timestamp)
 
         user = self.repository.get_user_by_email(normalized_email)
         if user is None:
@@ -82,7 +98,6 @@ class AuthStore:
             )
 
         plain_code = self.code_generator()
-        timestamp = self.now()
         self.repository.store_login_code(
             {
                 "id": f"login-code-{uuid.uuid4()}",
@@ -97,6 +112,23 @@ class AuthStore:
             }
         )
         return plain_code
+
+    def _enforce_login_code_rate_limits(self, email: str, purpose: str, timestamp: datetime) -> None:
+        window_start = timestamp - self.code_cooldown
+        if self.repository.count_login_codes(email=email, purpose=purpose, created_after=window_start) > 0:
+            cooldown_minutes = max(1, int(self.code_cooldown.total_seconds() // 60))
+            raise LoginCodeRateLimitError(
+                f"Please wait {cooldown_minutes} minutes before requesting another login code."
+            )
+
+        day_start = timestamp.replace(hour=0, minute=0, second=0, microsecond=0)
+        daily_email_count = self.repository.count_login_codes(email=email, purpose=purpose, created_after=day_start)
+        if daily_email_count >= self.code_daily_limit_per_email:
+            raise LoginCodeRateLimitError("Daily login code limit reached for this email. Please try again tomorrow.")
+
+        global_daily_count = self.repository.count_login_codes(email=None, purpose=purpose, created_after=day_start)
+        if global_daily_count >= self.code_daily_limit_global:
+            raise LoginCodeRateLimitError("Daily login code limit reached for this app. Please contact the administrator.")
 
     def verify_login_code(self, email: str, code: str, purpose: str = "login") -> BridgeUser:
         normalized_email = normalize_email(email)

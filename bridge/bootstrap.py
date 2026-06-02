@@ -21,6 +21,9 @@ def build_auth_store(settings: BridgeSettings) -> AuthStore:
         repository=PostgresBridgeRepository(settings),
         code_ttl=timedelta(minutes=settings.login_code_ttl_minutes),
         session_ttl=timedelta(hours=settings.session_ttl_hours),
+        code_cooldown=timedelta(minutes=settings.login_code_cooldown_minutes),
+        code_daily_limit_per_email=settings.login_code_daily_limit_per_email,
+        code_daily_limit_global=settings.login_code_daily_limit_global,
     )
 
 

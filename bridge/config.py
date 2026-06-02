@@ -19,6 +19,9 @@ class BridgeSettings:
     session_cookie_name: str = "genetics_lab_bridge_session"
     session_ttl_hours: int = 168
     login_code_ttl_minutes: int = 10
+    login_code_cooldown_minutes: int = 2
+    login_code_daily_limit_per_email: int = 5
+    login_code_daily_limit_global: int = 80
 
 
 def _read_streamlit_secret(name: str):
@@ -82,4 +85,7 @@ def load_bridge_settings() -> BridgeSettings | None:
         session_cookie_name=_get_setting("SESSION_COOKIE_NAME", "genetics_lab_bridge_session"),
         session_ttl_hours=int(_get_setting("SESSION_TTL_HOURS", 168)),
         login_code_ttl_minutes=int(_get_setting("LOGIN_CODE_TTL_MINUTES", 10)),
+        login_code_cooldown_minutes=int(_get_setting("LOGIN_CODE_COOLDOWN_MINUTES", 2)),
+        login_code_daily_limit_per_email=int(_get_setting("LOGIN_CODE_DAILY_LIMIT_PER_EMAIL", 5)),
+        login_code_daily_limit_global=int(_get_setting("LOGIN_CODE_DAILY_LIMIT_GLOBAL", 80)),
     )

@@ -4,7 +4,7 @@ import datetime
 
 import streamlit as st
 
-from bridge.auth_store import InvalidLoginCodeError, normalize_email
+from bridge.auth_store import InvalidLoginCodeError, LoginCodeRateLimitError, normalize_email
 from bridge.bootstrap import write_authenticated_user
 from bridge.emailer import send_login_code_email
 from bridge.session_cookie import set_session_cookie
@@ -68,6 +68,8 @@ def render_bridge_login(settings, auth_store, session_state):
             session_state["bridge_login_notice"] = f"A login code was sent to {normalized_email}."
             session_state.pop("bridge_login_code", None)
             st.rerun()
+        except LoginCodeRateLimitError as exc:
+            st.warning(str(exc))
         except ValueError as exc:
             st.error(str(exc))
         except Exception as exc:

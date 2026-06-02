@@ -101,6 +101,32 @@ class PostgresBridgeRepository:
             )
             return cur.fetchone()
 
+    def count_login_codes(self, *, email: str | None, purpose: str, created_after) -> int:
+        with self._connect() as conn, conn.cursor() as cur:
+            if email is None:
+                cur.execute(
+                    """
+                    SELECT COUNT(*) AS count
+                    FROM bridge_login_codes
+                    WHERE purpose = %s
+                      AND created_at >= %s
+                    """,
+                    (purpose, created_after),
+                )
+            else:
+                cur.execute(
+                    """
+                    SELECT COUNT(*) AS count
+                    FROM bridge_login_codes
+                    WHERE email = %s
+                      AND purpose = %s
+                      AND created_at >= %s
+                    """,
+                    (email, purpose, created_after),
+                )
+            row = cur.fetchone()
+        return int(row["count"])
+
     def update_login_code(self, login_code: dict) -> None:
         with self._connect() as conn, conn.cursor() as cur:
             cur.execute(
