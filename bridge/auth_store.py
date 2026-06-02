@@ -67,6 +67,7 @@ class AuthStore:
         code_cooldown: timedelta = DEFAULT_LOGIN_CODE_COOLDOWN,
         code_daily_limit_per_email: int = DEFAULT_LOGIN_CODE_DAILY_LIMIT_PER_EMAIL,
         code_daily_limit_global: int = DEFAULT_LOGIN_CODE_DAILY_LIMIT_GLOBAL,
+        code_rate_limit_bypass_emails: set[str] | None = None,
     ) -> None:
         self.repository = repository
         self.now = now or (lambda: datetime.now(timezone.utc))
@@ -77,6 +78,11 @@ class AuthStore:
         self.code_cooldown = code_cooldown
         self.code_daily_limit_per_email = code_daily_limit_per_email
         self.code_daily_limit_global = code_daily_limit_global
+        self.code_rate_limit_bypass_emails = {
+            normalize_email(email)
+            for email in (code_rate_limit_bypass_emails or set())
+            if email
+        }
 
     def issue_login_code(self, email: str, purpose: str = "login") -> str:
         normalized_email = normalize_email(email)
@@ -84,9 +90,10 @@ class AuthStore:
             raise ValueError("Only @ku.th email addresses can request a login code.")
 
         timestamp = self.now()
-        self._enforce_login_code_rate_limits(normalized_email, purpose, timestamp)
-
         user = self.repository.get_user_by_email(normalized_email)
+        if not self._bypasses_login_code_rate_limit(normalized_email, user):
+            self._enforce_login_code_rate_limits(normalized_email, purpose, timestamp)
+
         if user is None:
             user = self.repository.upsert_user(
                 BridgeUser(
@@ -112,6 +119,9 @@ class AuthStore:
             }
         )
         return plain_code
+
+    def _bypasses_login_code_rate_limit(self, email: str, user: BridgeUser | None) -> bool:
+        return email in self.code_rate_limit_bypass_emails or bool(user and user.is_admin)
 
     def _enforce_login_code_rate_limits(self, email: str, purpose: str, timestamp: datetime) -> None:
         window_start = timestamp - self.code_cooldown

@@ -22,6 +22,7 @@ class BridgeSettings:
     login_code_cooldown_minutes: int = 2
     login_code_daily_limit_per_email: int = 5
     login_code_daily_limit_global: int = 80
+    login_code_rate_limit_bypass_emails: tuple[str, ...] = ()
 
 
 def _read_streamlit_secret(name: str):
@@ -58,6 +59,15 @@ def _get_bool_setting(name: str, default: bool) -> bool:
     return str(raw_value).strip().lower() in {"1", "true", "yes", "on"}
 
 
+def _get_csv_setting(name: str, default="") -> tuple[str, ...]:
+    raw_value = _get_setting(name, default)
+    if raw_value in (None, ""):
+        return ()
+    if isinstance(raw_value, (list, tuple, set)):
+        return tuple(str(value).strip().lower() for value in raw_value if str(value).strip())
+    return tuple(value.strip().lower() for value in str(raw_value).split(",") if value.strip())
+
+
 def load_bridge_settings() -> BridgeSettings | None:
     database_url = _get_setting("DATABASE_URL")
     smtp_host = _get_setting("SMTP_HOST", "smtp.gmail.com")
@@ -88,4 +98,8 @@ def load_bridge_settings() -> BridgeSettings | None:
         login_code_cooldown_minutes=int(_get_setting("LOGIN_CODE_COOLDOWN_MINUTES", 2)),
         login_code_daily_limit_per_email=int(_get_setting("LOGIN_CODE_DAILY_LIMIT_PER_EMAIL", 5)),
         login_code_daily_limit_global=int(_get_setting("LOGIN_CODE_DAILY_LIMIT_GLOBAL", 80)),
+        login_code_rate_limit_bypass_emails=_get_csv_setting(
+            "LOGIN_CODE_RATE_LIMIT_BYPASS_EMAILS",
+            default="yanawat.pa@ku.th",
+        ),
     )

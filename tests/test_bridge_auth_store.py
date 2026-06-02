@@ -115,6 +115,21 @@ def build_limited_store(repository: FakeBridgeRepository, *, now) -> AuthStore:
     )
 
 
+def build_limited_store_with_bypass(repository: FakeBridgeRepository, *, now, bypass_emails: set[str]) -> AuthStore:
+    return AuthStore(
+        repository=repository,
+        now=now,
+        code_generator=lambda: "123456",
+        token_generator=lambda: "session-token-123",
+        code_ttl=timedelta(minutes=10),
+        session_ttl=timedelta(hours=12),
+        code_cooldown=timedelta(minutes=2),
+        code_daily_limit_per_email=2,
+        code_daily_limit_global=3,
+        code_rate_limit_bypass_emails=bypass_emails,
+    )
+
+
 def test_issue_login_code_rejects_non_ku_domain() -> None:
     repository = FakeBridgeRepository()
     store = build_store(repository)
@@ -185,6 +200,34 @@ def test_issue_login_code_enforces_global_daily_limit() -> None:
 
     with pytest.raises(LoginCodeRateLimitError, match="Daily login code limit reached for this app"):
         store.issue_login_code("student3@ku.th")
+
+
+def test_issue_login_code_bypasses_limits_for_admin_user() -> None:
+    repository = FakeBridgeRepository()
+    repository.upsert_user(FakeUserRecord(id="admin-1", email="admin@ku.th", is_admin=True))
+    current_time = datetime(2026, 5, 28, 10, 0, tzinfo=timezone.utc)
+    store = build_limited_store(repository, now=lambda: current_time)
+
+    for _ in range(4):
+        store.issue_login_code("admin@ku.th")
+
+    assert len(repository.login_codes) == 4
+
+
+def test_issue_login_code_bypasses_limits_for_configured_testing_email() -> None:
+    repository = FakeBridgeRepository()
+    repository.upsert_user(FakeUserRecord(id="user-1", email="yanawat.pa@ku.th"))
+    current_time = datetime(2026, 5, 28, 10, 0, tzinfo=timezone.utc)
+    store = build_limited_store_with_bypass(
+        repository,
+        now=lambda: current_time,
+        bypass_emails={"yanawat.pa@ku.th"},
+    )
+
+    for _ in range(4):
+        store.issue_login_code("yanawat.pa@ku.th")
+
+    assert len(repository.login_codes) == 4
 
 
 def test_verify_login_code_rejects_replay_after_consumption() -> None:

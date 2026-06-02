@@ -24,6 +24,7 @@ def build_auth_store(settings: BridgeSettings) -> AuthStore:
         code_cooldown=timedelta(minutes=settings.login_code_cooldown_minutes),
         code_daily_limit_per_email=settings.login_code_daily_limit_per_email,
         code_daily_limit_global=settings.login_code_daily_limit_global,
+        code_rate_limit_bypass_emails=set(settings.login_code_rate_limit_bypass_emails),
     )
 
 
