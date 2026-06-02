@@ -24,6 +24,7 @@ class BridgeSettings:
     login_code_daily_limit_global: int = 80
     login_code_rate_limit_bypass_emails: tuple[str, ...] = ()
     login_code_allowed_extra_emails: tuple[str, ...] = ()
+    reservation_ui_mode: str = "modern"
 
 
 def _read_streamlit_secret(name: str):
@@ -107,4 +108,5 @@ def load_bridge_settings() -> BridgeSettings | None:
             "LOGIN_CODE_ALLOWED_EXTRA_EMAILS",
             default="geneticsku.services@gmail.com",
         ),
+        reservation_ui_mode=str(_get_setting("RESERVATION_UI_MODE", "modern")).strip().lower(),
     )

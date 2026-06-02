@@ -571,7 +571,121 @@ def render_reservation_tables_section(prefix: str, *, title_font_size: int, axis
     )
 
 
-def render_reservation_form_section(prefix: str, role: str, *, image_width: int) -> None:
+def submit_pcr_reservation(selected_room: str, selected_equipment: str, reservation_date: datetime.date, selected_slot: dict | None) -> None:
+    if selected_slot is None:
+        st.error("No available slot was selected.")
+        return
+
+    df_pcr = fetch_data(PCR_FILE_PATH)
+    df_pcr.dropna(inplace=True)
+
+    start_datetime = datetime.datetime.combine(reservation_date, selected_slot['start'])
+    end_datetime = datetime.datetime.combine(reservation_date, selected_slot['end'])
+
+    df_pcr['Start_Time'] = pd.to_datetime(df_pcr['Start_Time'])
+    df_pcr['End_Time'] = pd.to_datetime(df_pcr['End_Time'])
+
+    user_reservations = df_pcr[
+        (df_pcr['Name'] == st.session_state["name"]) &
+        (df_pcr['Room'] == selected_room) &
+        (df_pcr['Equipments'] == selected_equipment) &
+        (df_pcr['Start_Time'].dt.date == reservation_date)
+    ]
+
+    continuous_slot_booked = any(
+        res['End_Time'] == start_datetime or res['Start_Time'] == end_datetime
+        for _, res in user_reservations.iterrows()
+    )
+
+    overlapping_reservations = df_pcr[
+        (df_pcr['Room'] == selected_room) &
+        (df_pcr['Equipments'] == selected_equipment) &
+        ((df_pcr['Start_Time'] < end_datetime) & (df_pcr['End_Time'] > start_datetime))
+    ]
+
+    if not overlapping_reservations.empty:
+        st.error("This slot is already booked. Please choose another slot.")
+    elif continuous_slot_booked:
+        st.error("Cannot book continuous slots. Please select a non-continuous slot.")
+    else:
+        new_reservation = pd.DataFrame([{
+            'Name': st.session_state["name"],
+            'Room': selected_room,
+            'Equipments': selected_equipment,
+            'Start_Time': start_datetime,
+            'End_Time': end_datetime
+        }])
+        df_pcr_buffer = pd.concat([df_pcr, new_reservation], ignore_index=True)
+        df_pcr_buffer.reset_index(drop=True, inplace=True)
+        df_pcr_buffer['Start_Time'] = df_pcr_buffer['Start_Time'].dt.strftime('%Y/%m/%d %H:%M:%S')
+        df_pcr_buffer['End_Time'] = df_pcr_buffer['End_Time'].dt.strftime('%Y/%m/%d %H:%M:%S')
+        save_data(df_pcr_buffer, PCR_FILE_PATH)
+        log_action("Add Reservation", st.session_state["name"], new_reservation)
+        st.success(
+            f"Reservation successful for {selected_equipment} from {start_datetime.strftime('%Y/%m/%d %H:%M:%S')} to {end_datetime.strftime('%Y/%m/%d %H:%M:%S')}"
+        )
+
+
+def submit_non_pcr_reservation(
+    selected_room: str,
+    selected_equipment: str,
+    start_date: datetime.date,
+    start_time: datetime.time | None,
+    end_time: datetime.time | None,
+    role: str,
+) -> None:
+    if not start_time or not end_time:
+        st.error("Please select both a start time and an end time.")
+        return
+
+    start_datetime = datetime.datetime.combine(start_date, start_time)
+    end_datetime = datetime.datetime.combine(start_date, end_time)
+    df_non_pcr = fetch_data(NON_PCR_FILE_PATH)
+    df_non_pcr.dropna(inplace=True)
+    current_time = datetime.datetime.now()
+
+    if start_datetime < current_time:
+        st.error("Cannot book a reservation in the past. Please select a future time.")
+    elif start_datetime >= end_datetime:
+        st.error("The start time must be before the end time. Please adjust your selection.")
+    else:
+        overlapping_reservations = df_non_pcr[
+            (df_non_pcr['Room'] == selected_room) &
+            (df_non_pcr['Equipments'] == selected_equipment) &
+            ((df_non_pcr['Start_Time'] < end_datetime) & (df_non_pcr['End_Time'] > start_datetime))
+        ]
+
+        if not overlapping_reservations.empty:
+            st.error("This time slot is already reserved. Please choose another time.")
+        else:
+            new_reservation = {
+                'Name': st.session_state["name"],
+                'Room': selected_room,
+                'Equipments': selected_equipment,
+                'Start_Time': start_datetime,
+                'End_Time': end_datetime
+            }
+            new_reservation_df = pd.DataFrame([new_reservation])
+            df_non_pcr_buffer = pd.concat([df_non_pcr, new_reservation_df], ignore_index=True)
+            df_non_pcr_buffer.reset_index(drop=True, inplace=True)
+            df_non_pcr_buffer['Start_Time'] = df_non_pcr_buffer['Start_Time'].dt.strftime('%Y/%m/%d %H:%M:%S')
+            df_non_pcr_buffer['End_Time'] = df_non_pcr_buffer['End_Time'].dt.strftime('%Y/%m/%d %H:%M:%S')
+            save_data(df_non_pcr_buffer, NON_PCR_FILE_PATH)
+            log_action("Add Reservation", st.session_state["name"], new_reservation)
+            st.success(
+                f"Reservation successful for {selected_equipment} in {selected_room} from {start_datetime.strftime('%Y/%m/%d %H:%M:%S')} to {end_datetime.strftime('%Y/%m/%d %H:%M:%S')}"
+            )
+
+
+def render_reservation_form_section(prefix: str, role: str, *, image_width: int, settings) -> None:
+    reservation_ui_mode = str(getattr(settings, "reservation_ui_mode", "modern")).strip().lower()
+    if reservation_ui_mode == "legacy":
+        render_reservation_form_section_legacy(prefix, role, image_width=image_width)
+        return
+    render_reservation_form_section_modern(prefix, role, image_width=image_width, settings=settings)
+
+
+def render_reservation_form_section_legacy(prefix: str, role: str, *, image_width: int) -> None:
     rooms = list(st.session_state.equipment_details.keys())
     equipment_state_key = f"{prefix}_selected_equipment"
     selected_room = st.selectbox("### Select a Room", rooms, key=f"{prefix}_selected_room")
@@ -715,6 +829,115 @@ def render_reservation_form_section(prefix: str, role: str, *, image_width: int)
                     st.success(
                         f"Reservation successful for {selected_equipment} in {selected_room} from {start_datetime.strftime('%Y/%m/%d %H:%M:%S')} to {end_datetime.strftime('%Y/%m/%d %H:%M:%S')}"
                     )
+
+
+def render_reservation_form_section_modern(prefix: str, role: str, *, image_width: int, settings) -> None:
+    rooms = list(st.session_state.equipment_details.keys())
+    room_key = f"{prefix}_selected_room"
+    equipment_key = f"{prefix}_selected_equipment"
+
+    if st.session_state.get(room_key) not in rooms:
+        st.session_state[room_key] = rooms[0]
+
+    st.markdown("### Reservation Workspace")
+    st.caption("Modern layout for faster booking. Switch `RESERVATION_UI_MODE=legacy` to roll back.")
+
+    step_cols = st.columns(4)
+    step_cols[0].info("1. Choose room")
+    step_cols[1].info("2. Choose equipment")
+    step_cols[2].info("3. Set schedule")
+    step_cols[3].info("4. Submit")
+
+    selected_room = st.selectbox("### Select a Room", rooms, key=room_key)
+    enabled_equipments = enabled_equipment_map(selected_room)
+    if not enabled_equipments:
+        st.warning("No enabled equipment is available in this room.")
+        return
+    if st.session_state.get(equipment_key) not in enabled_equipments:
+        st.session_state[equipment_key] = next(iter(enabled_equipments))
+    selected_equipment = st.selectbox("### Select Equipments", list(enabled_equipments.keys()), key=equipment_key)
+    equipment_info = enabled_equipments[selected_equipment]
+    is_pcr = "PCR" in selected_equipment
+
+    detail_col, summary_col = st.columns([1.15, 0.85], gap="large")
+    with detail_col:
+        safe_display_image(equipment_info['image'], width=image_width, offset=0.5)
+        st.write(f"#### Details : {equipment_info['details']}")
+        if is_pcr:
+            st.caption("PCR equipment uses fixed 3-hour slots and is limited to today or tomorrow.")
+        else:
+            max_days_advance = 60 if role in ["Admins", "Lecturer"] else 30
+            if "Autoclave" in selected_equipment:
+                max_days_advance = min(max_days_advance, 1)
+            st.caption(f"Non-PCR equipment can be booked up to {max_days_advance} days in advance.")
+
+    with summary_col:
+        st.markdown("### Booking summary")
+        st.info(
+            f"Room: {selected_room}\n\n"
+            f"Equipment: {selected_equipment}\n\n"
+            f"Type: {'PCR' if is_pcr else 'Non-PCR'}\n\n"
+            f"Mode: {'Modern workspace'}"
+        )
+
+        if is_pcr:
+            today = datetime.date.today()
+            tomorrow = today + datetime.timedelta(days=1)
+            current_datetime = datetime.datetime.now()
+            reservation_date = st.date_input(
+                "Reservation Date",
+                min_value=today,
+                max_value=tomorrow,
+                key=f"{prefix}_pcr_reservation_date",
+            )
+            slots = generate_time_slots()
+            if reservation_date == today:
+                slots = [slot for slot in slots if datetime.datetime.combine(today, slot['end']) > current_datetime]
+
+            selected_slot = None
+            if slots:
+                available_slots = [slot['label'] for slot in slots]
+                slot_key = f"{prefix}_pcr_selected_slot"
+                if st.session_state.get(slot_key) not in available_slots:
+                    st.session_state[slot_key] = available_slots[0]
+                selected_slot_label = st.selectbox("Select a Time Slot", available_slots, key=slot_key)
+                selected_slot = next((slot for slot in slots if slot['label'] == selected_slot_label), None)
+            else:
+                st.error("No available slots for the selected day.")
+
+            if selected_slot is not None:
+                start_datetime = datetime.datetime.combine(reservation_date, selected_slot['start'])
+                end_datetime = datetime.datetime.combine(reservation_date, selected_slot['end'])
+                st.success(
+                    f"Selected slot: {start_datetime.strftime('%Y/%m/%d %H:%M:%S')} to {end_datetime.strftime('%Y/%m/%d %H:%M:%S')}"
+                )
+
+            if st.button("Submit Reservation", key=f"{prefix}_modern_submit_pcr"):
+                submit_pcr_reservation(selected_room, selected_equipment, reservation_date, selected_slot)
+        else:
+            max_days_advance = 60 if role in ["Admins", "Lecturer"] else 30
+            if "Autoclave" in selected_equipment:
+                max_days_advance = min(max_days_advance, 1)
+            max_date = datetime.date.today() + datetime.timedelta(days=max_days_advance)
+            st.caption("Pick a date and start/end time, then submit.")
+            start_date = st.date_input(
+                "Start Date",
+                min_value=datetime.date.today(),
+                max_value=max_date,
+                key=f"{prefix}_non_pcr_start_date",
+            )
+            start_time = st.time_input("Start Time", value=None, key=f"{prefix}_non_pcr_start_time")
+            end_time = st.time_input("End Time", value=None, key=f"{prefix}_non_pcr_end_time")
+
+            if start_time and end_time:
+                start_preview = datetime.datetime.combine(start_date, start_time)
+                end_preview = datetime.datetime.combine(start_date, end_time)
+                st.success(
+                    f"Selected window: {start_preview.strftime('%Y/%m/%d %H:%M:%S')} to {end_preview.strftime('%Y/%m/%d %H:%M:%S')}"
+                )
+
+            if st.button("Submit Reservation", key=f"{prefix}_modern_submit_non_pcr"):
+                submit_non_pcr_reservation(selected_room, selected_equipment, start_date, start_time, end_time, role)
 
 
 def render_reservation_cancellation_section(prefix: str) -> None:
@@ -1000,7 +1223,7 @@ if mobile:
             margin_top=165,
         )
     elif selected_tab == "Reservation Forms":
-        render_reservation_form_section("mobile", role, image_width=300)
+        render_reservation_form_section("mobile", role, image_width=300, settings=settings)
     elif selected_tab == "Reservation Cancellation":
         render_reservation_cancellation_section("mobile")
     elif selected_tab == "Approval Requests":
@@ -1089,7 +1312,7 @@ else:
             margin_top=200,
         )
     elif selected_section == "Reservation Forms":
-        render_reservation_form_section("web", role, image_width=450)
+        render_reservation_form_section("web", role, image_width=450, settings=settings)
     elif selected_section == "Reservation Cancellation":
         render_reservation_cancellation_section("web")
     elif selected_section == "Approval Requests":
