@@ -779,13 +779,13 @@ def bridge_json_default(value):
 
 
 def render_bridge_sponsor_controls(auth_store, approved_users) -> bool:
-    editable_users = [user for user in approved_users if not user.is_admin]
+    editable_users = [user for user in approved_users if user.user_category == "Lecturer" and not user.is_admin]
     if not editable_users:
-        st.info("No approved non-admin users are available for sponsor changes.")
+        st.info("No approved lecturers are available for sponsor changes.")
         return False
 
     st.write("### Sponsor access controls")
-    st.caption("Toggle sponsor ability for approved users. Admins keep admin powers separately.")
+    st.caption("Toggle sponsor ability for approved lecturers. Admins keep admin powers separately.")
     with st.form("bridge_sponsor_access_controls"):
         sponsor_values: dict[str, bool] = {}
         for user in editable_users:
