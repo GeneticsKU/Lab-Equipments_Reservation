@@ -1,5 +1,6 @@
 from __future__ import annotations
 
+from collections.abc import Mapping
 from dataclasses import dataclass
 import os
 
@@ -34,7 +35,7 @@ def _read_streamlit_secret(name: str):
         return None
 
     def _find_nested_secret(value):
-        if isinstance(value, dict):
+        if isinstance(value, Mapping):
             if name in value:
                 return value.get(name)
             for nested_value in value.values():
