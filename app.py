@@ -1000,9 +1000,9 @@ else:
     if role == "Admins":
         available_sections = ["Reservation Tables", "Reservation Forms", "Reservation Cancellation", "Approval Requests", "Bridge Status", "Admins Interface"]
     elif can_review_approvals:
-        available_sections = ["Reservation Tables", "Reservation Forms", "Reservation Cancellation", "Approval Requests", "Contact Us"]
+        available_sections = ["Reservation Tables", "Reservation Forms", "Reservation Cancellation", "Approval Requests"]
     else:
-        available_sections = ["Reservation Tables", "Reservation Forms", "Reservation Cancellation", "Contact Us"]
+        available_sections = ["Reservation Tables", "Reservation Forms", "Reservation Cancellation"]
 
     if get_approval_request_id() and can_review_approvals:
         st.session_state["desktop_selected_section"] = "Approval Requests"
@@ -1048,20 +1048,6 @@ else:
         render_sponsor_request_history(auth_store, bridge_user, show_toggle=False)
     elif selected_section == "Bridge Status":
         render_bridge_status_panel(auth_store, bridge_user)
-    elif selected_section == "Contact Us":
-        st.subheader("Error reports or Inconvenient issues")
-
-        contact_form = """
-        <form action="https://formsubmit.co/geneticsku.services@gmail.com" method="POST">
-             <input type="hidden" name="_captcha" value="false">
-             <input type="text" name="name" placeholder="Your name" required>
-             <input type="email" name="email" placeholder="Your email" required>
-             <textarea name="message" placeholder="Your message here"></textarea>
-             <button type="submit">Send</button>
-        </form>
-        """
-
-        st.markdown(contact_form, unsafe_allow_html=True)
 
     if role == "Admins":
         def admin_interface():
