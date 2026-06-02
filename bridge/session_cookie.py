@@ -40,4 +40,9 @@ def set_session_cookie(cookie_name: str, token: str, expires_at: datetime) -> No
 
 def clear_session_cookie(cookie_name: str) -> None:
     manager = _cookie_manager()
-    manager.delete(cookie_name, key=f"bridge_cookie_delete_{cookie_name}")
+    try:
+        manager.delete(cookie_name, key=f"bridge_cookie_delete_{cookie_name}")
+    except KeyError:
+        # CookieManager raises when the cookie is already absent from its snapshot.
+        # Logout should still clear server-side/session state in that case.
+        return

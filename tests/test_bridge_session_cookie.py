@@ -33,6 +33,12 @@ class FakeCookieManager:
         )
 
 
+class MissingCookieManager(FakeCookieManager):
+    def delete(self, cookie_name, **kwargs) -> None:
+        super().delete(cookie_name, **kwargs)
+        raise KeyError(cookie_name)
+
+
 def test_set_session_cookie_uses_secure_lax_cookie_with_max_age(monkeypatch) -> None:
     manager = FakeCookieManager()
     monkeypatch.setattr(session_cookie, "_cookie_manager", lambda: manager)
@@ -65,6 +71,21 @@ def test_get_session_cookie_refreshes_cookie_snapshot_each_rerun(monkeypatch) ->
 
 def test_clear_session_cookie_deletes_cookie(monkeypatch) -> None:
     manager = FakeCookieManager()
+    monkeypatch.setattr(session_cookie, "_cookie_manager", lambda: manager)
+
+    session_cookie.clear_session_cookie("bridge_cookie")
+
+    assert manager.calls == [
+        {
+            "method": "delete",
+            "cookie_name": "bridge_cookie",
+            "key": "bridge_cookie_delete_bridge_cookie",
+        }
+    ]
+
+
+def test_clear_session_cookie_ignores_missing_cookie_snapshot(monkeypatch) -> None:
+    manager = MissingCookieManager()
     monkeypatch.setattr(session_cookie, "_cookie_manager", lambda: manager)
 
     session_cookie.clear_session_cookie("bridge_cookie")
