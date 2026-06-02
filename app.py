@@ -927,16 +927,19 @@ if mobile:
     # Usual app interface
     message = f"### Welcome <span class='welcome-message'>{st.session_state['name']}</span>"
     st.markdown(message, unsafe_allow_html=True)
+    can_review_approvals = bridge_user.is_admin or bridge_user.is_sponsor
 
     if role == "Admins":
         mobile_sections = ["Reservation Tables", "Reservation Forms", "Reservation Cancellation", "Approval Requests", "Bridge Status", "Announcement"]
-    elif role == "Lecturer":
+    elif can_review_approvals:
         mobile_sections = ["Reservation Tables", "Reservation Forms", "Reservation Cancellation", "Approval Requests", "Announcement"]
     else:
         mobile_sections = ["Reservation Tables", "Reservation Forms", "Reservation Cancellation"]
 
-    if get_approval_request_id():
+    if get_approval_request_id() and can_review_approvals:
         st.session_state["mobile_selected_section"] = "Approval Requests"
+    if st.session_state.get("mobile_selected_section") not in mobile_sections:
+        st.session_state["mobile_selected_section"] = mobile_sections[0]
     selected_tab = st.selectbox("### Select Actions", mobile_sections, key="mobile_selected_section")
 
     if selected_tab == "Reservation Tables":
@@ -993,13 +996,18 @@ else:
         logout_bridge_user(settings, auth_store)
         st.rerun()  # Rerun the app to refresh the state
 
+    can_review_approvals = bridge_user.is_admin or bridge_user.is_sponsor
     if role == "Admins":
         available_sections = ["Reservation Tables", "Reservation Forms", "Reservation Cancellation", "Approval Requests", "Bridge Status", "Admins Interface"]
-    else:
+    elif can_review_approvals:
         available_sections = ["Reservation Tables", "Reservation Forms", "Reservation Cancellation", "Approval Requests", "Contact Us"]
+    else:
+        available_sections = ["Reservation Tables", "Reservation Forms", "Reservation Cancellation", "Contact Us"]
 
-    if get_approval_request_id():
+    if get_approval_request_id() and can_review_approvals:
         st.session_state["desktop_selected_section"] = "Approval Requests"
+    if st.session_state.get("desktop_selected_section") not in available_sections:
+        st.session_state["desktop_selected_section"] = available_sections[0]
 
     selected_section = st.radio(
         "### Select Actions",
