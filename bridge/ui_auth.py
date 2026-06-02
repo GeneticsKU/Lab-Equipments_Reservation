@@ -20,10 +20,23 @@ def render_deployment_banner(settings) -> None:
 def finish_successful_login(settings, session_state, user, raw_session_token: str):
     session_state["bridge_pending_email"] = ""
     session_state.pop("bridge_login_code", None)
+    session_state.pop("bridge_login_error", None)
     write_authenticated_user(session_state, user, raw_session_token=raw_session_token)
     cookie_expiry = datetime.datetime.now(datetime.timezone.utc) + datetime.timedelta(hours=settings.session_ttl_hours)
     set_session_cookie(settings.session_cookie_name, raw_session_token, cookie_expiry)
     return user
+
+
+def verify_pending_login_code(settings, auth_store, session_state, pending_email: str) -> None:
+    login_code = session_state.get("bridge_login_code", "")
+    try:
+        user = auth_store.verify_login_code(pending_email, login_code)
+        raw_session_token = auth_store.create_session(user.id)
+        finish_successful_login(settings, session_state, user, raw_session_token)
+    except InvalidLoginCodeError as exc:
+        session_state["bridge_login_error"] = str(exc)
+    except Exception as exc:
+        session_state["bridge_login_error"] = f"Unable to complete sign-in: {exc}"
 
 
 def render_bridge_login(settings, auth_store, session_state):
@@ -62,22 +75,22 @@ def render_bridge_login(settings, auth_store, session_state):
 
     if pending_email:
         st.caption(f"Verifying code for: {pending_email}")
+        login_error = session_state.pop("bridge_login_error", None)
+        if login_error:
+            st.error(login_error)
         login_code = st.text_input("One-time code", key="bridge_login_code")
-        verify_code = st.button("Verify code", key="bridge_verify_code_button")
-
-        if verify_code:
-            try:
-                user = auth_store.verify_login_code(pending_email, login_code)
-                raw_session_token = auth_store.create_session(user.id)
-                return finish_successful_login(settings, session_state, user, raw_session_token)
-            except InvalidLoginCodeError as exc:
-                st.error(str(exc))
-            except Exception as exc:
-                st.error(f"Unable to complete sign-in: {exc}")
+        st.button(
+            "Verify code",
+            key="bridge_verify_code_button",
+            on_click=verify_pending_login_code,
+            args=(settings, auth_store, session_state, pending_email),
+            disabled=not bool(login_code.strip()),
+        )
 
         if st.button("Use a different email", key="bridge_reset_login_flow"):
             session_state["bridge_pending_email"] = ""
             session_state.pop("bridge_login_code", None)
+            session_state.pop("bridge_login_error", None)
             st.rerun()
 
     return None
