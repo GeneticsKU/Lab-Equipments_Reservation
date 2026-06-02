@@ -33,11 +33,23 @@ def _read_streamlit_secret(name: str):
     except Exception:
         return None
 
+    def _find_nested_secret(value):
+        if isinstance(value, dict):
+            if name in value:
+                return value.get(name)
+            for nested_value in value.values():
+                found = _find_nested_secret(nested_value)
+                if found not in (None, ""):
+                    return found
+        return None
+
     try:
         if name in st.secrets:
             return st.secrets[name]
         bridge_section = st.secrets.get("bridge", {})
-        return bridge_section.get(name)
+        if name in bridge_section:
+            return bridge_section.get(name)
+        return _find_nested_secret(dict(st.secrets))
     except Exception:
         return None
 
