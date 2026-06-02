@@ -51,3 +51,16 @@ CREATE TABLE IF NOT EXISTS bridge_sessions (
     last_seen_at TIMESTAMPTZ NOT NULL
 );
 
+CREATE TABLE IF NOT EXISTS bridge_reservations (
+    id BIGSERIAL PRIMARY KEY,
+    reservation_type TEXT NOT NULL,
+    name TEXT NOT NULL,
+    room TEXT NOT NULL,
+    equipments TEXT NOT NULL,
+    start_time TIMESTAMPTZ NOT NULL,
+    end_time TIMESTAMPTZ NOT NULL,
+    created_at TIMESTAMPTZ NOT NULL DEFAULT NOW()
+);
+
+CREATE INDEX IF NOT EXISTS bridge_reservations_type_start_idx
+    ON bridge_reservations (reservation_type, start_time);

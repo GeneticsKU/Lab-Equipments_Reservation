@@ -101,6 +101,32 @@ class PostgresBridgeRepository:
             )
             return cur.fetchone()
 
+    def count_login_codes(self, *, email: str | None, purpose: str, created_after) -> int:
+        with self._connect() as conn, conn.cursor() as cur:
+            if email is None:
+                cur.execute(
+                    """
+                    SELECT COUNT(*) AS count
+                    FROM bridge_login_codes
+                    WHERE purpose = %s
+                      AND created_at >= %s
+                    """,
+                    (purpose, created_after),
+                )
+            else:
+                cur.execute(
+                    """
+                    SELECT COUNT(*) AS count
+                    FROM bridge_login_codes
+                    WHERE email = %s
+                      AND purpose = %s
+                      AND created_at >= %s
+                    """,
+                    (email, purpose, created_after),
+                )
+            row = cur.fetchone()
+        return int(row["count"])
+
     def update_login_code(self, login_code: dict) -> None:
         with self._connect() as conn, conn.cursor() as cur:
             cur.execute(
@@ -237,6 +263,43 @@ class PostgresBridgeRepository:
             conn.commit()
         return row
 
+    def list_reservations(self, reservation_type: str) -> list[dict]:
+        with self._connect() as conn, conn.cursor() as cur:
+            cur.execute(
+                """
+                SELECT reservation_type, name, room, equipments, start_time, end_time
+                FROM bridge_reservations
+                WHERE reservation_type = %s
+                ORDER BY start_time ASC, end_time ASC, id ASC
+                """,
+                (reservation_type,),
+            )
+            return cur.fetchall()
+
+    def replace_reservations(self, reservation_type: str, rows: list[dict]) -> None:
+        with self._connect() as conn, conn.cursor() as cur:
+            cur.execute(
+                """
+                DELETE FROM bridge_reservations
+                WHERE reservation_type = %s
+                """,
+                (reservation_type,),
+            )
+            if rows:
+                cur.executemany(
+                    """
+                    INSERT INTO bridge_reservations (
+                        reservation_type, name, room, equipments, start_time, end_time
+                    )
+                    VALUES (
+                        %(reservation_type)s, %(name)s, %(room)s, %(equipments)s,
+                        %(start_time)s, %(end_time)s
+                    )
+                    """,
+                    rows,
+                )
+            conn.commit()
+
     def list_access_requests_for_sponsor(self, sponsor_user_id: str) -> list[dict]:
         with self._connect() as conn, conn.cursor() as cur:
             cur.execute(
@@ -260,6 +323,19 @@ class PostgresBridgeRepository:
                 ORDER BY created_at DESC
                 """,
                 (applicant_user_id,),
+            )
+            return cur.fetchall()
+
+    def list_all_access_requests(self) -> list[dict]:
+        with self._connect() as conn, conn.cursor() as cur:
+            cur.execute(
+                """
+                SELECT *
+                FROM bridge_access_requests
+                ORDER BY
+                    CASE WHEN status = 'Pending' THEN 0 ELSE 1 END,
+                    created_at DESC
+                """
             )
             return cur.fetchall()
 
@@ -302,8 +378,24 @@ class PostgresBridgeRepository:
                 SELECT id, email, full_name, user_category, affiliation, is_email_verified,
                        approval_state, is_sponsor, is_admin, is_operator, legacy_username, legacy_source
                 FROM bridge_users
-                WHERE is_sponsor = TRUE
+                WHERE is_sponsor = TRUE OR is_admin = TRUE
                 ORDER BY COALESCE(full_name, email), email
+                """
+            )
+            rows = cur.fetchall()
+        return [self._row_to_user(row) for row in rows if row is not None]
+
+    def list_users(self) -> list[BridgeUser]:
+        with self._connect() as conn, conn.cursor() as cur:
+            cur.execute(
+                """
+                SELECT id, email, full_name, user_category, affiliation, is_email_verified,
+                       approval_state, is_sponsor, is_admin, is_operator, legacy_username, legacy_source
+                FROM bridge_users
+                ORDER BY
+                    CASE WHEN approval_state = 'pending' THEN 0 ELSE 1 END,
+                    COALESCE(full_name, email),
+                    email
                 """
             )
             rows = cur.fetchall()

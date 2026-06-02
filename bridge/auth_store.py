@@ -8,11 +8,18 @@ import uuid
 
 
 DEFAULT_LOGIN_CODE_TTL = timedelta(minutes=10)
-DEFAULT_SESSION_TTL = timedelta(hours=12)
+DEFAULT_SESSION_TTL = timedelta(days=7)
+DEFAULT_LOGIN_CODE_COOLDOWN = timedelta(minutes=2)
+DEFAULT_LOGIN_CODE_DAILY_LIMIT_PER_EMAIL = 5
+DEFAULT_LOGIN_CODE_DAILY_LIMIT_GLOBAL = 80
 
 
 class InvalidLoginCodeError(ValueError):
     """Raised when a one-time code is missing, expired, replayed, or invalid."""
+
+
+class LoginCodeRateLimitError(ValueError):
+    """Raised when one-time code sending is throttled to protect email quota."""
 
 
 class InvalidAccessRequestError(ValueError):
@@ -43,6 +50,11 @@ def is_allowed_email(email: str) -> bool:
     return normalize_email(email).endswith("@ku.th")
 
 
+def is_allowed_login_email(email: str, allowed_extra_emails: set[str] | None = None) -> bool:
+    normalized_email = normalize_email(email)
+    return is_allowed_email(normalized_email) or normalized_email in (allowed_extra_emails or set())
+
+
 def hash_secret(raw_value: str) -> str:
     return hashlib.sha256(raw_value.encode("utf-8")).hexdigest()
 
@@ -57,6 +69,11 @@ class AuthStore:
         token_generator=None,
         code_ttl: timedelta = DEFAULT_LOGIN_CODE_TTL,
         session_ttl: timedelta = DEFAULT_SESSION_TTL,
+        code_cooldown: timedelta = DEFAULT_LOGIN_CODE_COOLDOWN,
+        code_daily_limit_per_email: int = DEFAULT_LOGIN_CODE_DAILY_LIMIT_PER_EMAIL,
+        code_daily_limit_global: int = DEFAULT_LOGIN_CODE_DAILY_LIMIT_GLOBAL,
+        code_rate_limit_bypass_emails: set[str] | None = None,
+        allowed_extra_login_emails: set[str] | None = None,
     ) -> None:
         self.repository = repository
         self.now = now or (lambda: datetime.now(timezone.utc))
@@ -64,13 +81,30 @@ class AuthStore:
         self.token_generator = token_generator or (lambda: secrets.token_urlsafe(32))
         self.code_ttl = code_ttl
         self.session_ttl = session_ttl
+        self.code_cooldown = code_cooldown
+        self.code_daily_limit_per_email = code_daily_limit_per_email
+        self.code_daily_limit_global = code_daily_limit_global
+        self.code_rate_limit_bypass_emails = {
+            normalize_email(email)
+            for email in (code_rate_limit_bypass_emails or set())
+            if email
+        }
+        self.allowed_extra_login_emails = {
+            normalize_email(email)
+            for email in (allowed_extra_login_emails or set())
+            if email
+        }
 
     def issue_login_code(self, email: str, purpose: str = "login") -> str:
         normalized_email = normalize_email(email)
-        if not is_allowed_email(normalized_email):
-            raise ValueError("Only @ku.th email addresses can request a login code.")
+        if not is_allowed_login_email(normalized_email, self.allowed_extra_login_emails):
+            raise ValueError("Only @ku.th email addresses or configured testing emails can request a login code.")
 
+        timestamp = self.now()
         user = self.repository.get_user_by_email(normalized_email)
+        if not self._bypasses_login_code_rate_limit(normalized_email, user):
+            self._enforce_login_code_rate_limits(normalized_email, purpose, timestamp)
+
         if user is None:
             user = self.repository.upsert_user(
                 BridgeUser(
@@ -82,7 +116,6 @@ class AuthStore:
             )
 
         plain_code = self.code_generator()
-        timestamp = self.now()
         self.repository.store_login_code(
             {
                 "id": f"login-code-{uuid.uuid4()}",
@@ -97,6 +130,26 @@ class AuthStore:
             }
         )
         return plain_code
+
+    def _bypasses_login_code_rate_limit(self, email: str, user: BridgeUser | None) -> bool:
+        return email in self.code_rate_limit_bypass_emails or bool(user and user.is_admin)
+
+    def _enforce_login_code_rate_limits(self, email: str, purpose: str, timestamp: datetime) -> None:
+        window_start = timestamp - self.code_cooldown
+        if self.repository.count_login_codes(email=email, purpose=purpose, created_after=window_start) > 0:
+            cooldown_minutes = max(1, int(self.code_cooldown.total_seconds() // 60))
+            raise LoginCodeRateLimitError(
+                f"Please wait {cooldown_minutes} minutes before requesting another login code."
+            )
+
+        day_start = timestamp.replace(hour=0, minute=0, second=0, microsecond=0)
+        daily_email_count = self.repository.count_login_codes(email=email, purpose=purpose, created_after=day_start)
+        if daily_email_count >= self.code_daily_limit_per_email:
+            raise LoginCodeRateLimitError("Daily login code limit reached for this email. Please try again tomorrow.")
+
+        global_daily_count = self.repository.count_login_codes(email=None, purpose=purpose, created_after=day_start)
+        if global_daily_count >= self.code_daily_limit_global:
+            raise LoginCodeRateLimitError("Daily login code limit reached for this app. Please contact the administrator.")
 
     def verify_login_code(self, email: str, code: str, purpose: str = "login") -> BridgeUser:
         normalized_email = normalize_email(email)
@@ -174,7 +227,7 @@ class AuthStore:
         sponsor = self.repository.get_user_by_id(chosen_sponsor_user_id)
         if applicant is None:
             raise InvalidAccessRequestError("Applicant user does not exist.")
-        if sponsor is None or not sponsor.is_sponsor:
+        if sponsor is None or (not sponsor.is_sponsor and not sponsor.is_admin):
             raise InvalidAccessRequestError("Selected sponsor is not valid.")
         if applicant.email != normalized_email:
             raise InvalidAccessRequestError("Applicant email does not match the signed-in user.")
@@ -204,14 +257,24 @@ class AuthStore:
     def list_sponsor_requests(self, sponsor_user_id: str) -> list[dict]:
         return self.repository.list_access_requests_for_sponsor(sponsor_user_id)
 
+    def list_reviewable_requests(self, reviewer_user: BridgeUser) -> list[dict]:
+        if reviewer_user.is_admin:
+            return self.list_all_access_requests()
+        if reviewer_user.is_sponsor:
+            return self.repository.list_access_requests_for_sponsor(reviewer_user.id)
+        return []
+
+    def list_all_access_requests(self) -> list[dict]:
+        return self.repository.list_all_access_requests()
+
     def list_applicant_requests(self, applicant_user_id: str) -> list[dict]:
         return self.repository.list_access_requests_for_applicant(applicant_user_id)
 
     def get_access_request(self, request_id: str) -> dict | None:
         return self.repository.get_access_request_by_id(request_id)
 
-    def approve_access_request(self, request_id: str, sponsor_user_id: str, *, approved_user_category: str) -> dict:
-        request_record = self._get_pending_request_for_sponsor(request_id, sponsor_user_id)
+    def approve_access_request(self, request_id: str, reviewer_user_id: str, *, approved_user_category: str) -> dict:
+        request_record = self._get_pending_request_for_reviewer(request_id, reviewer_user_id)
         applicant = self.repository.get_user_by_id(request_record["applicant_user_id"])
         if applicant is None:
             raise InvalidAccessRequestError("Applicant for the request no longer exists.")
@@ -225,12 +288,12 @@ class AuthStore:
 
         request_record["approved_user_category"] = approved_user_category
         request_record["status"] = "Approved"
-        request_record["decision_by_user_id"] = sponsor_user_id
+        request_record["decision_by_user_id"] = reviewer_user_id
         request_record["decision_at"] = self.now()
         return self.repository.update_access_request(request_record)
 
-    def deny_access_request(self, request_id: str, sponsor_user_id: str) -> dict:
-        request_record = self._get_pending_request_for_sponsor(request_id, sponsor_user_id)
+    def deny_access_request(self, request_id: str, reviewer_user_id: str) -> dict:
+        request_record = self._get_pending_request_for_reviewer(request_id, reviewer_user_id)
         applicant = self.repository.get_user_by_id(request_record["applicant_user_id"])
         if applicant is None:
             raise InvalidAccessRequestError("Applicant for the request no longer exists.")
@@ -239,19 +302,33 @@ class AuthStore:
         self.repository.update_user(updated_applicant)
 
         request_record["status"] = "Denied"
-        request_record["decision_by_user_id"] = sponsor_user_id
+        request_record["decision_by_user_id"] = reviewer_user_id
         request_record["decision_at"] = self.now()
         return self.repository.update_access_request(request_record)
 
     def list_sponsors(self) -> list[BridgeUser]:
         return self.repository.list_sponsors()
 
-    def _get_pending_request_for_sponsor(self, request_id: str, sponsor_user_id: str) -> dict:
+    def list_users(self) -> list[BridgeUser]:
+        return self.repository.list_users()
+
+    def set_user_sponsor(self, user_id: str, is_sponsor: bool) -> BridgeUser:
+        user = self.repository.get_user_by_id(user_id)
+        if user is None:
+            raise InvalidAccessRequestError("User does not exist.")
+
+        updated_user = replace(user, is_sponsor=is_sponsor)
+        return self.repository.update_user(updated_user)
+
+    def _get_pending_request_for_reviewer(self, request_id: str, reviewer_user_id: str) -> dict:
         request_record = self.repository.get_access_request_by_id(request_id)
         if request_record is None:
             raise InvalidAccessRequestError("Access request was not found.")
-        if request_record["chosen_sponsor_user_id"] != sponsor_user_id:
-            raise PermissionError("Only the selected sponsor can decide this request.")
+        reviewer = self.repository.get_user_by_id(reviewer_user_id)
+        if reviewer is None:
+            raise PermissionError("Reviewer user was not found.")
+        if not reviewer.is_admin and request_record["chosen_sponsor_user_id"] != reviewer_user_id:
+            raise PermissionError("Only the selected sponsor or an admin can decide this request.")
         if request_record["status"] != "Pending":
             raise InvalidAccessRequestError("This access request has already been decided.")
         return request_record

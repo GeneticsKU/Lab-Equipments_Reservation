@@ -1,6 +1,7 @@
 from __future__ import annotations
 
 from datetime import datetime
+import math
 
 
 def _cookie_manager():
@@ -16,14 +17,32 @@ def _cookie_manager():
 
 def get_session_cookie(cookie_name: str) -> str | None:
     manager = _cookie_manager()
-    return manager.get(cookie_name)
+    # Refresh browser cookies on each rerun so we do not keep the empty
+    # constructor snapshot from the first post-refresh render.
+    cookies = manager.get_all(key=f"bridge_cookie_get_all_{cookie_name}")
+    return cookies.get(cookie_name)
 
 
 def set_session_cookie(cookie_name: str, token: str, expires_at: datetime) -> None:
     manager = _cookie_manager()
-    manager.set(cookie_name, token, key=f"bridge_cookie_set_{cookie_name}", expires_at=expires_at)
+    max_age_seconds = max(1, math.ceil((expires_at - datetime.now(expires_at.tzinfo)).total_seconds()))
+    manager.set(
+        cookie_name,
+        token,
+        key=f"bridge_cookie_set_{cookie_name}",
+        expires_at=expires_at,
+        max_age=max_age_seconds,
+        path="/",
+        secure=True,
+        same_site="lax",
+    )
 
 
 def clear_session_cookie(cookie_name: str) -> None:
     manager = _cookie_manager()
-    manager.delete(cookie_name, key=f"bridge_cookie_delete_{cookie_name}")
+    try:
+        manager.delete(cookie_name, key=f"bridge_cookie_delete_{cookie_name}")
+    except KeyError:
+        # CookieManager raises when the cookie is already absent from its snapshot.
+        # Logout should still clear server-side/session state in that case.
+        return

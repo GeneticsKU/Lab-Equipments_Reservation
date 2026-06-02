@@ -2,6 +2,7 @@ from __future__ import annotations
 
 import argparse
 from datetime import timedelta
+from functools import lru_cache
 import json
 from pathlib import Path
 
@@ -20,12 +21,31 @@ def build_auth_store(settings: BridgeSettings) -> AuthStore:
         repository=PostgresBridgeRepository(settings),
         code_ttl=timedelta(minutes=settings.login_code_ttl_minutes),
         session_ttl=timedelta(hours=settings.session_ttl_hours),
+        code_cooldown=timedelta(minutes=settings.login_code_cooldown_minutes),
+        code_daily_limit_per_email=settings.login_code_daily_limit_per_email,
+        code_daily_limit_global=settings.login_code_daily_limit_global,
+        code_rate_limit_bypass_emails=set(settings.login_code_rate_limit_bypass_emails),
+        allowed_extra_login_emails=set(settings.login_code_allowed_extra_emails),
     )
 
 
 def ensure_bridge_schema(settings: BridgeSettings) -> None:
     sql_text = schema_sql_path().read_text(encoding="utf-8")
-    with connect_database(settings.database_url) as conn, conn.cursor() as cur:
+    _apply_bridge_schema(settings.database_url, sql_text)
+
+
+def ensure_bridge_schema_once(settings: BridgeSettings) -> None:
+    _ensure_bridge_schema_once_cached(settings.database_url, str(schema_sql_path()))
+
+
+@lru_cache(maxsize=8)
+def _ensure_bridge_schema_once_cached(database_url: str, schema_path: str) -> None:
+    sql_text = Path(schema_path).read_text(encoding="utf-8")
+    _apply_bridge_schema(database_url, sql_text)
+
+
+def _apply_bridge_schema(database_url: str, sql_text: str) -> None:
+    with connect_database(database_url) as conn, conn.cursor() as cur:
         statements = [statement.strip() for statement in sql_text.split(";") if statement.strip()]
         for statement in statements:
             cur.execute(statement)
@@ -46,14 +66,19 @@ def clear_bridge_session_state(session_state) -> None:
     session_state["name"] = None
     session_state["bridge_user"] = None
     session_state["bridge_role"] = None
+    session_state["bridge_raw_session_token"] = None
+    session_state["bridge_cookie_restore_reruns"] = 0
 
 
-def write_authenticated_user(session_state, user: BridgeUser) -> None:
+def write_authenticated_user(session_state, user: BridgeUser, *, raw_session_token: str | None = None) -> None:
     session_state["authentication_status"] = True
     session_state["username"] = user.email
     session_state["name"] = user.full_name or user.email
     session_state["bridge_user"] = user
     session_state["bridge_role"] = derive_legacy_role(user)
+    if raw_session_token is not None:
+        session_state["bridge_raw_session_token"] = raw_session_token
+    session_state["bridge_cookie_restore_reruns"] = 0
 
 
 def hydrate_bridge_session_state(session_state, auth_store: AuthStore, raw_session_token: str | None) -> BridgeUser | None:
@@ -61,8 +86,32 @@ def hydrate_bridge_session_state(session_state, auth_store: AuthStore, raw_sessi
     if user is None:
         clear_bridge_session_state(session_state)
         return None
-    write_authenticated_user(session_state, user)
+    write_authenticated_user(session_state, user, raw_session_token=raw_session_token)
     return user
+
+
+def should_retry_cookie_restore(session_state, *, raw_session_token: str | None) -> bool:
+    """Give the browser cookie component one extra rerun after a hard refresh.
+
+    On Streamlit Cloud, the cookie component can return its default empty value
+    on the first render after a page reload, then provide the real browser
+    cookies on the next rerun. We only retry once, and never when the user is
+    already in the middle of the explicit OTP login flow.
+    """
+
+    if raw_session_token:
+        session_state["bridge_cookie_restore_reruns"] = 0
+        return False
+
+    if session_state.get("bridge_pending_email"):
+        return False
+
+    reruns = session_state.get("bridge_cookie_restore_reruns", 0)
+    if reruns >= 1:
+        return False
+
+    session_state["bridge_cookie_restore_reruns"] = reruns + 1
+    return True
 
 
 def seed_sponsors(settings: BridgeSettings, sponsor_records: list[dict], *, source: str = "manual-sponsor-seed") -> dict[str, int]:
