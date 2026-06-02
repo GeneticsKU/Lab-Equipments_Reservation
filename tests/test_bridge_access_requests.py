@@ -130,6 +130,19 @@ def test_status_list_methods_delegate_to_repository() -> None:
     assert store.list_all_access_requests() == [request_record]
 
 
+def test_set_user_sponsor_updates_user_flag() -> None:
+    repository = FakeAccessRequestRepository()
+    admin = seed_user(repository, id="admin-1", email="admin@ku.th", is_admin=True, approval_state="approved")
+    approved_user = seed_user(repository, id="user-1", email="student@ku.th", approval_state="approved")
+    store = build_store(repository)
+
+    updated_user = store.set_user_sponsor(approved_user.id, True)
+
+    assert updated_user.is_sponsor is True
+    assert repository.get_user_by_id(approved_user.id).is_sponsor is True
+    assert repository.get_user_by_id(admin.id).is_admin is True
+
+
 def test_create_access_request_accepts_admin_as_selected_reviewer() -> None:
     repository = FakeAccessRequestRepository()
     admin = seed_user(repository, id="admin-1", email="admin@ku.th", is_admin=True, approval_state="approved")

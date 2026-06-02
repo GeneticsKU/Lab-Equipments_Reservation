@@ -778,6 +778,45 @@ def bridge_json_default(value):
     return str(value)
 
 
+def render_bridge_sponsor_controls(auth_store, approved_users) -> bool:
+    editable_users = [user for user in approved_users if not user.is_admin]
+    if not editable_users:
+        st.info("No approved non-admin users are available for sponsor changes.")
+        return False
+
+    st.write("### Sponsor access controls")
+    st.caption("Toggle sponsor ability for approved users. Admins keep admin powers separately.")
+    with st.form("bridge_sponsor_access_controls"):
+        sponsor_values: dict[str, bool] = {}
+        for user in editable_users:
+            display_name = user.full_name or user.email
+            sponsor_values[user.id] = st.checkbox(
+                f"{display_name} ({user.email})",
+                value=user.is_sponsor,
+                key=f"bridge_sponsor_flag_{user.id}",
+            )
+
+        submitted = st.form_submit_button("Save sponsor changes")
+
+    if not submitted:
+        return False
+
+    changes: list[str] = []
+    for user in editable_users:
+        desired_sponsor_state = sponsor_values[user.id]
+        if user.is_sponsor == desired_sponsor_state:
+            continue
+        auth_store.set_user_sponsor(user.id, desired_sponsor_state)
+        changes.append(f"{user.full_name or user.email}: {desired_sponsor_state}")
+
+    if changes:
+        st.session_state["bridge_status_flash"] = f"Updated sponsor access for {len(changes)} user(s)."
+        st.rerun()
+
+    st.info("No sponsor changes were made.")
+    return False
+
+
 def render_bridge_status_panel(auth_store, bridge_user) -> None:
     if not bridge_user.is_admin:
         st.info("Bridge status is available to admins only.")
@@ -786,6 +825,10 @@ def render_bridge_status_panel(auth_store, bridge_user) -> None:
     st.subheader("Bridge Status")
     st.caption("Pilot monitoring for login, approval, and current reservation storage.")
     st.info("Reservation storage mode: CSV files. Neon is used only for identity, sessions, and approval state.")
+
+    flash_message = st.session_state.pop("bridge_status_flash", None)
+    if flash_message:
+        st.success(flash_message)
 
     try:
         users = auth_store.list_users()
@@ -824,6 +867,11 @@ def render_bridge_status_panel(auth_store, bridge_user) -> None:
         st.dataframe(pd.DataFrame(pending_rows), use_container_width=True)
     else:
         st.success("No pending access requests.")
+
+    render_bridge_sponsor_controls(auth_store, approved_users)
+    users = auth_store.list_users()
+    access_requests = auth_store.list_all_access_requests()
+    approved_users = [user for user in users if user.approval_state == "approved"]
 
     with st.expander("Approved bridge users"):
         user_rows = [

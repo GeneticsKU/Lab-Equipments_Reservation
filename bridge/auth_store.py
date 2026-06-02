@@ -312,6 +312,14 @@ class AuthStore:
     def list_users(self) -> list[BridgeUser]:
         return self.repository.list_users()
 
+    def set_user_sponsor(self, user_id: str, is_sponsor: bool) -> BridgeUser:
+        user = self.repository.get_user_by_id(user_id)
+        if user is None:
+            raise InvalidAccessRequestError("User does not exist.")
+
+        updated_user = replace(user, is_sponsor=is_sponsor)
+        return self.repository.update_user(updated_user)
+
     def _get_pending_request_for_reviewer(self, request_id: str, reviewer_user_id: str) -> dict:
         request_record = self.repository.get_access_request_by_id(request_id)
         if request_record is None:
