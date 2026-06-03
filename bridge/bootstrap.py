@@ -60,6 +60,24 @@ def derive_legacy_role(user: BridgeUser) -> str:
     return "User"
 
 
+def derive_display_name(user: BridgeUser) -> str:
+    full_name = (user.full_name or "").strip()
+    affiliation = (user.affiliation or "").strip()
+
+    if full_name:
+        first_name = full_name.split()[0]
+        if affiliation:
+            return f"{first_name}_{affiliation}"
+        return first_name
+
+    if affiliation:
+        email_local = user.email.split("@", 1)[0].strip()
+        if email_local:
+            return f"{email_local}_{affiliation}"
+
+    return user.email
+
+
 def clear_bridge_session_state(session_state) -> None:
     session_state["authentication_status"] = False
     session_state["username"] = None
@@ -73,7 +91,7 @@ def clear_bridge_session_state(session_state) -> None:
 def write_authenticated_user(session_state, user: BridgeUser, *, raw_session_token: str | None = None) -> None:
     session_state["authentication_status"] = True
     session_state["username"] = user.email
-    session_state["name"] = user.full_name or user.email
+    session_state["name"] = derive_display_name(user)
     session_state["bridge_user"] = user
     session_state["bridge_role"] = derive_legacy_role(user)
     if raw_session_token is not None:

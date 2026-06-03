@@ -65,11 +65,17 @@ def test_should_retry_cookie_restore_skips_active_login_flow_and_resets_on_cooki
 
 def test_write_authenticated_user_tracks_raw_session_token() -> None:
     session_state = {}
-    user = bootstrap.BridgeUser(id="user-1", email="user@ku.th", full_name="Bridge User")
+    user = bootstrap.BridgeUser(
+        id="user-1",
+        email="user@ku.th",
+        full_name="Bridge User",
+        affiliation="4511",
+    )
 
     bootstrap.write_authenticated_user(session_state, user, raw_session_token="session-token-123")
 
     assert session_state["authentication_status"] is True
+    assert session_state["name"] == "Bridge_4511"
     assert session_state["bridge_raw_session_token"] == "session-token-123"
 
 
@@ -88,3 +94,32 @@ def test_clear_bridge_session_state_removes_raw_session_token() -> None:
 
     assert session_state["authentication_status"] is False
     assert session_state["bridge_raw_session_token"] is None
+
+
+def test_derive_display_name_uses_first_name_and_affiliation() -> None:
+    user = bootstrap.BridgeUser(
+        id="user-1",
+        email="kongtawan.wo@ku.th",
+        full_name="Kongtawan Worraraparp",
+        affiliation="4511",
+    )
+
+    assert bootstrap.derive_display_name(user) == "Kongtawan_4511"
+
+
+def test_derive_display_name_falls_back_cleanly() -> None:
+    no_affiliation = bootstrap.BridgeUser(
+        id="user-2",
+        email="teerasak.e@ku.th",
+        full_name="Teerasak E-kobon",
+        affiliation=None,
+    )
+    no_name = bootstrap.BridgeUser(
+        id="user-3",
+        email="bridge.user@ku.th",
+        full_name=None,
+        affiliation="4511",
+    )
+
+    assert bootstrap.derive_display_name(no_affiliation) == "Teerasak"
+    assert bootstrap.derive_display_name(no_name) == "bridge.user_4511"
