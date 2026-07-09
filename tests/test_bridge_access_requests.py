@@ -6,6 +6,7 @@ from datetime import datetime, timedelta, timezone
 import pytest
 
 from bridge.auth_store import AuthStore, BridgeUser
+from bridge.ui_access_requests import selectable_sponsors
 
 
 class UnauthorizedAccessRequestError(ValueError):
@@ -162,6 +163,13 @@ def test_create_access_request_accepts_admin_as_selected_reviewer() -> None:
     assert request_record["status"] == "Pending"
 
 
+def test_selectable_sponsors_excludes_admins() -> None:
+    sponsor = BridgeUser(id="sponsor-1", email="lecturer@ku.th", is_sponsor=True)
+    admin = BridgeUser(id="admin-1", email="admin@ku.th", is_admin=True)
+
+    assert selectable_sponsors([sponsor, admin]) == [sponsor]
+
+
 def test_list_sponsor_requests_only_returns_their_requests() -> None:
     repository = FakeAccessRequestRepository()
     sponsor_one = seed_user(repository, id="sponsor-1", email="lecturer1@ku.th", is_sponsor=True, approval_state="approved")
@@ -281,3 +289,44 @@ def test_admin_can_deny_any_request() -> None:
     assert denied["status"] == "Denied"
     assert denied["decision_by_user_id"] == admin.id
     assert repository.get_user_by_id(applicant.id).approval_state == "denied"
+
+
+def test_applicant_can_cancel_own_pending_request() -> None:
+    repository = FakeAccessRequestRepository()
+    sponsor = seed_user(repository, id="sponsor-1", email="lecturer@ku.th", is_sponsor=True, approval_state="approved")
+    applicant = seed_user(repository, id="user-1", email="student@ku.th")
+    store = build_store(repository)
+
+    request_record = store.create_access_request(
+        applicant_user_id=applicant.id,
+        full_name="Student User",
+        email=applicant.email,
+        chosen_sponsor_user_id=sponsor.id,
+        suggested_user_category="Master Student",
+        affiliation="Genetics Room 101",
+    )
+
+    cancelled = store.cancel_access_request(request_record["id"], applicant.id)
+
+    assert cancelled["status"] == "Cancelled"
+    assert cancelled["decision_by_user_id"] == applicant.id
+
+
+def test_applicant_cannot_cancel_other_users_request() -> None:
+    repository = FakeAccessRequestRepository()
+    sponsor = seed_user(repository, id="sponsor-1", email="lecturer@ku.th", is_sponsor=True, approval_state="approved")
+    applicant = seed_user(repository, id="user-1", email="student@ku.th")
+    other_applicant = seed_user(repository, id="user-2", email="other@ku.th")
+    store = build_store(repository)
+
+    request_record = store.create_access_request(
+        applicant_user_id=applicant.id,
+        full_name="Student User",
+        email=applicant.email,
+        chosen_sponsor_user_id=sponsor.id,
+        suggested_user_category="Master Student",
+        affiliation="Genetics Room 101",
+    )
+
+    with pytest.raises(PermissionError):
+        store.cancel_access_request(request_record["id"], other_applicant.id)
