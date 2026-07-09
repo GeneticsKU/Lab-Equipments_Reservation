@@ -306,6 +306,20 @@ class AuthStore:
         request_record["decision_at"] = self.now()
         return self.repository.update_access_request(request_record)
 
+    def cancel_access_request(self, request_id: str, applicant_user_id: str) -> dict:
+        request_record = self.repository.get_access_request_by_id(request_id)
+        if request_record is None:
+            raise InvalidAccessRequestError("Access request was not found.")
+        if request_record["applicant_user_id"] != applicant_user_id:
+            raise PermissionError("You can only cancel your own access request.")
+        if request_record["status"] != "Pending":
+            raise InvalidAccessRequestError("Only pending access requests can be cancelled.")
+
+        request_record["status"] = "Cancelled"
+        request_record["decision_by_user_id"] = applicant_user_id
+        request_record["decision_at"] = self.now()
+        return self.repository.update_access_request(request_record)
+
     def list_sponsors(self) -> list[BridgeUser]:
         return self.repository.list_sponsors()
 
