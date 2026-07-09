@@ -16,6 +16,10 @@ APPLICANT_CATEGORIES = [
 ]
 
 
+def selectable_sponsors(users):
+    return [user for user in users if not user.is_admin]
+
+
 def get_approval_request_id() -> str | None:
     query_params = st.query_params
     request_id = query_params.get("approve_request")
@@ -36,14 +40,14 @@ def render_applicant_pending_access(settings, auth_store, user, logout_callback)
     pending_request = next((request for request in applicant_requests if request["status"] == "Pending"), None)
 
     if pending_request is None:
-        sponsors = auth_store.list_sponsors()
+        sponsors = selectable_sponsors(auth_store.list_sponsors())
         if not sponsors:
             st.error("No sponsors are configured yet. Please contact the administrator.")
         else:
             sponsor_options = {f"{s.full_name or s.email} ({s.email})": s for s in sponsors}
             with st.form("bridge_access_request_form"):
                 full_name = st.text_input("Full name", value=user.full_name or "")
-                sponsor_label = st.selectbox("Choose sponsor or admin reviewer", list(sponsor_options.keys()))
+                sponsor_label = st.selectbox("Choose sponsor reviewer", list(sponsor_options.keys()))
                 suggested_category = st.selectbox("Suggested user category", APPLICANT_CATEGORIES)
                 affiliation = st.text_input("Lab (Room number) or department affiliation", value=user.affiliation or "")
                 submit_request = st.form_submit_button("Submit access request")
@@ -61,7 +65,7 @@ def render_applicant_pending_access(settings, auth_store, user, logout_callback)
                     )
                     send_sponsor_approval_email(settings, selected_sponsor.email, created_request["id"])
                     st.session_state["bridge_access_request_notice"] = (
-                        "Access request submitted. Your sponsor or admin reviewer can approve it from the app."
+                        "Access request submitted. Your sponsor can approve it from the app."
                     )
                     st.rerun()
                 except (InvalidAccessRequestError, ValueError) as exc:
@@ -69,17 +73,39 @@ def render_applicant_pending_access(settings, auth_store, user, logout_callback)
                 except Exception as exc:
                     st.error(f"Unable to submit the access request: {exc}")
     else:
+        selected_sponsor = auth_store.repository.get_user_by_id(pending_request["chosen_sponsor_user_id"])
+        selected_sponsor_label = (
+            f"{selected_sponsor.full_name or selected_sponsor.email} ({selected_sponsor.email})"
+            if selected_sponsor
+            else "Unknown sponsor"
+        )
         st.info("Your access request is waiting for sponsor approval.")
+        st.write(f"Chosen sponsor: {selected_sponsor_label}")
         st.write(f"Suggested category: {pending_request['suggested_user_category']}")
         st.write(f"Affiliation: {pending_request['affiliation']}")
         st.write(f"Requested at: {pending_request['created_at']}")
+        if st.button("Cancel access request", key=f"bridge_cancel_request_{pending_request['id']}"):
+            try:
+                auth_store.cancel_access_request(pending_request["id"], user.id)
+                st.session_state["bridge_access_request_notice"] = (
+                    "Access request cancelled. You can submit a new request with a different sponsor."
+                )
+                st.rerun()
+            except (InvalidAccessRequestError, PermissionError) as exc:
+                st.error(str(exc))
 
     if applicant_requests:
         st.write("### Your access request history")
         for request in applicant_requests:
+            request_sponsor = auth_store.repository.get_user_by_id(request["chosen_sponsor_user_id"])
+            request_sponsor_label = (
+                f"{request_sponsor.full_name or request_sponsor.email} ({request_sponsor.email})"
+                if request_sponsor
+                else "Unknown sponsor"
+            )
             st.write(
                 f"- {request['status']}: {request['suggested_user_category']} "
-                f"({request['affiliation']})"
+                f"({request['affiliation']}) - Sponsor: {request_sponsor_label}"
             )
 
     if st.button("Logout", key="bridge_pending_logout"):
