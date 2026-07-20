@@ -5,7 +5,7 @@ from datetime import datetime, timedelta, timezone
 
 import pytest
 
-from bridge.auth_store import AuthStore, BridgeUser
+from bridge.auth_store import AuthStore, BridgeUser, InvalidAccessRequestError
 from bridge.ui_access_requests import selectable_sponsors
 
 
@@ -105,6 +105,38 @@ def test_create_access_request_updates_applicant_details() -> None:
     updated_user = repository.get_user_by_id(applicant.id)
     assert updated_user.full_name == "Student User"
     assert updated_user.affiliation == "Genetics Room 101"
+
+
+def test_create_access_request_requires_full_name() -> None:
+    repository = FakeAccessRequestRepository()
+    sponsor = seed_user(repository, id="sponsor-1", email="lecturer@ku.th", is_sponsor=True, approval_state="approved")
+    applicant = seed_user(repository, id="user-1", email="student@ku.th", approval_state="pending")
+    store = build_store(repository)
+
+    with pytest.raises(InvalidAccessRequestError, match="Full name is required"):
+        store.create_access_request(
+            applicant_user_id=applicant.id,
+            full_name="   ",
+            email=applicant.email,
+            chosen_sponsor_user_id=sponsor.id,
+            suggested_user_category="Master Student",
+            affiliation="4511",
+        )
+
+    assert repository.requests == []
+    assert repository.get_user_by_id(applicant.id).full_name is None
+
+
+def test_set_user_full_name_trims_and_updates_user() -> None:
+    repository = FakeAccessRequestRepository()
+    user = seed_user(repository, id="user-1", email="student@ku.th", approval_state="approved")
+    store = build_store(repository)
+
+    updated_user = store.set_user_full_name(user.id, "  Student User  ")
+
+    assert updated_user.full_name == "Student User"
+    with pytest.raises(InvalidAccessRequestError, match="Full name is required"):
+        store.set_user_full_name(user.id, "   ")
 
 
 def test_status_list_methods_delegate_to_repository() -> None:
