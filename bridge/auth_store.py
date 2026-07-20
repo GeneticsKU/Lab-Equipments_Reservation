@@ -46,6 +46,13 @@ def normalize_email(email: str) -> str:
     return email.strip().lower()
 
 
+def _normalize_required_full_name(full_name: str) -> str:
+    normalized_full_name = full_name.strip()
+    if not normalized_full_name:
+        raise InvalidAccessRequestError("Full name is required.")
+    return normalized_full_name
+
+
 def is_allowed_email(email: str) -> bool:
     return normalize_email(email).endswith("@ku.th")
 
@@ -222,6 +229,7 @@ class AuthStore:
         suggested_user_category: str,
         affiliation: str,
     ) -> dict:
+        normalized_full_name = _normalize_required_full_name(full_name)
         normalized_email = normalize_email(email)
         applicant = self.repository.get_user_by_id(applicant_user_id)
         sponsor = self.repository.get_user_by_id(chosen_sponsor_user_id)
@@ -234,7 +242,7 @@ class AuthStore:
 
         updated_applicant = replace(
             applicant,
-            full_name=full_name,
+            full_name=normalized_full_name,
             affiliation=affiliation,
         )
         self.repository.update_user(updated_applicant)
@@ -325,6 +333,14 @@ class AuthStore:
 
     def list_users(self) -> list[BridgeUser]:
         return self.repository.list_users()
+
+    def set_user_full_name(self, user_id: str, full_name: str) -> BridgeUser:
+        user = self.repository.get_user_by_id(user_id)
+        if user is None:
+            raise InvalidAccessRequestError("User does not exist.")
+
+        updated_user = replace(user, full_name=_normalize_required_full_name(full_name))
+        return self.repository.update_user(updated_user)
 
     def set_user_sponsor(self, user_id: str, is_sponsor: bool) -> BridgeUser:
         user = self.repository.get_user_by_id(user_id)
