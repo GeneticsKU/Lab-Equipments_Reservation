@@ -16,6 +16,7 @@ from bridge.bootstrap import (
     hydrate_bridge_session_state,
     load_app_settings,
     should_retry_cookie_restore,
+    write_authenticated_user,
 )
 from bridge.github_backup import build_push_refspec, build_repo_url, resolve_github_backup_settings
 from bridge.session_cookie import clear_session_cookie, get_session_cookie, set_session_cookie
@@ -1169,6 +1170,26 @@ mobile = st.toggle('Mobile Version')
 announcement_text = read_announcement()
 settings, auth_store, bridge_user = require_bridge_user()
 render_deployment_banner(settings)
+
+if not (bridge_user.full_name or "").strip():
+    st.title("Complete your profile")
+    st.info("Enter your full name before continuing to the reservation app.")
+    with st.form("bridge_profile_completion_form"):
+        full_name = st.text_input("Full name")
+        complete_profile = st.form_submit_button("Save name")
+
+    if complete_profile:
+        try:
+            bridge_user = auth_store.set_user_full_name(bridge_user.id, full_name)
+            write_authenticated_user(st.session_state, bridge_user)
+            st.rerun()
+        except ValueError as exc:
+            st.error(str(exc))
+
+    if st.button("Logout", key="bridge_profile_completion_logout"):
+        logout_bridge_user(settings, auth_store)
+        st.rerun()
+    st.stop()
 
 if bridge_user.approval_state != "approved" or not bridge_user.is_email_verified:
     render_applicant_pending_access(
