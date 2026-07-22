@@ -171,6 +171,21 @@ def test_set_user_affiliation_trims_and_updates_user() -> None:
         store.set_user_affiliation(user.id, "   ")
 
 
+def test_complete_user_profile_requires_and_stores_lecturer_sponsor() -> None:
+    repository = FakeAccessRequestRepository()
+    user = seed_user(repository, id="user-1", email="student@ku.th", approval_state="approved")
+    sponsor = seed_user(repository, id="sponsor-1", email="lecturer@ku.th", is_sponsor=True, approval_state="approved")
+    admin = seed_user(repository, id="admin-1", email="admin@ku.th", is_sponsor=True, is_admin=True, approval_state="approved")
+    store = build_store(repository)
+
+    updated_user = store.complete_user_profile(user.id, affiliation="  4511  ", sponsor_user_id=sponsor.id)
+
+    assert updated_user.affiliation == "4511"
+    assert updated_user.sponsor_user_id == sponsor.id
+    with pytest.raises(InvalidAccessRequestError, match="Selected sponsor is not valid"):
+        store.complete_user_profile(user.id, affiliation="4511", sponsor_user_id=admin.id)
+
+
 def test_status_list_methods_delegate_to_repository() -> None:
     repository = FakeAccessRequestRepository()
     admin = seed_user(repository, id="admin-1", email="admin@ku.th", is_admin=True, approval_state="approved")
@@ -302,6 +317,7 @@ def test_approve_and_deny_access_request_update_state() -> None:
     assert approved["approved_user_category"] == "Researcher"
     assert repository.get_user_by_id(applicant.id).approval_state == "approved"
     assert repository.get_user_by_id(applicant.id).user_category == "Researcher"
+    assert repository.get_user_by_id(applicant.id).sponsor_user_id == sponsor.id
     assert denied["status"] == "Denied"
     assert repository.get_user_by_id(applicant_two.id).approval_state == "denied"
 

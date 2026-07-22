@@ -30,6 +30,7 @@ from bridge.ui_access_requests import (
     get_approval_request_id,
     render_applicant_pending_access,
     render_sponsor_request_history,
+    selectable_sponsors,
 )
 from bridge.ui_auth import render_bridge_login, render_deployment_banner
 
@@ -1191,20 +1192,47 @@ if not (bridge_user.full_name or "").strip():
         st.rerun()
     st.stop()
 
-if bridge_user.approval_state == "approved" and not (bridge_user.affiliation or "").strip():
+if bridge_user.approval_state == "approved" and (
+    not (bridge_user.affiliation or "").strip() or not bridge_user.sponsor_user_id
+):
     st.title("Complete your profile")
-    st.info("Enter your lab number or department affiliation before continuing to the reservation app.")
-    with st.form("bridge_affiliation_completion_form"):
-        affiliation = st.text_input("Lab number or department affiliation")
-        complete_profile = st.form_submit_button("Save information")
+    st.info("Enter your lab information and choose your lecturer sponsor before continuing to the reservation app.")
+    sponsors = [sponsor for sponsor in selectable_sponsors(auth_store.list_sponsors()) if sponsor.id != bridge_user.id]
+    if not sponsors:
+        st.error("No lecturer sponsors are configured. Please contact the administrator.")
+    else:
+        sponsor_options = {f"{sponsor.full_name or sponsor.email} ({sponsor.email})": sponsor for sponsor in sponsors}
+        selected_index = next(
+            (
+                index
+                for index, sponsor in enumerate(sponsor_options.values())
+                if sponsor.id == bridge_user.sponsor_user_id
+            ),
+            0,
+        )
+        with st.form("bridge_profile_details_completion_form"):
+            affiliation = st.text_input(
+                "Lab number or department affiliation",
+                value=bridge_user.affiliation or "",
+            )
+            sponsor_label = st.selectbox(
+                "Choose lecturer sponsor",
+                list(sponsor_options.keys()),
+                index=selected_index,
+            )
+            complete_profile = st.form_submit_button("Save profile")
 
-    if complete_profile:
-        try:
-            bridge_user = auth_store.set_user_affiliation(bridge_user.id, affiliation)
-            write_authenticated_user(st.session_state, bridge_user)
-            st.rerun()
-        except ValueError as exc:
-            st.error(str(exc))
+        if complete_profile:
+            try:
+                bridge_user = auth_store.complete_user_profile(
+                    bridge_user.id,
+                    affiliation=affiliation,
+                    sponsor_user_id=sponsor_options[sponsor_label].id,
+                )
+                write_authenticated_user(st.session_state, bridge_user)
+                st.rerun()
+            except ValueError as exc:
+                st.error(str(exc))
 
     if st.button("Logout", key="bridge_affiliation_completion_logout"):
         logout_bridge_user(settings, auth_store)

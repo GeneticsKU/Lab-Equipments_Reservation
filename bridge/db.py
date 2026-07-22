@@ -25,7 +25,7 @@ class PostgresBridgeRepository:
         with self._connect() as conn, conn.cursor() as cur:
             cur.execute(
                 """
-                SELECT id, email, full_name, user_category, affiliation, is_email_verified,
+                SELECT id, email, full_name, user_category, affiliation, sponsor_user_id, is_email_verified,
                        approval_state, is_sponsor, is_admin, is_operator, legacy_username, legacy_source
                 FROM bridge_users
                 WHERE email = %s
@@ -41,11 +41,11 @@ class PostgresBridgeRepository:
             cur.execute(
                 """
                 INSERT INTO bridge_users (
-                    id, email, full_name, user_category, affiliation, is_email_verified,
+                    id, email, full_name, user_category, affiliation, sponsor_user_id, is_email_verified,
                     approval_state, is_sponsor, is_admin, is_operator, legacy_username, legacy_source
                 )
                 VALUES (
-                    %(id)s, %(email)s, %(full_name)s, %(user_category)s, %(affiliation)s,
+                    %(id)s, %(email)s, %(full_name)s, %(user_category)s, %(affiliation)s, %(sponsor_user_id)s,
                     %(is_email_verified)s, %(approval_state)s, %(is_sponsor)s, %(is_admin)s,
                     %(is_operator)s, %(legacy_username)s, %(legacy_source)s
                 )
@@ -53,6 +53,7 @@ class PostgresBridgeRepository:
                     full_name = COALESCE(EXCLUDED.full_name, bridge_users.full_name),
                     user_category = COALESCE(EXCLUDED.user_category, bridge_users.user_category),
                     affiliation = COALESCE(EXCLUDED.affiliation, bridge_users.affiliation),
+                    sponsor_user_id = COALESCE(EXCLUDED.sponsor_user_id, bridge_users.sponsor_user_id),
                     is_email_verified = EXCLUDED.is_email_verified,
                     approval_state = EXCLUDED.approval_state,
                     is_sponsor = EXCLUDED.is_sponsor,
@@ -61,7 +62,7 @@ class PostgresBridgeRepository:
                     legacy_username = COALESCE(EXCLUDED.legacy_username, bridge_users.legacy_username),
                     legacy_source = COALESCE(EXCLUDED.legacy_source, bridge_users.legacy_source),
                     updated_at = NOW()
-                RETURNING id, email, full_name, user_category, affiliation, is_email_verified,
+                RETURNING id, email, full_name, user_category, affiliation, sponsor_user_id, is_email_verified,
                           approval_state, is_sponsor, is_admin, is_operator, legacy_username, legacy_source
                 """,
                 payload,
@@ -148,7 +149,7 @@ class PostgresBridgeRepository:
                 SET is_email_verified = TRUE,
                     updated_at = NOW()
                 WHERE email = %s
-                RETURNING id, email, full_name, user_category, affiliation, is_email_verified,
+                RETURNING id, email, full_name, user_category, affiliation, sponsor_user_id, is_email_verified,
                           approval_state, is_sponsor, is_admin, is_operator, legacy_username, legacy_source
                 """,
                 (email,),
@@ -204,7 +205,7 @@ class PostgresBridgeRepository:
         with self._connect() as conn, conn.cursor() as cur:
             cur.execute(
                 """
-                SELECT id, email, full_name, user_category, affiliation, is_email_verified,
+                SELECT id, email, full_name, user_category, affiliation, sponsor_user_id, is_email_verified,
                        approval_state, is_sponsor, is_admin, is_operator, legacy_username, legacy_source
                 FROM bridge_users
                 WHERE id = %s
@@ -223,6 +224,7 @@ class PostgresBridgeRepository:
                 SET full_name = %(full_name)s,
                     user_category = %(user_category)s,
                     affiliation = %(affiliation)s,
+                    sponsor_user_id = %(sponsor_user_id)s,
                     is_email_verified = %(is_email_verified)s,
                     approval_state = %(approval_state)s,
                     is_sponsor = %(is_sponsor)s,
@@ -232,7 +234,7 @@ class PostgresBridgeRepository:
                     legacy_source = %(legacy_source)s,
                     updated_at = NOW()
                 WHERE id = %(id)s
-                RETURNING id, email, full_name, user_category, affiliation, is_email_verified,
+                RETURNING id, email, full_name, user_category, affiliation, sponsor_user_id, is_email_verified,
                           approval_state, is_sponsor, is_admin, is_operator, legacy_username, legacy_source
                 """,
                 payload,
@@ -375,7 +377,7 @@ class PostgresBridgeRepository:
         with self._connect() as conn, conn.cursor() as cur:
             cur.execute(
                 """
-                SELECT id, email, full_name, user_category, affiliation, is_email_verified,
+                SELECT id, email, full_name, user_category, affiliation, sponsor_user_id, is_email_verified,
                        approval_state, is_sponsor, is_admin, is_operator, legacy_username, legacy_source
                 FROM bridge_users
                 WHERE is_sponsor = TRUE OR is_admin = TRUE
@@ -389,7 +391,7 @@ class PostgresBridgeRepository:
         with self._connect() as conn, conn.cursor() as cur:
             cur.execute(
                 """
-                SELECT id, email, full_name, user_category, affiliation, is_email_verified,
+                SELECT id, email, full_name, user_category, affiliation, sponsor_user_id, is_email_verified,
                        approval_state, is_sponsor, is_admin, is_operator, legacy_username, legacy_source
                 FROM bridge_users
                 ORDER BY
@@ -411,6 +413,7 @@ class PostgresBridgeRepository:
             full_name=row.get("full_name"),
             user_category=row.get("user_category"),
             affiliation=row.get("affiliation"),
+            sponsor_user_id=row.get("sponsor_user_id"),
             is_email_verified=row.get("is_email_verified", False),
             approval_state=row.get("approval_state", "pending"),
             is_sponsor=row.get("is_sponsor", False),

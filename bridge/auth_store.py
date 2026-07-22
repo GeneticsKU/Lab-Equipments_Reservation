@@ -33,6 +33,7 @@ class BridgeUser:
     full_name: str | None = None
     user_category: str | None = None
     affiliation: str | None = None
+    sponsor_user_id: str | None = None
     is_email_verified: bool = False
     approval_state: str = "pending"
     is_sponsor: bool = False
@@ -292,6 +293,7 @@ class AuthStore:
     def approve_access_request(self, request_id: str, reviewer_user_id: str, *, approved_user_category: str) -> dict:
         request_record = self._get_pending_request_for_reviewer(request_id, reviewer_user_id)
         applicant = self.repository.get_user_by_id(request_record["applicant_user_id"])
+        selected_sponsor = self.repository.get_user_by_id(request_record["chosen_sponsor_user_id"])
         if applicant is None:
             raise InvalidAccessRequestError("Applicant for the request no longer exists.")
 
@@ -299,6 +301,11 @@ class AuthStore:
             applicant,
             user_category=approved_user_category,
             approval_state="approved",
+            sponsor_user_id=(
+                selected_sponsor.id
+                if selected_sponsor and selected_sponsor.is_sponsor and not selected_sponsor.is_admin
+                else applicant.sponsor_user_id
+            ),
         )
         self.repository.update_user(updated_applicant)
 
@@ -356,6 +363,21 @@ class AuthStore:
             raise InvalidAccessRequestError("User does not exist.")
 
         updated_user = replace(user, affiliation=_normalize_required_affiliation(affiliation))
+        return self.repository.update_user(updated_user)
+
+    def complete_user_profile(self, user_id: str, *, affiliation: str, sponsor_user_id: str) -> BridgeUser:
+        user = self.repository.get_user_by_id(user_id)
+        sponsor = self.repository.get_user_by_id(sponsor_user_id)
+        if user is None:
+            raise InvalidAccessRequestError("User does not exist.")
+        if sponsor is None or not sponsor.is_sponsor or sponsor.is_admin or sponsor.id == user.id:
+            raise InvalidAccessRequestError("Selected sponsor is not valid.")
+
+        updated_user = replace(
+            user,
+            affiliation=_normalize_required_affiliation(affiliation),
+            sponsor_user_id=sponsor.id,
+        )
         return self.repository.update_user(updated_user)
 
     def set_user_sponsor(self, user_id: str, is_sponsor: bool) -> BridgeUser:

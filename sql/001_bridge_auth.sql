@@ -4,6 +4,7 @@ CREATE TABLE IF NOT EXISTS bridge_users (
     full_name TEXT,
     user_category TEXT,
     affiliation TEXT,
+    sponsor_user_id TEXT REFERENCES bridge_users(id),
     is_email_verified BOOLEAN NOT NULL DEFAULT FALSE,
     approval_state TEXT NOT NULL DEFAULT 'pending',
     is_sponsor BOOLEAN NOT NULL DEFAULT FALSE,
@@ -14,6 +15,9 @@ CREATE TABLE IF NOT EXISTS bridge_users (
     created_at TIMESTAMPTZ NOT NULL DEFAULT NOW(),
     updated_at TIMESTAMPTZ NOT NULL DEFAULT NOW()
 );
+
+ALTER TABLE bridge_users
+    ADD COLUMN IF NOT EXISTS sponsor_user_id TEXT REFERENCES bridge_users(id);
 
 CREATE TABLE IF NOT EXISTS bridge_access_requests (
     id TEXT PRIMARY KEY,
@@ -28,6 +32,25 @@ CREATE TABLE IF NOT EXISTS bridge_access_requests (
     created_at TIMESTAMPTZ NOT NULL DEFAULT NOW(),
     expires_at TIMESTAMPTZ
 );
+
+UPDATE bridge_users AS applicant
+SET sponsor_user_id = latest_request.chosen_sponsor_user_id,
+    updated_at = NOW()
+FROM (
+    SELECT DISTINCT ON (request.applicant_user_id)
+           request.applicant_user_id,
+           request.chosen_sponsor_user_id
+    FROM bridge_access_requests AS request
+    JOIN bridge_users AS sponsor ON sponsor.id = request.chosen_sponsor_user_id
+    WHERE request.status = 'Approved'
+      AND sponsor.is_sponsor = TRUE
+      AND sponsor.is_admin = FALSE
+    ORDER BY request.applicant_user_id,
+             COALESCE(request.decision_at, request.created_at) DESC,
+             request.created_at DESC
+) AS latest_request
+WHERE applicant.id = latest_request.applicant_user_id
+  AND applicant.sponsor_user_id IS NULL;
 
 CREATE TABLE IF NOT EXISTS bridge_login_codes (
     id TEXT PRIMARY KEY,
