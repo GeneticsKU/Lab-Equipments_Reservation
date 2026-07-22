@@ -159,6 +159,18 @@ def test_set_user_full_name_trims_and_updates_user() -> None:
         store.set_user_full_name(user.id, "   ")
 
 
+def test_set_user_affiliation_trims_and_updates_user() -> None:
+    repository = FakeAccessRequestRepository()
+    user = seed_user(repository, id="user-1", email="student@ku.th", approval_state="approved")
+    store = build_store(repository)
+
+    updated_user = store.set_user_affiliation(user.id, "  4511  ")
+
+    assert updated_user.affiliation == "4511"
+    with pytest.raises(InvalidAccessRequestError, match="Lab number or affiliation is required"):
+        store.set_user_affiliation(user.id, "   ")
+
+
 def test_status_list_methods_delegate_to_repository() -> None:
     repository = FakeAccessRequestRepository()
     admin = seed_user(repository, id="admin-1", email="admin@ku.th", is_admin=True, approval_state="approved")

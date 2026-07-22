@@ -1191,6 +1191,26 @@ if not (bridge_user.full_name or "").strip():
         st.rerun()
     st.stop()
 
+if bridge_user.approval_state == "approved" and not (bridge_user.affiliation or "").strip():
+    st.title("Complete your profile")
+    st.info("Enter your lab number or department affiliation before continuing to the reservation app.")
+    with st.form("bridge_affiliation_completion_form"):
+        affiliation = st.text_input("Lab number or department affiliation")
+        complete_profile = st.form_submit_button("Save information")
+
+    if complete_profile:
+        try:
+            bridge_user = auth_store.set_user_affiliation(bridge_user.id, affiliation)
+            write_authenticated_user(st.session_state, bridge_user)
+            st.rerun()
+        except ValueError as exc:
+            st.error(str(exc))
+
+    if st.button("Logout", key="bridge_affiliation_completion_logout"):
+        logout_bridge_user(settings, auth_store)
+        st.rerun()
+    st.stop()
+
 if bridge_user.approval_state != "approved" or not bridge_user.is_email_verified:
     render_applicant_pending_access(
         settings,
