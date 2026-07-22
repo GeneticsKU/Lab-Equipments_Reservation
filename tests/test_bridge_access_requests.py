@@ -127,6 +127,26 @@ def test_create_access_request_requires_full_name() -> None:
     assert repository.get_user_by_id(applicant.id).full_name is None
 
 
+def test_create_access_request_requires_affiliation() -> None:
+    repository = FakeAccessRequestRepository()
+    sponsor = seed_user(repository, id="sponsor-1", email="lecturer@ku.th", is_sponsor=True, approval_state="approved")
+    applicant = seed_user(repository, id="user-1", email="student@ku.th", approval_state="pending")
+    store = build_store(repository)
+
+    with pytest.raises(InvalidAccessRequestError, match="Lab number or affiliation is required"):
+        store.create_access_request(
+            applicant_user_id=applicant.id,
+            full_name="Student User",
+            email=applicant.email,
+            chosen_sponsor_user_id=sponsor.id,
+            suggested_user_category="Master Student",
+            affiliation="   ",
+        )
+
+    assert repository.requests == []
+    assert repository.get_user_by_id(applicant.id).affiliation is None
+
+
 def test_set_user_full_name_trims_and_updates_user() -> None:
     repository = FakeAccessRequestRepository()
     user = seed_user(repository, id="user-1", email="student@ku.th", approval_state="approved")

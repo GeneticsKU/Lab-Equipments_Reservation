@@ -49,7 +49,7 @@ def render_applicant_pending_access(settings, auth_store, user, logout_callback)
                 full_name = st.text_input("Full name", value=user.full_name or "")
                 sponsor_label = st.selectbox("Choose sponsor reviewer", list(sponsor_options.keys()))
                 suggested_category = st.selectbox("Suggested user category", APPLICANT_CATEGORIES)
-                affiliation = st.text_input("Lab (Room number) or department affiliation", value=user.affiliation or "")
+                affiliation = st.text_input("Lab number or department affiliation (required)", value=user.affiliation or "")
                 submit_request = st.form_submit_button("Submit access request")
 
             if submit_request:

@@ -230,6 +230,9 @@ class AuthStore:
         affiliation: str,
     ) -> dict:
         normalized_full_name = _normalize_required_full_name(full_name)
+        normalized_affiliation = affiliation.strip()
+        if not normalized_affiliation:
+            raise InvalidAccessRequestError("Lab number or affiliation is required.")
         normalized_email = normalize_email(email)
         applicant = self.repository.get_user_by_id(applicant_user_id)
         sponsor = self.repository.get_user_by_id(chosen_sponsor_user_id)
@@ -243,7 +246,7 @@ class AuthStore:
         updated_applicant = replace(
             applicant,
             full_name=normalized_full_name,
-            affiliation=affiliation,
+            affiliation=normalized_affiliation,
         )
         self.repository.update_user(updated_applicant)
 
@@ -253,7 +256,7 @@ class AuthStore:
             "chosen_sponsor_user_id": chosen_sponsor_user_id,
             "suggested_user_category": suggested_user_category,
             "approved_user_category": None,
-            "affiliation": affiliation,
+            "affiliation": normalized_affiliation,
             "status": "Pending",
             "decision_at": None,
             "decision_by_user_id": None,
