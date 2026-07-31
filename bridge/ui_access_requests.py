@@ -20,6 +20,21 @@ def selectable_sponsors(users):
     return [user for user in users if not user.is_admin]
 
 
+def lecturer_lab_options(users):
+    return sorted(
+        {
+            user.affiliation.strip()
+            for user in users
+            if user.user_category == "Lecturer"
+            and user.approval_state == "approved"
+            and user.is_sponsor
+            and not user.is_admin
+            and (user.affiliation or "").strip()
+        },
+        key=str.casefold,
+    )
+
+
 def get_approval_request_id() -> str | None:
     query_params = st.query_params
     request_id = query_params.get("approve_request")
@@ -41,15 +56,18 @@ def render_applicant_pending_access(settings, auth_store, user, logout_callback)
 
     if pending_request is None:
         sponsors = selectable_sponsors(auth_store.list_sponsors())
+        lab_options = lecturer_lab_options(sponsors)
         if not sponsors:
             st.error("No sponsors are configured yet. Please contact the administrator.")
+        elif not lab_options:
+            st.error("No lecturer lab numbers are configured. Please contact the administrator.")
         else:
             sponsor_options = {f"{s.full_name or s.email} ({s.email})": s for s in sponsors}
             with st.form("bridge_access_request_form"):
                 full_name = st.text_input("Full name", value=user.full_name or "")
                 sponsor_label = st.selectbox("Choose sponsor reviewer", list(sponsor_options.keys()))
                 suggested_category = st.selectbox("Suggested user category", APPLICANT_CATEGORIES)
-                affiliation = st.text_input("Lab number or department affiliation (required)", value=user.affiliation or "")
+                affiliation = st.selectbox("Lab number or affiliation", lab_options)
                 submit_request = st.form_submit_button("Submit access request")
 
             if submit_request:

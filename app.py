@@ -28,6 +28,7 @@ from bridge.reservation_store import (
 )
 from bridge.ui_access_requests import (
     get_approval_request_id,
+    lecturer_lab_options,
     render_applicant_pending_access,
     render_sponsor_request_history,
     selectable_sponsors,
@@ -1197,9 +1198,13 @@ if bridge_user.approval_state == "approved" and (
 ):
     st.title("Complete your profile")
     st.info("Enter your lab information and choose your lecturer sponsor before continuing to the reservation app.")
-    sponsors = [sponsor for sponsor in selectable_sponsors(auth_store.list_sponsors()) if sponsor.id != bridge_user.id]
+    directory_sponsors = selectable_sponsors(auth_store.list_sponsors())
+    sponsors = [sponsor for sponsor in directory_sponsors if sponsor.id != bridge_user.id]
+    lab_options = lecturer_lab_options(directory_sponsors)
     if not sponsors:
         st.error("No lecturer sponsors are configured. Please contact the administrator.")
+    elif not lab_options:
+        st.error("No lecturer lab numbers are configured. Please contact the administrator.")
     else:
         sponsor_options = {f"{sponsor.full_name or sponsor.email} ({sponsor.email})": sponsor for sponsor in sponsors}
         selected_index = next(
@@ -1211,9 +1216,12 @@ if bridge_user.approval_state == "approved" and (
             0,
         )
         with st.form("bridge_profile_details_completion_form"):
-            affiliation = st.text_input(
-                "Lab number or department affiliation",
-                value=bridge_user.affiliation or "",
+            affiliation = st.selectbox(
+                "Lab number or affiliation",
+                lab_options,
+                index=lab_options.index(bridge_user.affiliation)
+                if bridge_user.affiliation in lab_options
+                else 0,
             )
             sponsor_label = st.selectbox(
                 "Choose lecturer sponsor",
