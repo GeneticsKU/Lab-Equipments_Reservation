@@ -112,11 +112,12 @@ class AuthStore:
 
     def issue_login_code(self, email: str, purpose: str = "login") -> str:
         normalized_email = normalize_email(email)
-        if not is_allowed_login_email(normalized_email, self.allowed_extra_login_emails):
+        user = self.repository.get_user_by_email(normalized_email)
+        is_approved_sponsor = bool(user and user.approval_state == "approved" and user.is_sponsor)
+        if not is_allowed_login_email(normalized_email, self.allowed_extra_login_emails) and not is_approved_sponsor:
             raise ValueError("Only @ku.th email addresses or configured testing emails can request a login code.")
 
         timestamp = self.now()
-        user = self.repository.get_user_by_email(normalized_email)
         if not self._bypasses_login_code_rate_limit(normalized_email, user):
             self._enforce_login_code_rate_limits(normalized_email, purpose, timestamp)
 

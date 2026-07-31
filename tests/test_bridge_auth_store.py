@@ -161,6 +161,21 @@ def test_issue_login_code_accepts_configured_non_ku_testing_email() -> None:
     assert repository.get_user_by_email("geneticsku.services@gmail.com") is not None
 
 
+def test_issue_login_code_accepts_approved_legacy_domain_sponsor() -> None:
+    repository = FakeBridgeRepository()
+    repository.upsert_user(
+        FakeUserRecord(
+            id="legacy-lecturer",
+            email="lecturer@ku.ac.th",
+            approval_state="approved",
+            is_sponsor=True,
+        )
+    )
+    store = build_store(repository)
+
+    assert store.issue_login_code("lecturer@ku.ac.th") == "123456"
+
+
 def test_issue_login_code_still_rejects_unconfigured_non_ku_email() -> None:
     repository = FakeBridgeRepository()
     store = build_store_with_extra_login_emails(repository, {"geneticsku.services@gmail.com"})
