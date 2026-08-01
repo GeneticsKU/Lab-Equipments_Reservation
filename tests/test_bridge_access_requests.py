@@ -6,7 +6,7 @@ from datetime import datetime, timedelta, timezone
 import pytest
 
 from bridge.auth_store import AuthStore, BridgeUser, InvalidAccessRequestError
-from bridge.ui_access_requests import lecturer_lab_options, selectable_sponsors
+from bridge.ui_access_requests import lecturer_lab_options, requires_sponsor_assignment, selectable_sponsors
 
 
 class UnauthorizedAccessRequestError(ValueError):
@@ -270,6 +270,18 @@ def test_lecturer_lab_options_returns_unique_approved_lecturer_affiliations() ->
     )
 
     assert lecturer_lab_options([other_lab, duplicate, admin, inactive, lecturer]) == ["4511", "4607"]
+
+
+def test_requires_sponsor_assignment_exempts_lecturers_and_admins() -> None:
+    user = BridgeUser(id="user", email="user@ku.th")
+    assigned_user = replace(user, sponsor_user_id="lecturer")
+    lecturer = replace(user, id="lecturer", email="lecturer@ku.th", is_sponsor=True)
+    admin = replace(user, id="admin", email="admin@ku.th", is_admin=True)
+
+    assert requires_sponsor_assignment(user) is True
+    assert requires_sponsor_assignment(assigned_user) is False
+    assert requires_sponsor_assignment(lecturer) is False
+    assert requires_sponsor_assignment(admin) is False
 
 
 def test_list_sponsor_requests_only_returns_their_requests() -> None:

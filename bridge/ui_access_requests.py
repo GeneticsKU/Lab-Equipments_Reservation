@@ -20,6 +20,10 @@ def selectable_sponsors(users):
     return [user for user in users if not user.is_admin]
 
 
+def requires_sponsor_assignment(user):
+    return not user.sponsor_user_id and not user.is_sponsor and not user.is_admin
+
+
 def lecturer_lab_options(users):
     return sorted(
         {
